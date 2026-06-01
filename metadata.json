@@ -1,0 +1,6 @@
+{
+  "name": "GOQii 2.0",
+  "description": "Continuous health intelligence for human health, prevention, and longevity.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
