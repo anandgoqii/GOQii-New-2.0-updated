@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import Header from "./components/Header";
 import HeroSection from "./components/HeroSection";
 import SectionProblem from "./components/SectionProblem";
 import SectionGap from "./components/SectionGap";
@@ -11,6 +12,7 @@ import TrustRegulatory from "./components/TrustRegulatory";
 import Leadership from "./components/Leadership";
 import AboutGOQii from "./components/AboutGOQii";
 import FinalCTA from "./components/FinalCTA";
+import Footer from "./components/Footer";
 
 export default function App() {
   // Smooth scroll handler for the Explore CTA action
@@ -25,6 +27,9 @@ export default function App() {
       transition={{ duration: 0.8 }}
       className="relative min-h-screen bg-[#F8FAFB] w-full"
     >
+      {/* Global Floating Header Navigation Bar */}
+      <Header />
+
       {/* 1. Hero Section */}
       <HeroSection onExplore={handleExplore} />
 
@@ -60,6 +65,9 @@ export default function App() {
 
       {/* 13. Section 14: Final CTA & Closing Interaction */}
       <FinalCTA />
+
+      {/* 14. Responsive Brand Footer */}
+      <Footer />
     </motion.div>
   );
 }

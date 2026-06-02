@@ -107,7 +107,7 @@ export default function ConnectedEcosystem() {
         - Desktop mode (lg and above): Floating curved vectors 
         - Tablet/Mobile mode (below lg): Grid columns
       */}
-      <div className="relative w-full max-w-5xl mt-6">
+      <div className="relative w-full max-w-5xl mt-6 overflow-x-auto lg:overflow-x-visible">
         
         {/* ================= DESKTOP STAKEHOLDER GRAPHICS AT VIEW lg+ ================= */}
         <div className="hidden lg:block relative w-[1000px] h-[520px] mx-auto select-none">

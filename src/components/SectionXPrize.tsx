@@ -1,106 +1,131 @@
 import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
-import Particles from "./Particles";
-import SmartText from "./SmartText";
+import { useRef, useState } from "react";
+import { Globe, Play } from "lucide-react";
 
 // Import the generated pristine DNA structure asset
 import dnaStructureImage from "../assets/images/goqii_dna_structure_1780319199140.png";
 
+// Sparkling starry particles inside the glass sphere to create spatial three-dimensional depth
+const whiteSparkles = [
+  { id: 1, x: -75, y: -65, size: 3.5, delay: 0.1, duration: 4.5 },
+  { id: 2, x: 65, y: -75, size: 4, delay: 1.2, duration: 5.2 },
+  { id: 3, x: -90, y: 25, size: 2.2, delay: 0.5, duration: 3.8 },
+  { id: 4, x: 85, y: 65, size: 4.5, delay: 2.3, duration: 6.0 },
+  { id: 5, x: -45, y: 85, size: 3.2, delay: 1.1, duration: 4.8 },
+  { id: 6, x: 55, y: -80, size: 4, delay: 1.7, duration: 5.5 },
+  { id: 7, x: -25, y: -45, size: 2.5, delay: 0.3, duration: 3.9 },
+  { id: 8, x: 75, y: -15, size: 3.5, delay: 1.6, duration: 4.9 },
+  { id: 9, x: -65, y: -20, size: 3, delay: 0.8, duration: 4.3 },
+  { id: 10, x: 45, y: 50, size: 4.2, delay: 2.5, duration: 5.1 },
+  { id: 11, x: -35, y: -85, size: 3, delay: 2.0, duration: 4.6 },
+  { id: 12, x: 80, y: -50, size: 2, delay: 0.5, duration: 3.7 },
+  { id: 13, x: -85, y: -40, size: 4, delay: 1.3, duration: 5.3 },
+  { id: 14, x: 30, y: 85, size: 3.5, delay: 0.9, duration: 4.7 },
+  { id: 15, x: -70, y: 70, size: 2.5, delay: 1.5, duration: 4.1 },
+];
+
+const emeraldSparkles = [
+  { id: 21, x: -40, y: -30, size: 3.5, delay: 0.3, duration: 4.4 },
+  { id: 22, x: 60, y: 20, size: 2.5, delay: 1.0, duration: 3.7 },
+  { id: 23, x: -50, y: 50, size: 3, delay: 2.2, duration: 4.9 },
+  { id: 24, x: 30, y: -60, size: 4.2, delay: 0.7, duration: 5.3 },
+];
+
 export default function SectionXPrize() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 
-  // Translate scroll sequence to standard 25% parallax for DNA alignment
+  // Translate scroll sequence to standard subtle parallax for core background glow
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   });
 
-  const yParallax = useTransform(scrollYProgress, [0, 1], ["-12.5%", "12.5%"]);
-  const pulseSphere = useTransform(scrollYProgress, [0.1, 0.5, 0.9], [0.85, 1.05, 0.9]);
+  const coreGlowScale = useTransform(scrollYProgress, [0.1, 0.5, 0.9], [0.95, 1.08, 0.98]);
 
   return (
     <div
       id="section-xprize"
       ref={containerRef}
-      className="relative min-h-[95vh] w-full flex flex-col justify-center items-center overflow-hidden bg-[#F8FAFB] py-24 px-6 md:px-16"
+      className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-[#FAFBFB] py-24 px-4 sm:px-6 md:px-16 border-t border-[#E8EDF2]"
     >
-      {/* Background Section Subtitle */}
-      <div className="w-full max-w-6xl mx-auto mb-16 flex flex-col items-start font-bold">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-          className="label-caps !text-[#2BC48A] mb-4"
-        >
-          Section 06 / XPRIZE Sanjeevini
-        </motion.div>
-      </div>
-
-      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-        {/* Left column: Text details */}
-        <div className="flex flex-col justify-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="text-5xl sm:text-7xl font-bold tracking-tighter text-[#0F172A] leading-[0.95] mb-8"
-          >
-            Extending healthy life. <br />
-            <span className="text-[#667085]">For everyone.</span>
-          </motion.h2>
-
-          <span className="text-xs font-bold tracking-widest text-[#2BC48A] uppercase mb-4 block">GLOBAL LONGEVITY CHALLENGE</span>
-
-          <motion.p
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-            className="text-lg md:text-xl font-normal text-[#667085] leading-relaxed max-w-md"
-          >
-            <SmartText>A global mission to add healthy years to human life. Partnering with the world's most visionary scientists, clinicians, and technologies to push back the boundaries of cellular age.</SmartText>
-          </motion.p>
-        </div>
-
-        {/* Right column: DNA slow rotation + drifting particles + soft light sphere */}
-        <div className="relative w-full aspect-[1/1] max-w-[480px] mx-auto rounded-full bg-white border border-[#E8EDF2] flex items-center justify-center overflow-hidden">
-          {/* Subtle grid nodes behind */}
-          <div className="absolute inset-0 bg-[radial-gradient(#E8EDF2_1px,transparent_1px)] [background-size:24px_24px] opacity-35" />
-
-          {/* Soft background light sphere pulsing */}
-          <motion.div
-            style={{ scale: pulseSphere }}
-            className="absolute w-64 h-64 rounded-full bg-gradient-to-tr from-[#2BC48A]/10 to-indigo-500/5 blur-[45px] pointer-events-none"
-          />
-
-          {/* Drifting cosmic particles */}
-          <Particles count={15} color="bg-[#2BC48A]" speedMultiplier={1.2} />
-
-          {/* Rotating DNA Structure Layer with 25% parallax */}
-          <motion.div
-            style={{ y: yParallax }}
-            animate={{ rotate: 360 }}
-            transition={{ duration: 32, repeat: Infinity, ease: "linear" }}
-            className="relative w-[85%] h-[85%] flex items-center justify-center p-4"
-          >
-            <img
-              src={ dnaStructureImage }
-              alt="Priscilla DNA Double-helix representation"
-              className="w-full h-full object-contain opacity-90 scale-102"
-              referrerPolicy="no-referrer"
-            />
-          </motion.div>
-
-          {/* Abstract central human core layout outline */}
-          <div className="absolute inset-0 border border-slate-100 rounded-full scale-95 pointer-events-none" />
-          <div className="absolute inset-0 border border-[#2BC48A]/10 rounded-full scale-[0.88] pointer-events-none" />
+      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center z-10">
+        
+        {/* ================= LEFT COLUMN: TEXT LAYOUT & STEP PROCESS FLOW ================= */}
+        <div className="lg:col-span-5 flex flex-col justify-center text-left">
           
-          <div className="absolute bottom-6 font-mono text-[9px] text-[#667085] tracking-widest uppercase pointer-events-none">
-            XPRIZE COHORT INTEGRATED
+          {/* 1. Subtitle Alignment */}
+          <div className="flex items-center gap-4 text-xs mb-8 font-sans">
+            <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">06</span>
+            <span className="text-[#E2E8F0] font-light text-sm">|</span>
+            <span className="font-semibold text-[#667085] text-[11px] tracking-[0.25em] uppercase">
+              XPRIZE SANJEEVINI
+            </span>
           </div>
+
+          {/* 2. Main High-contrast Heading */}
+          <h2 className="text-5xl sm:text-6xl lg:text-[72px] font-black tracking-tight text-[#0F172A] leading-[1.05] font-sans">
+            Extending <br />
+            healthy life. <br />
+            <span className="text-[#2BC48A]">For everyone.</span>
+          </h2>
+
+          {/* 3. Small green thick divider block */}
+          <div className="w-14 h-[3.5px] bg-[#2BC48A] rounded-full mt-6 mb-10" />
+
+          {/* 4. Global Longevity Challenge Section with Globe Icon */}
+          <div className="flex items-center gap-3.5 mb-6">
+            <div className="w-10 h-10 rounded-full border border-[#E8EDF2] bg-white flex items-center justify-center text-[#2BC48A] shadow-[0_4px_12px_rgba(0,0,0,0.01)]">
+              <Globe className="w-5 h-5" strokeWidth={2} />
+            </div>
+            <span className="text-[12px] font-sans font-bold tracking-[0.16em] text-[#2BC48A] uppercase">
+              GLOBAL LONGEVITY CHALLENGE
+            </span>
+          </div>
+
+          {/* 5. Description Text with custom serif italic ending */}
+          <p className="text-[#475467] font-sans text-[15px] sm:text-[16px] leading-[1.75] max-w-md mb-10">
+            A global mission to add healthy years to human life. Partnering with the world's most visionary scientists, clinicians, and technologies to <span className="italic-serif text-[#2BC48A] font-medium font-serif italic">push back the boundaries of cellular age.</span>
+          </p>
+
+          {/* 6. Capsule Pill Buttons Container */}
+          <div className="flex items-center self-start">
+            <div className="inline-flex items-center gap-6 bg-white border border-[#E8EDF2] px-6 py-4 rounded-full shadow-[0_8px_30px_rgba(15,23,42,0.012)] hover:shadow-[0_12px_40px_rgba(43,196,138,0.06)] transition-all duration-300">
+              <button className="flex items-center gap-2.5 group/btn text-sm font-semibold tracking-wide text-[#0F172A] hover:text-[#2BC48A] transition-colors">
+                <div className="w-8 h-8 rounded-full bg-[#E5F7F0] flex items-center justify-center text-[#2BC48A] group-hover/btn:scale-110 transition-transform duration-300">
+                  <Play className="w-3.5 h-3.5 fill-current ml-0.5 animate-pulse" strokeWidth={2.5} />
+                </div>
+                Watch the film
+              </button>
+              <div className="w-[1px] h-4 bg-[#E2E8F0]" />
+              <button className="text-sm font-semibold tracking-wide text-[#475467] hover:text-[#2BC48A] transition-colors">
+                Learn more
+              </button>
+            </div>
+          </div>
+
         </div>
+
+        {/* ================= RIGHT COLUMN: CONCENTRIC DNA ORB CARD ================= */}
+        <div className="lg:col-span-7 flex justify-center w-full">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, y: 15 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="relative w-full max-w-[540px] aspect-[4/3.2] bg-white border border-[#E8EDF2] rounded-[32px] overflow-hidden p-2 shadow-[0_16px_40px_rgba(15,23,42,0.02)] flex items-center justify-center group"
+          >
+            <div className="relative w-full h-full rounded-[24px] overflow-hidden bg-[#FAFBFB] flex items-center justify-center p-4">
+              <img
+                src="https://appcdn.goqii.com/storeimg/20784_1780386295.png"
+                alt="Sanjeevini Longevity Infographic"
+                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.025]"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </motion.div>
+        </div>
+
       </div>
     </div>
   );

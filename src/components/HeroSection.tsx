@@ -55,21 +55,6 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
       {/* Atmospheric signals drifting */}
       <Particles count={25} color="bg-[#2BC48A]" speedMultiplier={0.8} />
 
-      {/* Top Header Navigation bar placeholder (Minimal) */}
-      <div className="relative z-10 w-full flex justify-between items-center">
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 rounded-full bg-[#2BC48A] flex items-center justify-center text-white font-extrabold text-xs">G</div>
-          <span className="font-extrabold text-xl tracking-tighter text-[#0F172A]">
-            GOQii <span className="text-[#2BC48A] font-light">2.0</span>
-          </span>
-        </div>
-        <div className="hidden md:flex items-center space-x-10 text-[13px] font-medium text-[#667085]">
-          <span>People</span>
-          <span>Ecosystem</span>
-          <span className="text-[#2BC48A]">Alive O.S.</span>
-        </div>
-      </div>
-
       {/* Hero Content Area */}
       <div className="relative z-10 max-w-5xl mx-auto my-auto flex flex-col items-center text-center mt-20 md:mt-32">
         {/* Label */}
