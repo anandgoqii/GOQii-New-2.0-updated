@@ -20,7 +20,7 @@ export default function SectionProblem() {
     <div
       id="section-problem"
       ref={containerRef}
-      className="relative min-h-[90vh] w-full flex flex-col justify-center items-center overflow-hidden bg-white py-20 md:py-32 px-6 md:px-16"
+      className="relative min-h-[90vh] w-full flex flex-col justify-center items-center overflow-hidden bg-white py-12 md:py-20 px-6 md:px-16"
     >
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         

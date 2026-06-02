@@ -104,10 +104,10 @@ export default function TrustRegulatory() {
   const logosRegulatory = ["CDSCO", "HIPAA", "FHIR", "ABDM", "NHS", "ISO", "SOC2", "GDPR"];
 
   return (
-    <div className="w-full bg-[#FAFBFB] py-20 divide-y divide-[#E8EDF2] overflow-hidden select-none">
+    <div className="w-full bg-[#FAFBFB] py-12 divide-y divide-[#E8EDF2] overflow-hidden select-none">
       
       {/* SECTION 10: GLOBAL SCALE */}
-      <div id="section-trust" className="py-16 md:py-28 px-4 sm:px-6 md:px-16 w-full flex flex-col items-center justify-center">
+      <div id="section-trust" className="py-10 md:py-16 px-4 sm:px-6 md:px-16 w-full flex flex-col items-center justify-center">
         
         {/* Header Tag Index Layout */}
         <div className="w-full max-w-6xl mx-auto mb-8 flex flex-col items-start font-sans">
@@ -332,7 +332,7 @@ export default function TrustRegulatory() {
       </div>
 
       {/* SECTION 11: SECURE BY DESIGN */}
-      <div id="section-regulatory" className="py-24 px-4 sm:px-6 md:px-16 w-full flex flex-col items-center justify-center bg-[#FAFBFB] border-t border-[#E8EDF2]">
+      <div id="section-regulatory" className="py-14 px-4 sm:px-6 md:px-16 w-full flex flex-col items-center justify-center bg-[#FAFBFB] border-t border-[#E8EDF2]">
         
         {/* Header Tag Index Layout */}
         <div className="w-full max-w-6xl mx-auto mb-10 flex flex-col items-start font-sans">

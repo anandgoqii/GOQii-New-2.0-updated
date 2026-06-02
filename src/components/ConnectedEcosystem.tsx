@@ -78,7 +78,7 @@ export default function ConnectedEcosystem() {
   return (
     <div
       id="section-ecosystem"
-      className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-[#FAFBFB] py-28 px-4 sm:px-6 md:px-16"
+      className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-[#FAFBFB] py-16 px-4 sm:px-6 md:px-16"
     >
       {/* Background Section Subtitle Anchor Label */}
       <div className="w-full max-w-6xl mx-auto flex flex-col items-start px-2 relative z-10">
@@ -107,10 +107,10 @@ export default function ConnectedEcosystem() {
         - Desktop mode (lg and above): Floating curved vectors 
         - Tablet/Mobile mode (below lg): Grid columns
       */}
-      <div className="relative w-full max-w-5xl mt-6 overflow-x-auto lg:overflow-x-visible">
+      <div className="relative w-full max-w-5xl mt-6 overflow-x-auto xl:overflow-x-visible">
         
-        {/* ================= DESKTOP STAKEHOLDER GRAPHICS AT VIEW lg+ ================= */}
-        <div className="hidden lg:block relative w-[1000px] h-[520px] mx-auto select-none">
+        {/* ================= DESKTOP STAKEHOLDER GRAPHICS AT VIEW xl+ ================= */}
+        <div className="hidden xl:block relative w-[1000px] h-[520px] mx-auto select-none">
           
           {/* Transparent Infinite mesh pattern layer */}
           <div className="absolute inset-0 bg-[radial-gradient(#E8EDF2_1px,transparent_1px)] [background-size:20px_20px] opacity-40 pointer-events-none" />
@@ -254,8 +254,8 @@ export default function ConnectedEcosystem() {
         </div>
 
 
-        {/* ================= RESPONSIVE TABLET/MOBILE STACK AT < lg ================= */}
-        <div className="lg:hidden w-full max-w-xl mx-auto flex flex-col gap-5 px-3">
+        {/* ================= RESPONSIVE TABLET/MOBILE STACK AT < xl ================= */}
+        <div className="xl:hidden w-full max-w-4xl mx-auto flex flex-col gap-5 px-3">
           
           {/* central floating header pill */}
           <div className="mx-auto w-40 py-3.5 rounded-full border border-[#E8EDF2] bg-white flex flex-col items-center justify-center shadow-xs mb-4">
@@ -263,7 +263,7 @@ export default function ConnectedEcosystem() {
             <span className="font-extrabold text-[#0F172A] text-lg tracking-tight">GOQii</span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {STAKEHOLDERS.map((node) => {
               const IconComp = node.icon;
               return (

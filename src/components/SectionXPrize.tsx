@@ -47,7 +47,7 @@ export default function SectionXPrize() {
     <div
       id="section-xprize"
       ref={containerRef}
-      className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-[#FAFBFB] py-24 px-4 sm:px-6 md:px-16 border-t border-[#E8EDF2]"
+      className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-[#FAFBFB] py-14 px-4 sm:px-6 md:px-16 border-t border-[#E8EDF2]"
     >
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center z-10">
         

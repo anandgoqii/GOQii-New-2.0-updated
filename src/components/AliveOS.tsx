@@ -1,10 +1,25 @@
 import { motion, useScroll, useTransform } from "motion/react";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Target, ArrowRight, User, Brain, TrendingUp } from "lucide-react";
 
 export default function AliveOS() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
+  const graphicContainerRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const el = graphicContainerRef.current;
+    if (!el) return;
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const width = entry.contentRect.width;
+        setScale(Math.min(1, width / 500));
+      }
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   // Hook scroll progress for subtle core expansion effects on scroll
   const { scrollYProgress } = useScroll({
@@ -18,7 +33,7 @@ export default function AliveOS() {
     <div
       id="section-aliveos"
       ref={containerRef}
-      className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-[#FAFBFB] py-24 px-4 sm:px-6 md:px-16 border-t border-[#E8EDF2]"
+      className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-[#FAFBFB] py-14 px-4 sm:px-6 md:px-16 border-t border-[#E8EDF2]"
     >
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center z-10">
         
@@ -114,7 +129,18 @@ export default function AliveOS() {
         {/* ================= RIGHT COLUMN: CONCENTRIC INTEL GRAPHICS CARD ================= */}
         <div className="lg:col-span-7 flex justify-center">
           
-          <div className="relative w-full max-w-[500px] aspect-[500/580] bg-white border border-[#E8EDF2] rounded-[44px] shadow-[0_24px_64px_rgba(15,23,42,0.015)] overflow-hidden flex flex-col items-center justify-center p-6">
+          <div 
+            ref={graphicContainerRef}
+            className="relative w-full max-w-[500px] aspect-[500/580] bg-white border border-[#E8EDF2] rounded-[44px] shadow-[0_24px_64px_rgba(15,23,42,0.015)] overflow-hidden flex flex-col items-center justify-center mx-auto"
+          >
+            {/* Inner Scaled Canvas wrapper */}
+            <div 
+              className="relative w-[500px] h-[580px] shrink-0 pointer-events-auto"
+              style={{ 
+                transform: `scale(${scale})`, 
+                transformOrigin: "center center"
+              }}
+            >
             
             {/* Soft grid background */}
             <div className="absolute inset-0 bg-[radial-gradient(#E8EDF2_1px,transparent_1px)] [background-size:24px_24px] opacity-25 pointer-events-none" />
@@ -276,6 +302,7 @@ export default function AliveOS() {
               HYBRID AI CORE MODULE
             </div>
 
+            </div>
           </div>
 
         </div>

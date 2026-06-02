@@ -6,7 +6,7 @@ interface MenuItem {
   label: string;
   key: string;
   targetId?: string;
-  dropdownItems?: { label: string; desc: string; targetId?: string }[];
+  dropdownItems?: { label: string; desc: string; targetId?: string; href?: string }[];
 }
 
 export default function Header() {
@@ -101,11 +101,11 @@ export default function Header() {
       key: "enterprise",
       targetId: "section-ecosystem",
       dropdownItems: [
-        { label: "HealthEngage Platform", desc: "Advanced B2B digital health & lifestyle coaching platform.", targetId: "section-ecosystem" },
-        { label: "For Insurance", desc: "Intelligent health risk scoring & premium reduction programs.", targetId: "section-gap" },
-        { label: "For Pharma", desc: "Real-world evidence collection & clinical trial diagnostics.", targetId: "section-aliveos" },
-        { label: "For Hospital", desc: "Post-discharge continuous monitoring & outpatient integration.", targetId: "section-trust" },
-        { label: "For Corporate", desc: "Scale executive health parameters & reduce employee absenteeism.", targetId: "section-ecosystem" }
+        { label: "HealthEngage Platform", desc: "Advanced B2B digital health & lifestyle coaching platform.", targetId: "section-ecosystem", href: "https://goqii.com/healthengage" },
+        { label: "For Insurance", desc: "Intelligent health risk scoring & premium reduction programs.", targetId: "section-gap", href: "https://goqii.com/healthengage-insurance" },
+        { label: "For Pharma", desc: "Real-world evidence collection & clinical trial diagnostics.", targetId: "section-aliveos", href: "https://goqii.com/healthengage-pharma" },
+        { label: "For Hospital", desc: "Post-discharge continuous monitoring & outpatient integration.", targetId: "section-trust", href: "https://go-qii-connected-care-7c49.vercel.app/" },
+        { label: "For Corporate", desc: "Scale executive health parameters & reduce employee absenteeism.", targetId: "section-ecosystem", href: "https://goqii.com/healthengage-corporate" }
       ]
     },
     {
@@ -113,11 +113,11 @@ export default function Header() {
       key: "personal",
       targetId: "section-solution",
       dropdownItems: [
-        { label: "Personal Care", desc: "1-on-1 certified human coaching tailored for preventative vitality.", targetId: "section-solution" },
+        { label: "Personal Care", desc: "1-on-1 certified human coaching tailored for preventative vitality.", targetId: "section-solution", href: "https://consult.goqii.com/" },
         { label: "Chronic Care", desc: "Intelligent symptom tracking, clinical logs, and expert compliance.", targetId: "section-solution" },
-        { label: "Insurance Plus", desc: "Active lifestyle rewards teamed with wellness policy upgrades.", targetId: "section-gap" },
-        { label: "Longevity", desc: "Comprehensive cellular health biomarkers, DNA analytics, and ALIVE O.S.", targetId: "section-about" },
-        { label: "Nutriforge", desc: "Custom diagnostics & precise nutrient-tracking integration loops.", targetId: "section-ecosystem" }
+        { label: "Insurance Plus", desc: "Active lifestyle rewards teamed with wellness policy upgrades.", targetId: "section-gap", href: "https://store.goqii.com/goqii-insureplus" },
+        { label: "Longevity", desc: "Comprehensive cellular health biomarkers, DNA analytics, and ALIVE O.S.", targetId: "section-about", href: "https://goqii.com/superlife/" },
+        { label: "Nutriforge", desc: "Custom diagnostics & precise nutrient-tracking integration loops.", targetId: "section-ecosystem", href: "https://goqii.com/nutrigenius" }
       ]
     },
     { label: "Sanjeevini", key: "sanjeevini", targetId: "section-xprize" },
@@ -217,21 +217,29 @@ export default function Header() {
                         className="absolute left-0 mt-1 w-80 bg-white dark:bg-[#0B1220] border border-slate-100 dark:border-slate-850 shadow-[0_16px_36px_rgba(15,23,42,0.1)] dark:shadow-[0_16px_36px_rgba(0,0,0,0.5)] rounded-2xl p-3 z-50 pointer-events-auto"
                       >
                         <div className="space-y-1">
-                          {item.dropdownItems?.map((drop) => (
-                            <button
-                              key={drop.label}
-                              onClick={() => drop.targetId && handleScrollTo(drop.targetId)}
-                              className="w-full text-left p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors flex flex-col gap-0.5 cursor-pointer"
-                            >
-                              <span className="text-[12.5px] font-bold text-slate-800 dark:text-slate-100 flex items-center justify-between group">
-                                {drop.label}
-                                <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
-                              </span>
-                              <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium leading-relaxed">
-                                {drop.desc}
-                              </span>
-                            </button>
-                          ))}
+                          {item.dropdownItems?.map((drop) => {
+                            const isExternal = !!drop.href;
+                            const Element = isExternal ? "a" : "button";
+                            const extraProps = isExternal
+                              ? { href: drop.href, target: "_blank", rel: "noopener noreferrer" }
+                              : { onClick: () => drop.targetId && handleScrollTo(drop.targetId) };
+
+                            return (
+                              <Element
+                                key={drop.label}
+                                {...extraProps}
+                                className="w-full text-left p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors flex flex-col gap-0.5 cursor-pointer block"
+                              >
+                                <span className="text-[12.5px] font-bold text-slate-800 dark:text-slate-100 flex items-center justify-between group">
+                                  {drop.label}
+                                  <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" />
+                                </span>
+                                <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium leading-relaxed">
+                                  {drop.desc}
+                                </span>
+                              </Element>
+                            );
+                          })}
                         </div>
                       </motion.div>
                     )}
@@ -307,15 +315,23 @@ export default function Header() {
 
                     {item.dropdownItems && (
                       <div className="pl-6 border-l-2 border-slate-100 dark:border-slate-850 space-y-1">
-                        {item.dropdownItems.map((drop) => (
-                          <button
-                            key={drop.label}
-                            onClick={() => drop.targetId && handleScrollTo(drop.targetId)}
-                            className="w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 cursor-pointer"
-                          >
-                            {drop.label}
-                          </button>
-                        ))}
+                        {item.dropdownItems.map((drop) => {
+                          const isExternal = !!drop.href;
+                          const Element = isExternal ? "a" : "button";
+                          const extraProps = isExternal
+                            ? { href: drop.href, target: "_blank", rel: "noopener noreferrer", onClick: () => setMobileMenuOpen(false) }
+                            : { onClick: () => drop.targetId && handleScrollTo(drop.targetId) };
+
+                          return (
+                            <Element
+                              key={drop.label}
+                              {...extraProps}
+                              className="w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 cursor-pointer block"
+                            >
+                              {drop.label}
+                            </Element>
+                          );
+                        })}
                       </div>
                     )}
                   </div>

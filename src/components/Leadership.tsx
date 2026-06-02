@@ -329,7 +329,7 @@ export default function Leadership() {
   return (
     <div
       id="section-leadership"
-      className="relative min-h-screen w-full flex flex-col justify-center bg-[#FAFBFB] py-24 px-4 sm:px-6 md:px-16 overflow-hidden select-none border-t border-[#E8EDF2]"
+      className="relative min-h-screen w-full flex flex-col justify-center bg-[#FAFBFB] py-14 px-4 sm:px-6 md:px-16 overflow-hidden select-none border-t border-[#E8EDF2]"
     >
       {/* Header Tag Index Layout */}
       <div className="w-full max-w-7xl mx-auto mb-10 flex flex-col items-start font-sans">
@@ -520,7 +520,7 @@ export default function Leadership() {
             >
               
               {/* Left Side: Grayscale/Color Active Photo Block */}
-              <div className="w-full md:w-[40%] bg-[#FAFBFB] relative overflow-hidden flex items-center justify-center shrink-0 border-b md:border-b-0 md:border-r border-slate-100 aspect-[4/3] md:aspect-auto md:min-h-full">
+              <div className="w-full md:w-[40%] bg-[#FAFBFB] relative overflow-hidden flex items-center justify-center shrink-0 border-b md:border-b-0 md:border-r border-slate-100 h-44 sm:h-52 md:h-auto aspect-square md:aspect-auto md:min-h-full">
                 <img
                   src={selectedMember.image}
                   alt={selectedMember.name}

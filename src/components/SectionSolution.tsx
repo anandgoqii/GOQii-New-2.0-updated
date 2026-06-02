@@ -54,7 +54,7 @@ export default function SectionSolution() {
   return (
     <div
       id="section-solution"
-      className="relative min-h-screen w-full flex flex-col justify-center items-center bg-[#FAFBFB] py-24 px-4 sm:px-6 md:px-16 border-t border-[#E8EDF2]"
+      className="relative min-h-screen w-full flex flex-col justify-center items-center bg-[#FAFBFB] py-14 px-4 sm:px-6 md:px-16 border-t border-[#E8EDF2]"
     >
       {/* Dynamic Background subtle grid detail to elevate aesthetic depth */}
       <div className="absolute inset-0 opacity-[0.4] pointer-events-none select-none overflow-hidden">

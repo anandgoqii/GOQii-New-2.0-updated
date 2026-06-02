@@ -1,10 +1,25 @@
 import { motion, useScroll, useTransform } from "motion/react";
-import { useRef, useState } from "react";
-import { Moon, Leaf, Star, Activity, ArrowDown } from "lucide-react";
+import { useRef, useState, useEffect } from "react";
+import { Moon, Leaf, Star, Footprints } from "lucide-react";
 
 export default function SectionGap() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
+  const graphicContainerRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const el = graphicContainerRef.current;
+    if (!el) return;
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        const width = entry.contentRect.width;
+        setScale(Math.min(1, width / 500));
+      }
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   // Hook into viewport scroll progress for this specific section
   const { scrollYProgress } = useScroll({
@@ -33,7 +48,7 @@ export default function SectionGap() {
     <div
       id="section-gap"
       ref={containerRef}
-      className="relative min-h-[100vh] w-full flex flex-col justify-center items-center overflow-hidden bg-[#FAFBFB] py-20 md:py-32 px-6 md:px-16 border-t border-[#E8EDF2]"
+      className="relative min-h-[100vh] w-full flex flex-col justify-center items-center overflow-hidden bg-[#FAFBFB] py-12 md:py-20 px-6 md:px-16 border-t border-[#E8EDF2]"
     >
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center z-10">
         
@@ -98,7 +113,18 @@ export default function SectionGap() {
         {/* Right column: Interactive Connected Orbits Canvas */}
         <div className="lg:col-span-1" /> {/* Layout cushion spacing */}
         
-        <div className="lg:col-span-6 relative w-full aspect-square max-w-[500px] lg:max-w-[520px] rounded-[32px] bg-white border border-[#E8EDF2]/40 shadow-[0_12px_40px_rgba(0,0,0,0.015)] flex items-center justify-center p-8 overflow-hidden">
+        <div 
+          ref={graphicContainerRef}
+          className="lg:col-span-6 relative w-full aspect-square max-w-[500px] lg:max-w-[520px] rounded-[32px] bg-white border border-[#E8EDF2]/40 shadow-[0_12px_40px_rgba(0,0,0,0.015)] flex items-center justify-center overflow-hidden mx-auto"
+        >
+          {/* Inner Scaled Canvas wrapper */}
+          <div 
+            className="relative w-[500px] h-[500px] shrink-0 pointer-events-auto"
+            style={{ 
+              transform: `scale(${scale})`, 
+              transformOrigin: "center center"
+            }}
+          >
           
           {/* 1. Backdrop Ambient Rotating Celestial Grid Details */}
           <motion.svg 
@@ -149,7 +175,7 @@ export default function SectionGap() {
           {/* 3. CENTRAL GLOWING CORE */}
           <motion.div
             style={{ scale: coreScale }}
-            className="absolute z-10 w-24 h-24 rounded-full bg-[#2BC48A] flex flex-col items-center justify-center border-4 border-white shadow-[0_8px_32px_rgba(43,196,138,0.22)]"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-24 h-24 rounded-full bg-[#2BC48A] flex flex-col items-center justify-center border-4 border-white shadow-[0_8px_32px_rgba(43,196,138,0.22)]"
           >
             <span className="text-[11.5px] font-sans font-bold tracking-[0.22em] text-white select-none">CORE</span>
             {/* Pulsing outer atmosphere rings */}
@@ -243,7 +269,7 @@ export default function SectionGap() {
               className="flex flex-col items-center justify-center w-full"
             >
               <div className="w-8 h-8 rounded-full flex items-center justify-center text-[#2BC48A] mb-1">
-                <Activity className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" strokeWidth={2} />
+                <Footprints className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" strokeWidth={2} />
               </div>
               <span className="text-[8.5px] font-sans font-extrabold tracking-[0.16em] text-[#0F172A] uppercase">
                 Movement
@@ -253,14 +279,12 @@ export default function SectionGap() {
 
           {/* 5. DOWN POINTING HINT ARROW AND TEXT */}
           <div className="absolute bottom-6 flex flex-col items-center gap-2 pointer-events-none">
-            <div className="w-7 h-7 rounded-full border border-[#E2E8F0] flex items-center justify-center text-[#2BC48A]">
-              <ArrowDown className="w-3.5 h-3.5 animate-bounce" />
-            </div>
             <span className="text-[8.5px] font-sans font-extrabold tracking-[0.18em] text-[#94A3B8] uppercase">
               Scroll down to unify channels
             </span>
           </div>
 
+          </div>
         </div>
 
       </div>

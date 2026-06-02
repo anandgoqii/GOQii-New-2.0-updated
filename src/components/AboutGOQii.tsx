@@ -6,63 +6,63 @@ const TIMELINE_STEPS = [
     year: "2014",
     title: "GOQii Founded",
     description: "Launched with a radical mission: combine wearable technology with human coaching to build a sustainable preventative health ecosystem.",
-    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1000&auto=format&fit=crop",
+    image: "https://appcdn.goqii.com/storeimg/1464_1780405387.png",
     boldWord: "ecosystem.",
   },
   {
     year: "2016",
     title: "Wearables & IoT Integration",
     description: "Pioneered smart wearable trackers integrated directly into daily health loops, shifting parameters from static reports to continuous data streams.",
-    image: "https://images.unsplash.com/photo-1510017808632-95f06e681897?q=80&w=1000&auto=format&fit=crop",
+    image: "https://appcdn.goqii.com/storeimg/32813_1780405437.png",
     boldWord: "streams.",
   },
   {
     year: "2018",
     title: "Coaching Ecosystem",
     description: "Scaled a network of certified health coaches, doctors, and nutritionists, translating algorithmic suggestions into deep human habit transformation.",
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1000&auto=format&fit=crop",
+    image: "https://appcdn.goqii.com/storeimg/27759_1780405580.png",
     boldWord: "transformation.",
   },
   {
     year: "2020",
     title: "Health Marketplace",
     description: "Created a comprehensive preventative marketplace, integrating clean nutrition, diagnostic screenings, and therapeutic options into one app experience.",
-    image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1000&auto=format&fit=crop",
+    image: "https://appcdn.goqii.com/storeimg/81877_1780405597.png",
     boldWord: "experience.",
   },
   {
     year: "2021",
     title: "Insurance Layer",
     description: "Merged preventive compliance with interactive risk scoring tools, partnering with prime insurance bodies to lower premiums based on healthy habits.",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000&auto=format&fit=crop",
+    image: "https://appcdn.goqii.com/storeimg/68542_1780405608.png",
     boldWord: "habits.",
   },
   {
     year: "2022",
     title: "Healthcare Integrations",
     description: "Integrated deep clinical compliance, enabling continuous monitoring channels for clinics, diabetes support, and post-discharge protocols.",
-    image: "https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1000&auto=format&fit=crop",
+    image: "https://appcdn.goqii.com/storeimg/70146_1780405622.png",
     boldWord: "protocols.",
   },
   {
     year: "2023",
     title: "AI Intelligence Ecosystem",
     description: "Injected initial generative models to synthesize coach metrics, streamlining administrative processes and enhancing feedback cycles.",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1000&auto=format&fit=crop",
+    image: "https://appcdn.goqii.com/storeimg/61833_1780405630.png",
     boldWord: "cycles.",
   },
   {
     year: "2024",
     title: "ALIVE O.S.",
     description: "Engineered a low-latency, ambient clinical operating system, continuously calculating risk trajectories behind the scenes.",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop",
+    image: "https://appcdn.goqii.com/storeimg/69373_1780405662.png",
     boldWord: "scenes.",
   },
   {
     year: "2026",
     title: "GOQii 2.0",
     description: "Unified humans, continuous biomarker intelligence, and autonomous medical networks into an absolute system for lifetime health optimization.",
-    image: "https://images.unsplash.com/photo-1630839437035-dac17da580d0?q=80&w=1000&auto=format&fit=crop", // high-contrast brain cell structure
+    image: "https://appcdn.goqii.com/storeimg/90518_1780405675.png",
     boldWord: "optimization.",
   },
 ];
@@ -86,7 +86,7 @@ export default function AboutGOQii() {
   return (
     <div
       id="section-about"
-      className="relative min-h-screen w-full flex flex-col justify-center bg-[#FAFBFB] py-24 px-4 sm:px-6 md:px-16 overflow-hidden select-none border-t border-[#E8EDF2]"
+      className="relative min-h-screen w-full flex flex-col justify-center bg-[#FAFBFB] py-14 px-4 sm:px-6 md:px-16 overflow-hidden select-none border-t border-[#E8EDF2]"
     >
       {/* Two-Column Grid Layout */}
       <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start z-10">
@@ -159,7 +159,7 @@ export default function AboutGOQii() {
                   transition={{ duration: 0.6 }}
                   src={TIMELINE_STEPS[activeIndex].image}
                   alt={TIMELINE_STEPS[activeIndex].title}
-                  className="w-full h-full object-cover grayscale brightness-90 contrast-[1.15] transition-transform duration-700"
+                  className="w-full h-full object-cover transition-transform duration-700"
                   referrerPolicy="no-referrer"
                 />
 

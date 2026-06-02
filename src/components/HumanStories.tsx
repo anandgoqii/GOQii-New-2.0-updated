@@ -12,7 +12,7 @@ const STORIES = [
     subtext: "We integrated Alive O.S. directly with our digital claim layers, offering members tailored premium credits when metabolic vectors stay optimal.",
     metric: "34%",
     metricLabel: "Claims Reduction",
-    videoClip: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop",
+    videoClip: "https://appcdn.goqii.com/storeimg/2975_1779880105.png",
     colorOverlay: "rgba(43, 196, 138, 0.04)",
   },
   {
@@ -23,7 +23,7 @@ const STORIES = [
     subtext: "Employees gained direct access to tailored sleep, nutrition, and metabolic guidance pathways—creating a physical workplace culture aligned to longevity.",
     metric: "85%",
     metricLabel: "Organization Engagement",
-    videoClip: "https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=1200&auto=format&fit=crop",
+    videoClip: "https://appcdn.goqii.com/storeimg/88400_1779880196.png",
     colorOverlay: "rgba(43, 196, 138, 0.04)",
   },
   {
@@ -34,7 +34,7 @@ const STORIES = [
     subtext: "Deployed across national health channels to pre-emptively trace and guide glucose and biometric indices on millions of patients offline.",
     metric: "90%",
     metricLabel: "Patient Satisfaction",
-    videoClip: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1200&auto=format&fit=crop",
+    videoClip: "https://appcdn.goqii.com/storeimg/46626_1779880112.png",
     colorOverlay: "rgba(43, 196, 138, 0.04)",
   },
 ];
@@ -46,7 +46,7 @@ export default function HumanStories() {
   return (
     <div
       id="section-stories"
-      className="relative min-h-[100vh] w-full flex flex-col justify-center items-center overflow-hidden bg-[#FAFBFB] py-24 px-4 sm:px-6 md:px-16 border-t border-[#E8EDF2]"
+      className="relative min-h-[100vh] w-full flex flex-col justify-center items-center overflow-hidden bg-[#FAFBFB] py-14 px-4 sm:px-6 md:px-16 border-t border-[#E8EDF2]"
     >
       
       {/* 1. Subtitle & Title Header Layout */}
