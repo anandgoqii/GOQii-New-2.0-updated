@@ -87,7 +87,7 @@ export default function SectionSolution() {
               </span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl lg:text-[64px] font-black tracking-tight text-[#0F172A] leading-[1.08] font-sans">
+            <h2 className="text-2xl sm:text-3xl lg:text-[45px] font-black tracking-tight text-[#0F172A] leading-[1.08] font-sans">
               From information <br className="hidden sm:inline" />
               to <span className="text-[#2BC48A]">transformation.</span>
             </h2>

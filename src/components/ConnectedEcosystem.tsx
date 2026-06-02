@@ -93,7 +93,7 @@ export default function ConnectedEcosystem() {
 
       {/* Main Core Centered Typography Headers */}
       <div className="w-full max-w-4xl mx-auto text-center mb-6 relative z-10">
-        <h2 className="text-5xl sm:text-6xl md:text-[76px] font-black tracking-tight text-[#0F172A] leading-[1.05] mb-6 font-sans">
+        <h2 className="text-3xl sm:text-4xl md:text-[54px] font-black tracking-tight text-[#0F172A] leading-[1.05] mb-6 font-sans">
           One ecosystem.<br />
           Every <span className="text-[#2BC48A]">stakeholder.</span>
         </h2>

@@ -65,7 +65,7 @@ export default function HumanStories() {
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-5xl sm:text-6xl lg:text-[72px] font-black tracking-tight text-[#0F172A] leading-[1.05] font-sans"
+          className="text-3xl sm:text-4xl lg:text-[50px] font-black tracking-tight text-[#0F172A] leading-[1.05] font-sans"
         >
           Real people. <br />
           <span className="text-[#64748B]">Real </span>

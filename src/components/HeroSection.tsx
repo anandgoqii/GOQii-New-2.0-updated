@@ -1,14 +1,54 @@
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
 import Particles from "./Particles";
 import SmartText from "./SmartText";
 
-// Reference the exact generated image asset path
-import heroImage from "../assets/images/goqii_hero_portrait_1780319171867.png";
+const slides = [
+  {
+    id: 1,
+    label: "Operating System for Human Health",
+    lines: [
+      { text: "Health should begin", highlight: false },
+      { text: "before illness.", highlight: true }
+    ],
+    subtext: "Continuous health intelligence for people, enterprises and populations.",
+    bgImage: "https://appcdn.goqii.com/storeimg/70278_1780397805.png"
+  },
+  {
+    id: 2,
+    label: "THE GOQii PLATFORM",
+    lines: [
+      { text: "Predict.", highlight: false },
+      { text: "Personalize.", highlight: false },
+      { text: "Prevent.", highlight: true }
+    ],
+    subtext: "GOQii transforms everyday health signals into intelligent actions and better outcomes.",
+    bgImage: "https://appcdn.goqii.com/storeimg/70352_1780397831.png"
+  },
+  {
+    id: 3,
+    label: "BUILT FOR GLOBAL SCALE",
+    lines: [
+      { text: "Intelligence for", highlight: false },
+      { text: "every human.", highlight: true }
+    ],
+    subtext: "Trusted by enterprises, insurers, healthcare providers and governments worldwide.",
+    bgImage: "https://appcdn.goqii.com/storeimg/43274_1780397840.png"
+  }
+];
 
 export default function HeroSection({ onExplore }: { onExplore: () => void }) {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
   
+  // Auto-play the slides
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
   // Create 20% parallax scrolling effect on the image
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -17,10 +57,6 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
   
   const yParallax = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const imageScale = useTransform(scrollYProgress, [0, 1], [1.02, 1.08]);
-
-  // Text animation configuration (reveal word by word or line by line)
-  const line1 = "Health should begin";
-  const line2 = "before illness.";
 
   return (
     <div
@@ -34,18 +70,28 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
           style={{ y: yParallax, scale: imageScale }}
           className="relative w-full h-full origin-center"
         >
-          <img
-            src={heroImage}
-            alt="Serene health reflection portrait"
-            className="w-full h-full object-cover opacity-35"
-            referrerPolicy="no-referrer"
-          />
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentSlide}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.75 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8 }}
+              src={slides[currentSlide].bgImage}
+              alt="Serene health reflection portrait"
+              className="w-full h-full object-cover object-right md:object-right-center"
+              referrerPolicy="no-referrer"
+            />
+          </AnimatePresence>
           {/* Subtle gradient edges & overlays requested in Bold Typography design */}
-          <div className="absolute top-[10%] right-[10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-[#2BC48A]/15 via-blue-100/25 to-transparent blur-[110px] pointer-events-none" />
-          <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-[#2BC48A]/8 blur-[90px] pointer-events-none" />
+          <div className="absolute top-[10%] right-[10%] w-[600px] h-[600px] rounded-full bg-gradient-to-br from-[#2BC48A]/8 via-blue-100/5 to-transparent blur-[110px] pointer-events-none" />
+          <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-[#2BC48A]/3 blur-[90px] pointer-events-none" />
           
-          <div className="absolute inset-0 bg-gradient-to-b from-[#F8FAFB]/10 via-transparent to-[#F8FAFB]" />
-          <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#F8FAFB] to-transparent" />
+          {/* Left-to-right legibility mask gradient specifically for left-aligned text */}
+          <div className="absolute inset-y-0 left-0 w-full md:w-[65%] bg-gradient-to-r from-[#F8FAFB]/75 via-[#F8FAFB]/30 to-transparent z-[1]" />
+          
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#F8FAFB]/50" />
+          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#F8FAFB] to-transparent" />
         </motion.div>
       </div>
 
@@ -56,56 +102,45 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
       <Particles count={25} color="bg-[#2BC48A]" speedMultiplier={0.8} />
 
       {/* Hero Content Area */}
-      <div className="relative z-10 max-w-5xl mx-auto my-auto flex flex-col items-center text-center mt-20 md:mt-32">
-        {/* Label */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="label-caps mb-6 md:mb-8"
-        >
-          Operating System for Human Health
-        </motion.div>
+      <div className="relative z-10 max-w-3xl mr-auto my-auto flex flex-col items-start text-left mt-20 md:mt-32 w-full lg:pl-12">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="flex flex-col items-start text-left w-full min-h-[300px] sm:min-h-[260px] md:min-h-[320px] justify-center"
+          >
+            {/* Label */}
+            <div className="label-caps mb-6 md:mb-8 tracking-[0.25em] text-[#2BC48A] font-bold">
+              {slides[currentSlide].label}
+            </div>
 
-        {/* Big Large Typography (Reveal line by line using the explicit hero-heading class) */}
-        <h1 className="hero-heading text-[#0F172A] mb-8 flex flex-col items-center">
-          <span className="block overflow-hidden pb-2">
-            <motion.span
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-              className="inline-block"
-            >
-              {line1}
-            </motion.span>
-          </span>
-          <span className="block overflow-hidden pb-2">
-            <motion.span
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
-              className="inline-block text-[#2BC48A]"
-            >
-              before illness.
-            </motion.span>
-          </span>
-        </h1>
+            {/* Big Large Typography (Reveal line by line using the explicit hero-heading class) */}
+            <h1 className="hero-heading text-[#0F172A] mb-8 flex flex-col items-start leading-[1.08]">
+              {slides[currentSlide].lines.map((line, idx) => (
+                <span key={idx} className="block overflow-hidden pb-1">
+                  <span className={`inline-block ${line.highlight ? "text-[#2BC48A]" : "text-[#0F172A]"}`}>
+                    {line.text}
+                  </span>
+                </span>
+              ))}
+            </h1>
 
-        {/* Subtext */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2, ease: "easeOut", delay: 0.5 }}
-          className="text-lg md:text-2xl font-normal text-[#667085] max-w-xl md:max-w-2xl leading-relaxed mb-10"
-        >
-          <SmartText>Continuous health intelligence for people, enterprises and populations.</SmartText>
-        </motion.p>
+            {/* Subtext */}
+            <p className="text-xs sm:text-sm md:text-base font-normal text-[#667085] max-w-md md:max-w-lg leading-relaxed mb-4">
+              <SmartText>{slides[currentSlide].subtext}</SmartText>
+            </p>
+          </motion.div>
+        </AnimatePresence>
 
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut", delay: 0.7 }}
+          transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+          className="mt-4"
         >
           <motion.button
             onClick={onExplore}
@@ -116,6 +151,24 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
             Explore GOQii
           </motion.button>
         </motion.div>
+
+        {/* Slide indicators / dots */}
+        <div className="flex items-center justify-start gap-3 mt-10">
+          {slides.map((slide, index) => (
+            <button
+              key={slide.id}
+              onClick={() => setCurrentSlide(index)}
+              className="group p-1 cursor-pointer transition-transform"
+              aria-label={`Go to slide ${index + 1}`}
+            >
+              <div
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  currentSlide === index ? "w-8 bg-[#2BC48A]" : "w-1.5 bg-[#667085]/30 hover:bg-[#667085]/60"
+                }`}
+              />
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Tiny footer tracker */}

@@ -51,7 +51,7 @@ export default function FinalCTA() {
         <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center justify-center">
           <motion.h2
             style={{ y: titleY }}
-            className="text-4xl sm:text-6xl md:text-8xl font-extrabold tracking-tighter text-[#0F172A] leading-[0.9] text-center"
+            className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter text-[#0F172A] leading-[0.9] text-center"
           >
             Human health deserves <br />
             <span className="text-[#2BC48A]">better systems.</span>

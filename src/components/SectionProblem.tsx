@@ -36,8 +36,8 @@ export default function SectionProblem() {
             </span>
           </div>
 
-          {/* Editorial Headline with Playfair Display normal weight */}
-          <h2 className="font-serif text-[#0F172A] text-5xl sm:text-6xl lg:text-[76px] leading-[1.05] tracking-tight mb-6 font-normal">
+          {/* Main High-contrast Heading */}
+          <h2 className="text-3xl sm:text-4xl lg:text-[54px] font-black tracking-tight text-[#0F172A] leading-[1.05] mb-6 font-sans">
             Most healthcare <br />
             <span className="text-[#5A6376]">reacts too late.</span>
           </h2>

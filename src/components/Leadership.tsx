@@ -351,7 +351,7 @@ export default function Leadership() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl sm:text-6xl lg:text-[72px] font-black tracking-tight text-[#0F172A] leading-[1.05] font-sans"
+            className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0F172A] leading-[1.05] font-sans"
           >
             Built by experts. <br />
             <span className="text-[#64748B]">Trusted </span>

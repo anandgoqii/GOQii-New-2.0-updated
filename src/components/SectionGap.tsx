@@ -54,7 +54,7 @@ export default function SectionGap() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.2, ease: "easeOut" }}
-            className="text-5xl sm:text-6xl lg:text-[76px] font-black tracking-tight text-[#0F172A] leading-[1.05] mb-8 font-sans"
+            className="text-3xl sm:text-4xl lg:text-[54px] font-black tracking-tight text-[#0F172A] leading-[1.05] mb-8 font-sans"
           >
             We know <br />
             <span className="text-[#5A6376]">what to do.</span>

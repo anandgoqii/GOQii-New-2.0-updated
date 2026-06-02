@@ -126,7 +126,7 @@ export default function TrustRegulatory() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl sm:text-6xl lg:text-[72px] font-black tracking-tight text-[#0F172A] leading-[1.05] font-sans"
+            className="text-3xl sm:text-4xl lg:text-[50px] font-black tracking-tight text-[#0F172A] leading-[1.05] font-sans"
           >
             Built for millions. <br />
             Designed for <span className="text-[#2BC48A]">every human.</span>
@@ -142,138 +142,54 @@ export default function TrustRegulatory() {
           </motion.p>
         </div>
 
-        {/* ================= PARTNER HIGHLIGHTS HORIZONTAL BAR ================= */}
-        <div className="w-full max-w-6xl mx-auto bg-white border border-[#E8EDF2] rounded-[24px] p-6 lg:p-8 shadow-[0_12px_32px_rgba(15,23,42,0.01)] mb-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-[#E8EDF2]">
-          
-          {/* Column 1: Government Bodies */}
-          <div className="px-4 flex flex-col items-center lg:items-start justify-center text-center lg:text-left">
-            <div className="text-[10px] font-sans font-black tracking-[0.2em] text-[#2BC48A] uppercase mb-4 opacity-85">
-              GOVERNMENT BODIES
-            </div>
-            <div className="flex items-center gap-6 flex-wrap justify-center lg:justify-start">
-              {/* NITI Aayog */}
-              <div className="flex items-center gap-1.5 opacity-90 select-none">
-                <svg className="w-6 h-10 text-[#0A522C]" viewBox="0 0 24 40" fill="currentColor">
-                  <path d="M12 2C10.5 2 9 4 9 7C9 9.5 10 11 11.5 12h1c1.5-1 2.5-2.5 2.5-5C15 4 13.5 2 12 2z" fill="#D4AF37" />
-                  <rect x="10.5" y="12" width="3" height="1" fill="#0A522C" />
-                  <circle cx="12" cy="15" r="2.5" stroke="#065F46" fill="none" strokeWidth="0.8" />
-                  <path d="M10 18c1.5 2 2.5 2 4 0l1 2.5c-2 1-4 1-5 0L10 18z" fill="#065F46" />
-                </svg>
-                <div className="flex flex-col text-left leading-none">
-                  <span className="text-[11px] font-black text-[#0B3C1D] tracking-tight font-sans">NITI Aayog</span>
-                  <span className="text-[6px] font-medium text-[#475467] font-sans uppercase mt-0.5 tracking-tighter">National Institution for Transforming India</span>
-                </div>
-              </div>
+        {/* ================= GLOBAL SCALE PARTNERS MARQUEE CARD ================= */}
+        <div className="w-full max-w-6xl mx-auto bg-white border border-[#E8EDF2] rounded-[24px] p-8 sm:p-10 shadow-[0_12px_32px_rgba(15,23,42,0.01)] mb-12 overflow-hidden relative">
+          <div className="text-[10px] font-sans font-black tracking-[0.2em] text-[#2BC48A] uppercase mb-6 text-center select-none opacity-85">
+            GLOBAL PARTNERS & SCALE
+          </div>
+          <div className="relative w-full overflow-hidden py-2 select-none">
+            {/* Edge blur mask overlays */}
+            <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-white via-white/50 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-white via-white/50 to-transparent z-10 pointer-events-none" />
 
-              {/* NHS */}
-              <div className="bg-[#005EB8] text-white px-2.5 py-1.5 rounded-[4px] font-black italic text-base leading-none select-none tracking-tight font-sans">
-                NHS
-              </div>
+            <div className="flex w-max">
+              <motion.div
+                animate={{ x: [0, "-50%"] }}
+                transition={{
+                  ease: "linear",
+                  duration: 25,
+                  repeat: Infinity,
+                }}
+                className="flex items-center gap-12 sm:gap-20 shrink-0 whitespace-nowrap pl-4 pr-1"
+              >
+                {[
+                  "https://appcdn.goqii.com/storeimg/27854_1733133577.png",
+                  "https://appcdn.goqii.com/storeimg/74067_1733133593.png",
+                  "https://storecdn.goqii.com/media/goqiiweb/assets/images/partners-logo-harvard.png",
+                  "https://storecdn.goqii.com/media/goqiiweb/assets/images/partners-logo-idc.png",
+                  "https://storecdn.goqii.com/media/goqiiweb/assets/images/partners-logo-device-world.png",
+                  "https://storecdn.goqii.com/media/goqiiweb/assets/images/partners-logo-swiss-re.png",
+                  "https://appcdn.goqii.com/storeimg/83714_1733133635.png"
+                ].concat([
+                  "https://appcdn.goqii.com/storeimg/27854_1733133577.png",
+                  "https://appcdn.goqii.com/storeimg/74067_1733133593.png",
+                  "https://storecdn.goqii.com/media/goqiiweb/assets/images/partners-logo-harvard.png",
+                  "https://storecdn.goqii.com/media/goqiiweb/assets/images/partners-logo-idc.png",
+                  "https://storecdn.goqii.com/media/goqiiweb/assets/images/partners-logo-device-world.png",
+                  "https://storecdn.goqii.com/media/goqiiweb/assets/images/partners-logo-swiss-re.png",
+                  "https://appcdn.goqii.com/storeimg/83714_1733133635.png"
+                ]).map((logo, idx) => (
+                  <img
+                    key={idx}
+                    src={logo}
+                    alt="Partner logo"
+                    className="h-10 sm:h-12 w-auto object-contain filter grayscale opacity-75 hover:grayscale-0 hover:opacity-100 transition-all duration-300 pointer-events-none"
+                    referrerPolicy="no-referrer"
+                  />
+                ))}
+              </motion.div>
             </div>
           </div>
-
-          {/* Column 2: Global Partners */}
-          <div className="px-4 flex flex-col items-center lg:items-start justify-center text-center lg:text-left">
-            <div className="text-[10px] font-sans font-black tracking-[0.2em] text-[#2BC48A] uppercase mb-4 opacity-85">
-              GLOBAL PARTNERS
-            </div>
-            <div className="flex items-center gap-5 flex-wrap justify-center lg:justify-start">
-              {/* WEF */}
-              <div className="flex flex-col items-center text-center relative leading-none select-none py-1">
-                <span className="text-[7px] font-black text-[#1E293B] tracking-[0.16em] uppercase font-sans">WORLD</span>
-                <span className="text-[9px] font-black text-[#1E293B] tracking-[0.24em] uppercase font-sans mt-0.5">ECONOMIC</span>
-                <span className="text-[7px] font-black text-[#1E293B] tracking-[0.16em] uppercase font-sans mt-0.5 font-sans">FORUM</span>
-                <div className="absolute top-1/2 left-1/2 -translate-x-[52%] -translate-y-[41%] w-[114%] h-[120%] border-[0.8px] border-sky-400 rounded-full border-t-transparent border-r-transparent rotate-[-15deg] opacity-75 pointer-events-none" />
-              </div>
-
-              {/* AWS */}
-              <div className="flex flex-col items-center pt-1 relative select-none">
-                <span className="text-[17px] font-black tracking-tight text-[#1E293B] font-sans leading-none flex items-end">
-                  aws
-                </span>
-                <svg className="w-10 h-2 -mt-0.5" viewBox="0 0 40 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 1C8 4 18 6 32 2" stroke="#FF9900" strokeWidth="1.6" strokeLinecap="round" />
-                  <path d="M29 1.5L33 2.5L32 6.5" stroke="#FF9900" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-
-              {/* Google Cloud */}
-              <div className="flex items-center gap-1 opacity-90 select-none">
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 15l6 3.5 6-3.5" stroke="#4285F4" strokeWidth="1.8" strokeLinecap="round" />
-                  <path d="M12 4.5V11" stroke="#EA4335" strokeWidth="1.8" strokeLinecap="round" />
-                  <path d="M6 9l6 3.5 6-3.5" stroke="#FBBC05" strokeWidth="1.8" strokeLinecap="round" />
-                  <circle cx="12" cy="11.5" r="1.5" fill="#34A853" />
-                </svg>
-                <span className="text-[11px] font-black text-[#475467] font-sans tracking-tight">Google Cloud</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Column 3: Insurance Partners */}
-          <div className="px-4 flex flex-col items-center lg:items-start justify-center text-center lg:text-left">
-            <div className="text-[10px] font-sans font-black tracking-[0.2em] text-[#2BC48A] uppercase mb-4 opacity-85">
-              INSURANCE PARTNERS
-            </div>
-            <div className="flex items-center gap-5 flex-wrap justify-center lg:justify-start">
-              {/* Munich RE */}
-              <div className="flex items-center gap-1 select-none">
-                <span className="text-xs font-black text-[#0B2545] font-sans tracking-tight">Munich RE</span>
-                <svg className="w-3.5 h-3.5 text-sky-500" viewBox="0 0 24 24" fill="none">
-                  <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.5" />
-                  <path d="M10 12h4m-2-2v4" stroke="currentColor" strokeWidth="1.5" />
-                </svg>
-              </div>
-
-              {/* Swiss Re */}
-              <div className="flex items-center gap-1.5 select-none">
-                <div className="flex gap-[3.5px] h-4 items-center">
-                  <div className="w-[3px] h-3 bg-[#024978] transform -skew-x-[15deg]" />
-                  <div className="w-[3px] h-[15px] bg-[#024978] transform -skew-x-[15deg]" />
-                  <div className="w-[3px] h-[10px] bg-[#024978] transform -skew-x-[15deg]" />
-                </div>
-                <span className="text-[11px] font-black text-[#024978] tracking-tight font-sans">Swiss Re</span>
-              </div>
-
-              {/* TCS */}
-              <div className="flex flex-col items-start leading-none select-none">
-                <span className="text-xs font-black tracking-tight text-[#0F1D36] font-sans">tcs</span>
-                <span className="text-[5px] font-bold text-[#667085] tracking-widest uppercase mt-0.5">TATA</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Column 4: Corporate Clients */}
-          <div className="px-4 flex flex-col items-center lg:items-start justify-center text-center lg:text-left">
-            <div className="text-[10px] font-sans font-black tracking-[0.2em] text-[#2BC48A] uppercase mb-4 opacity-85">
-              CORPORATE CLIENTS
-            </div>
-            <div className="flex items-center gap-5 flex-wrap justify-center lg:justify-start">
-              {/* Accenture */}
-              <div className="flex items-center select-none leading-none">
-                <span className="text-[12px] font-black text-black font-sans tracking-tight lowercase">accenture</span>
-                <span className="text-[12px] font-black text-[#A100FF] font-sans ml-[1px]">&gt;</span>
-              </div>
-
-              {/* Infosys */}
-              <span className="text-[12px] font-black text-[#006699] font-sans tracking-tight select-none">Infosys</span>
-
-              {/* Wipro */}
-              <div className="flex items-center gap-1 select-none">
-                <span className="text-[11px] font-black text-[#222E50] font-sans tracking-tight lowercase">wipro</span>
-                <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor">
-                  <circle cx="12" cy="6" r="1.5" fill="#E63946" />
-                  <circle cx="17.5" cy="8.5" r="1.5" fill="#F4A261" />
-                  <circle cx="18" cy="14" r="1.5" fill="#2A9D8F" />
-                  <circle cx="14" cy="18" r="1.5" fill="#264653" />
-                  <circle cx="8" cy="16" r="1.5" fill="#457B9D" />
-                  <circle cx="6" cy="11.5" r="1.5" fill="#A8DADC" />
-                  <circle cx="7.5" cy="7.5" r="1.5" fill="#1D3557" />
-                </svg>
-              </div>
-            </div>
-          </div>
-
         </div>
 
         {/* ================= METRIC CARDS GRID ================= */}
@@ -438,7 +354,7 @@ export default function TrustRegulatory() {
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-5xl sm:text-6xl lg:text-[72px] font-black tracking-tight text-[#0F172A] leading-[1.05] font-sans"
+              className="text-3xl sm:text-4xl lg:text-[50px] font-black tracking-tight text-[#0F172A] leading-[1.05] font-sans"
             >
               Secure. Scalable. <br />
               <span className="text-[#64748B]">Regulatory </span>
