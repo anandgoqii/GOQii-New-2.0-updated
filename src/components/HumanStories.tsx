@@ -1,46 +1,50 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
-import { Play } from "lucide-react";
+import { Play, X } from "lucide-react";
 import SmartText from "./SmartText";
 
 const STORIES = [
   {
     category: "INSURANCE PARTNER",
-    title: "Global Insurance Partner",
-    pillLabel: "GLOBAL",
+    title: "When Better Health Becomes Reality",
+    pillLabel: "Prevention",
     desc: "Scaling prevention across millions of policyholders, turning silent actuarial risks into automated daily interventions and healthier lifespans.",
     subtext: "We integrated Alive O.S. directly with our digital claim layers, offering members tailored premium credits when metabolic vectors stay optimal.",
     metric: "34%",
     metricLabel: "Claims Reduction",
     videoClip: "https://appcdn.goqii.com/storeimg/2975_1779880105.png",
     colorOverlay: "rgba(43, 196, 138, 0.04)",
+    videoUrl: "https://www.youtube.com/embed/wfUk6-A891k",
   },
   {
     category: "CORPORATE HEALTH",
     title: "Fortune 500 Corporate",
-    pillLabel: "FORTUNE 500",
+    pillLabel: "Workplace",
     desc: "Healthier employees, stronger organizations. Moving from administrative benefit logs to continuous prevention and active energy loops.",
     subtext: "Employees gained direct access to tailored sleep, nutrition, and metabolic guidance pathways—creating a physical workplace culture aligned to longevity.",
     metric: "85%",
     metricLabel: "Organization Engagement",
     videoClip: "https://appcdn.goqii.com/storeimg/88400_1779880196.png",
     colorOverlay: "rgba(43, 196, 138, 0.04)",
+    videoUrl: "https://www.youtube.com/embed/ycTIWOo_F2g",
   },
   {
     category: "PUBLIC SECTOR",
     title: "Public Health Initiative",
-    pillLabel: "PUBLIC SECTOR",
+    pillLabel: "Population",
     desc: "Prevention at population scale. Establishing public health infrastructure that targets vascular and cellular health before hospitalization indexes surge.",
     subtext: "Deployed across national health channels to pre-emptively trace and guide glucose and biometric indices on millions of patients offline.",
     metric: "90%",
     metricLabel: "Patient Satisfaction",
     videoClip: "https://appcdn.goqii.com/storeimg/46626_1779880112.png",
     colorOverlay: "rgba(43, 196, 138, 0.04)",
+    videoUrl: "https://www.youtube.com/embed/jMxC0WCxNYA",
   },
 ];
 
 export default function HumanStories() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPlayingVideo, setIsPlayingVideo] = useState(false);
   const activeStory = STORIES[activeIndex];
 
   return (
@@ -77,9 +81,9 @@ export default function HumanStories() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-[#667085] text-sm sm:text-base font-medium mt-4 max-w-xl"
+          className="text-[#667085] text-sm sm:text-base font-medium mt-4 max-w-3xl"
         >
-          Stories of impact, powered by prevention and intelligence.
+          Every health journey starts with a single decision. Meet people from different walks of life who chose to prioritise their health and went on to achieve remarkable changes through guidance, commitment and small daily improvements.
         </motion.p>
       </div>
 
@@ -142,15 +146,20 @@ export default function HumanStories() {
           </div>
 
           {/* Floated "Watch the story" Button with glass outline on bottom left */}
-          <button className="absolute bottom-6 left-6 z-20 flex items-center gap-3 bg-white px-5 py-3 rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.15)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] transition-all duration-300 group">
-            <div className="w-8 h-8 rounded-full bg-[#E5F7F0] flex items-center justify-center text-[#2BC48A] group-hover:scale-110 transition-transform duration-300">
-              <Play className="w-3.5 h-3.5 fill-current ml-0.5" strokeWidth={2.5} />
-            </div>
-            <div className="flex flex-col text-left">
-              <span className="text-xs font-bold text-[#0F172A] leading-tight flex items-center">Watch the story</span>
-              <span className="text-[10px] text-[#667085] font-medium mt-0.5">3:45 min</span>
-            </div>
-          </button>
+          {activeStory.videoUrl && (
+            <button
+              onClick={() => setIsPlayingVideo(true)}
+              className="absolute bottom-6 left-6 z-20 flex items-center gap-3 bg-white px-5 py-3 rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.15)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] transition-all duration-300 group cursor-pointer"
+            >
+              <div className="w-8 h-8 rounded-full bg-[#E5F7F0] flex items-center justify-center text-[#2BC48A] group-hover:scale-110 transition-transform duration-300">
+                <Play className="w-3.5 h-3.5 fill-current ml-0.5" strokeWidth={2.5} />
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-xs font-bold text-[#0F172A] leading-tight flex items-center">Watch the story</span>
+                <span className="text-[10px] text-[#667085] font-medium mt-0.5">3:45 min</span>
+              </div>
+            </button>
+          )}
 
           {/* Subtly animated dynamic green soundwave overlay situated at the bottom right */}
           <div className="absolute bottom-6 right-6 flex items-end gap-[4px] h-7 opacity-35 pointer-events-none z-20">
@@ -214,7 +223,7 @@ export default function HumanStories() {
                   <button
                     key={i}
                     onClick={() => setActiveIndex(i)}
-                    className={`px-5 py-2.5 text-[10px] font-bold rounded-full tracking-wider uppercase transition-all duration-300 cursor-pointer ${
+                    className={`px-5 py-2.5 text-xs font-semibold rounded-full transition-all duration-300 cursor-pointer ${
                       isActive
                         ? "bg-[#0F172A] text-white shadow-md shadow-slate-900/10"
                         : "bg-white text-[#667085] border border-[#E8EDF2] hover:bg-[#F8FAFB] hover:text-[#0F172A]"
@@ -236,7 +245,10 @@ export default function HumanStories() {
         {STORIES.map((_, i) => (
           <button
             key={i}
-            onClick={() => setActiveIndex(i)}
+            onClick={() => {
+              setActiveIndex(i);
+              setIsPlayingVideo(false);
+            }}
             className={`transition-all duration-300 ${
               activeIndex === i
                 ? "w-6 h-2 bg-[#2BC48A] rounded-full"
@@ -245,6 +257,47 @@ export default function HumanStories() {
           />
         ))}
       </div>
+
+      {/* Video Modal Overlay Popup */}
+      <AnimatePresence>
+        {isPlayingVideo && activeStory.videoUrl && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 sm:p-6"
+            onClick={() => setIsPlayingVideo(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              className="relative w-full max-w-4xl aspect-video rounded-2xl bg-black border border-white/10 overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button overlay */}
+              <button
+                onClick={() => setIsPlayingVideo(false)}
+                className="absolute top-4 right-4 z-50 p-2.5 rounded-full bg-black/50 hover:bg-black/80 text-white/80 hover:text-white border border-white/10 hover:scale-105 transition-all duration-200 cursor-pointer"
+                aria-label="Close video player"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* YouTube Iframe Embed */}
+              <iframe
+                src={`${activeStory.videoUrl}?autoplay=1&rel=0`}
+                title={`${activeStory.title} video`}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </div>
   );

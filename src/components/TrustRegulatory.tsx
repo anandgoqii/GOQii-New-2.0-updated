@@ -110,52 +110,6 @@ export default function TrustRegulatory() {
       {/* SECTION 10: GLOBAL SCALE */}
       <div id="section-trust" className="py-10 md:py-16 px-4 sm:px-6 md:px-16 w-full flex flex-col items-center justify-center">
         
-        {/* Header Tag Index Layout */}
-        <div className="w-full max-w-6xl mx-auto mb-8 flex flex-col items-start font-sans">
-          <div className="flex items-center gap-4 text-xs tracking-wide">
-            <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">10</span>
-            <span className="text-[#E2E8F0] font-light text-sm">|</span>
-            <span className="font-semibold text-[#667085] text-[11px] tracking-[0.25em] uppercase">
-              IMPACT
-            </span>
-          </div>
-        </div>
-
-        {/* Headline & Description */}
-        <div className="w-full max-w-6xl mx-auto mb-12 text-left flex flex-col items-start">
-          <motion.h2
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-3xl sm:text-4xl lg:text-[50px] font-black tracking-tight text-[#0F172A] leading-[1.05] font-sans uppercase"
-          >
-            FROM CLAIMS TO <span className="text-[#2BC48A]">PREVENTION.</span>
-          </motion.h2>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-[#64748B] text-base sm:text-lg font-medium mt-4 max-w-3xl font-sans"
-          >
-            Scaling preventive healthcare across millions of lives through continuous engagement, coaching, and early intervention.
-          </motion.p>
-
-          <motion.blockquote
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="relative border-l-2 border-[#2BC48A] pl-5 py-1 text-left flex gap-3 mt-6 max-w-3xl"
-          >
-            <span className="text-4xl font-serif text-[#2BC48A] leading-none select-none -mt-1">
-              “
-            </span>
-            <p className="text-sm sm:text-base text-[#475467] leading-[1.65] font-semibold italic">
-              We moved from managing claims after illness to helping people stay healthier before illness begins.
-            </p>
-          </motion.blockquote>
-        </div>
-
         {/* ================= GLOBAL SCALE PARTNERS MARQUEE CARD ================= */}
         <div className="w-full max-w-6xl mx-auto bg-white border border-[#E8EDF2] rounded-[24px] p-8 sm:p-10 shadow-[0_12px_32px_rgba(15,23,42,0.01)] mb-12 overflow-hidden relative">
           <div className="text-[10px] font-sans font-black tracking-[0.2em] text-[#2BC48A] uppercase mb-6 text-center select-none opacity-85">
