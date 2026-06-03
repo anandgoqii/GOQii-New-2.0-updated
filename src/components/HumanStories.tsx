@@ -160,7 +160,7 @@ export default function HumanStories() {
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch bg-white border border-[#E8EDF2] rounded-[32px] overflow-hidden p-6 md:p-8 shadow-[0_24px_64px_rgba(15,23,42,0.015)]">
         
         {/* Left Column Visualizer: Realistic, full-color landscape background */}
-        <div className="lg:col-span-6 relative aspect-[1.1] sm:aspect-[4/3] lg:aspect-auto lg:min-h-[480px] rounded-[24px] bg-slate-950 overflow-hidden flex items-center justify-center">
+        <div className="lg:col-span-6 relative aspect-[4/3] lg:aspect-auto lg:min-h-[480px] rounded-[24px] bg-slate-950 overflow-hidden flex items-center justify-center">
           
           <AnimatePresence mode="wait">
             <motion.div

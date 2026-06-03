@@ -103,7 +103,7 @@ export default function FloatingTabs() {
                 <button
                   key={tab.id}
                   onClick={() => handleTabClick(tab.targetId, tab.id)}
-                  className={`flex items-center gap-1 sm:gap-1.5 md:gap-2 px-2.5 sm:px-4 md:px-6 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-xs md:text-sm font-bold tracking-tight transition-all duration-300 relative cursor-pointer select-none ${
+                  className={`flex items-center gap-1.5 md:gap-2 px-4 md:px-6 py-2.5 rounded-full text-xs md:text-sm font-bold tracking-tight transition-all duration-300 relative cursor-pointer select-none ${
                     isActive
                       ? "text-white"
                       : "text-slate-400 hover:text-white"

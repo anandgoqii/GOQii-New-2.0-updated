@@ -171,7 +171,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="w-full max-w-4xl aspect-[1.4] sm:aspect-[16/9] lg:aspect-[21/9] bg-[#0B1220] rounded-[24px] sm:rounded-[32px] border border-slate-800/70 shadow-[0_32px_80px_rgba(15,23,42,0.18)] p-2 relative overflow-hidden group"
+            className="w-full max-w-4xl aspect-[21/9] bg-[#0B1220] rounded-[32px] border border-slate-800/70 shadow-[0_32px_80px_rgba(15,23,42,0.18)] p-2 relative overflow-hidden group"
           >
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(43,196,138,0.2),transparent_70%)] z-10 pointer-events-none" />
             
@@ -197,8 +197,7 @@ export default function AboutPage() {
             {/* Bottom floating telemetry details */}
             <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 z-20 font-mono text-[9px] text-slate-400">
               <div className="flex gap-4">
-                <span className="hidden sm:inline">VECTORS: [ RESPIRATION, HEART_RATE, GALVANIC_SYNC ]</span>
-                <span className="sm:hidden">SYS_VECTORS: [ RESP, HR, GSR ]</span>
+                <span>VECTORS: [ RESPIRATION, HEART_RATE, GALVANIC_SYNC ]</span>
                 <span className="hidden md:inline">SYSTEM: ACTIVE</span>
               </div>
               <span>PREVENTIVE METABOLISM OS v2.04</span>
