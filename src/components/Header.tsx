@@ -80,18 +80,37 @@ export default function Header() {
   };
 
   const handleScrollTo = (targetId: string) => {
-    const element = document.getElementById(targetId);
-    if (element) {
+    // Intercept the About Us category to switch to the standalone stateful page
+    if (targetId === "section-about") {
       setMobileMenuOpen(false);
       setActiveDropdown(null);
-      // Offset for floating navigation panel
-      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - 100;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+      if (window.navigateToPage) {
+        window.navigateToPage("about");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      return;
     }
+
+    // Switch back to home if scrolling to other sections
+    if (window.navigateToPage) {
+      window.navigateToPage("home");
+    }
+
+    // Give state transition a micro-tick to mount elements so we can scroll
+    setTimeout(() => {
+      const element = document.getElementById(targetId);
+      if (element) {
+        setMobileMenuOpen(false);
+        setActiveDropdown(null);
+        // Offset for floating navigation panel
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - 100;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }, 50);
   };
 
   const menuItems: MenuItem[] = [
@@ -251,15 +270,6 @@ export default function Header() {
 
           {/* Right Control Handlers */}
           <div className="flex items-center gap-3">
-            {/* Dark Mode Moon/Sun Button */}
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full border border-slate-100 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 text-[#475467] dark:text-[#94A3B8] hover:text-[#0F172A] dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-200 cursor-pointer"
-              aria-label="Toggle Dark Theme"
-            >
-              {darkMode ? <Sun className="w-[18px] h-[18px]" /> : <Moon className="w-[18px] h-[18px]" />}
-            </button>
-
             {/* Request Demo Premium Gradient Pill */}
             <button
               onClick={() => setDemoModalOpen(true)}

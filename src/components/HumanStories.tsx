@@ -5,9 +5,9 @@ import SmartText from "./SmartText";
 
 const STORIES = [
   {
-    category: "INSURANCE PARTNER",
+    category: "INSURANCE PARTNERSHIP",
     title: "When Better Health Becomes Reality",
-    pillLabel: "Prevention",
+    pillLabel: "Individuals",
     desc: "Scaling prevention across millions of policyholders, turning silent actuarial risks into automated daily interventions and healthier lifespans.",
     subtext: "We integrated Alive O.S. directly with our digital claim layers, offering members tailored premium credits when metabolic vectors stay optimal.",
     metric: "34%",
@@ -15,11 +15,23 @@ const STORIES = [
     videoClip: "https://appcdn.goqii.com/storeimg/2975_1779880105.png",
     colorOverlay: "rgba(43, 196, 138, 0.04)",
     videoUrl: "https://www.youtube.com/embed/wfUk6-A891k",
+    impact: [
+      { value: "34%", label: "Claims Reduction" },
+      { value: "10M+", label: "Members Guided" },
+      { value: "Live", label: "Claim Integration" },
+    ],
+    capabilities: [
+      "Actuarial Cost Mapping",
+      "Automated Claims Incentive",
+      "Metabolic Vector Diagnostics",
+      "Dynamic Premium Tuning"
+    ],
+    cta: "Explore Individual Solutions →"
   },
   {
     category: "CORPORATE HEALTH",
-    title: "Fortune 500 Corporate",
-    pillLabel: "Workplace",
+    title: "Fortune 500 Corporate Engagement",
+    pillLabel: "Enterprises",
     desc: "Healthier employees, stronger organizations. Moving from administrative benefit logs to continuous prevention and active energy loops.",
     subtext: "Employees gained direct access to tailored sleep, nutrition, and metabolic guidance pathways—creating a physical workplace culture aligned to longevity.",
     metric: "85%",
@@ -27,18 +39,43 @@ const STORIES = [
     videoClip: "https://appcdn.goqii.com/storeimg/88400_1779880196.png",
     colorOverlay: "rgba(43, 196, 138, 0.04)",
     videoUrl: "https://www.youtube.com/embed/ycTIWOo_F2g",
+    impact: [
+      { value: "85%", label: "Organization Engagement" },
+      { value: "-22%", label: "Absenteeism Index" },
+      { value: "100+", label: "Corporates Trusted" },
+    ],
+    capabilities: [
+      "Sleep Recovery Protocols",
+      "Active Performance Tuning",
+      "Employee metabolic screening",
+      "Continuous Human Coaching"
+    ],
+    cta: "Explore Enterprise Solutions →"
   },
   {
-    category: "PUBLIC SECTOR",
-    title: "Public Health Initiative",
-    pillLabel: "Population",
-    desc: "Prevention at population scale. Establishing public health infrastructure that targets vascular and cellular health before hospitalization indexes surge.",
-    subtext: "Deployed across national health channels to pre-emptively trace and guide glucose and biometric indices on millions of patients offline.",
+    category: "PUBLIC HEALTH",
+    title: "Prevention at Population Scale.",
+    pillLabel: "Public Health",
+    desc: "Helping governments and public health systems improve community wellbeing through digital prevention, continuous engagement, and early intervention.",
+    subtext: "Healthier communities begin with proactive care.",
     metric: "90%",
     metricLabel: "Patient Satisfaction",
     videoClip: "https://appcdn.goqii.com/storeimg/46626_1779880112.png",
     colorOverlay: "rgba(43, 196, 138, 0.04)",
     videoUrl: "https://www.youtube.com/embed/jMxC0WCxNYA",
+    impact: [
+      { value: "90%", label: "Patient Satisfaction" },
+      { value: "Regional", label: "Health Deployments" },
+      { value: "2024", label: "Expansion" },
+    ],
+    capabilities: [
+      "Preventive Care Programs",
+      "Population Health Intelligence",
+      "Community Engagement",
+      "Early Risk Detection",
+      "Digital Health Infrastructure"
+    ],
+    cta: "Explore Public Health Solutions →"
   },
 ];
 
@@ -87,11 +124,43 @@ export default function HumanStories() {
         </motion.p>
       </div>
 
+      {/* 1.5. FLOATING STORY TABS */}
+      <div className="w-full max-w-6xl mx-auto mb-10 flex justify-center">
+        <div className="inline-flex bg-white border border-[#E8EDF2] p-1.5 rounded-full shadow-[0_12px_32px_rgba(15,23,42,0.03)] backdrop-blur-md relative gap-2 isolate">
+          {STORIES.map((story, i) => {
+            const isActive = activeIndex === i;
+            return (
+              <button
+                key={i}
+                onClick={() => {
+                  setActiveIndex(i);
+                  setIsPlayingVideo(false);
+                }}
+                className={`px-5 sm:px-8 py-2.5 text-xs sm:text-sm font-extrabold tracking-tight rounded-full transition-all duration-300 relative select-none cursor-pointer ${
+                  isActive
+                    ? "text-[#0F172A]"
+                    : "text-[#64748B] hover:text-[#0F172A]"
+                }`}
+              >
+                {isActive && (
+                  <motion.div
+                    layoutId="activeStoryTab"
+                    className="absolute inset-0 bg-[#F1F5F9] rounded-full -z-10 border border-[#E2E8F0]"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                {story.pillLabel}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
       {/* 2. Main Large Immersive Viewport + Story Panel Grid */}
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch bg-white border border-[#E8EDF2] rounded-[32px] overflow-hidden p-6 md:p-8 shadow-[0_24px_64px_rgba(15,23,42,0.015)]">
         
         {/* Left Column Visualizer: Realistic, full-color landscape background */}
-        <div className="lg:col-span-7 relative aspect-[4/3] lg:aspect-auto lg:min-h-[480px] rounded-[24px] bg-slate-950 overflow-hidden flex items-center justify-center">
+        <div className="lg:col-span-6 relative aspect-[4/3] lg:aspect-auto lg:min-h-[480px] rounded-[24px] bg-slate-950 overflow-hidden flex items-center justify-center">
           
           <AnimatePresence mode="wait">
             <motion.div
@@ -172,7 +241,7 @@ export default function HumanStories() {
         </div>
 
         {/* Right Column details panel content */}
-        <div className="lg:col-span-5 flex flex-col justify-between py-4 pl-0 lg:pl-6 text-left">
+        <div className="lg:col-span-6 flex flex-col justify-between py-2 pl-0 lg:pl-6 text-left">
           
           <AnimatePresence mode="wait">
             <motion.div
@@ -194,7 +263,7 @@ export default function HumanStories() {
               </h3>
 
               {/* Story Description paragraph using SmartText to format highlights */}
-              <p className="text-base sm:text-lg text-[#0F172A] leading-[1.65] font-normal font-sans">
+              <p className="text-base sm:text-lg text-[#475467] leading-[1.6] font-normal font-sans">
                 <SmartText>{activeStory.desc}</SmartText>
               </p>
 
@@ -208,33 +277,49 @@ export default function HumanStories() {
                 </p>
               </div>
 
+              {/* Impact Section */}
+              <div className="pt-4 border-t border-[#E8EDF2]">
+                <h4 className="text-xs font-black tracking-[0.15em] text-[#64748B] uppercase mb-3">
+                  Impact
+                </h4>
+                <div className="grid grid-cols-3 gap-3">
+                  {activeStory.impact?.map((item: any, idx: number) => (
+                    <div key={idx} className="bg-[#FAFBFB] border border-[#E8EDF2] p-3 rounded-[12px] text-left">
+                      <div className="text-base sm:text-lg font-black text-[#2BC48A] tracking-tight truncate">
+                        {item.value}
+                      </div>
+                      <div className="text-[10px] sm:text-[11px] text-[#64748B] font-semibold leading-tight mt-0.5">
+                        {item.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Key Capabilities */}
+              <div className="pt-2">
+                <h4 className="text-xs font-black tracking-[0.15em] text-[#64748B] uppercase mb-2.5">
+                  Key Capabilities
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                  {activeStory.capabilities?.map((cap: string, idx: number) => (
+                    <div key={idx} className="flex items-start gap-2 text-sm text-[#475467] font-medium font-sans">
+                      <span className="text-[#2BC48A] font-bold mt-0.5">•</span>
+                      <span>{cap}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Explore Link */}
+              <div className="pt-4">
+                <button className="inline-flex items-center gap-2 group text-sm font-extrabold text-[#0F172A] hover:text-[#2BC48A] transition-colors duration-300 cursor-pointer">
+                  <span>{activeStory.cta}</span>
+                </button>
+              </div>
+
             </motion.div>
           </AnimatePresence>
-
-          {/* Pill Selector Panel Navigation */}
-          <div className="mt-8 pt-8 border-t border-[#E8EDF2]">
-            <span className="text-[10px] font-mono tracking-widest text-[#667085] uppercase mb-4 block font-bold">
-              SELECT PARTNER CHANNEL
-            </span>
-            <div className="flex flex-wrap gap-2.5">
-              {STORIES.map((story, i) => {
-                const isActive = activeIndex === i;
-                return (
-                  <button
-                    key={i}
-                    onClick={() => setActiveIndex(i)}
-                    className={`px-5 py-2.5 text-xs font-semibold rounded-full transition-all duration-300 cursor-pointer ${
-                      isActive
-                        ? "bg-[#0F172A] text-white shadow-md shadow-slate-900/10"
-                        : "bg-white text-[#667085] border border-[#E8EDF2] hover:bg-[#F8FAFB] hover:text-[#0F172A]"
-                    }`}
-                  >
-                    {story.pillLabel}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
 
         </div>
 

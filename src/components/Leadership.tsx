@@ -334,7 +334,7 @@ export default function Leadership() {
       {/* Header Tag Index Layout */}
       <div className="w-full max-w-7xl mx-auto mb-10 flex flex-col items-start font-sans">
         <div className="flex items-center gap-4 text-xs tracking-wide">
-          <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">12</span>
+          <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">10</span>
           <span className="text-[#E2E8F0] font-light text-sm">/</span>
           <span className="font-semibold text-[#667085] text-[11px] tracking-[0.25em] uppercase font-sans">
             OUR PEOPLE

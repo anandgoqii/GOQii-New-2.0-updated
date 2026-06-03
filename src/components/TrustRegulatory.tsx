@@ -107,9 +107,40 @@ export default function TrustRegulatory() {
   return (
     <div className="w-full bg-[#FAFBFB] py-12 divide-y divide-[#E8EDF2] overflow-hidden select-none">
       
-      {/* SECTION 10: GLOBAL SCALE */}
+      {/* SECTION 09: GLOBAL IMPACT */}
       <div id="section-trust" className="py-10 md:py-16 px-4 sm:px-6 md:px-16 w-full flex flex-col items-center justify-center">
         
+        {/* Header Tag Index Layout */}
+        <div className="w-full max-w-6xl mx-auto mb-16 text-left flex flex-col items-start font-sans">
+          <div className="flex items-center gap-4 text-xs mb-8 font-sans">
+            <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">08</span>
+            <span className="text-[#E2E8F0] font-light text-sm">|</span>
+            <span className="font-semibold text-[#667085] text-[11px] tracking-[0.25em] uppercase">
+              GLOBAL IMPACT
+            </span>
+          </div>
+
+          {/* Heading */}
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-3xl sm:text-4xl lg:text-[50px] font-black tracking-tight text-[#0F172A] leading-[1.05] font-sans"
+          >
+            Real Reach. <br />
+            <span className="text-[#2BC48A]">Real Results.</span>
+          </motion.h2>
+          
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-[#667085] text-base sm:text-lg font-medium mt-6 max-w-3xl font-sans"
+          >
+            Driving measurable health outcomes across populations, organizations, and healthcare systems.
+          </motion.p>
+        </div>
+
         {/* ================= GLOBAL SCALE PARTNERS MARQUEE CARD ================= */}
         <div className="w-full max-w-6xl mx-auto bg-white border border-[#E8EDF2] rounded-[24px] p-8 sm:p-10 shadow-[0_12px_32px_rgba(15,23,42,0.01)] mb-12 overflow-hidden relative">
           <div className="text-[10px] font-sans font-black tracking-[0.2em] text-[#2BC48A] uppercase mb-6 text-center select-none opacity-85">
@@ -305,7 +336,7 @@ export default function TrustRegulatory() {
         {/* Header Tag Index Layout */}
         <div className="w-full max-w-6xl mx-auto mb-10 flex flex-col items-start font-sans">
           <div className="flex items-center gap-4 text-xs tracking-wide">
-            <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">11</span>
+            <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">09</span>
             <span className="text-[#E2E8F0] font-light text-sm">|</span>
             <span className="font-semibold text-[#667085] text-[11px] tracking-[0.25em] uppercase">
               SECURE BY DESIGN

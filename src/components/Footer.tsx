@@ -9,6 +9,37 @@ export default function Footer() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      
+      if (targetId === "section-about") {
+        if (window.navigateToPage) {
+          window.navigateToPage("about");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        return;
+      }
+      
+      if (window.navigateToPage) {
+        window.navigateToPage("home");
+      }
+      
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+          const offsetPosition = elementPosition - 100;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 50);
+    }
+  };
+
   const footerLinks = {
     consumer: {
       title: "CONSUMER",
@@ -63,6 +94,7 @@ export default function Footer() {
                 <li key={idx}>
                   <a
                     href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href)}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-sm sm:text-[15px] font-medium text-[#64748B] hover:text-[#2BC48A] transition-colors duration-200"
@@ -84,6 +116,7 @@ export default function Footer() {
                 <li key={idx}>
                   <a
                     href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href)}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-sm sm:text-[15px] font-medium text-[#64748B] hover:text-[#2BC48A] transition-colors duration-200"
@@ -105,6 +138,7 @@ export default function Footer() {
                 <li key={idx}>
                   <a
                     href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href)}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-sm sm:text-[15px] font-medium text-[#64748B] hover:text-[#2BC48A] transition-colors duration-200"
@@ -126,6 +160,7 @@ export default function Footer() {
                 <li key={idx}>
                   <a
                     href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href)}
                     target={link.href.startsWith("http") ? "_blank" : undefined}
                     rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-sm sm:text-[15px] font-medium text-[#64748B] hover:text-[#2BC48A] transition-colors duration-200"
