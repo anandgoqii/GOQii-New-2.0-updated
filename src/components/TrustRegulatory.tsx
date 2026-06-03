@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import SmartText from "./SmartText";
 
 // Counters hook to animate values in viewport
-function AnimatedCounter({ endValue, suffix = "", duration = 2000 }: { endValue: number; suffix?: string; duration?: number }) {
+function AnimatedCounter({ endValue, suffix = "", prefix = "", duration = 2000 }: { endValue: number; suffix?: string; prefix?: string; duration?: number }) {
   const [count, setCount] = useState(0);
   const elementRef = useRef<HTMLDivElement>(null);
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -39,6 +39,7 @@ function AnimatedCounter({ endValue, suffix = "", duration = 2000 }: { endValue:
 
   return (
     <div ref={elementRef} className="text-4xl sm:text-6xl font-black font-sans text-[#0F172A] tracking-tighter mb-2">
+      {prefix}
       {count}
       {suffix}
     </div>
@@ -115,31 +116,44 @@ export default function TrustRegulatory() {
             <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">10</span>
             <span className="text-[#E2E8F0] font-light text-sm">|</span>
             <span className="font-semibold text-[#667085] text-[11px] tracking-[0.25em] uppercase">
-              GLOBAL SCALE
+              IMPACT
             </span>
           </div>
         </div>
 
         {/* Headline & Description */}
-        <div className="w-full max-w-6xl mx-auto mb-12">
+        <div className="w-full max-w-6xl mx-auto mb-12 text-left flex flex-col items-start">
           <motion.h2
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl lg:text-[50px] font-black tracking-tight text-[#0F172A] leading-[1.05] font-sans"
+            className="text-3xl sm:text-4xl lg:text-[50px] font-black tracking-tight text-[#0F172A] leading-[1.05] font-sans uppercase"
           >
-            Built for millions. <br />
-            Designed for <span className="text-[#2BC48A]">every human.</span>
+            FROM CLAIMS TO <span className="text-[#2BC48A]">PREVENTION.</span>
           </motion.h2>
           
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[#667085] text-sm sm:text-base font-medium mt-4 max-w-xl font-sans"
+            className="text-[#64748B] text-base sm:text-lg font-medium mt-4 max-w-3xl font-sans"
           >
-            A global impact across individuals, enterprises, health systems, and communities.
+            Scaling preventive healthcare across millions of lives through continuous engagement, coaching, and early intervention.
           </motion.p>
+
+          <motion.blockquote
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="relative border-l-2 border-[#2BC48A] pl-5 py-1 text-left flex gap-3 mt-6 max-w-3xl"
+          >
+            <span className="text-4xl font-serif text-[#2BC48A] leading-none select-none -mt-1">
+              “
+            </span>
+            <p className="text-sm sm:text-base text-[#475467] leading-[1.65] font-semibold italic">
+              We moved from managing claims after illness to helping people stay healthier before illness begins.
+            </p>
+          </motion.blockquote>
         </div>
 
         {/* ================= GLOBAL SCALE PARTNERS MARQUEE CARD ================= */}
@@ -225,7 +239,7 @@ export default function TrustRegulatory() {
             </p>
           </motion.div>
 
-          {/* Card 2: Employees Engaged */}
+          {/* Card 2: Deployment */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -243,15 +257,15 @@ export default function TrustRegulatory() {
             </div>
 
             <div className="text-4xl lg:text-[44px] font-black font-sans text-[#0F172A] tracking-tight mb-2">
-              <AnimatedCounter endValue={50} suffix="K+" />
+              <AnimatedCounter endValue={1} prefix="0" />
             </div>
 
             <div className="text-[10px] font-sans font-extrabold tracking-[0.15em] text-[#2BC48A] uppercase mb-4 leading-none">
-              EMPLOYEES ENGAGED
+              DEPLOYMENT
             </div>
 
             <p className="text-[#667085] text-[13px] leading-relaxed max-w-[200px] font-sans font-medium">
-              Enterprise workforce thriving with preventive health.
+              Primary healthcare deployment on national digital channels.
             </p>
           </motion.div>
 
