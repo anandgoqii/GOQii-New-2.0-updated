@@ -70,8 +70,18 @@ export default function SectionXPrize() {
             <span className="text-[#2BC48A]">For everyone.</span>
           </h2>
 
+          {/* XPrize Sanjeevini Logo */}
+          <div className="mt-8 mb-4 flex items-center">
+            <img
+              src="https://appcdn.goqii.com/storeimg/96760_1780031032.png"
+              alt="XPrize Sanjeevini Logo"
+              className="h-14 w-auto object-contain"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+
           {/* 3. Small green thick divider block */}
-          <div className="w-14 h-[3.5px] bg-[#2BC48A] rounded-full mt-6 mb-10" />
+          <div className="w-14 h-[3.5px] bg-[#2BC48A] rounded-full mt-4 mb-10" />
 
           {/* 4. Global Longevity Challenge Section with Globe Icon */}
           <div className="flex items-center gap-3.5 mb-6">
@@ -98,9 +108,14 @@ export default function SectionXPrize() {
                 Watch the film
               </button>
               <div className="w-[1px] h-4 bg-[#E2E8F0]" />
-              <button className="text-sm font-semibold tracking-wide text-[#475467] hover:text-[#2BC48A] transition-colors">
+              <a
+                href="https://goqii.com/sanjeevini"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold tracking-wide text-[#475467] hover:text-[#2BC48A] transition-colors"
+              >
                 Learn more
-              </button>
+              </a>
             </div>
           </div>
 

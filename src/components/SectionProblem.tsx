@@ -2,9 +2,6 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import SmartText from "./SmartText";
 
-// Reuse the generated premium human portrait
-import heroImage from "../assets/images/goqii_hero_portrait_1780319171867.png";
-
 export default function SectionProblem() {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -81,7 +78,7 @@ export default function SectionProblem() {
             className="absolute -inset-8 w-[calc(100%+64px)] h-[calc(100%+64px)] pointer-events-none"
           >
             <img
-              src={heroImage}
+              src="https://appcdn.goqii.com/storeimg/60054_1780406959.png"
               alt="Subtle preventative clinical insight portrait"
               className="w-full h-full object-cover brightness-100 contrast-[1.03] opacity-95 scale-100"
               referrerPolicy="no-referrer"

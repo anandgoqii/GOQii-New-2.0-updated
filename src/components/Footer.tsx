@@ -13,20 +13,19 @@ export default function Footer() {
     consumer: {
       title: "CONSUMER",
       links: [
-        { label: "SuperLife", href: "#section-about" },
-        { label: "Personal Care", href: "#section-solution" },
-        { label: "SmartRx", href: "#section-xprize" },
-        { label: "Wearables", href: "#section-ecosystem" },
+        { label: "SuperLife", href: "https://goqii.com/superlife/" },
+        { label: "Personal Care", href: "https://consult.goqii.com/" },
+        { label: "SmartRx", href: "https://smartrx.goqii.com/" },
       ]
     },
     enterprise: {
       title: "ENTERPRISE",
       links: [
-        { label: "For Business", href: "#section-ecosystem" },
-        { label: "Insurance", href: "#section-gap" },
-        { label: "Pharma", href: "#section-aliveos" },
-        { label: "Corporate", href: "#section-ecosystem" },
-        { label: "Hospital", href: "#section-trust" },
+        { label: "Business to Enterprise", href: "https://goqii.com/healthengage" },
+        { label: "For Insurance", href: "https://goqii.com/healthengage-insurance" },
+        { label: "For Pharma", href: "https://goqii.com/healthengage-pharma" },
+        { label: "For Corporate", href: "https://goqii.com/healthengage-corporate" },
+        { label: "For Hospital", href: "https://go-qii-connected-care-7c49.vercel.app/" },
       ]
     },
     company: {
@@ -34,10 +33,7 @@ export default function Footer() {
       links: [
         { label: "About Us", href: "#section-about" },
         { label: "Contact Us", href: "#section-final" },
-        { label: "Leadership", href: "#section-leadership" },
         { label: "Careers", href: "#section-final" },
-        { label: "Investors", href: "#section-about" },
-        { label: "Partners", href: "#section-trust" },
       ]
     },
     trustLegal: {
@@ -67,6 +63,8 @@ export default function Footer() {
                 <li key={idx}>
                   <a
                     href={link.href}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-sm sm:text-[15px] font-medium text-[#64748B] hover:text-[#2BC48A] transition-colors duration-200"
                   >
                     {link.label}
@@ -86,6 +84,8 @@ export default function Footer() {
                 <li key={idx}>
                   <a
                     href={link.href}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-sm sm:text-[15px] font-medium text-[#64748B] hover:text-[#2BC48A] transition-colors duration-200"
                   >
                     {link.label}
@@ -105,6 +105,8 @@ export default function Footer() {
                 <li key={idx}>
                   <a
                     href={link.href}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-sm sm:text-[15px] font-medium text-[#64748B] hover:text-[#2BC48A] transition-colors duration-200"
                   >
                     {link.label}
@@ -124,6 +126,8 @@ export default function Footer() {
                 <li key={idx}>
                   <a
                     href={link.href}
+                    target={link.href.startsWith("http") ? "_blank" : undefined}
+                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                     className="text-sm sm:text-[15px] font-medium text-[#64748B] hover:text-[#2BC48A] transition-colors duration-200"
                   >
                     {link.label}
@@ -143,17 +147,14 @@ export default function Footer() {
           
           {/* Logo & Vision Tagline */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 max-w-2xl">
-            {/* GOQii 2x2 grid logo with text side by side as requested */}
+            {/* Official GOQii logo image */}
             <div className="flex items-center gap-2.5 shrink-0">
-              <div className="grid grid-cols-2 gap-[2px] w-6.5 h-6.5 rounded overflow-hidden shrink-0">
-                <div className="bg-[#EE5D26]" />
-                <div className="bg-[#E11A22]" />
-                <div className="bg-[#48B147]" />
-                <div className="bg-[#008CC9]" />
-              </div>
-              <span className="font-black text-[#0F172A] text-2xl tracking-tighter col-span-2 leading-none">
-                GOQii
-              </span>
+              <img
+                src="https://appcdn.goqii.com/storeimg/36455_1779860387.png"
+                alt="GOQii Logo"
+                className="h-8 w-auto object-contain"
+                referrerPolicy="no-referrer"
+              />
             </div>
             
             <p className="text-sm sm:text-[15px] font-medium text-[#64748B] leading-relaxed">

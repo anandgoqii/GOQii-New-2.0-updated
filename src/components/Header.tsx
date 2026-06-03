@@ -459,7 +459,7 @@ export default function Header() {
                               name="company"
                               value={formData.company}
                               onChange={handleFormChange}
-                              placeholder="Goqii Health Inc"
+                              placeholder="GOQii Health Inc"
                               className="w-full pl-11 pr-4 py-3 text-sm rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 focus:outline-none focus:border-[#21C083] dark:focus:border-[#21C083] dark:text-white text-slate-800 transition-colors"
                             />
                           </div>

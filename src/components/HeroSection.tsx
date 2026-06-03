@@ -135,6 +135,26 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
           </motion.div>
         </AnimatePresence>
 
+        {/* XPRIZE Healthspan Semifinalist Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.1 }}
+          className="flex flex-col sm:flex-row items-start sm:items-center gap-3 bg-white/90 backdrop-blur-md border border-[#E2E8F0] px-4 py-3 rounded-2xl mb-8 shadow-xs max-w-lg select-none"
+        >
+          <div className="flex items-center justify-center bg-[#FEF08A] text-[#854D0E] w-10 h-10 rounded-xl text-lg shrink-0 shadow-inner">
+            🏆
+          </div>
+          <div className="flex flex-col text-left">
+            <span className="text-xs font-black tracking-wider text-[#0F172A] uppercase">
+              XPRIZE Healthspan Semifinalist
+            </span>
+            <span className="text-[11px] font-bold text-[#64748B] font-mono tracking-wide mt-0.5">
+              $101M Global Competition
+            </span>
+          </div>
+        </motion.div>
+
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}

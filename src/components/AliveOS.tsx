@@ -308,6 +308,58 @@ export default function AliveOS() {
         </div>
 
       </div>
+
+      {/* ALIVE O.S. Healthstack Visual */}
+      <div className="w-full max-w-6xl mx-auto mt-20 pt-16 border-t border-[#E8EDF2] z-10 text-center">
+        <span className="text-[11px] font-sans font-bold tracking-[0.25em] text-[#667085] uppercase mb-4 block">
+          THE UNIFIED LONGEVITY SYSTEM
+        </span>
+        <h3 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] mb-12 tracking-tight">
+          ALIVE O.S. Healthstack Integration
+        </h3>
+
+        {/* 6 Grid Connected Elements */}
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-4 mb-10">
+          {[
+            { label: "DEVICES", desc: "Wearables & Biomarker Trackers", icon: "⌚" },
+            { label: "LABS", desc: "Biochemical & Genetic Diagnostics", icon: "🧬" },
+            { label: "DIGITAL TWIN", desc: "Virtual Health Modeling Engine", icon: "👤" },
+            { label: "HEALTH LOCKER", desc: "Secure ABDM & Medical Vault", icon: "🔐" },
+            { label: "COACHING", desc: "Human Expert Steering & Advice", icon: "🤝" },
+            { label: "REWARDS", desc: "Behavioral Habit Incentive Loops", icon: "🏆" },
+          ].map((item, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{ y: -4 }}
+              className="bg-white border border-[#E8EDF2] rounded-2xl p-5 flex flex-col items-center justify-center text-center shadow-xs transition-all relative overflow-hidden"
+            >
+              <span className="text-3xl mb-3">{item.icon}</span>
+              <span className="text-xs font-black text-[#0F172A] tracking-wider mb-1 block">{item.label}</span>
+              <span className="text-[11px] font-medium text-[#64748B] leading-relaxed block">{item.desc}</span>
+              
+              {/* Thin light connector link representing standard ecosystem integration */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 h-2 bg-[#2BC48A]/30" />
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Unified Connector Layer */}
+        <div className="flex flex-col items-center justify-center py-4">
+          <motion.div
+            animate={{ y: [0, 5, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            className="w-10 h-10 rounded-full bg-[#E5F7F0] text-[#2BC48A] flex items-center justify-center mb-4 border border-[#2BC48A]/20"
+          >
+            <ArrowRight className="w-5 h-5 rotate-90" />
+          </motion.div>
+          
+          <div className="inline-flex items-center gap-3 bg-[#0B1220] text-white px-8 py-4 rounded-2xl shadow-md border border-[#2BC48A]/30">
+            <div className="w-2.5 h-2.5 rounded-full bg-[#2BC48A] animate-ping shrink-0" />
+            <span className="text-sm font-extrabold tracking-[0.2em] uppercase text-white">ALIVE O.S. INSTANCE</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
