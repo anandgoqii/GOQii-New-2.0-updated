@@ -6,19 +6,19 @@ import SmartText from "./SmartText";
 const STORIES = [
   {
     category: "INDIVIDUAL METABOLIC HEALTH",
-    title: "Real Transformations. Lasting Habit Change.",
+    title: "FROM STRUGGLE TO TRANSFORMATION.",
     pillLabel: "Individuals",
-    desc: "Real people achieving sustainable health outcomes. Creating lasting lifestyle improvements, managed body weight, healthy longevity, and daily habit modifications.",
-    subtext: "I transformed my physiological state and reduced metabolic biomarkers by adopting small, highly guided health habit changes every single day. The personalized coaching and accountability changed everything.",
-    metric: "94%",
-    metricLabel: "Habit Change",
+    desc: "Every health journey starts with a single decision. Meet people who improved their health through coaching, consistency, and small daily actions.",
+    subtext: "The biggest change wasn't my weight. It was building habits I could sustain.",
+    metric: "15kg+",
+    metricLabel: "Weight Loss",
     videoClip: "https://appcdn.goqii.com/storeimg/2975_1779880105.png",
     colorOverlay: "rgba(43, 196, 138, 0.04)",
     videoUrl: "https://www.youtube.com/embed/wfUk6-A891k",
     impact: [
-      { value: "94%", label: "Habit Change Rate" },
-      { value: "14 lbs", label: "Avg Weight Managed" },
-      { value: "2.8 yrs", label: "Biological Age Saved" },
+      { value: "15kg+ Loss", label: "Weight Journey" },
+      { value: "Improved", label: "Metabolic Health" },
+      { value: "365 Days", label: "Active Cohort" },
     ],
     capabilities: [
       "Custom Habit Calibration",
@@ -30,10 +30,10 @@ const STORIES = [
   },
   {
     category: "CORPORATE HEALTH & WELLNESS",
-    title: "Stronger Organizations. Healthier Employees.",
+    title: "HEALTHIER EMPLOYEES. STRONGER ORGANIZATIONS.",
     pillLabel: "Enterprises",
-    desc: "Moving beyond passive HR logs to continuous prevention, structured corporate wellness pathways, and high-performance workforce energy loops.",
-    subtext: "Our entire workforce gained direct connection to tailored sleep, metabolic wellness, and nutrition guidance pathways—improving daily engagement and employee health metrics.",
+    desc: "Helping organizations improve workforce wellbeing, engagement, productivity, and long-term health outcomes through continuous health intelligence.",
+    subtext: "We transformed employee wellness from a program into an everyday behavior.",
     metric: "85%",
     metricLabel: "Workforce Engagement",
     videoClip: "https://appcdn.goqii.com/storeimg/88400_1779880196.png",
@@ -41,8 +41,8 @@ const STORIES = [
     videoUrl: "https://www.youtube.com/embed/ycTIWOo_F2g",
     impact: [
       { value: "85%", label: "Workforce Engagement" },
-      { value: "50K+", label: "Employees Guided" },
-      { value: "-22%", label: "Absenteeism Index" },
+      { value: "50K+", label: "Employees Supported" },
+      { value: "Fortune 500", label: "Deployments" },
     ],
     capabilities: [
       "Sleep Recovery Protocols",
@@ -54,19 +54,19 @@ const STORIES = [
   },
   {
     category: "PUBLIC HEALTH INITIATIVES",
-    title: "Decentralized Care at Population Scale.",
+    title: "HEALTHIER COMMUNITIES. BETTER OUTCOMES.",
     pillLabel: "Public Health",
-    desc: "Partnering with national health authorities and community groups to roll out digital-first preventive health, active engagement, and early risk identification systems.",
-    subtext: "Healthier communities start with preventive care systems designed to intercept metabolic risk patterns before they turn into complex clinical cases.",
-    metric: "90%",
-    metricLabel: "Patient Satisfaction",
+    desc: "Supporting governments and public health organizations through prevention-first healthcare and continuous population engagement.",
+    subtext: "Extending preventive healthcare beyond hospitals and into everyday life.",
+    metric: "15M+",
+    metricLabel: "Population Scale",
     videoClip: "https://appcdn.goqii.com/storeimg/46626_1779880112.png",
     colorOverlay: "rgba(43, 196, 138, 0.04)",
     videoUrl: "https://www.youtube.com/embed/jMxC0WCxNYA",
     impact: [
-      { value: "90%", label: "Patient Satisfaction" },
-      { value: "Regional", label: "Scale Deployments" },
-      { value: "15M+", label: "Population Impact" },
+      { value: "Regional", label: "Health Programs" },
+      { value: "Population", label: "Scale Deployments" },
+      { value: "Community", label: "Health Initiatives" },
     ],
     capabilities: [
       "Preventive Care Protocols",
@@ -167,7 +167,7 @@ export default function HumanStories() {
               initial={{ opacity: 0, scale: 1.02 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.98 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
+              transition={{ duration: 0.35, ease: "easeInOut" }}
               className="absolute inset-0 w-full h-full"
             >
               <img

@@ -88,46 +88,69 @@ export default function SectionXPrize() {
           </p>
 
           {/* Supporting checklist points */}
-          <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-8">
-            <div className="flex items-center gap-2.5">
-              <div className="w-5 h-5 rounded-full bg-[#E5F7F0] flex items-center justify-center shrink-0">
-                <svg className="w-3 h-3 text-[#2BC48A] stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-4 mb-8">
+            <div className="flex items-start gap-2.5">
+              <div className="w-5 h-5 rounded-full bg-[#E5F7F0] flex items-center justify-center shrink-0 mt-0.5">
+                <svg className="w-3 h-3 text-[#2BC48A] stroke-[4]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span className="text-xs sm:text-xs font-bold text-[#0F172A] tracking-tight font-sans">
-                XPRIZE Healthspan Semifinalist
-              </span>
+              <div className="flex flex-col text-left">
+                <span className="text-xs font-extrabold text-[#0F172A] leading-tight font-sans">
+                  $101M XPRIZE Semifinalist
+                </span>
+                <span className="text-[10px] text-[#667085] font-medium leading-normal mt-0.5">
+                  Competing globally to validate therapeutic solutions that restore muscle, cognitive, and immune function by 10+ years.
+                </span>
+              </div>
             </div>
-            <div className="flex items-center gap-2.5">
-              <div className="w-5 h-5 rounded-full bg-[#E5F7F0] flex items-center justify-center shrink-0">
-                <svg className="w-3 h-3 text-[#2BC48A] stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+            <div className="flex items-start gap-2.5">
+              <div className="w-5 h-5 rounded-full bg-[#E5F7F0] flex items-center justify-center shrink-0 mt-0.5">
+                <svg className="w-3 h-3 text-[#2BC48A] stroke-[4]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span className="text-xs sm:text-xs font-bold text-[#0F172A] tracking-tight font-sans">
-                Clinical Research Consortium
-              </span>
+              <div className="flex flex-col text-left">
+                <span className="text-xs font-extrabold text-[#0F172A] leading-tight font-sans">
+                  Longevity Biomarker Tracking
+                </span>
+                <span className="text-[10px] text-[#667085] font-medium leading-normal mt-0.5">
+                  Continuous assessment of biological age, epigenetic scores, telomere health, and metabolic trajectories.
+                </span>
+              </div>
             </div>
-            <div className="flex items-center gap-2.5">
-              <div className="w-5 h-5 rounded-full bg-[#E5F7F0] flex items-center justify-center shrink-0">
-                <svg className="w-3 h-3 text-[#2BC48A] stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+            <div className="flex items-start gap-2.5">
+              <div className="w-5 h-5 rounded-full bg-[#E5F7F0] flex items-center justify-center shrink-0 mt-0.5">
+                <svg className="w-3 h-3 text-[#2BC48A] stroke-[4]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span className="text-xs sm:text-xs font-bold text-[#0F172A] tracking-tight font-sans">
-                Longevity Intelligence
-              </span>
+              <div className="flex flex-col text-left">
+                <span className="text-xs font-extrabold text-[#0F172A] leading-tight font-sans">
+                  Clinical Research Consortium
+                </span>
+                <span className="text-[10px] text-[#667085] font-medium leading-normal mt-0.5">
+                  Validating life-extension interventions in collaboration with world-leading medical centers and longevity labs.
+                </span>
+              </div>
             </div>
-            <div className="flex items-center gap-2.5">
-              <div className="w-5 h-5 rounded-full bg-[#E5F7F0] flex items-center justify-center shrink-0">
-                <svg className="w-3 h-3 text-[#2BC48A] stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+
+            <div className="flex items-start gap-2.5">
+              <div className="w-5 h-5 rounded-full bg-[#E5F7F0] flex items-center justify-center shrink-0 mt-0.5">
+                <svg className="w-3 h-3 text-[#2BC48A] stroke-[4]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span className="text-xs sm:text-xs font-bold text-[#0F172A] tracking-tight font-sans">
-                Population Scale Deployment
-              </span>
+              <div className="flex flex-col text-left">
+                <span className="text-xs font-extrabold text-[#0F172A] leading-tight font-sans">
+                  Behavioral Neurocoding™
+                </span>
+                <span className="text-[10px] text-[#667085] font-medium leading-normal mt-0.5">
+                  Proprietary habit framing layer converting scientific protocols into autonomous biological compliance.
+                </span>
+              </div>
             </div>
           </div>
 

@@ -68,7 +68,7 @@ export default function SectionGap() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
             className="text-3xl sm:text-4xl lg:text-[54px] font-black tracking-tight text-[#0F172A] leading-[1.05] mb-8 font-sans"
           >
             We know <br />
@@ -85,7 +85,7 @@ export default function SectionGap() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: "easeOut", delay: 0.1 }}
+            transition={{ duration: 0.35, ease: "easeOut", delay: 0.1 }}
             className="text-base sm:text-[17px] font-sans text-[#475467] leading-[1.8] max-w-sm mb-12"
           >
             <p>

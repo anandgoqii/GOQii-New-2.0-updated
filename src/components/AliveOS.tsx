@@ -124,19 +124,19 @@ export default function AliveOS() {
             </div>
           </div>
 
-          {/* 8. Behavioral Neurocoding Sub-Layer */}
+          {/* 8. Behavioral Neurocoding™ Sub-Layer */}
           <div className="pt-6 border-t border-[#E8EDF2] max-w-md">
             <span className="text-[10px] font-sans font-black tracking-[0.2em] text-[#2BC48A] uppercase mb-2.5 block">
-              BEHAVIORAL NEUROCODING
+              PROPRIETARY ENGINE
             </span>
             <h4 className="text-base font-black text-[#0F172A] tracking-tight mb-2 font-sans">
-              The Human Layer Behind The Intelligence
+              Behavioral Neurocoding™
             </h4>
-            <p className="text-[#64748B] text-xs sm:text-sm leading-relaxed mb-3">
-              Transforming health insights into lasting behavior change through coaching, motivation, rewards, accountability and habit science.
+            <p className="text-[#64748B] text-xs sm:text-sm leading-relaxed mb-3 font-sans">
+              ALIVE O.S. utilizes our proprietary Behavioral Neurocoding™ logic engine to bypass cognitive friction and establish permanent, low-entropy health habits.
             </p>
-            <div className="text-[11px] font-semibold text-[#8a99ad] leading-normal pl-3 border-l-2 border-[#2BC48A] italic">
-              "The proprietary system refined through over a decade of real-world health engagement."
+            <div className="text-[11px] font-semibold text-[#8a99ad] leading-normal pl-3 border-l-2 border-[#2BC48A] italic font-sans animate-pulse">
+              "Bypassing cognitive friction to lock in lifelong wellness habits automatically."
             </div>
           </div>
 

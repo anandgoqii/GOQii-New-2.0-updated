@@ -1,0 +1,15 @@
+{
+  "short_name": "GOQii 2.0",
+  "name": "GOQii 2.0: The Operating System for Human Longevity",
+  "icons": [
+    {
+      "src": "/og-goqii-2-0.jpg",
+      "type": "image/jpeg",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#F8FAFB",
+  "theme_color": "#2BC48A",
+  "display": "standalone"
+}

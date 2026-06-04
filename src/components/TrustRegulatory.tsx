@@ -49,59 +49,49 @@ function AnimatedCounter({ endValue, suffix = "", prefix = "", duration = 2000 }
 export default function TrustRegulatory() {
   const certificates = [
     {
+      img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-6.png",
+      title: "HIPAA",
+      desc: "Health Insurance Portability & Accountability"
+    },
+    {
       img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-9.png",
       title: "SOC 2",
       desc: "Security, Availability & Confidentiality"
     },
     {
-      img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-6.png",
-      title: "HIPAA Compliant",
-      desc: "Health Insurance Portability & Accountability"
-    },
-    {
       img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-5.png",
-      title: "GDPR Compliant",
+      title: "GDPR",
       desc: "EU General Data Protection Regulation"
     },
     {
-      img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-7.png",
-      title: "Cyber Essentials Certified",
-      desc: "UK National Cyber Security Centre Standards"
-    },
-    {
       img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-4.png",
-      title: "ISO/IEC 27001:2022",
+      title: "ISO 27001",
       desc: "Information Security Management System"
     },
     {
       img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-4.png",
-      title: "ISO 9001 Certified",
+      title: "ISO 9001",
       desc: "Quality Management System Standards"
     },
     {
       img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-3.png",
-      title: "ISO 13485:2016",
+      title: "ISO 13485",
       desc: "Medical Devices Quality Management"
     },
     {
       img: "https://appcdn.goqii.com/storeimg/26305_1733141292.png",
-      title: "CDSCO Medical Utility",
+      title: "CDSCO",
       desc: "Central Drugs Standard Control Organisation"
     },
     {
       img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-7.png",
-      title: "DCB0129 Standard",
+      title: "Cyber Essentials",
+      desc: "UK National Cyber Security Centre Standards"
+    },
+    {
+      img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-7.png",
+      title: "DCB0129",
       desc: "Clinical Risk Management for Health IT"
-    },
-    {
-      img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-8.png",
-      title: "DPDPA Ready",
-      desc: "Digital Personal Data Protection Act Compliant"
-    },
-    {
-      img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-2.png",
-      title: "FDA Registered Class II",
-      desc: "Food & Drug Administration Registered Device"
     }
   ];
 
@@ -378,6 +368,20 @@ export default function TrustRegulatory() {
             >
               Built to support healthcare organizations, governments and enterprises globally.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-6 border border-[#E8EDF2] rounded-2xl p-5 bg-white shadow-[0_4px_12px_rgba(15,23,42,0.01)] text-left max-w-xl"
+            >
+              <h4 className="text-xs font-black tracking-[0.15em] text-[#2BC48A] uppercase mb-1.5 font-sans">
+                ENTERPRISE READY
+              </h4>
+              <p className="text-[#475467] text-xs sm:text-sm font-medium leading-relaxed font-sans">
+                Business Associate Agreement (BAA) ready infrastructure designed to support healthcare organizations, insurers, employers, and public health programs.
+              </p>
+            </motion.div>
           </div>
 
           {/* Right Column: Dynamic Shield concentric circles visualization */}

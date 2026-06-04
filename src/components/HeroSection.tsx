@@ -76,7 +76,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.75 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.35 }}
               src={slides[currentSlide].bgImage}
               alt="Serene health reflection portrait"
               className="w-full h-full object-cover object-right md:object-right-center"
@@ -109,7 +109,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
             className="flex flex-col items-start text-left w-full min-h-[300px] sm:min-h-[260px] md:min-h-[320px] justify-center"
           >
             {/* Label */}
@@ -118,7 +118,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
             </div>
 
             {/* Big Large Typography (Reveal line by line using the explicit hero-heading class) */}
-            <h1 className="hero-heading text-[#0F172A] mb-8 flex flex-col items-start leading-[1.08]">
+            <h1 className="hero-heading text-[#0F172A] mb-8 flex flex-col items-start leading-[1.08] min-h-[105px] md:min-h-[140px] lg:min-h-[225px]">
               {slides[currentSlide].lines.map((line, idx) => (
                 <span key={idx} className="block overflow-hidden pb-1">
                   <span className={`inline-block ${line.highlight ? "text-[#2BC48A]" : "text-[#0F172A]"}`}>
@@ -152,7 +152,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
+          transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
           className="mt-4"
         >
           <motion.button
