@@ -5,59 +5,59 @@ import SmartText from "./SmartText";
 
 const STORIES = [
   {
-    category: "INSURANCE PARTNERSHIP",
-    title: "When Better Health Becomes Reality",
+    category: "INDIVIDUAL METABOLIC HEALTH",
+    title: "Real Transformations. Lasting Habit Change.",
     pillLabel: "Individuals",
-    desc: "Scaling prevention across millions of policyholders, turning silent actuarial risks into automated daily interventions and healthier lifespans.",
-    subtext: "We integrated Alive O.S. directly with our digital claim layers, offering members tailored premium credits when metabolic vectors stay optimal.",
-    metric: "34%",
-    metricLabel: "Claims Reduction",
+    desc: "Real people achieving sustainable health outcomes. Creating lasting lifestyle improvements, managed body weight, healthy longevity, and daily habit modifications.",
+    subtext: "I transformed my physiological state and reduced metabolic biomarkers by adopting small, highly guided health habit changes every single day. The personalized coaching and accountability changed everything.",
+    metric: "94%",
+    metricLabel: "Habit Change",
     videoClip: "https://appcdn.goqii.com/storeimg/2975_1779880105.png",
     colorOverlay: "rgba(43, 196, 138, 0.04)",
     videoUrl: "https://www.youtube.com/embed/wfUk6-A891k",
     impact: [
-      { value: "34%", label: "Claims Reduction" },
-      { value: "10M+", label: "Members Guided" },
-      { value: "Live", label: "Claim Integration" },
+      { value: "94%", label: "Habit Change Rate" },
+      { value: "14 lbs", label: "Avg Weight Managed" },
+      { value: "2.8 yrs", label: "Biological Age Saved" },
     ],
     capabilities: [
-      "Actuarial Cost Mapping",
-      "Automated Claims Incentive",
-      "Metabolic Vector Diagnostics",
-      "Dynamic Premium Tuning"
+      "Custom Habit Calibration",
+      "Weight & Metabolic Management",
+      "Lifestyle Improvement Guides",
+      "Continuous Companion Coaching"
     ],
     cta: "Explore Individual Solutions →"
   },
   {
-    category: "CORPORATE HEALTH",
-    title: "Fortune 500 Corporate Engagement",
+    category: "CORPORATE HEALTH & WELLNESS",
+    title: "Stronger Organizations. Healthier Employees.",
     pillLabel: "Enterprises",
-    desc: "Healthier employees, stronger organizations. Moving from administrative benefit logs to continuous prevention and active energy loops.",
-    subtext: "Employees gained direct access to tailored sleep, nutrition, and metabolic guidance pathways—creating a physical workplace culture aligned to longevity.",
+    desc: "Moving beyond passive HR logs to continuous prevention, structured corporate wellness pathways, and high-performance workforce energy loops.",
+    subtext: "Our entire workforce gained direct connection to tailored sleep, metabolic wellness, and nutrition guidance pathways—improving daily engagement and employee health metrics.",
     metric: "85%",
-    metricLabel: "Organization Engagement",
+    metricLabel: "Workforce Engagement",
     videoClip: "https://appcdn.goqii.com/storeimg/88400_1779880196.png",
     colorOverlay: "rgba(43, 196, 138, 0.04)",
     videoUrl: "https://www.youtube.com/embed/ycTIWOo_F2g",
     impact: [
-      { value: "85%", label: "Organization Engagement" },
+      { value: "85%", label: "Workforce Engagement" },
+      { value: "50K+", label: "Employees Guided" },
       { value: "-22%", label: "Absenteeism Index" },
-      { value: "100+", label: "Corporates Trusted" },
     ],
     capabilities: [
       "Sleep Recovery Protocols",
-      "Active Performance Tuning",
-      "Employee metabolic screening",
+      "Active Workplace Performance",
+      "Metabolic Risk Screenings",
       "Continuous Human Coaching"
     ],
     cta: "Explore Enterprise Solutions →"
   },
   {
-    category: "PUBLIC HEALTH",
-    title: "Prevention at Population Scale.",
+    category: "PUBLIC HEALTH INITIATIVES",
+    title: "Decentralized Care at Population Scale.",
     pillLabel: "Public Health",
-    desc: "Helping governments and public health systems improve community wellbeing through digital prevention, continuous engagement, and early intervention.",
-    subtext: "Healthier communities begin with proactive care.",
+    desc: "Partnering with national health authorities and community groups to roll out digital-first preventive health, active engagement, and early risk identification systems.",
+    subtext: "Healthier communities start with preventive care systems designed to intercept metabolic risk patterns before they turn into complex clinical cases.",
     metric: "90%",
     metricLabel: "Patient Satisfaction",
     videoClip: "https://appcdn.goqii.com/storeimg/46626_1779880112.png",
@@ -65,15 +65,14 @@ const STORIES = [
     videoUrl: "https://www.youtube.com/embed/jMxC0WCxNYA",
     impact: [
       { value: "90%", label: "Patient Satisfaction" },
-      { value: "Regional", label: "Health Deployments" },
-      { value: "2024", label: "Expansion" },
+      { value: "Regional", label: "Scale Deployments" },
+      { value: "15M+", label: "Population Impact" },
     ],
     capabilities: [
-      "Preventive Care Programs",
+      "Preventive Care Protocols",
       "Population Health Intelligence",
-      "Community Engagement",
-      "Early Risk Detection",
-      "Digital Health Infrastructure"
+      "Localized Community Engagement",
+      "Decentralized Risk Interception"
     ],
     cta: "Explore Public Health Solutions →"
   },

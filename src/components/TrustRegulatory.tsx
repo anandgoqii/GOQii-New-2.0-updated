@@ -74,6 +74,11 @@ export default function TrustRegulatory() {
       desc: "Information Security Management System"
     },
     {
+      img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-4.png",
+      title: "ISO 9001 Certified",
+      desc: "Quality Management System Standards"
+    },
+    {
       img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-3.png",
       title: "ISO 13485:2016",
       desc: "Medical Devices Quality Management"
@@ -82,6 +87,11 @@ export default function TrustRegulatory() {
       img: "https://appcdn.goqii.com/storeimg/26305_1733141292.png",
       title: "CDSCO Medical Utility",
       desc: "Central Drugs Standard Control Organisation"
+    },
+    {
+      img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-7.png",
+      title: "DCB0129 Standard",
+      desc: "Clinical Risk Management for Health IT"
     },
     {
       img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-8.png",

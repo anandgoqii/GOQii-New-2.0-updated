@@ -59,15 +59,14 @@ export default function SectionXPrize() {
             <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">06</span>
             <span className="text-[#E2E8F0] font-light text-sm">|</span>
             <span className="font-semibold text-[#667085] text-[11px] tracking-[0.25em] uppercase">
-              XPRIZE SANJEEVINI
+              SANJEEVINI
             </span>
           </div>
 
           {/* 2. Main High-contrast Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-[50px] font-black tracking-tight text-[#0F172A] leading-[1.05] font-sans">
-            Extending <br />
-            healthy life. <br />
-            <span className="text-[#2BC48A]">For everyone.</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-[45px] font-black tracking-tight text-[#0F172A] leading-[1.08] font-sans">
+            Extending Healthy Life.<br />
+            <span className="text-[#2BC48A]">The Next Frontier Of Preventive Healthcare.</span>
           </h2>
 
           {/* XPrize Sanjeevini Logo */}
@@ -81,42 +80,78 @@ export default function SectionXPrize() {
           </div>
 
           {/* 3. Small green thick divider block */}
-          <div className="w-14 h-[3.5px] bg-[#2BC48A] rounded-full mt-4 mb-10" />
-
-          {/* 4. Global Longevity Challenge Section with Globe Icon */}
-          <div className="flex items-center gap-3.5 mb-6">
-            <div className="w-10 h-10 rounded-full border border-[#E8EDF2] bg-white flex items-center justify-center text-[#2BC48A] shadow-[0_4px_12px_rgba(0,0,0,0.01)]">
-              <Globe className="w-5 h-5" strokeWidth={2} />
-            </div>
-            <span className="text-[12px] font-sans font-bold tracking-[0.16em] text-[#2BC48A] uppercase">
-              GLOBAL LONGEVITY CHALLENGE
-            </span>
-          </div>
+          <div className="w-14 h-[3.5px] bg-[#2BC48A] rounded-full mt-4 mb-6" />
 
           {/* 5. Description Text with custom serif italic ending */}
-          <p className="text-[#475467] font-sans text-[15px] sm:text-[16px] leading-[1.75] max-w-md mb-10">
-            A global mission to add healthy years to human life. Partnering with the world's most visionary scientists, clinicians, and technologies to <span className="italic-serif text-[#2BC48A] font-medium font-serif italic">push back the boundaries of cellular age.</span>
+          <p className="text-[#475467] font-sans text-[15px] sm:text-[16px] leading-[1.75] max-w-md mb-6">
+            A global initiative combining longevity science, diagnostics, coaching, AI, and continuous health intelligence to help people live healthier for longer.
           </p>
 
-          {/* 6. Capsule Pill Buttons Container */}
-          <div className="flex items-center self-start">
-            <div className="inline-flex items-center gap-6 bg-white border border-[#E8EDF2] px-6 py-4 rounded-full shadow-[0_8px_30px_rgba(15,23,42,0.012)] hover:shadow-[0_12px_40px_rgba(43,196,138,0.06)] transition-all duration-300">
-              <button className="flex items-center gap-2.5 group/btn text-sm font-semibold tracking-wide text-[#0F172A] hover:text-[#2BC48A] transition-colors">
-                <div className="w-8 h-8 rounded-full bg-[#E5F7F0] flex items-center justify-center text-[#2BC48A] group-hover/btn:scale-110 transition-transform duration-300">
-                  <Play className="w-3.5 h-3.5 fill-current ml-0.5 animate-pulse" strokeWidth={2.5} />
-                </div>
-                Watch the film
-              </button>
-              <div className="w-[1px] h-4 bg-[#E2E8F0]" />
-              <a
-                href="https://goqii.com/sanjeevini"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-semibold tracking-wide text-[#475467] hover:text-[#2BC48A] transition-colors"
-              >
-                Learn more
-              </a>
+          {/* Supporting checklist points */}
+          <div className="grid grid-cols-2 gap-x-4 gap-y-3 mb-8">
+            <div className="flex items-center gap-2.5">
+              <div className="w-5 h-5 rounded-full bg-[#E5F7F0] flex items-center justify-center shrink-0">
+                <svg className="w-3 h-3 text-[#2BC48A] stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="text-xs sm:text-xs font-bold text-[#0F172A] tracking-tight font-sans">
+                XPRIZE Healthspan Semifinalist
+              </span>
             </div>
+            <div className="flex items-center gap-2.5">
+              <div className="w-5 h-5 rounded-full bg-[#E5F7F0] flex items-center justify-center shrink-0">
+                <svg className="w-3 h-3 text-[#2BC48A] stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="text-xs sm:text-xs font-bold text-[#0F172A] tracking-tight font-sans">
+                Clinical Research Consortium
+              </span>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <div className="w-5 h-5 rounded-full bg-[#E5F7F0] flex items-center justify-center shrink-0">
+                <svg className="w-3 h-3 text-[#2BC48A] stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="text-xs sm:text-xs font-bold text-[#0F172A] tracking-tight font-sans">
+                Longevity Intelligence
+              </span>
+            </div>
+            <div className="flex items-center gap-2.5">
+              <div className="w-5 h-5 rounded-full bg-[#E5F7F0] flex items-center justify-center shrink-0">
+                <svg className="w-3 h-3 text-[#2BC48A] stroke-[3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <span className="text-xs sm:text-xs font-bold text-[#0F172A] tracking-tight font-sans">
+                Population Scale Deployment
+              </span>
+            </div>
+          </div>
+
+          {/* Buttons Container */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <button
+              onClick={() => {
+                if (window.navigateToPage) {
+                  window.navigateToPage("sanjeevini");
+                }
+              }}
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#0F172A] text-white text-sm font-semibold tracking-wider uppercase rounded-full hover:bg-[#2BC48A] transition-colors shadow-sm cursor-pointer"
+            >
+              Explore Sanjeevini <span className="text-base">→</span>
+            </button>
+            <a 
+              href="https://goqii.com/sanjeevini"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2.5 text-sm font-semibold tracking-wide text-[#475467] hover:text-[#2BC48A] transition-colors px-6 py-3.5 rounded-full border border-[#E8EDF2] bg-white cursor-pointer"
+            >
+              <Play className="w-3.5 h-3.5 fill-current ml-0.5" strokeWidth={2.5} />
+              Watch the film
+            </a>
           </div>
 
         </div>

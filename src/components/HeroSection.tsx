@@ -132,6 +132,19 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
             <p className="text-xs sm:text-sm md:text-base font-normal text-[#667085] max-w-md md:max-w-lg leading-relaxed mb-4">
               <SmartText>{slides[currentSlide].subtext}</SmartText>
             </p>
+
+            {/* XPRIZE Premium Badge */}
+            <div className="inline-flex items-center gap-3 bg-[#FFFFFF]/90 border border-[#E8EDF2] py-2.5 px-4 rounded-xl shadow-[0_8px_20px_rgba(15,23,42,0.02)] mt-4 mb-2">
+              <span className="text-lg">🏆</span>
+              <div className="flex flex-col text-left">
+                <span className="text-[11px] font-black tracking-wider text-[#0F172A] uppercase">
+                  XPRIZE Healthspan Semifinalist
+                </span>
+                <span className="text-[9px] font-extrabold text-[#667085] uppercase tracking-widest mt-0.5">
+                  $101M Global Competition
+                </span>
+              </div>
+            </div>
           </motion.div>
         </AnimatePresence>
 
@@ -153,7 +166,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
         </motion.div>
 
         {/* Slide indicators / dots */}
-        <div className="flex items-center justify-start gap-3 mt-10">
+        <div className="flex items-center justify-start gap-3 mt-8">
           {slides.map((slide, index) => (
             <button
               key={slide.id}
@@ -168,6 +181,26 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
               />
             </button>
           ))}
+        </div>
+
+        {/* Enterprise Signals Proof Strip */}
+        <div className="relative z-10 w-full border-t border-[#E8EDF2] pt-6 mt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 text-left max-w-2xl">
+          <div>
+            <div className="text-2xl font-black text-[#0F172A] tracking-tight">5M+</div>
+            <div className="text-[9px] font-mono tracking-widest text-[#667085] uppercase mt-0.5 font-bold">Active Users</div>
+          </div>
+          <div>
+            <div className="text-2xl font-black text-[#0F172A] tracking-tight">300+</div>
+            <div className="text-[9px] font-mono tracking-widest text-[#667085] uppercase mt-0.5 font-bold">Enterprise Partners</div>
+          </div>
+          <div>
+            <div className="text-2xl font-black text-[#0F172A] tracking-tight">Fortune 500</div>
+            <div className="text-[9px] font-mono tracking-widest text-[#667085] uppercase mt-0.5 font-bold">Deployments</div>
+          </div>
+          <div>
+            <div className="text-2xl font-black text-[#0F172A] tracking-tight">NHS Approved</div>
+            <div className="text-[9px] font-mono tracking-widest text-[#667085] uppercase mt-0.5 font-bold">Programs</div>
+          </div>
         </div>
       </div>
 

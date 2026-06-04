@@ -108,12 +108,12 @@ export default function AliveOS() {
           </div>
 
           {/* 6. Description Text with longevity styled */}
-          <p className="text-[#475467] font-sans text-[15px] sm:text-[16px] leading-[1.75] max-w-md mb-10">
+          <p className="text-[#475467] font-sans text-[15px] sm:text-[16px] leading-[1.75] max-w-md mb-6">
             Alive O.S. acts as a quiet, ambient clinical intelligence companion. It continuously cross-analyzes behavioral vectors and biomarker patterns to pre-empt risk and steer <span className="italic-serif text-[#2BC48A] font-medium font-serif">longevity.</span>
           </p>
 
           {/* 7. Beautiful Brain Icon Ambient Pill */}
-          <div className="flex items-center self-start">
+          <div className="flex items-center self-start mb-6">
             <div className="inline-flex items-center gap-3 bg-white border border-[#E8EDF2] px-5 py-3.5 rounded-full shadow-[0_4px_15px_rgba(0,0,0,0.01)] hover:shadow-[0_8px_24px_rgba(43,196,138,0.04)] transition-all duration-300">
               <div className="w-8 h-8 rounded-full bg-[#E5F7F0] flex items-center justify-center text-[#2BC48A]">
                 <Brain className="w-4.5 h-4.5" />
@@ -121,6 +121,22 @@ export default function AliveOS() {
               <span className="text-[13px] font-sans font-medium text-[#475467] leading-relaxed">
                 Ambient. Predictive. Personal. <span className="text-[#2BC48A] font-bold">Always-on.</span>
               </span>
+            </div>
+          </div>
+
+          {/* 8. Behavioral Neurocoding Sub-Layer */}
+          <div className="pt-6 border-t border-[#E8EDF2] max-w-md">
+            <span className="text-[10px] font-sans font-black tracking-[0.2em] text-[#2BC48A] uppercase mb-2.5 block">
+              BEHAVIORAL NEUROCODING
+            </span>
+            <h4 className="text-base font-black text-[#0F172A] tracking-tight mb-2 font-sans">
+              The Human Layer Behind The Intelligence
+            </h4>
+            <p className="text-[#64748B] text-xs sm:text-sm leading-relaxed mb-3">
+              Transforming health insights into lasting behavior change through coaching, motivation, rewards, accountability and habit science.
+            </p>
+            <div className="text-[11px] font-semibold text-[#8a99ad] leading-normal pl-3 border-l-2 border-[#2BC48A] italic">
+              "The proprietary system refined through over a decade of real-world health engagement."
             </div>
           </div>
 
