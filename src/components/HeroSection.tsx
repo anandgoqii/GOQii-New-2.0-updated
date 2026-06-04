@@ -118,7 +118,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
             </div>
 
             {/* Big Large Typography (Reveal line by line using the explicit hero-heading class) */}
-            <h1 className="hero-heading text-[#0F172A] mb-8 flex flex-col items-start leading-[1.08] min-h-[105px] md:min-h-[140px] lg:min-h-[225px]">
+            <h1 className="hero-heading text-[#0F172A] mb-8 flex flex-col items-start leading-[1.08] min-h-[84px] md:min-h-[112px] lg:min-h-[180px]">
               {slides[currentSlide].lines.map((line, idx) => (
                 <span key={idx} className="block overflow-hidden pb-1">
                   <span className={`inline-block ${line.highlight ? "text-[#2BC48A]" : "text-[#0F172A]"}`}>

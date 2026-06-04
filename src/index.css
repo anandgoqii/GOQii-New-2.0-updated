@@ -35,7 +35,7 @@
 
 /* Specific theme classes from Bold Typography design template */
 .hero-heading {
-  font-size: clamp(2rem, 7vw, 75px);
+  font-size: clamp(1.6rem, 5.6vw, 60px);
   line-height: 0.95;
   letter-spacing: -0.04em;
   font-weight: 700;
