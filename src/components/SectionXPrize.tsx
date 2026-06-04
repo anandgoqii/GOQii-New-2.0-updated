@@ -156,16 +156,14 @@ export default function SectionXPrize() {
 
           {/* Buttons Container */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <button
-              onClick={() => {
-                if (window.navigateToPage) {
-                  window.navigateToPage("sanjeevini");
-                }
-              }}
+            <a
+              href="https://goqii.com/sanjeevini"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#0F172A] text-white text-sm font-semibold tracking-wider uppercase rounded-full hover:bg-[#2BC48A] transition-colors shadow-sm cursor-pointer"
             >
               Explore Sanjeevini <span className="text-base">→</span>
-            </button>
+            </a>
             <a 
               href="https://goqii.com/sanjeevini"
               target="_blank"

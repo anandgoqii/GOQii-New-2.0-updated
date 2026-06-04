@@ -6,6 +6,7 @@ interface MenuItem {
   label: string;
   key: string;
   targetId?: string;
+  href?: string;
   dropdownItems?: { label: string; desc: string; targetId?: string; href?: string }[];
 }
 
@@ -139,7 +140,7 @@ export default function Header() {
         { label: "Nutriforge", desc: "Custom diagnostics & precise nutrient-tracking integration loops.", targetId: "section-ecosystem", href: "https://goqii.com/nutrigenius" }
       ]
     },
-    { label: "Sanjeevini", key: "sanjeevini", targetId: "section-xprize" },
+    { label: "Sanjeevini", key: "sanjeevini", href: "https://goqii.com/sanjeevini" },
     { label: "Plans", key: "plans", targetId: "section-aliveos" },
     { label: "Contact", key: "contact", targetId: "section-final" }
   ];
@@ -204,6 +205,12 @@ export default function Header() {
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
             {menuItems.map((item) => {
               const hasDropdown = !!item.dropdownItems;
+              const isExternal = !!item.href;
+              const Element = isExternal ? "a" : "button";
+              const extraProps = isExternal
+                ? { href: item.href, target: "_blank", rel: "noopener noreferrer" }
+                : { onClick: () => item.targetId && handleScrollTo(item.targetId) };
+
               return (
                 <div
                   key={item.key}
@@ -211,9 +218,9 @@ export default function Header() {
                   onMouseEnter={() => hasDropdown && setActiveDropdown(item.key)}
                   onMouseLeave={() => hasDropdown && setActiveDropdown(null)}
                 >
-                  <button
-                    onClick={() => item.targetId && handleScrollTo(item.targetId)}
-                    className="flex items-center gap-1 px-4 py-2 rounded-full text-[13px] font-semibold text-[#475467] dark:text-[#94A3B8] hover:text-[#0F172A] dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 cursor-pointer"
+                  <Element
+                    {...extraProps}
+                    className="flex items-center gap-1 px-4 py-2 rounded-full text-[13px] font-semibold text-[#475467] dark:text-[#94A3B8] hover:text-[#0F172A] dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all duration-200 cursor-pointer block"
                   >
                     {item.label}
                     {hasDropdown && (
@@ -223,7 +230,7 @@ export default function Header() {
                         }`}
                       />
                     )}
-                  </button>
+                  </Element>
 
                   {/* Dropdown Card */}
                   <AnimatePresence>
@@ -313,15 +320,22 @@ export default function Header() {
               <div className="w-12 h-1 bg-slate-200 dark:bg-slate-800 rounded-full mx-auto mb-6 shrink-0" />
 
               <div className="space-y-3 pb-6 flex-grow">
-                {menuItems.map((item) => (
-                  <div key={item.key} className="space-y-1">
-                    <button
-                      onClick={() => item.targetId && handleScrollTo(item.targetId)}
-                      className="w-full text-left px-4 py-3 rounded-xl font-bold text-slate-800 dark:text-slate-100 text-base hover:bg-slate-50 dark:hover:bg-slate-900/50 flex justify-between items-center cursor-pointer"
-                    >
-                      {item.label}
-                      <ArrowRight className="w-4 h-4 text-slate-400" />
-                    </button>
+                {menuItems.map((item) => {
+                  const isExternal = !!item.href;
+                  const Element = isExternal ? "a" : "button";
+                  const extraProps = isExternal
+                    ? { href: item.href, target: "_blank", rel: "noopener noreferrer", onClick: () => setMobileMenuOpen(false) }
+                    : { onClick: () => item.targetId && handleScrollTo(item.targetId) };
+
+                  return (
+                    <div key={item.key} className="space-y-1">
+                      <Element
+                        {...extraProps}
+                        className="w-full text-left px-4 py-3 rounded-xl font-bold text-slate-800 dark:text-slate-100 text-base hover:bg-slate-50 dark:hover:bg-slate-900/50 flex justify-between items-center cursor-pointer block"
+                      >
+                        {item.label}
+                        <ArrowRight className="w-4 h-4 text-slate-400" />
+                      </Element>
 
                     {item.dropdownItems && (
                       <div className="pl-6 border-l-2 border-slate-100 dark:border-slate-850 space-y-1">
@@ -344,8 +358,9 @@ export default function Header() {
                         })}
                       </div>
                     )}
-                  </div>
-                ))}
+                    </div>
+                  );
+                })}
               </div>
 
               {/* Mobile Request a Demo Action */}
