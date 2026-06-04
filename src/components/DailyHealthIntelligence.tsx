@@ -239,51 +239,11 @@ export default function DailyHealthIntelligence() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="relative w-[280px] sm:w-[320px] h-[550px] sm:h-[620px] bg-[#090D16] rounded-[48px] p-2.5 shadow-[0_32px_80px_rgba(15,23,42,0.18)] border-[4px] border-[#222E42] z-10 overflow-hidden flex flex-col"
             >
-              {/* Phone Dynamic Island */}
-              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-28 h-5 bg-[#090D16] rounded-full z-40 flex items-center justify-between px-3.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#1A2536] border border-[#2D3A4F]" />
-                <div className="w-1.5 h-1.5 rounded-full bg-[#111A28]" />
-              </div>
-
-              {/* Speaker pill notch contour */}
-              <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-14 h-1 bg-[#1A2536] rounded-full z-40" />
-
-              {/* Status Bar */}
-              <div className="flex justify-between items-center px-6 pt-3 pb-2 text-[9px] font-bold text-slate-400 z-30 font-sans tracking-wide">
-                <span>9:41 AM</span>
-                <div className="flex items-center gap-1.5">
-                  <div className="flex gap-[1.5px] items-end h-2">
-                    <span className="w-[1.5px] h-1 bg-slate-400 rounded-full" />
-                    <span className="w-[1.5px] h-1.5 bg-slate-400 rounded-full" />
-                    <span className="w-[1.5px] h-2 bg-slate-400 rounded-full" />
-                  </div>
-                  <span>5G</span>
-                  <div className="w-4 h-2.5 border border-slate-400/80 rounded-sm p-[1px] flex items-center">
-                    <div className="h-full w-3 bg-slate-400 rounded-2xs" />
-                  </div>
-                </div>
-              </div>
-
               {/* Dynamic App Content Body */}
-              <div className="flex-1 bg-[#0F172A] rounded-[38px] overflow-hidden relative flex flex-col p-4 shadow-inner border border-white/5">
-                
-                {/* Simulated App Header */}
-                <div className="flex justify-between items-center mt-3 pb-3 border-b border-white/5 z-20">
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded-lg bg-gradient-to-tr from-[#2BC48A] to-[#00ADC7] flex items-center justify-center text-white text-[10px] font-black">
-                      Q
-                    </div>
-                    <span className="text-[11px] font-black font-sans text-white tracking-widest uppercase">
-                      GOQII ALIVE
-                    </span>
-                  </div>
-                  <div className="w-5 h-5 rounded-full bg-white/5 flex items-center justify-center font-mono text-[8px] text-white">
-                    A
-                  </div>
-                </div>
+              <div className="flex-1 bg-[#0F172A] rounded-[38px] overflow-hidden relative flex flex-col shadow-inner border border-white/5 p-0">
 
                 {/* Screens Slider with AnimatePresence */}
-                <div className="flex-1 relative z-20 overflow-hidden mt-3 text-left">
+                <div className="flex-1 relative z-20 overflow-hidden text-left">
                   <AnimatePresence mode="wait">
                     {activeTab === "nutrition" && (
                       <motion.div
@@ -292,81 +252,14 @@ export default function DailyHealthIntelligence() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -20 }}
                         transition={{ duration: 0.3 }}
-                        className="absolute inset-0 flex flex-col justify-between"
+                        className="absolute inset-0 flex items-center justify-center overflow-hidden"
                       >
-                        {/* Nutrition Screen Header */}
-                        <div>
-                          <div className="flex items-center justify-between mb-3">
-                            <span className="text-xs font-black text-white/95">Nutrition AI</span>
-                            <span className="text-[9px] font-semibold text-[#2BC48A] bg-[#2BC48A]/10 px-2 py-0.5 rounded-full">Camera Active</span>
-                          </div>
-
-                          {/* Scanned Food Viewport */}
-                          <div className="relative aspect-[4/2.6] bg-slate-900 rounded-xl overflow-hidden border border-white/10 flex items-center justify-center group mb-3">
-                            <img 
-                              src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=350&auto=format&fit=crop" 
-                              alt="Scan Preview"
-                              className="w-full h-full object-crop opacity-85"
-                            />
-                            {/* Scanning HUD overlay */}
-                            <div className="absolute inset-0 border-2 border-dashed border-[#2BC48A]/30 rounded-xl m-2 animate-pulse flex items-center justify-center">
-                              {/* Glowing bounding box */}
-                              <div className="absolute left-6 top-5 w-24 h-16 border-2 border-[#2BC48A] rounded-lg">
-                                <span className="absolute -top-4 -left-1 px-1.5 py-0.5 bg-[#2BC48A] text-white font-black text-[7px] tracking-wide rounded">94% AVOCADO</span>
-                              </div>
-                              <div className="absolute right-6 bottom-4 w-20 h-14 border-2 border-[#00ADC7] rounded-lg">
-                                <span className="absolute -top-4 -left-1 px-1.5 py-0.5 bg-[#00ADC7] text-white font-black text-[7px] tracking-wide rounded">88% EGG</span>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Food details */}
-                          <div className="bg-slate-900/60 border border-white/5 rounded-xl p-3 flex flex-col gap-2">
-                            <div className="flex justify-between items-center">
-                              <span className="text-[11px] font-bold text-white">Avocado & Egg Salad</span>
-                              <span className="text-[11px] font-black text-[#2BC48A]">340 kcal</span>
-                            </div>
-                            
-                            {/* Macro bars */}
-                            <div className="grid grid-cols-3 gap-2 text-[8px] font-bold text-slate-400 mt-1">
-                              <div>
-                                <div className="flex justify-between mb-0.5">
-                                  <span>Carbs</span>
-                                  <span className="text-white">12g</span>
-                                </div>
-                                <div className="w-full h-1 bg-slate-800 rounded-full overflow-hidden">
-                                  <div className="h-full bg-indigo-400 w-[30%]" />
-                                </div>
-                              </div>
-                              <div>
-                                <div className="flex justify-between mb-0.5">
-                                  <span>Protein</span>
-                                  <span className="text-white">14g</span>
-                                </div>
-                                <div className="w-full h-1 bg-slate-800 rounded-full overflow-hidden">
-                                  <div className="h-full bg-emerald-400 w-[55%]" />
-                                </div>
-                              </div>
-                              <div>
-                                <div className="flex justify-between mb-0.5">
-                                  <span>Fat</span>
-                                  <span className="text-white">26g</span>
-                                </div>
-                                <div className="w-full h-1 bg-slate-800 rounded-full overflow-hidden">
-                                  <div className="h-full bg-amber-400 w-[80%]" />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Nutrition Tips footer */}
-                        <div className="bg-[#2BC48A]/10 border border-[#2BC48A]/20 rounded-xl p-2.5 flex items-start gap-2.5">
-                          <Camera className="w-4 h-4 text-[#2BC48A] flex-shrink-0 mt-0.5" />
-                          <p className="text-[9.5px] font-medium leading-normal text-slate-300">
-                            Snap any meal. AI instantly estimates nutrients and synchronises to your coaching plan.
-                          </p>
-                        </div>
+                        <img 
+                          src="https://appcdn.goqii.com/storeimg/96020_1780557384.png" 
+                          alt="Nutrition Intelligence"
+                          className="w-full h-full object-cover rounded-2xl"
+                          referrerPolicy="no-referrer"
+                        />
                       </motion.div>
                     )}
 
@@ -377,72 +270,14 @@ export default function DailyHealthIntelligence() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -20 }}
                         transition={{ duration: 0.3 }}
-                        className="absolute inset-0 flex flex-col justify-between"
+                        className="absolute inset-0 flex items-center justify-center overflow-hidden"
                       >
-                        <div>
-                          <div className="flex items-center justify-between mb-4">
-                            <span className="text-xs font-black text-white/95">S.A.F.E. Score Analysis</span>
-                            <span className="text-[9px] font-semibold text-[#00ADC7] bg-[#00ADC7]/15 px-2 py-0.5 rounded-full">Optimal Pace</span>
-                          </div>
-
-                          {/* Massive Score Gauge widget card */}
-                          <div className="bg-slate-900/40 border border-white/5 rounded-2xl p-4 flex flex-col items-center justify-center text-center relative mb-3">
-                            {/* Circle speedometer clip */}
-                            <div className="relative w-28 h-28 flex items-center justify-center mb-1">
-                              <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                                <circle 
-                                  cx="50" 
-                                  cy="50" 
-                                  r="40" 
-                                  stroke="#1E293B" 
-                                  strokeWidth="6" 
-                                  fill="transparent" 
-                                />
-                                <circle 
-                                  cx="50" 
-                                  cy="50" 
-                                  r="40" 
-                                  stroke="#00ADC7" 
-                                  strokeWidth="6" 
-                                  fill="transparent" 
-                                  strokeDasharray="251.2"
-                                  strokeDashoffset="37.6" // 85% full circle path
-                                  strokeLinecap="round"
-                                />
-                              </svg>
-                              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                                <span className="text-3xl font-black text-white tracking-tighter">85</span>
-                                <span className="text-[8px] font-black text-[#00ADC7] uppercase tracking-wider">LONGEVITY GAP</span>
-                              </div>
-                            </div>
-                            
-                            <p className="text-[10px] text-slate-400 font-bold">Aging Pace: 0.82x (Delayed aging)</p>
-                          </div>
-
-                          {/* Interactive stats list */}
-                          <div className="space-y-2">
-                            <div className="bg-slate-900/60 border border-white/5 rounded-xl p-2.5 flex justify-between items-center">
-                              <span className="text-[10px] text-slate-300 font-medium">Biological DNA Age</span>
-                              <span className="text-[11px] font-black text-[#2BC48A]">34.5 Years</span>
-                            </div>
-                            <div className="bg-slate-900/60 border border-white/5 rounded-xl p-2.5 flex justify-between items-center">
-                              <span className="text-[10px] text-slate-300 font-medium">Chronological Base</span>
-                              <span className="text-[11px] font-black text-slate-400">38.0 Years</span>
-                            </div>
-                            <div className="bg-slate-900/60 border border-white/5 rounded-xl p-2.5 flex justify-between items-center">
-                              <span className="text-[10px] text-slate-300 font-medium">Healthspan Projected Buffer</span>
-                              <span className="text-[11px] font-black text-[#00ADC7]">+6.4 Years</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* S.A.F.E insight message bottom */}
-                        <div className="bg-[#00ADC7]/10 border border-[#00ADC7]/20 rounded-xl p-2.5 flex items-start gap-2.5">
-                          <Activity className="w-4 h-4 text-[#00ADC7] flex-shrink-0 mt-0.5" />
-                          <p className="text-[9.5px] font-medium leading-normal text-slate-300">
-                            Calculated dynamically from resting heart-rate variability, physical exercises, active recovery and sleep stages.
-                          </p>
-                        </div>
+                        <img 
+                          src="https://appcdn.goqii.com/storeimg/82027_1780557626.png" 
+                          alt="S.A.F.E. Score Analysis"
+                          className="w-full h-full object-cover rounded-2xl"
+                          referrerPolicy="no-referrer"
+                        />
                       </motion.div>
                     )}
 
@@ -453,77 +288,14 @@ export default function DailyHealthIntelligence() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -20 }}
                         transition={{ duration: 0.3 }}
-                        className="absolute inset-0 flex flex-col justify-between"
+                        className="absolute inset-0 flex items-center justify-center overflow-hidden"
                       >
-                        <div>
-                          <div className="flex items-center justify-between mb-3">
-                            <span className="text-xs font-black text-white/95">Secure Health Locker</span>
-                            <span className="text-[9.2px] font-semibold text-indigo-400 bg-indigo-400/15 px-2 py-0.5 rounded-full flex items-center gap-1">
-                              <Lock className="w-2.5 h-2.5" /> ISO-Secure
-                            </span>
-                          </div>
-
-                          {/* Quick Search */}
-                          <div className="relative mb-3.5">
-                            <input 
-                              type="text" 
-                              placeholder="Search lab tests, prescriptions..." 
-                              disabled 
-                              className="w-full bg-slate-900/80 border border-white/5 text-[9.5px] py-1.8 pl-8 pr-3 rounded-xl text-slate-400 placeholder:text-slate-600 focus:outline-none"
-                            />
-                            <Search className="w-3 h-3 text-slate-600 absolute left-2.5 top-1/2 -translate-y-1/2" />
-                          </div>
-
-                          {/* Folder lists or document items */}
-                          <div className="space-y-2">
-                            <div className="bg-slate-900/50 hover:bg-slate-900/80 border border-white/5 rounded-xl p-3 flex justify-between items-center transition-colors">
-                              <div className="flex items-center gap-2.5">
-                                <div className="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400">
-                                  <FileText className="w-4 h-4" />
-                                </div>
-                                <div className="text-left">
-                                  <h5 className="text-[11px] font-bold text-white">Full Blood Panel Report</h5>
-                                  <span className="text-[8.5px] text-slate-500 font-medium">May 21, 2026 • Wellness Clinic</span>
-                                </div>
-                              </div>
-                              <span className="text-[9px] font-bold text-[#2BC48A] bg-[#2BC48A]/10 px-2 py-0.5 rounded-lg border border-[#2BC48A]/20">Synced</span>
-                            </div>
-
-                            <div className="bg-slate-900/50 hover:bg-slate-900/80 border border-white/5 rounded-xl p-3 flex justify-between items-center transition-colors">
-                              <div className="flex items-center gap-2.5">
-                                <div className="w-8 h-8 rounded-lg bg-[#2BC48A]/10 flex items-center justify-center text-[#2BC48A]">
-                                  <TrendingUp className="w-4 h-4" />
-                                </div>
-                                <div className="text-left">
-                                  <h5 className="text-[11px] font-bold text-white">HbA1c Blood Glucose Trends</h5>
-                                  <span className="text-[8.5px] text-slate-500 font-medium">Linked biomarker records</span>
-                                </div>
-                              </div>
-                              <span className="text-[9px] font-bold text-white/90">5.4 %</span>
-                            </div>
-
-                            <div className="bg-slate-900/50 hover:bg-slate-900/80 border border-white/5 rounded-xl p-3 flex justify-between items-center transition-colors">
-                              <div className="flex items-center gap-2.5">
-                                <div className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-400">
-                                  <FolderHeart className="w-4 h-4" />
-                                </div>
-                                <div className="text-left">
-                                  <h5 className="text-[11px] font-bold text-white">Cardio-Vascular Fitness</h5>
-                                  <span className="text-[8.5px] text-slate-500 font-medium">3 trend charts synced</span>
-                                </div>
-                              </div>
-                              <span className="text-[9px] font-serif italic text-amber-400 font-bold">Smart AI</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Locker info message footer */}
-                        <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-xl p-2.5 flex items-start gap-2.5">
-                          <ShieldCheck className="w-4 h-4 text-indigo-400 flex-shrink-0 mt-0.5" />
-                          <p className="text-[9.5px] font-medium leading-normal text-slate-300">
-                            Secure health repository verified to HIPAA and ISO/IEC regulatory and cloud privacy frameworks.
-                          </p>
-                        </div>
+                        <img 
+                          src="https://appcdn.goqii.com/storeimg/62662_1780558012.png" 
+                          alt="Secure Health Locker"
+                          className="w-full h-full object-cover rounded-2xl"
+                          referrerPolicy="no-referrer"
+                        />
                       </motion.div>
                     )}
 
@@ -534,69 +306,14 @@ export default function DailyHealthIntelligence() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -20 }}
                         transition={{ duration: 0.3 }}
-                        className="absolute inset-0 flex flex-col justify-between"
+                        className="absolute inset-0 flex items-center justify-center overflow-hidden"
                       >
-                        {/* Conversation window */}
-                        <div className="flex-1 flex flex-col justify-between">
-                          <div>
-                            {/* Profile Header */}
-                            <div className="flex items-center gap-3 mb-4">
-                              <div className="relative">
-                                <img 
-                                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=150&auto=format&fit=crop" 
-                                  alt="Coach Portrait" 
-                                  className="w-9 h-9 rounded-full object-cover border border-[#2BC48A]"
-                                />
-                                <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-slate-900" />
-                              </div>
-                              <div className="text-left">
-                                <h5 className="text-xs font-black text-white">Coach Neha Shah</h5>
-                                <span className="text-[8.5px] text-[#2BC48A] font-extrabold tracking-widest uppercase">Certified Longevity Expert</span>
-                              </div>
-                            </div>
-
-                            {/* Dialogue Boxes */}
-                            <div className="space-y-3 mb-4">
-                              <div className="bg-slate-900/80 border border-white/5 rounded-xl p-3 text-[10.5px] text-slate-300 max-w-[85%] self-start leading-relaxed">
-                                <span className="text-[8.5px] font-black text-indigo-400 block mb-1">GOQii AI Summary</span>
-                                Glycemic vector stays excellent today following your Avocado & Egg lunch. Keep active recovery up.
-                              </div>
-
-                              <div className="bg-[#2BC48A]/10 border border-[#2BC48A]/20 rounded-xl p-3 text-[10.5px] text-slate-200 max-w-[90%] self-start leading-relaxed">
-                                <span className="text-[8.5px] font-black text-[#2BC48A] block mb-1">Coach Neha Shah</span>
-                                Hey Anand! Wonderful metabolic parameters today. Let's aim to hit a 15-minute cellular recovery sequence this evening to secure your active streak.
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Recommended Actions */}
-                          <div className="bg-slate-900/40 border border-white/5 rounded-xl p-2.5 mb-2">
-                            <span className="text-[8px] font-black tracking-widest text-[#667085] uppercase block mb-2">Daily Coaching Goals</span>
-                            <div className="space-y-1 text-[9px] font-bold text-slate-300">
-                              <div className="flex items-center gap-2">
-                                <CheckCircle className="w-3.5 h-3.5 text-[#2BC48A]" />
-                                <span className="line-through text-slate-500">Scan nutritious lunch photo</span>
-                              </div>
-                              <div className="flex items-center gap-2">
-                                <CheckCircle className="w-3.5 h-3.5 text-slate-600" />
-                                <span>15m Evening Cellular Recovery</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Input bar mockup */}
-                        <div className="border-t border-white/5 pt-2 flex gap-2">
-                          <input 
-                            type="text" 
-                            placeholder="Message coach or ask AI..." 
-                            disabled 
-                            className="flex-1 bg-slate-900 border border-white/5 rounded-full px-4 py-2 text-[10px] text-slate-400"
-                          />
-                          <button className="w-7 h-7 rounded-full bg-[#2BC48A] text-white flex items-center justify-center">
-                            <ArrowRight className="w-3.5 h-3.5" />
-                          </button>
-                        </div>
+                        <img 
+                          src="https://appcdn.goqii.com/storeimg/83435_1780558423.png" 
+                          alt="Coaching & Guidance"
+                          className="w-full h-full object-cover rounded-2xl"
+                          referrerPolicy="no-referrer"
+                        />
                       </motion.div>
                     )}
 
@@ -607,65 +324,14 @@ export default function DailyHealthIntelligence() {
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: -20 }}
                         transition={{ duration: 0.3 }}
-                        className="absolute inset-0 flex flex-col justify-between"
+                        className="absolute inset-0 flex items-center justify-center overflow-hidden"
                       >
-                        <div>
-                          <div className="flex items-center justify-between mb-3.5">
-                            <span className="text-xs font-black text-white/95">Health Premium Rewards</span>
-                            <span className="text-[9px] font-semibold text-amber-400 bg-amber-400/15 px-2 py-0.5 rounded-full flex items-center gap-1">
-                              <Trophy className="w-2.5 h-2.5" /> Top Tier
-                            </span>
-                          </div>
-
-                          {/* Golden Cash Wallet representation */}
-                          <div className="bg-gradient-to-tr from-[#1E293B] to-slate-900 border border-white/10 rounded-2xl p-4 flex flex-col justify-between h-28 relative mb-4">
-                            <div className="flex justify-between items-start">
-                              <div className="text-left">
-                                <span className="text-[8.5px] font-black tracking-widest text-[#2BC48A] uppercase">Active Balance</span>
-                                <h3 className="text-xl font-black text-white tracking-tight mt-0.5">1,250 UHT</h3>
-                              </div>
-                              <div className="w-7 h-7 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
-                                <Trophy className="w-4 h-4" />
-                              </div>
-                            </div>
-                            <div className="flex justify-between items-end text-[9px] font-bold text-slate-400">
-                              <span>Universal Health Token</span>
-                              <span className="text-[#2BC48A] flex items-center gap-0.5">
-                                <Flame className="w-3 h-3 fill-current" /> 18 Days Streak
-                              </span>
-                            </div>
-                          </div>
-
-                          {/* Reward item progress */}
-                          <div className="space-y-3">
-                            <h6 className="text-[9px] font-black tracking-widest text-slate-500 uppercase text-left">Unlockable Milestones</h6>
-                            
-                            <div className="bg-slate-900/60 border border-white/5 rounded-xl p-2.5 flex flex-col gap-2">
-                              <div className="flex justify-between text-[10px] font-bold text-slate-300">
-                                <span>Insurance Premium Credit (15%)</span>
-                                <span className="text-[#2BC48A]">1,500 UHT</span>
-                              </div>
-                              {/* progress bar */}
-                              <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                                <div className="h-full bg-gradient-to-r from-[#2BC48A] to-[#00ADC7] w-[83%]" />
-                              </div>
-                              <span className="text-[8px] text-slate-500 text-left">Only 250 UHT tokens to unlock</span>
-                            </div>
-
-                            <div className="bg-slate-900/60 border border-white/5 rounded-xl p-2.5 flex justify-between items-center">
-                              <span className="text-[10px] text-slate-400 font-bold line-through">Certified DNA Biomarker Screening</span>
-                              <span className="text-[9px] font-black bg-[#2BC48A]/10 text-[#2BC48A] border border-[#2BC48A]/20 px-2 py-0.5 rounded-lg">Unlocked</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Rewards Motivation bottom footer */}
-                        <div className="bg-rose-500/10 border border-rose-500/20 rounded-xl p-2.5 flex items-start gap-2.5">
-                          <Flame className="w-4 h-4 text-rose-400 flex-shrink-0 mt-0.5" />
-                          <p className="text-[9.5px] font-medium leading-normal text-slate-300">
-                            Consistency breeds health. Earn tokens directly when metabolic and cardiac indices hit daily parameters.
-                          </p>
-                        </div>
+                        <img 
+                          src="https://appcdn.goqii.com/storeimg/70019_1780558199.png" 
+                          alt="Rewards & Motivation"
+                          className="w-full h-full object-cover rounded-2xl"
+                          referrerPolicy="no-referrer"
+                        />
                       </motion.div>
                     )}
                   </AnimatePresence>
