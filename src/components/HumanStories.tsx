@@ -76,30 +76,6 @@ const STORIES = [
     ],
     cta: "Explore Public Health Solutions →"
   },
-  {
-    category: "INSURANCE SOLUTIONS & RISK STRATIFICATION",
-    title: "PREVENTIVE HEALTH INTELLIGENCE FOR INSURERS.",
-    pillLabel: "Insurers",
-    desc: "Empowering insurance providers and actuarial systems to stratify risk, reward healthy habits automatically, and engage members before claims arise.",
-    subtext: "We integrated daily health data with risk stratification to lower loss ratios safely.",
-    metric: "34%",
-    metricLabel: "Claims Reduction",
-    videoClip: "https://appcdn.goqii.com/storeimg/74067_1733133593.png",
-    colorOverlay: "rgba(0, 173, 199, 0.04)",
-    videoUrl: "https://www.youtube.com/embed/ycTIWOo_F2g",
-    impact: [
-      { value: "34%", label: "Average Claims Reduction" },
-      { value: "1M+", label: "Lives Covered" },
-      { value: "S&P Global", label: "Validated Underwriting" },
-    ],
-    capabilities: [
-      "Predictive Claims Modeling",
-      "Health Risk Stratification",
-      "Automated Wellness Rewards",
-      "Preventive Health Engagement"
-    ],
-    cta: "Explore Insurer Solutions →"
-  },
 ];
 
 export default function HumanStories() {
@@ -148,8 +124,8 @@ export default function HumanStories() {
       </div>
 
       {/* 1.5. FLOATING STORY TABS */}
-      <div className="w-full max-w-6xl mx-auto mb-10 flex justify-center">
-        <div className="inline-flex bg-white border border-[#E8EDF2] p-1.5 rounded-full shadow-[0_12px_32px_rgba(15,23,42,0.03)] backdrop-blur-md relative gap-2 isolate">
+      <div className="w-full max-w-6xl mx-auto mb-10 flex justify-center px-4">
+        <div className="flex flex-wrap sm:inline-flex bg-white border border-[#E8EDF2] p-1.5 rounded-[22px] sm:rounded-full shadow-[0_12px_32px_rgba(15,23,42,0.03)] backdrop-blur-md relative gap-1 sm:gap-2 isolate justify-center">
           {STORIES.map((story, i) => {
             const isActive = activeIndex === i;
             return (
@@ -159,7 +135,7 @@ export default function HumanStories() {
                   setActiveIndex(i);
                   setIsPlayingVideo(false);
                 }}
-                className={`px-5 sm:px-8 py-2.5 text-xs sm:text-sm font-extrabold tracking-tight rounded-full transition-all duration-300 relative select-none cursor-pointer ${
+                className={`px-4 sm:px-8 py-2 sm:py-2.5 text-[11px] sm:text-sm font-extrabold tracking-tight rounded-full transition-all duration-300 relative select-none cursor-pointer ${
                   isActive
                     ? "text-[#0F172A]"
                     : "text-[#64748B] hover:text-[#0F172A]"
@@ -305,13 +281,13 @@ export default function HumanStories() {
                 <h4 className="text-xs font-black tracking-[0.15em] text-[#64748B] uppercase mb-3">
                   Impact
                 </h4>
-                <div className="grid grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {activeStory.impact?.map((item: any, idx: number) => (
                     <div key={idx} className="bg-[#FAFBFB] border border-[#E8EDF2] p-3 rounded-[12px] text-left">
-                      <div className="text-base sm:text-lg font-black text-[#2BC48A] tracking-tight truncate">
+                      <div className="text-base sm:text-lg font-black text-[#2BC48A] tracking-tight whitespace-normal break-words sm:truncate">
                         {item.value}
                       </div>
-                      <div className="text-[10px] sm:text-[11px] text-[#64748B] font-semibold leading-tight mt-0.5">
+                      <div className="text-[10px] sm:text-[11px] text-[#64748B] font-semibold leading-tight mt-0.5 whitespace-normal break-words">
                         {item.label}
                       </div>
                     </div>

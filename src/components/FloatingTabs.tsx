@@ -1,6 +1,6 @@
 import { useState, useEffect, ComponentType } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { User, Building2, ShieldEllipsis, ShieldCheck } from "lucide-react";
+import { User, Building2, ShieldEllipsis } from "lucide-react";
 
 interface TabItem {
   id: string;
@@ -21,12 +21,6 @@ const TABS: TabItem[] = [
     label: "Enterprises",
     icon: Building2,
     targetId: "section-ecosystem",
-  },
-  {
-    id: "insurers",
-    label: "Insurers",
-    icon: ShieldCheck,
-    targetId: "section-stories",
   },
   {
     id: "public-health",
@@ -109,7 +103,7 @@ export default function FloatingTabs() {
                 <button
                   key={tab.id}
                   onClick={() => handleTabClick(tab.targetId, tab.id)}
-                  className={`flex items-center gap-1.5 md:gap-2 px-4 md:px-6 py-2.5 rounded-full text-xs md:text-sm font-bold tracking-tight transition-all duration-300 relative cursor-pointer select-none ${
+                  className={`flex items-center gap-1.5 md:gap-2 px-3.5 sm:px-5 md:px-6 py-2.5 rounded-full text-xs md:text-sm font-bold tracking-tight transition-all duration-300 relative cursor-pointer select-none ${
                     isActive
                       ? "text-white"
                       : "text-slate-400 hover:text-white"
@@ -123,8 +117,8 @@ export default function FloatingTabs() {
                       style={{ boxShadow: "0 4px 14px rgba(43, 196, 138, 0.4)" }}
                     />
                   )}
-                  <Icon className="w-3.5 h-3.5 md:w-4 md:h-4" />
-                  <span>{tab.label}</span>
+                  <Icon className="w-4 h-4" />
+                  <span className="hidden sm:inline">{tab.label}</span>
                 </button>
               );
             })}

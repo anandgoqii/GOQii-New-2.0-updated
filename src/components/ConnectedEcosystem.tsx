@@ -35,21 +35,6 @@ export default function ConnectedEcosystem() {
         </p>
       </div>
 
-      {/* Elegant CTA Action Button */}
-      <div className="mb-14 relative z-10">
-        <motion.button 
-          whileHover={{ scale: 1.03, y: -1 }}
-          whileTap={{ scale: 0.98 }}
-          onClick={() => {
-            document.getElementById("section-problem")?.scrollIntoView({ behavior: "smooth" });
-          }}
-          className="inline-flex items-center gap-2 bg-[#2BC48A] text-white font-black px-7 py-3.5 rounded-full shadow-[0_10px_25px_rgba(43,196,138,0.25)] hover:shadow-[0_15px_30px_rgba(43,196,138,0.35)] transition-all duration-300 text-sm md:text-base cursor-pointer"
-        >
-          Explore the Ecosystem
-          <ArrowRight className="w-4 h-4 md:w-5 h-5" />
-        </motion.button>
-      </div>
-
       {/* ================= STUNNING PREMIUM LIGHT ECOSYSTEM CARD (FIXED AS PER DEVICE WINDOW & LIGHT THEME) ================= */}
       <div className="w-full max-w-5xl bg-white border border-[#E8EDF2] rounded-[36px] sm:rounded-[40px] p-6 sm:p-10 md:p-12 shadow-[0_24px_50px_rgba(15,23,42,0.03)] relative overflow-hidden">
         
