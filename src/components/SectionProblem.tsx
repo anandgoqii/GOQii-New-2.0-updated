@@ -78,42 +78,13 @@ export default function SectionProblem() {
             className="absolute -inset-8 w-[calc(100%+64px)] h-[calc(100%+64px)] pointer-events-none"
           >
             <img
-              src="https://appcdn.goqii.com/storeimg/60054_1780406959.png"
+              src="https://appcdn.goqii.com/storeimg/11912_1780901386.png"
               alt="Subtle preventative clinical insight portrait"
               className="w-full h-full object-cover brightness-100 contrast-[1.03] opacity-95 scale-100"
               referrerPolicy="no-referrer"
             />
           </motion.div>
 
-          {/* Concentric Prevention Ring Overlays around her mental space as seen in image */}
-          <div className="absolute inset-0 z-10 pointer-events-none select-none">
-            {/* The Green Dot on her face/temple coordinate */}
-            <div className="absolute top-[41.5%] left-[76.5%] -translate-x-1/2 -translate-y-1/2">
-              {/* Solid Green Pulse Core */}
-              <div className="relative flex items-center justify-center">
-                <span className="absolute inline-flex h-6 w-6 rounded-full bg-[#2BC48A] opacity-20 animate-ping" />
-                <div className="h-4.5 w-4.5 rounded-full bg-[#2BC48A]" />
-              </div>
-
-              {/* Concentric rings styled perfectly as ultra-thin light lines */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-                {/* Ring 1 */}
-                <div className="w-24 h-24 rounded-full border border-[#2BC48A]/15" />
-              </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-                {/* Ring 2 */}
-                <div className="w-48 h-48 rounded-full border border-[#2BC48A]/10" />
-              </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-                {/* Ring 3 */}
-                <div className="w-80 h-80 rounded-full border border-[#2BC48A]/8" />
-              </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-                {/* Ring 4 */}
-                <div className="w-[440px] h-[440px] rounded-full border border-[#2BC48A]/5" />
-              </div>
-            </div>
-          </div>
 
           {/* Smooth overlay shading mapping window shadow feel */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/[0.02] via-transparent to-transparent pointer-events-none" />

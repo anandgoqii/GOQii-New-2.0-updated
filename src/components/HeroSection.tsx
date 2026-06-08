@@ -23,7 +23,7 @@ const slides = [
       { text: "Prevent.", highlight: true }
     ],
     subtext: "GOQii transforms everyday health signals into intelligent actions and better outcomes.",
-    bgImage: "https://appcdn.goqii.com/storeimg/70352_1780397831.png"
+    bgImage: "https://appcdn.goqii.com/storeimg/79890_1780900607.jpg"
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const slides = [
       { text: "every human.", highlight: true }
     ],
     subtext: "Trusted by enterprises, insurers, healthcare providers and governments worldwide.",
-    bgImage: "https://appcdn.goqii.com/storeimg/43274_1780397840.png"
+    bgImage: "https://appcdn.goqii.com/storeimg/33596_1780903515.jpg"
   }
 ];
 
@@ -184,31 +184,27 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
         </div>
 
         {/* Enterprise Signals Proof Strip */}
-        <div className="relative z-10 w-full border-t border-[#E8EDF2] pt-6 mt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 text-left max-w-2xl">
+        <div className="relative z-10 w-full border-t border-[#E8EDF2] pt-5 mt-6 grid grid-cols-2 sm:grid-cols-4 gap-y-5 gap-x-4 text-left max-w-xl">
           <div>
-            <div className="text-2xl font-black text-[#0F172A] tracking-tight">5M+</div>
-            <div className="text-[9px] font-mono tracking-widest text-[#667085] uppercase mt-0.5 font-bold">Active Users</div>
+            <div className="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight leading-none">5M+</div>
+            <div className="text-[9px] font-mono tracking-widest text-[#667085] uppercase mt-1 font-bold">Active Users</div>
           </div>
           <div>
-            <div className="text-2xl font-black text-[#0F172A] tracking-tight">300+</div>
-            <div className="text-[9px] font-mono tracking-widest text-[#667085] uppercase mt-0.5 font-bold">Enterprise Partners</div>
+            <div className="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight leading-none">300+</div>
+            <div className="text-[9px] font-mono tracking-widest text-[#667085] uppercase mt-1 font-bold">Enterprise Partners</div>
           </div>
           <div>
-            <div className="text-2xl font-black text-[#0F172A] tracking-tight">Fortune 500</div>
-            <div className="text-[9px] font-mono tracking-widest text-[#667085] uppercase mt-0.5 font-bold">Deployments</div>
+            <div className="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight leading-none">Fortune 500</div>
+            <div className="text-[9px] font-mono tracking-widest text-[#667085] uppercase mt-1 font-bold">Deployments</div>
           </div>
           <div>
-            <div className="text-2xl font-black text-[#0F172A] tracking-tight">NHS Approved</div>
-            <div className="text-[9px] font-mono tracking-widest text-[#667085] uppercase mt-0.5 font-bold">Programs</div>
+            <div className="text-base sm:text-lg font-black text-[#0F172A] tracking-tight leading-tight">NHS Primary Care</div>
+            <div className="text-[8.5px] font-mono tracking-wider text-[#667085] uppercase mt-0.5 font-bold leading-tight">Modality Partnership</div>
           </div>
         </div>
       </div>
 
-      {/* Tiny footer tracker */}
-      <div className="relative z-10 w-full flex justify-between items-center text-[10px] font-mono tracking-widest text-[#667085] uppercase">
-        <span>PREVENTIVE HEALTHCARE</span>
-        <span>SCROLL TO DISCOVER</span>
-      </div>
+
     </div>
   );
 }

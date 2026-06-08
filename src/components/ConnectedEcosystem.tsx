@@ -18,7 +18,7 @@ export default function ConnectedEcosystem() {
   return (
     <div
       id="section-ecosystem"
-      className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-slate-50 py-20 px-4 sm:px-6 md:px-16"
+      className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-[#F8FAFB] py-20 px-4 sm:px-6 md:px-16"
     >
       {/* Background Decorative Mesh Grids */}
       <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-70 pointer-events-none" />
@@ -50,19 +50,19 @@ export default function ConnectedEcosystem() {
         </motion.button>
       </div>
 
-      {/* ================= STUNNING PREMIUM DARK ECOSYSTEM CARD ================= */}
-      <div className="w-full max-w-5xl bg-gradient-to-br from-[#070e17] to-[#0a1523] border border-white/5 rounded-[36px] sm:rounded-[40px] p-6 sm:p-10 md:p-12 shadow-[0_32px_80px_rgba(8,19,36,0.65)] relative overflow-hidden">
+      {/* ================= STUNNING PREMIUM LIGHT ECOSYSTEM CARD (FIXED AS PER DEVICE WINDOW & LIGHT THEME) ================= */}
+      <div className="w-full max-w-5xl bg-white border border-[#E8EDF2] rounded-[36px] sm:rounded-[40px] p-6 sm:p-10 md:p-12 shadow-[0_24px_50px_rgba(15,23,42,0.03)] relative overflow-hidden">
         
-        {/* Glowing ambient radial light enhancements inside card */}
-        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-[#2BC48A]/10 rounded-full blur-[110px] pointer-events-none" />
+        {/* Subtle ambient radial highlights */}
+        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-emerald-500/[0.03] rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-[#00ADC7]/[0.03] rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-[#2BC48A]/[0.04] rounded-full blur-[110px] pointer-events-none" />
 
         {/* Top Header Row Inside Card */}
         <div className="flex flex-row justify-between items-center gap-4 w-full mb-10 text-[10px] sm:text-[11px] uppercase relative z-10">
           
           {/* Left Live Indicator Capsule */}
-          <div className="inline-flex items-center bg-[#091f17]/80 border border-[#2BC48A]/20 px-3.5 py-1.5 rounded-full text-[#2BC48A] font-sans tracking-wider text-[10px] font-black shadow-[0_2px_10px_rgba(43,196,138,0.08)]">
+          <div className="inline-flex items-center bg-[#E5F7F0] border border-[#2BC48A]/30 px-3.5 py-1.5 rounded-full text-[#0F9E6C] font-sans tracking-wider text-[10px] font-black shadow-[0_2px_10px_rgba(43,196,138,0.04)]">
             <span className="relative flex h-2 w-2 mr-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#2BC48A] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#2BC48A]"></span>
@@ -71,7 +71,7 @@ export default function ConnectedEcosystem() {
           </div>
 
           {/* Right System Badge Capsule */}
-          <div className="inline-flex items-center bg-[#111927] border border-white/10 px-3.5 py-1.5 rounded-full text-slate-300 font-sans tracking-wider text-[10px] font-bold">
+          <div className="inline-flex items-center bg-slate-50 border border-slate-200/80 px-3.5 py-1.5 rounded-full text-slate-600 font-sans tracking-wider text-[10px] font-bold">
             <span className="text-slate-400">SYSTEM STATUS</span>
             <span className="text-[#2BC48A] font-extrabold ml-2 flex items-center">
               <span className="w-1.5 h-1.5 rounded-full bg-[#2BC48A] mr-1.5 animate-pulse" />
@@ -82,10 +82,10 @@ export default function ConnectedEcosystem() {
 
         {/* Card Title Block */}
         <div className="text-left mb-10 relative z-10 max-w-md">
-          <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight mb-2 font-sans">
+          <h3 className="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight mb-2 font-sans">
             Your Health. Connected.
           </h3>
-          <p className="text-slate-400 text-xs sm:text-sm font-medium">
+          <p className="text-slate-500 text-xs sm:text-sm font-semibold">
             Real-time signals working for your better health.
           </p>
         </div>
@@ -100,10 +100,10 @@ export default function ConnectedEcosystem() {
             <motion.div
               onMouseEnter={() => setActiveNode("wearables")}
               onMouseLeave={() => setActiveNode(null)}
-              className={`w-full max-w-sm p-4.5 rounded-2xl border text-left cursor-pointer transition-all duration-300 flex items-center gap-4 relative group ${
+              className={`w-full max-w-sm p-5 rounded-2xl border text-left cursor-pointer transition-all duration-300 flex items-center gap-4 relative group ${
                 activeNode === "wearables"
-                  ? "bg-[#0b1b17] border-[#2BC48A] shadow-[0_8px_30px_rgba(43,196,138,0.18)]"
-                  : "bg-[#0f1d30]/65 border-white/5 hover:border-[#2BC48A]/40 hover:bg-[#0c1827]"
+                  ? "bg-[#F4FBF9] border-[#2BC48A] shadow-[0_8px_32px_rgba(43,196,138,0.1)]"
+                  : "bg-[#FAFBFB] border-[#E8EDF2] hover:border-[#2BC48A]/40 hover:bg-white"
               }`}
             >
               {/* Connector line for desktop */}
@@ -112,7 +112,7 @@ export default function ConnectedEcosystem() {
                   <path
                     d="M 0 0 C 24 0, 24 15, 48 20"
                     fill="none"
-                    stroke={activeNode === "wearables" ? "#2BC48A" : "rgba(255,255,255,0.08)"}
+                    stroke={activeNode === "wearables" ? "#2BC48A" : "rgba(15,23,42,0.08)"}
                     strokeWidth="1.5"
                     strokeDasharray="4 4"
                     className="transition-all duration-300"
@@ -128,22 +128,22 @@ export default function ConnectedEcosystem() {
               {/* Icon Container */}
               <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 shrink-0 ${
                 activeNode === "wearables" 
-                  ? "bg-[#2BC48A]/20 text-[#2BC48A] scale-105" 
-                  : "bg-white/5 text-[#2BC48A] group-hover:bg-[#2BC48A]/10 group-hover:scale-105"
+                  ? "bg-[#2BC48A]/10 text-[#2BC48A] scale-105" 
+                  : "bg-slate-100 text-[#2BC48A]/80 group-hover:bg-[#2BC48A]/10 group-hover:text-[#2BC48A] group-hover:scale-105"
               }`}>
                 <Watch className="w-6 h-6" />
               </div>
 
               <div>
-                <h4 className="text-[15px] font-black text-white mb-0.5">Wearables</h4>
-                <p className="text-xs text-slate-400 font-medium leading-normal">
+                <h4 className="text-[15px] font-black text-[#0F172A] mb-0.5 font-sans">Wearables</h4>
+                <p className="text-xs text-slate-500 font-medium leading-normal font-sans">
                   Steps, HR, Sleep, Activity & more
                 </p>
               </div>
 
               {/* Status active indicator dot */}
-              <div className={`absolute right-4 top-4.5 w-2 h-2 rounded-full transition-all duration-300 ${
-                activeNode === "wearables" ? "bg-[#2BC48A] scale-125 shadow-[0_0_8px_#2BC48A]" : "bg-white/10"
+              <div className={`absolute right-5 top-5 w-2 h-2 rounded-full transition-all duration-300 ${
+                activeNode === "wearables" ? "bg-[#2BC48A] scale-125 shadow-[0_0_8px_#2BC48A]" : "bg-slate-200"
               }`} />
             </motion.div>
 
@@ -151,10 +151,10 @@ export default function ConnectedEcosystem() {
             <motion.div
               onMouseEnter={() => setActiveNode("coaching")}
               onMouseLeave={() => setActiveNode(null)}
-              className={`w-full max-w-sm p-4.5 rounded-2xl border text-left cursor-pointer transition-all duration-300 flex items-center gap-4 relative group ${
+              className={`w-full max-w-sm p-5 rounded-2xl border text-left cursor-pointer transition-all duration-300 flex items-center gap-4 relative group ${
                 activeNode === "coaching"
-                  ? "bg-[#0b1c2b] border-[#00ADC7] shadow-[0_8px_30px_rgba(0,173,199,0.18)]"
-                  : "bg-[#0f1d30]/65 border-white/5 hover:border-[#00ADC7]/40 hover:bg-[#0c1827]"
+                  ? "bg-[#F0FAFC] border-[#00ADC7] shadow-[0_8px_32px_rgba(0,173,199,0.1)]"
+                  : "bg-[#FAFBFB] border-[#E8EDF2] hover:border-[#00ADC7]/40 hover:bg-white"
               }`}
             >
               {/* Connector line for desktop */}
@@ -163,7 +163,7 @@ export default function ConnectedEcosystem() {
                   <path
                     d="M 0 0 C 24 0, 24 -15, 48 -20"
                     fill="none"
-                    stroke={activeNode === "coaching" ? "#00ADC7" : "rgba(255,255,255,0.08)"}
+                    stroke={activeNode === "coaching" ? "#00ADC7" : "rgba(15,23,42,0.08)"}
                     strokeWidth="1.5"
                     strokeDasharray="4 4"
                     className="transition-all duration-300"
@@ -179,22 +179,22 @@ export default function ConnectedEcosystem() {
               {/* Icon Container */}
               <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 shrink-0 ${
                 activeNode === "coaching" 
-                  ? "bg-[#00ADC7]/20 text-[#00ADC7] scale-105" 
-                  : "bg-white/5 text-[#00ADC7] group-hover:bg-[#00ADC7]/10 group-hover:scale-105"
+                  ? "bg-[#00ADC7]/10 text-[#00ADC7] scale-105" 
+                  : "bg-slate-100 text-[#00ADC7]/80 group-hover:bg-[#00ADC7]/10 group-hover:text-[#00ADC7] group-hover:scale-105"
               }`}>
                 <User className="w-6 h-6" />
               </div>
 
               <div>
-                <h4 className="text-[15px] font-black text-white mb-0.5">Coaching</h4>
-                <p className="text-xs text-slate-400 font-medium leading-normal">
+                <h4 className="text-[15px] font-black text-[#0F172A] mb-0.5 font-sans">Coaching</h4>
+                <p className="text-xs text-slate-500 font-medium leading-normal font-sans">
                   Expert guidance, personalized support
                 </p>
               </div>
 
               {/* Status active indicator dot */}
-              <div className={`absolute right-4 top-4.5 w-2 h-2 rounded-full transition-all duration-300 ${
-                activeNode === "coaching" ? "bg-[#00ADC7] scale-125 shadow-[0_0_8px_#00ADC7]" : "bg-white/10"
+              <div className={`absolute right-5 top-5 w-2 h-2 rounded-full transition-all duration-300 ${
+                activeNode === "coaching" ? "bg-[#00ADC7] scale-125 shadow-[0_0_8px_#00ADC7]" : "bg-slate-200"
               }`} />
             </motion.div>
 
@@ -208,53 +208,53 @@ export default function ConnectedEcosystem() {
               
               {/* Orbit dash boundary track */}
               <div className={`absolute w-[285px] h-[285px] rounded-full border border-dashed transition-all duration-700 ${
-                activeNode ? "border-white/15 scale-105" : "border-white/5"
+                activeNode ? "border-slate-300/80 scale-105" : "border-slate-200/40"
               }`} />
 
               {/* Spinning middle track for tech ambiance */}
-              <div className="absolute w-[235px] h-[235px] rounded-full border border-white/[0.04] animate-spin-slow pointer-events-none" />
+              <div className="absolute w-[235px] h-[235px] rounded-full border border-slate-100/80 animate-spin-slow pointer-events-none" />
 
               {/* Orbit Node Glowing Dots (linked to active state) */}
-              <div className={`absolute left-[13%] top-[14%] w-4 h-4 rounded-full border-[3px] border-[#070e17] transition-all duration-300 ${
-                activeNode === "wearables" ? "bg-[#2BC48A] scale-[1.3] shadow-[0_0_15px_#2BC48A]" : "bg-slate-800 border-white/5"
+              <div className={`absolute left-[13%] top-[14%] w-4 h-4 rounded-full border-[3px] border-white transition-all duration-300 ${
+                activeNode === "wearables" ? "bg-[#2BC48A] scale-[1.3] shadow-[0_0_15px_rgba(43,196,138,0.5)]" : "bg-slate-200"
               }`} />
 
-              <div className={`absolute left-[13%] bottom-[14%] w-4 h-4 rounded-full border-[3px] border-[#070e17] transition-all duration-300 ${
-                activeNode === "coaching" ? "bg-[#00ADC7] scale-[1.3] shadow-[0_0_15px_#00ADC7]" : "bg-slate-800 border-white/5"
+              <div className={`absolute left-[13%] bottom-[14%] w-4 h-4 rounded-full border-[3px] border-white transition-all duration-300 ${
+                activeNode === "coaching" ? "bg-[#00ADC7] scale-[1.3] shadow-[0_0_15px_rgba(0,173,199,0.5)]" : "bg-slate-200"
               }`} />
 
-              <div className={`absolute right-[13%] top-[14%] w-4 h-4 rounded-full border-[3px] border-[#070e17] transition-all duration-300 ${
-                activeNode === "ai" ? "bg-[#A855F7] scale-[1.3] shadow-[0_0_15px_#A855F7]" : "bg-slate-800 border-white/5"
+              <div className={`absolute right-[13%] top-[14%] w-4 h-4 rounded-full border-[3px] border-white transition-all duration-300 ${
+                activeNode === "ai" ? "bg-[#A855F7] scale-[1.3] shadow-[0_0_15px_rgba(168,85,247,0.5)]" : "bg-slate-200"
               }`} />
 
-              <div className={`absolute right-[13%] bottom-[14%] w-4 h-4 rounded-full border-[3px] border-[#070e17] transition-all duration-300 ${
-                activeNode === "preventive" ? "bg-[#F97316] scale-[1.3] shadow-[0_0_15px_#F97316]" : "bg-slate-800 border-white/5"
+              <div className={`absolute right-[13%] bottom-[14%] w-4 h-4 rounded-full border-[3px] border-white transition-all duration-300 ${
+                activeNode === "preventive" ? "bg-[#F97316] scale-[1.3] shadow-[0_0_15px_rgba(249,115,22,0.5)]" : "bg-slate-200"
               }`} />
             </div>
 
             {/* Core Circular Orb Container */}
-            <div className={`relative w-[184px] h-[184px] rounded-full bg-gradient-to-b from-[#0e1c2e] to-[#040a12] border flex flex-col items-center justify-center p-6 shadow-2xl transition-all duration-500 z-10 ${
-              activeNode === "wearables" ? "border-[#2BC48A] shadow-[0_0_45px_rgba(43,196,138,0.35)]" :
-              activeNode === "coaching" ? "border-[#00ADC7] shadow-[0_0_45px_rgba(0,173,199,0.35)]" :
-              activeNode === "ai" ? "border-[#A855F7] shadow-[0_0_45px_rgba(168,85,247,0.35)]" :
-              activeNode === "preventive" ? "border-[#F97316] shadow-[0_0_45px_rgba(249,115,22,0.35)]" :
-              "border-[#2BC48A]/70 shadow-[0_0_35px_rgba(43,196,138,0.22)]"
+            <div className={`relative w-[184px] h-[184px] rounded-full bg-white border flex flex-col items-center justify-center p-6 transition-all duration-500 z-10 ${
+              activeNode === "wearables" ? "border-[#2BC48A] shadow-[0_12px_45px_rgba(43,196,138,0.15)]" :
+              activeNode === "coaching" ? "border-[#00ADC7] shadow-[0_12px_45px_rgba(0,173,199,0.15)]" :
+              activeNode === "ai" ? "border-[#A855F7] shadow-[0_12px_45px_rgba(168,85,247,0.15)]" :
+              activeNode === "preventive" ? "border-[#F97316] shadow-[0_12px_45px_rgba(249,115,22,0.15)]" :
+              "border-[#2BC48A]/60 shadow-[0_12px_36px_rgba(43,196,138,0.08)]"
             }`}>
               
               {/* Inner accent ring */}
-              <div className="absolute inset-2.5 border border-white/5 rounded-full pointer-events-none" />
+              <div className="absolute inset-2.5 border border-slate-100 rounded-full pointer-events-none" />
 
               {/* Rotating radar graphic overlay when active to add extreme polish */}
-              <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,transparent_30%,rgba(43,196,138,0.03)_100%)] pointer-events-none" />
+              <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_center,transparent_30%,rgba(43,196,138,0.02)_100%)] pointer-events-none" />
 
               {/* Graphic Logo Segment representation inside Orb */}
               <div className="mb-2 uppercase">
                 <svg className={`w-12 h-12 transition-all duration-500 ${
-                  activeNode === "wearables" ? "text-[#2BC48A] drop-shadow-[0_0_4px_#2BC48A]" :
-                  activeNode === "coaching" ? "text-[#00ADC7] drop-shadow-[0_0_4px_#00ADC7]" :
-                  activeNode === "ai" ? "text-[#A855F7] drop-shadow-[0_0_4px_#A855F7]" :
-                  activeNode === "preventive" ? "text-[#F97316] drop-shadow-[0_0_4px_#F97316]" :
-                  "text-[#2BC48A] drop-shadow-[0_0_6px_rgba(43,196,138,0.4)]"
+                  activeNode === "wearables" ? "text-[#2BC48A] drop-shadow-[0_0_4px_rgba(43,196,138,0.4)]" :
+                  activeNode === "coaching" ? "text-[#00ADC7] drop-shadow-[0_0_4px_rgba(0,173,199,0.4)]" :
+                  activeNode === "ai" ? "text-[#A855F7] drop-shadow-[0_0_4px_rgba(168,85,247,0.4)]" :
+                  activeNode === "preventive" ? "text-[#F97316] drop-shadow-[0_0_4px_rgba(249,115,22,0.4)]" :
+                  "text-[#2BC48A] drop-shadow-[0_0_6px_rgba(43,196,138,0.3)]"
                 }`} viewBox="0 0 100 100" fill="currentColor">
                   <path d="M50 15A35 35 0 0 0 15 50h12A23 23 0 0 1 50 27V15z" opacity="0.9" />
                   <path d="M85 50A35 35 0 0 0 50 15v12a23 23 0 0 1 23 23h12z" opacity="0.9" />
@@ -265,7 +265,7 @@ export default function ConnectedEcosystem() {
               </div>
 
               {/* Central text elements */}
-              <span className="font-sans font-black text-white text-[16px] tracking-wider leading-none">
+              <span className="font-sans font-black text-[#0F172A] text-[16px] tracking-wider leading-none">
                 GOQii AI
               </span>
               <span className="text-[9px] text-[#2BC48A] font-extrabold mt-1.5 uppercase tracking-widest text-center">
@@ -282,10 +282,10 @@ export default function ConnectedEcosystem() {
             <motion.div
               onMouseEnter={() => setActiveNode("ai")}
               onMouseLeave={() => setActiveNode(null)}
-              className={`w-full max-w-sm p-4.5 rounded-2xl border text-left cursor-pointer transition-all duration-300 flex items-center gap-4 relative group ${
+              className={`w-full max-w-sm p-5 rounded-2xl border text-left cursor-pointer transition-all duration-300 flex items-center gap-4 relative group ${
                 activeNode === "ai"
-                  ? "bg-[#180b29] border-[#A855F7] shadow-[0_8px_30px_rgba(168,85,247,0.18)]"
-                  : "bg-[#0f1d30]/65 border-white/5 hover:border-[#A855F7]/40 hover:bg-[#0c1827]"
+                  ? "bg-[#FAF5FF] border-[#A855F7] shadow-[0_8px_32px_rgba(168,85,247,0.1)]"
+                  : "bg-[#FAFBFB] border-[#E8EDF2] hover:border-[#A855F7]/40 hover:bg-white"
               }`}
             >
               {/* Connector line for desktop */}
@@ -294,7 +294,7 @@ export default function ConnectedEcosystem() {
                   <path
                     d="M 48 0 C 24 0, 24 15, 0 20"
                     fill="none"
-                    stroke={activeNode === "ai" ? "#A855F7" : "rgba(255,255,255,0.08)"}
+                    stroke={activeNode === "ai" ? "#A855F7" : "rgba(15,23,42,0.08)"}
                     strokeWidth="1.5"
                     strokeDasharray="4 4"
                     className="transition-all duration-300"
@@ -310,22 +310,22 @@ export default function ConnectedEcosystem() {
               {/* Icon Container */}
               <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 shrink-0 ${
                 activeNode === "ai" 
-                  ? "bg-[#A855F7]/20 text-[#A855F7] scale-105" 
-                  : "bg-white/5 text-[#A855F7] group-hover:bg-[#A855F7]/10 group-hover:scale-105"
+                  ? "bg-[#A855F7]/10 text-[#A855F7] scale-105" 
+                  : "bg-slate-100 text-[#A855F7]/80 group-hover:bg-[#A855F7]/10 group-hover:text-[#A855F7] group-hover:scale-105"
               }`}>
                 <Brain className="w-6 h-6" />
               </div>
 
               <div>
-                <h4 className="text-[15px] font-black text-white mb-0.5">AI Intelligence</h4>
-                <p className="text-xs text-slate-400 font-medium leading-normal">
+                <h4 className="text-[15px] font-black text-[#0F172A] mb-0.5 font-sans">AI Intelligence</h4>
+                <p className="text-xs text-slate-500 font-medium leading-normal font-sans">
                   Predictive insights & risk detection
                 </p>
               </div>
 
               {/* Status active indicator dot */}
-              <div className={`absolute right-4 top-4.5 w-2 h-2 rounded-full transition-all duration-300 ${
-                activeNode === "ai" ? "bg-[#A855F7] scale-125 shadow-[0_0_8px_#A855F7]" : "bg-white/10"
+              <div className={`absolute right-5 top-5 w-2 h-2 rounded-full transition-all duration-300 ${
+                activeNode === "ai" ? "bg-[#A855F7] scale-125 shadow-[0_0_8px_#A855F7]" : "bg-slate-200"
               }`} />
             </motion.div>
 
@@ -333,10 +333,10 @@ export default function ConnectedEcosystem() {
             <motion.div
               onMouseEnter={() => setActiveNode("preventive")}
               onMouseLeave={() => setActiveNode(null)}
-              className={`w-full max-w-sm p-4.5 rounded-2xl border text-left cursor-pointer transition-all duration-300 flex items-center gap-4 relative group ${
+              className={`w-full max-w-sm p-5 rounded-2xl border text-left cursor-pointer transition-all duration-300 flex items-center gap-4 relative group ${
                 activeNode === "preventive"
-                  ? "bg-[#1f1009] border-[#F97316] shadow-[0_8px_30px_rgba(249,115,22,0.18)]"
-                  : "bg-[#0f1d30]/65 border-white/5 hover:border-[#F97316]/40 hover:bg-[#0c1827]"
+                  ? "bg-[#FFF7ED] border-[#F97316] shadow-[0_8px_32px_rgba(249,115,22,0.1)]"
+                  : "bg-[#FAFBFB] border-[#E8EDF2] hover:border-[#F97316]/40 hover:bg-white"
               }`}
             >
               {/* Connector line for desktop */}
@@ -345,7 +345,7 @@ export default function ConnectedEcosystem() {
                   <path
                     d="M 48 0 C 24 0, 24 -15, 0 -20"
                     fill="none"
-                    stroke={activeNode === "preventive" ? "#F97316" : "rgba(255,255,255,0.08)"}
+                    stroke={activeNode === "preventive" ? "#F97316" : "rgba(15,23,42,0.08)"}
                     strokeWidth="1.5"
                     strokeDasharray="4 4"
                     className="transition-all duration-300"
@@ -361,22 +361,22 @@ export default function ConnectedEcosystem() {
               {/* Icon Container */}
               <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 shrink-0 ${
                 activeNode === "preventive" 
-                  ? "bg-[#F97316]/20 text-[#F97316] scale-105" 
-                  : "bg-white/5 text-[#F97316] group-hover:bg-[#F97316]/10 group-hover:scale-105"
+                  ? "bg-[#F97316]/10 text-[#F97316] scale-105" 
+                  : "bg-slate-100 text-[#F97316]/80 group-hover:bg-[#F97316]/10 group-hover:scale-105 group-hover:text-[#F97316]"
               }`}>
                 <Shield className="w-6 h-6" />
               </div>
 
               <div>
-                <h4 className="text-[15px] font-black text-white mb-0.5">Preventive Care</h4>
-                <p className="text-xs text-slate-400 font-medium leading-normal">
+                <h4 className="text-[15px] font-black text-[#0F172A] mb-0.5 font-sans">Preventive Care</h4>
+                <p className="text-xs text-slate-500 font-medium leading-normal font-sans">
                   Early action, better outcomes
                 </p>
               </div>
 
               {/* Status active indicator dot */}
-              <div className={`absolute right-4 top-4.5 w-2 h-2 rounded-full transition-all duration-300 ${
-                activeNode === "preventive" ? "bg-[#F97316] scale-125 shadow-[0_0_8px_#F97316]" : "bg-white/10"
+              <div className={`absolute right-5 top-5 w-2 h-2 rounded-full transition-all duration-300 ${
+                activeNode === "preventive" ? "bg-[#F97316] scale-125 shadow-[0_0_8px_#F97316]" : "bg-slate-200"
               }`} />
             </motion.div>
 
@@ -384,84 +384,84 @@ export default function ConnectedEcosystem() {
 
         </div>
 
-        {/* ================= GORGEOUS BOTTOM METRICS GRID BAR (HORIZONTAL FLEX MOCKUP SPEC) ================= */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 p-6 sm:p-8 bg-white/[0.01] border border-white/[0.04] rounded-[28px] mt-16 relative z-10 text-left">
+        {/* ================= GORGEOUS BOTTOM METRICS GRID BAR ================= */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 p-6 sm:p-8 bg-[#F8FAFB] border border-[#E8EDF2] rounded-[28px] mt-16 relative z-10 text-left">
           
           {/* Module 1: Live Signals */}
-          <div className="flex items-center gap-4.5">
+          <div className="flex items-center gap-4">
             {/* Glowing Icon Badge (Left) */}
-            <div className="w-13 h-13 rounded-full bg-[#133126] text-[#2BC48A] border border-[#2BC48A]/20 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(43,196,138,0.18)]">
+            <div className="w-12 h-12 rounded-full bg-[#E5F7F0] text-[#2BC48A] border border-[#2BC48A]/20 flex items-center justify-center shrink-0">
               <Activity className="w-6 h-6" />
             </div>
             {/* Metrics Info (Right) */}
             <div className="flex flex-col">
-              <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#2BC48A] mb-0.5">
+              <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#2BC48A] mb-0.5 font-sans">
                 Live Signals
               </span>
-              <span className="text-2xl sm:text-[27px] font-black text-white tracking-tight leading-none mb-1">
+              <span className="text-2xl sm:text-[27px] font-black text-[#0F172A] tracking-tight leading-none mb-1 font-sans">
                 128
               </span>
-              <span className="text-[11px] font-medium text-slate-400">
+              <span className="text-[11px] font-medium text-slate-500 font-sans">
                 Active right now
               </span>
             </div>
           </div>
 
           {/* Module 2: Insights Generated */}
-          <div className="flex items-center gap-4.5 border-t sm:border-t-0 sm:border-l border-white/[0.05] pt-6 sm:pt-0 sm:pl-6 lg:pl-8">
+          <div className="flex items-center gap-4 border-t sm:border-t-0 sm:border-l border-slate-200/60 pt-6 sm:pt-0 sm:pl-6 lg:pl-8">
             {/* Glowing Icon Badge (Left) */}
-            <div className="w-13 h-13 rounded-full bg-[#0F293B] text-[#00ADC7] border border-[#00ADC7]/20 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(0,173,199,0.18)]">
+            <div className="w-12 h-12 rounded-full bg-[#E0F2FE] text-[#00ADC7] border border-[#00ADC7]/20 flex items-center justify-center shrink-0">
               <TrendingUp className="w-6 h-6" />
             </div>
             {/* Metrics Info (Right) */}
             <div className="flex flex-col">
-              <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#00ADC7] mb-0.5">
+              <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#00ADC7] mb-0.5 font-sans">
                 Insights Generated
               </span>
-              <span className="text-2xl sm:text-[27px] font-black text-white tracking-tight leading-none mb-1">
+              <span className="text-2xl sm:text-[27px] font-black text-[#0F172A] tracking-tight leading-none mb-1 font-sans">
                 24
               </span>
-              <span className="text-[11px] font-medium text-slate-400">
+              <span className="text-[11px] font-medium text-slate-500 font-sans">
                 In the last hour
               </span>
             </div>
           </div>
 
           {/* Module 3: Actions Completed */}
-          <div className="flex items-center gap-4.5 border-t lg:border-t-0 lg:border-l border-white/[0.05] pt-6 lg:pt-0 lg:pl-8">
+          <div className="flex items-center gap-4 border-t lg:border-t-0 lg:border-l border-slate-200/60 pt-6 lg:pt-0 lg:pl-8">
             {/* Glowing Icon Badge (Left) */}
-            <div className="w-13 h-13 rounded-full bg-[#241B3B] text-[#A855F7] border border-[#A855F7]/20 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(168,85,247,0.18)]">
+            <div className="w-12 h-12 rounded-full bg-[#F3E8FF] text-[#A855F7] border border-[#A855F7]/40 flex items-center justify-center shrink-0">
               <CheckCircle className="w-6 h-6" />
             </div>
             {/* Metrics Info (Right) */}
             <div className="flex flex-col">
-              <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#A855F7] mb-0.5">
+              <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#A855F7] mb-0.5 font-sans">
                 Actions Completed
               </span>
-              <span className="text-2xl sm:text-[27px] font-black text-white tracking-tight leading-none mb-1">
+              <span className="text-2xl sm:text-[27px] font-black text-[#0F172A] tracking-tight leading-none mb-1 font-sans">
                 96%
               </span>
-              <span className="text-[11px] font-medium text-slate-400">
+              <span className="text-[11px] font-medium text-slate-500 font-sans">
                 Daily goal progress
               </span>
             </div>
           </div>
 
           {/* Module 4: Health Trend */}
-          <div className="flex items-center gap-4.5 border-t lg:border-t-0 lg:border-l border-white/[0.05] pt-6 lg:pt-0 lg:pl-8">
+          <div className="flex items-center gap-4 border-t lg:border-t-0 lg:border-l border-slate-200/60 pt-6 lg:pt-0 lg:pl-8">
             {/* Glowing Icon Badge (Left) */}
-            <div className="w-13 h-13 rounded-full bg-[#331E18] text-[#F97316] border border-[#F97316]/20 flex items-center justify-center shrink-0 shadow-[0_0_15px_rgba(249,115,22,0.18)]">
+            <div className="w-12 h-12 rounded-full bg-[#FFEDD5] text-[#F97316] border border-[#F97316]/40 flex items-center justify-center shrink-0">
               <Flame className="w-6 h-6" />
             </div>
             {/* Metrics Info (Right) */}
             <div className="flex flex-col">
-              <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#F97316] mb-0.5">
+              <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#F97316] mb-0.5 font-sans">
                 Health Trend
               </span>
-              <span className="text-2xl sm:text-[27px] font-black text-white tracking-tight leading-none mb-1">
+              <span className="text-2xl sm:text-[27px] font-black text-[#0F172A] tracking-tight leading-none mb-1 font-sans">
                 Improving
               </span>
-              <span className="text-[11px] font-medium text-slate-400">
+              <span className="text-[11px] font-medium text-slate-500 font-sans">
                 Great going!
               </span>
             </div>
