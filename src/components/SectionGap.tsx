@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef, useState, useEffect } from "react";
-import { Moon, Leaf, Star, Footprints } from "lucide-react";
+import { Moon, Leaf, Heart, Footprints, UserCheck, Sparkles, ClipboardList, Trophy } from "lucide-react";
 
 export default function SectionGap() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -27,22 +27,33 @@ export default function SectionGap() {
     offset: ["start end", "end start"]
   });
 
-  // Transform offsets to simulate "unifying" scatter on scroll down
-  const sleepY = useTransform(scrollYProgress, [0.1, 0.55], [-70, 0]);
-  const sleepOpacity = useTransform(scrollYProgress, [0.1, 0.3], [0.6, 1]);
+  // Sequential, progressive scroll-animation triggers for the human-centered design
+  const humanOpacity = useTransform(scrollYProgress, [0.10, 0.20], [0, 1]);
+  const humanScale = useTransform(scrollYProgress, [0.10, 0.20], [0.85, 1]);
 
-  const nutritionX = useTransform(scrollYProgress, [0.1, 0.55], [70, 0]);
-  const nutritionOpacity = useTransform(scrollYProgress, [0.1, 0.3], [0.6, 1]);
+  const sleepOpacity = useTransform(scrollYProgress, [0.18, 0.28], [0, 1]);
+  const sleepScale = useTransform(scrollYProgress, [0.18, 0.28], [0.85, 1]);
 
-  const recoveryY = useTransform(scrollYProgress, [0.1, 0.55], [70, 0]);
-  const recoveryOpacity = useTransform(scrollYProgress, [0.1, 0.3], [0.6, 1]);
+  const movementOpacity = useTransform(scrollYProgress, [0.22, 0.32], [0, 1]);
+  const movementScale = useTransform(scrollYProgress, [0.22, 0.32], [0.85, 1]);
 
-  const movementX = useTransform(scrollYProgress, [0.1, 0.55], [-70, 0]);
-  const movementOpacity = useTransform(scrollYProgress, [0.1, 0.3], [0.6, 1]);
+  const nutritionOpacity = useTransform(scrollYProgress, [0.26, 0.36], [0, 1]);
+  const nutritionScale = useTransform(scrollYProgress, [0.26, 0.36], [0.85, 1]);
 
-  // Curve draw factor on scroll progress
-  const lineDraw = useTransform(scrollYProgress, [0.25, 0.6], [0.15, 1]);
-  const coreScale = useTransform(scrollYProgress, [0.2, 0.5], [0.95, 1.05]);
+  const recoveryOpacity = useTransform(scrollYProgress, [0.30, 0.40], [0, 1]);
+  const recoveryScale = useTransform(scrollYProgress, [0.30, 0.40], [0.85, 1]);
+
+  const coachingOpacity = useTransform(scrollYProgress, [0.34, 0.44], [0, 1]);
+  const coachingScale = useTransform(scrollYProgress, [0.34, 0.44], [0.85, 1]);
+
+  const aiOpacity = useTransform(scrollYProgress, [0.38, 0.48], [0, 1]);
+  const aiScale = useTransform(scrollYProgress, [0.38, 0.48], [0.85, 1]);
+
+  const diagnosticsOpacity = useTransform(scrollYProgress, [0.42, 0.52], [0, 1]);
+  const diagnosticsScale = useTransform(scrollYProgress, [0.42, 0.52], [0.85, 1]);
+
+  const motivationOpacity = useTransform(scrollYProgress, [0.46, 0.56], [0, 1]);
+  const motivationScale = useTransform(scrollYProgress, [0.46, 0.56], [0.85, 1]);
 
   return (
     <div
@@ -119,169 +130,224 @@ export default function SectionGap() {
         >
           {/* Inner Scaled Canvas wrapper */}
           <div 
-            className="relative w-[500px] h-[500px] shrink-0 pointer-events-auto"
+            className="relative w-[500px] h-[500px] shrink-0 pointer-events-auto select-none"
             style={{ 
               transform: `scale(${scale})`, 
               transformOrigin: "center center"
             }}
           >
           
-          {/* 1. Backdrop Ambient Rotating Celestial Grid Details */}
-          <motion.svg 
-            className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.28]" 
-            viewBox="0 0 550 550"
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, ease: "linear", duration: 100 }}
-          >
-            {/* Soft Concentric Orbits */}
-            <circle cx="275" cy="275" r="50" fill="none" stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.12" />
-            <circle cx="275" cy="275" r="105" fill="none" stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.09" />
-            <circle cx="275" cy="275" r="160" fill="none" stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.07" />
-            <circle cx="275" cy="275" r="220" fill="none" stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.04" />
+          {/* 1. Backdrop Grid Details & Ambient Lines */}
+          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 500 500">
+            {/* Soft backdrop rings around center */}
+            <circle cx="250" cy="250" r="175" fill="none" stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.04" />
+            <circle cx="250" cy="250" r="155" fill="none" stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.03" />
             
-            {/* Elegant Data telemetry link dots positioned on Orbits */}
-            <circle cx="349" cy="198" r="3.5" fill="#2BC48A" fillOpacity="0.5" className="animate-pulse" />
-            <circle cx="162" cy="386" r="3" fill="#2BC48A" fillOpacity="0.4" />
-            <circle cx="433" cy="383" r="3" fill="#2BC48A" fillOpacity="0.4" className="animate-pulse" />
-            <circle cx="385" cy="148" r="3.5" fill="#2BC48A" fillOpacity="0.5" />
-          </motion.svg>
-
-          {/* 2. Static Connection Paths System */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 550 550">
-            {/* Curving swooping data fibers from Movement (left: 125,275) to Core (center: 275,275) */}
-            <motion.g style={{ opacity: lineDraw }}>
-              {/* Curve 1 - Center Straightish */}
-              <path d="M 125 275 Q 200 275, 275 275" stroke="#2BC48A" strokeWidth="1.2" fill="none" strokeOpacity="0.25" strokeDasharray="3 3" />
-              {/* Curve 2 - Deep Swoop Bottom */}
-              <path d="M 125 275 C 155 330, 220 315, 275 275" stroke="#2BC48A" strokeWidth="1" fill="none" strokeOpacity="0.18" />
-              {/* Curve 3 - Swoop Top */}
-              <path d="M 125 275 C 160 220, 225 240, 275 275" stroke="#2BC48A" strokeWidth="1" fill="none" strokeOpacity="0.18" />
-              {/* Curve 4 - Dynamic lower split fibers */}
-              <path d="M 125 275 C 145 355, 240 310, 275 275" stroke="#2BC48A" strokeWidth="0.8" fill="none" strokeOpacity="0.12" />
-              {/* Curve 5 - Dynamic upper split fibers */}
-              <path d="M 125 275 C 145 195, 240 240, 275 275" stroke="#2BC48A" strokeWidth="0.8" fill="none" strokeOpacity="0.12" />
-
-              {/* Anchor line nodes to Sleep, Nutrition, Recovery */}
-              <line x1="275" y1="125" x2="275" y2="230" stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.15" strokeDasharray="3 3" />
-              <line x1="425" y1="275" x2="320" y2="275" stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.15" strokeDasharray="3 3" />
-              <line x1="275" y1="425" x2="275" y2="320" stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.15" strokeDasharray="3 3" />
-            </motion.g>
-
-            {/* Glowing signal flow nodes */}
-            <circle cx="235" cy="275" r="3" fill="#2BC48A" />
-            <circle cx="235" cy="275" r="8" fill="#2BC48A" fillOpacity="0.15" className="animate-ping" />
+            {/* Sleep line (Top) */}
+            <motion.line 
+              x1="250" y1="75" x2="250" y2="250" 
+              stroke="#2BC48A" strokeWidth="1.2" strokeOpacity="0.3" strokeDasharray="3 3"
+              style={{ opacity: sleepOpacity }}
+            />
+            {/* Nutrition line (Right) */}
+            <motion.line 
+              x1="425" y1="250" x2="250" y2="250" 
+              stroke="#2BC48A" strokeWidth="1.2" strokeOpacity="0.3" strokeDasharray="3 3"
+              style={{ opacity: nutritionOpacity }}
+            />
+            {/* Recovery line (Bottom) */}
+            <motion.line 
+              x1="250" y1="425" x2="250" y2="250" 
+              stroke="#2BC48A" strokeWidth="1.2" strokeOpacity="0.3" strokeDasharray="3 3"
+              style={{ opacity: recoveryOpacity }}
+            />
+            {/* Movement line (Left) */}
+            <motion.line 
+              x1="75" y1="250" x2="250" y2="250" 
+              stroke="#2BC48A" strokeWidth="1.2" strokeOpacity="0.3" strokeDasharray="3 3"
+              style={{ opacity: movementOpacity }}
+            />
+            
+            {/* Coaching line (Top-Left) */}
+            <motion.line 
+              x1="140" y1="140" x2="250" y2="250" 
+              stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.2" strokeDasharray="3 3"
+              style={{ opacity: coachingOpacity }}
+            />
+            {/* AI Guidance line (Top-Right) */}
+            <motion.line 
+              x1="360" y1="140" x2="250" y2="250" 
+              stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.2" strokeDasharray="3 3"
+              style={{ opacity: aiOpacity }}
+            />
+            {/* Diagnostics line (Bottom-Right) */}
+            <motion.line 
+              x1="360" y1="360" x2="250" y2="250" 
+              stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.2" strokeDasharray="3 3"
+              style={{ opacity: diagnosticsOpacity }}
+            />
+            {/* Motivation Reward line (Bottom-Left) */}
+            <motion.line 
+              x1="140" y1="360" x2="250" y2="250" 
+              stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.2" strokeDasharray="3 3"
+              style={{ opacity: motivationOpacity }}
+            />
           </svg>
 
-          {/* 3. CENTRAL GLOWING CORE */}
+          {/* 2. CENTRAL HUMAN NODE */}
           <motion.div
-            style={{ scale: coreScale }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-24 h-24 rounded-full bg-[#2BC48A] flex flex-col items-center justify-center border-4 border-white shadow-[0_8px_32px_rgba(43,196,138,0.22)]"
+            style={{ opacity: humanOpacity, scale: humanScale }}
+            className="absolute left-[250px] top-[250px] -ml-11 -mt-11 z-10 w-22 h-22 rounded-full bg-[#FAFBFB] flex items-center justify-center border-2 border-[#2BC48A]/40 shadow-[0_4px_24px_rgba(43,196,138,0.06)] group"
           >
-            <span className="text-[11.5px] font-sans font-bold tracking-[0.22em] text-white select-none">CORE</span>
-            {/* Pulsing outer atmosphere rings */}
-            <div className="absolute inset-[-12px] rounded-full border border-[#2BC48A]/20 scale-100 animate-pulse duration-1000" />
-            <div className="absolute inset-[-24px] rounded-full border border-[#2BC48A]/5 scale-100" />
+            <div className="relative flex items-center justify-center">
+              <svg viewBox="0 0 24 24" className="w-10 h-10 text-[#2BC48A]/90 transition-transform duration-300 group-hover:scale-105" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="7" r="4" />
+                <path d="M5.5 21C5.5 17 8.5 14 12 14C15.5 14 18.5 17 18.5 21" />
+              </svg>
+              {/* Outer soft dynamic breeding rings */}
+              <div className="absolute inset-[-6px] rounded-full border border-[#2BC48A]/10 animate-pulse duration-1000" />
+            </div>
           </motion.div>
 
-          {/* 4. CORE CHANNELS NODES (Pristine circular nodes with kinetic animations) */}
+          {/* 3. PRIMARY LAYER NODES (4 core behaviors) */}
           
-          {/* Channel A: SLEEP (Top - centered at Y: 22.5%, X: 50%) */}
+          {/* SLEEP (Top) */}
           <motion.div
-            style={{ y: sleepY, opacity: sleepOpacity }}
-            className={`absolute top-[16%] left-1/2 -translate-x-1/2 z-20 w-[84px] h-[84px] rounded-full bg-white border transition-all duration-300 flex flex-col items-center justify-center p-1 cursor-pointer ${
-              hoveredNode === "sleep" ? "border-[#2BC48A] shadow-[0_8px_24px_rgba(43,196,138,0.1)]" : "border-[#E8EDF2] shadow-[0_4px_16px_rgba(0,0,0,0.02)]"
+            style={{ opacity: sleepOpacity, scale: sleepScale }}
+            className={`absolute left-[250px] top-[75px] -ml-10 -mt-10 z-20 w-20 h-20 rounded-full bg-white border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
+              hoveredNode === "sleep" ? "border-[#2BC48A] shadow-[0_8px_24px_rgba(43,196,138,0.12)]" : "border-[#E8EDF2] shadow-sm"
             }`}
             onMouseEnter={() => setHoveredNode("sleep")}
             onMouseLeave={() => setHoveredNode(null)}
           >
-            <motion.div
-              animate={{ y: [0, -3, 0] }}
-              transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 0 }}
-              className="flex flex-col items-center justify-center w-full"
-            >
-              <div className="w-8 h-8 rounded-full flex items-center justify-center text-[#2BC48A] mb-1">
-                <Moon className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" strokeWidth={2} />
-              </div>
-              <span className="text-[8.5px] font-sans font-extrabold tracking-[0.16em] text-[#0F172A] uppercase">
-                Sleep
-              </span>
-            </motion.div>
+            <Moon className="w-5 h-5 text-[#2BC48A] mb-1" strokeWidth={2} />
+            <span className="text-[8.5px] font-sans font-extrabold tracking-[0.12em] text-[#0F172A] uppercase">Sleep</span>
           </motion.div>
 
-          {/* Channel B: NUTRITION (Right - centered at Y: 50%, X: 77.5%) */}
+          {/* NUTRITION (Right) */}
           <motion.div
-            style={{ x: nutritionX, opacity: nutritionOpacity }}
-            className={`absolute right-[14%] top-1/2 -translate-y-1/2 z-20 w-[84px] h-[84px] rounded-full bg-white border transition-all duration-300 flex flex-col items-center justify-center p-1 cursor-pointer ${
-              hoveredNode === "nutrition" ? "border-[#2BC48A] shadow-[0_8px_24px_rgba(43,196,138,0.1)]" : "border-[#E8EDF2] shadow-[0_4px_16px_rgba(0,0,0,0.02)]"
+            style={{ opacity: nutritionOpacity, scale: nutritionScale }}
+            className={`absolute left-[425px] top-[250px] -ml-10 -mt-10 z-20 w-20 h-20 rounded-full bg-white border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
+              hoveredNode === "nutrition" ? "border-[#2BC48A] shadow-[0_8px_24px_rgba(43,196,138,0.12)]" : "border-[#E8EDF2] shadow-sm"
             }`}
             onMouseEnter={() => setHoveredNode("nutrition")}
             onMouseLeave={() => setHoveredNode(null)}
           >
-            <motion.div
-              animate={{ y: [0, -3, 0] }}
-              transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 0.8 }}
-              className="flex flex-col items-center justify-center w-full"
-            >
-              <div className="w-8 h-8 rounded-full flex items-center justify-center text-[#2BC48A] mb-1">
-                <Leaf className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" strokeWidth={2} />
-              </div>
-              <span className="text-[8.5px] font-sans font-extrabold tracking-[0.16em] text-[#0F172A] uppercase">
-                Nutrition
-              </span>
-            </motion.div>
+            <Leaf className="w-5 h-5 text-[#2BC48A] mb-1" strokeWidth={2} />
+            <span className="text-[8.5px] font-sans font-extrabold tracking-[0.12em] text-[#0F172A] uppercase">Nutrition</span>
           </motion.div>
 
-          {/* Channel C: RECOVERY (Bottom - centered at Y: 77.5%, X: 50%) */}
+          {/* RECOVERY (Bottom) */}
           <motion.div
-            style={{ y: recoveryY, opacity: recoveryOpacity }}
-            className={`absolute bottom-[16%] left-1/2 -translate-x-1/2 z-20 w-[84px] h-[84px] rounded-full bg-white border transition-all duration-300 flex flex-col items-center justify-center p-1 cursor-pointer ${
-              hoveredNode === "recovery" ? "border-[#2BC48A] shadow-[0_8px_24px_rgba(43,196,138,0.1)]" : "border-[#E8EDF2] shadow-[0_4px_16px_rgba(0,0,0,0.02)]"
+            style={{ opacity: recoveryOpacity, scale: recoveryScale }}
+            className={`absolute left-[250px] top-[425px] -ml-10 -mt-10 z-20 w-20 h-20 rounded-full bg-white border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
+              hoveredNode === "recovery" ? "border-[#2BC48A] shadow-[0_8px_24px_rgba(43,196,138,0.12)]" : "border-[#E8EDF2] shadow-sm"
             }`}
             onMouseEnter={() => setHoveredNode("recovery")}
             onMouseLeave={() => setHoveredNode(null)}
           >
-            <motion.div
-              animate={{ y: [0, -3, 0] }}
-              transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 1.6 }}
-              className="flex flex-col items-center justify-center w-full"
-            >
-              <div className="w-8 h-8 rounded-full flex items-center justify-center text-[#2BC48A] mb-1">
-                <Star className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" strokeWidth={2} />
-              </div>
-              <span className="text-[8.5px] font-sans font-extrabold tracking-[0.16em] text-[#0F172A] uppercase">
-                Recovery
-              </span>
-            </motion.div>
+            <Heart className="w-5 h-5 text-[#2BC48A] mb-1" strokeWidth={2} />
+            <span className="text-[8.5px] font-sans font-extrabold tracking-[0.12em] text-[#0F172A] uppercase">Recovery</span>
           </motion.div>
 
-          {/* Channel D: MOVEMENT (Left - centered at Y: 50%, X: 22.5%) */}
+          {/* MOVEMENT (Left) */}
           <motion.div
-            style={{ x: movementX, opacity: movementOpacity }}
-            className={`absolute left-[14%] top-1/2 -translate-y-1/2 z-20 w-[84px] h-[84px] rounded-full bg-white border transition-all duration-300 flex flex-col items-center justify-center p-1 cursor-pointer ${
-              hoveredNode === "movement" ? "border-[#2BC48A] shadow-[0_8px_24px_rgba(43,196,138,0.1)]" : "border-[#E8EDF2] shadow-[0_4px_16px_rgba(0,0,0,0.02)]"
+            style={{ opacity: movementOpacity, scale: movementScale }}
+            className={`absolute left-[75px] top-[250px] -ml-10 -mt-10 z-20 w-20 h-20 rounded-full bg-white border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
+              hoveredNode === "movement" ? "border-[#2BC48A] shadow-[0_8px_24px_rgba(43,196,138,0.12)]" : "border-[#E8EDF2] shadow-sm"
             }`}
             onMouseEnter={() => setHoveredNode("movement")}
             onMouseLeave={() => setHoveredNode(null)}
           >
-            <motion.div
-              animate={{ y: [0, -3, 0] }}
-              transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 2.4 }}
-              className="flex flex-col items-center justify-center w-full"
-            >
-              <div className="w-8 h-8 rounded-full flex items-center justify-center text-[#2BC48A] mb-1">
-                <Footprints className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" strokeWidth={2} />
-              </div>
-              <span className="text-[8.5px] font-sans font-extrabold tracking-[0.16em] text-[#0F172A] uppercase">
-                Movement
-              </span>
-            </motion.div>
+            <Footprints className="w-5 h-5 text-[#2BC48A] mb-1" strokeWidth={2} />
+            <span className="text-[8.5px] font-sans font-extrabold tracking-[0.12em] text-[#0F172A] uppercase">Movement</span>
           </motion.div>
 
-          {/* 5. DOWN POINTING HINT ARROW AND TEXT */}
-          <div className="absolute bottom-6 flex flex-col items-center gap-2 pointer-events-none">
-            <span className="text-[8.5px] font-sans font-extrabold tracking-[0.18em] text-[#94A3B8] uppercase">
-              Scroll down to unify channels
-            </span>
+          {/* 4. SECONDARY LAYER NODES (4 ecosystem facilitators) */}
+          
+          {/* COACHING (Top-Left) */}
+          <motion.div
+            style={{ opacity: coachingOpacity, scale: coachingScale }}
+            className={`absolute left-[140px] top-[140px] -ml-[34px] -mt-[34px] z-20 w-[68px] h-[68px] rounded-full bg-slate-50 border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
+              hoveredNode === "coaching" ? "border-[#00ADC7] bg-white shadow-[0_6px_20px_rgba(0,173,199,0.1)]" : "border-[#E2E8F0] shadow-sm"
+            }`}
+            onMouseEnter={() => setHoveredNode("coaching")}
+            onMouseLeave={() => setHoveredNode(null)}
+          >
+            <UserCheck className="w-4 h-4 text-[#00ADC7] mb-1" strokeWidth={2} />
+            <span className="text-[8px] font-sans font-extrabold tracking-[0.08em] text-[#0F172A] uppercase">Coaching</span>
+          </motion.div>
+
+          {/* AI GUIDANCE (Top-Right) */}
+          <motion.div
+            style={{ opacity: aiOpacity, scale: aiScale }}
+            className={`absolute left-[360px] top-[140px] -ml-[34px] -mt-[34px] z-20 w-[68px] h-[68px] rounded-full bg-slate-50 border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
+              hoveredNode === "ai" ? "border-[#A855F7] bg-white shadow-[0_6px_20px_rgba(168,85,247,0.1)]" : "border-[#E2E8F0] shadow-sm"
+            }`}
+            onMouseEnter={() => setHoveredNode("ai")}
+            onMouseLeave={() => setHoveredNode(null)}
+          >
+            <Sparkles className="w-4 h-4 text-[#A855F7] mb-1" strokeWidth={2} />
+            <span className="text-[8px] font-sans font-extrabold tracking-[0.08em] text-[#0F172A] uppercase">AI</span>
+          </motion.div>
+
+          {/* DIAGNOSTICS (Bottom-Right) */}
+          <motion.div
+            style={{ opacity: diagnosticsOpacity, scale: diagnosticsScale }}
+            className={`absolute left-[360px] top-[360px] -ml-[34px] -mt-[34px] z-20 w-[68px] h-[68px] rounded-full bg-slate-50 border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
+              hoveredNode === "diagnostics" ? "border-[#F97316] bg-white shadow-[0_6px_20px_rgba(249,115,22,0.1)]" : "border-[#E2E8F0] shadow-sm"
+            }`}
+            onMouseEnter={() => setHoveredNode("diagnostics")}
+            onMouseLeave={() => setHoveredNode(null)}
+          >
+            <ClipboardList className="w-4 h-4 text-[#F97316] mb-1" strokeWidth={2} />
+            <span className="text-[8px] font-sans font-extrabold tracking-[0.08em] text-[#0F172A] uppercase">Diagnosis</span>
+          </motion.div>
+
+          {/* MOTIVATION / REWARDS (Bottom-Left) */}
+          <motion.div
+            style={{ opacity: motivationOpacity, scale: motivationScale }}
+            className={`absolute left-[140px] top-[360px] -ml-[34px] -mt-[34px] z-20 w-[68px] h-[68px] rounded-full bg-slate-50 border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
+              hoveredNode === "motivation" ? "border-[#EAB308] bg-white shadow-[0_6px_20px_rgba(234,179,8,0.1)]" : "border-[#E2E8F0] shadow-sm"
+            }`}
+            onMouseEnter={() => setHoveredNode("motivation")}
+            onMouseLeave={() => setHoveredNode(null)}
+          >
+            <Trophy className="w-4 h-4 text-[#EAB308] mb-1" strokeWidth={2} />
+            <span className="text-[8px] font-sans font-extrabold tracking-[0.08em] text-[#0F172A] uppercase">Rewards</span>
+          </motion.div>
+
+          {/* 5. Dynamic Context Description Bar at Bottom */}
+          <div className="absolute bottom-5 left-6 right-6 flex items-center justify-center border-t border-[#E8EDF2]/40 pt-4 font-sans text-center transition-all duration-300 h-10">
+            {hoveredNode ? (
+              <motion.p 
+                initial={{ opacity: 0, y: 5 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-[11px] sm:text-[11.5px] text-[#475467] font-medium leading-relaxed"
+              >
+                {hoveredNode === "sleep" && <span className="text-[#2BC48A] font-bold">Sleep</span>}
+                {hoveredNode === "movement" && <span className="text-[#2BC48A] font-bold">Movement</span>}
+                {hoveredNode === "nutrition" && <span className="text-[#2BC48A] font-bold">Nutrition</span>}
+                {hoveredNode === "recovery" && <span className="text-[#2BC48A] font-bold">Recovery</span>}
+                {hoveredNode === "coaching" && <span className="text-[#00ADC7] font-bold">Coaching</span>}
+                {hoveredNode === "ai" && <span className="text-[#A855F7] font-bold">AI Guidance</span>}
+                {hoveredNode === "diagnostics" && <span className="text-[#F97316] font-bold">Diagnostics</span>}
+                {hoveredNode === "motivation" && <span className="text-[#EAB308] font-bold">Motivation</span>}
+                {" — "}
+                {hoveredNode === "sleep" && "Recovery, rest and critical cellular restoration"}
+                {hoveredNode === "movement" && "Consistent daily physical actions & cardiovascular activity"}
+                {hoveredNode === "nutrition" && "Nourishing choices, glucose stability and metabolic health"}
+                {hoveredNode === "recovery" && "Stress mitigation, resilience, mindfulness and down-regulation"}
+                {hoveredNode === "coaching" && "Human empathy, accountability, guidance and goal pacing"}
+                {hoveredNode === "ai" && "Generative personalized recommendations & active feedback loop"}
+                {hoveredNode === "diagnostics" && "Biomarker data tracking, test evaluations and regular inputs"}
+                {hoveredNode === "motivation" && "Engaging rewards, habit reinforcement and consistent motivation"}
+              </motion.p>
+            ) : (
+              <p className="text-[11px] text-[#94A3B8] tracking-widest uppercase font-bold">
+                Hover elements to explore the ecosystem
+              </p>
+            )}
           </div>
 
           </div>

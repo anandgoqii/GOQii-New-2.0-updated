@@ -61,9 +61,9 @@ const TIMELINE_STEPS = [
   {
     year: "2026",
     title: "GOQii 2.0",
-    description: "Unified humans, continuous biomarker intelligence, and autonomous medical networks into an absolute system for lifetime health optimization.",
-    image: "https://appcdn.goqii.com/storeimg/90518_1780405675.png",
-    boldWord: "optimization.",
+    description: "In 2026, GOQii becomes the operating system for human longevity, bringing together wearables, diagnostics, AI, and human coaching into one continuous platform for individuals, employers, insurers, and public health systems.",
+    image: "https://appcdn.goqii.com/storeimg/6213_1780914607.jpg",
+    boldWord: "systems.",
   },
 ];
 

@@ -5,7 +5,7 @@ const STEPS = [
   {
     num: "01",
     title: "Connect",
-    description: "Aggregate silent daily biological channels into a unified stream.",
+    description: "Connect continuous data from wearables, lab tests, and daily health check-ins into one unified health record.",
     icon: (
       <svg className="w-6 h-6 text-[#2BC48A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
@@ -15,11 +15,7 @@ const STEPS = [
   {
     num: "02",
     title: "Understand",
-    description: (
-      <span>
-        Translate variables into clear patterns of <span className="italic-serif text-[#2BC48A] font-medium font-serif">longevity</span> and <span className="italic-serif text-[#2BC48A] font-medium font-serif">prevention</span>.
-      </span>
-    ),
+    description: "GOQii's intelligence layer identifies emerging health risks and patterns before they become larger health concerns.",
     icon: (
       <svg className="w-6 h-6 text-[#2BC48A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
@@ -29,17 +25,17 @@ const STEPS = [
   {
     num: "03",
     title: "Guide",
-    description: "Provide micro-interventions matched to your immediate lifestyle metadata.",
+    description: "Personalized recommendations and coaching help members take the right action based on their latest health data.",
     icon: (
       <svg className="w-6 h-6 text-[#2BC48A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043a3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12z" />
       </svg>
     )
   },
   {
     num: "04",
     title: "Improve",
-    description: "Create sustainable habits to extend cellular longevity and healthy lifespan.",
+    description: "Small daily actions lead to measurable improvements in sleep, activity, nutrition, weight, and overall health.",
     icon: (
       <svg className="w-6 h-6 text-[#2BC48A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.307a11.95 11.95 0 0 1 5.814-5.519l2.74-1.22m0 0-5.94-2.28m5.94 2.28-2.28 5.941" />
@@ -179,12 +175,14 @@ export default function SectionSolution() {
             </div>
           </div>
 
-          <div className="flex items-center gap-5 text-[9px] font-sans font-bold tracking-[0.25em] text-[#667085] uppercase">
-            <span>NON-INVASIVE</span>
+          <div className="flex items-center gap-5 text-[9px] font-sans font-bold tracking-[0.25em] text-[#667085] uppercase flex-wrap justify-center sm:justify-start">
+            <span>Continuous Monitoring</span>
             <span className="text-[#2BC48A] select-none text-xs leading-none">·</span>
-            <span>INTELLIGENT</span>
+            <span>Early Risk Detection</span>
             <span className="text-[#2BC48A] select-none text-xs leading-none">·</span>
-            <span>CONTINUOUS</span>
+            <span>Personalized Guidance</span>
+            <span className="text-[#2BC48A] select-none text-xs leading-none">·</span>
+            <span>Human Coaching</span>
           </div>
 
         </div>

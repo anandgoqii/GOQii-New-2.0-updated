@@ -237,13 +237,21 @@ export default function DailyHealthIntelligence() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-[280px] sm:w-[320px] h-[550px] sm:h-[620px] bg-[#090D16] rounded-[48px] p-2.5 shadow-[0_32px_80px_rgba(15,23,42,0.18)] border-[4px] border-[#222E42] z-10 overflow-hidden flex flex-col"
+              className="relative w-full max-w-[260px] sm:max-w-[320px] h-[500px] sm:h-[620px] bg-[#090D16] rounded-[40px] sm:rounded-[48px] p-2 sm:p-2.5 shadow-[0_32px_80px_rgba(15,23,42,0.18)] border-[3px] sm:border-[4px] border-[#222E42] z-10 overflow-hidden flex flex-col"
             >
               {/* Dynamic App Content Body */}
-              <div className="flex-1 bg-[#0F172A] rounded-[38px] overflow-hidden relative flex flex-col shadow-inner border border-white/5 p-0">
+              <div 
+                className="flex-1 bg-[#0F172A] rounded-[32px] sm:rounded-[38px] overflow-hidden relative flex flex-col shadow-inner border border-white/5 p-0"
+                style={{
+                  transform: "translate3d(0,0,0)",
+                  WebkitTransform: "translate3d(0,0,0)",
+                  backfaceVisibility: "hidden",
+                  WebkitBackfaceVisibility: "hidden"
+                }}
+              >
 
                 {/* Screens Slider with AnimatePresence */}
-                <div className="flex-1 relative z-20 overflow-hidden text-left">
+                <div className="flex-1 relative z-20 overflow-hidden text-left bg-[#0F172A]">
                   <AnimatePresence mode="wait">
                     {activeTab === "nutrition" && (
                       <motion.div
@@ -253,12 +261,28 @@ export default function DailyHealthIntelligence() {
                         exit={{ opacity: 0, x: -20 }}
                         transition={{ duration: 0.3 }}
                         className="absolute inset-0 flex items-center justify-center overflow-hidden"
+                        style={{
+                          transform: "translate3d(0,0,0)",
+                          WebkitTransform: "translate3d(0,0,0)",
+                          backfaceVisibility: "hidden",
+                          WebkitBackfaceVisibility: "hidden"
+                        }}
                       >
                         <img 
                           src="https://appcdn.goqii.com/storeimg/96020_1780557384.png" 
                           alt="Nutrition Intelligence"
-                          className="w-full h-full object-cover rounded-2xl"
+                          className="w-full h-full object-contain bg-[#0F172A] rounded-2xl"
                           referrerPolicy="no-referrer"
+                          loading="eager"
+                          style={{
+                            imageRendering: "-webkit-optimize-contrast",
+                            // @ts-ignore
+                            imageRendering: "high-quality",
+                            transform: "translate3d(0,0,0)",
+                            WebkitTransform: "translate3d(0,0,0)",
+                            backfaceVisibility: "hidden",
+                            WebkitBackfaceVisibility: "hidden"
+                          }}
                         />
                       </motion.div>
                     )}
@@ -271,12 +295,28 @@ export default function DailyHealthIntelligence() {
                         exit={{ opacity: 0, x: -20 }}
                         transition={{ duration: 0.3 }}
                         className="absolute inset-0 flex items-center justify-center overflow-hidden"
+                        style={{
+                          transform: "translate3d(0,0,0)",
+                          WebkitTransform: "translate3d(0,0,0)",
+                          backfaceVisibility: "hidden",
+                          WebkitBackfaceVisibility: "hidden"
+                        }}
                       >
                         <img 
                           src="https://appcdn.goqii.com/storeimg/82027_1780557626.png" 
                           alt="S.A.F.E. Score Analysis"
-                          className="w-full h-full object-cover rounded-2xl"
+                          className="w-full h-full object-contain bg-[#0F172A] rounded-2xl"
                           referrerPolicy="no-referrer"
+                          loading="eager"
+                          style={{
+                            imageRendering: "-webkit-optimize-contrast",
+                            // @ts-ignore
+                            imageRendering: "high-quality",
+                            transform: "translate3d(0,0,0)",
+                            WebkitTransform: "translate3d(0,0,0)",
+                            backfaceVisibility: "hidden",
+                            WebkitBackfaceVisibility: "hidden"
+                          }}
                         />
                       </motion.div>
                     )}
@@ -289,12 +329,28 @@ export default function DailyHealthIntelligence() {
                         exit={{ opacity: 0, x: -20 }}
                         transition={{ duration: 0.3 }}
                         className="absolute inset-0 flex items-center justify-center overflow-hidden"
+                        style={{
+                          transform: "translate3d(0,0,0)",
+                          WebkitTransform: "translate3d(0,0,0)",
+                          backfaceVisibility: "hidden",
+                          WebkitBackfaceVisibility: "hidden"
+                        }}
                       >
                         <img 
                           src="https://appcdn.goqii.com/storeimg/62662_1780558012.png" 
                           alt="Secure Health Locker"
-                          className="w-full h-full object-cover rounded-2xl"
+                          className="w-full h-full object-contain bg-[#0F172A] rounded-2xl"
                           referrerPolicy="no-referrer"
+                          loading="eager"
+                          style={{
+                            imageRendering: "-webkit-optimize-contrast",
+                            // @ts-ignore
+                            imageRendering: "high-quality",
+                            transform: "translate3d(0,0,0)",
+                            WebkitTransform: "translate3d(0,0,0)",
+                            backfaceVisibility: "hidden",
+                            WebkitBackfaceVisibility: "hidden"
+                          }}
                         />
                       </motion.div>
                     )}
@@ -307,12 +363,28 @@ export default function DailyHealthIntelligence() {
                         exit={{ opacity: 0, x: -20 }}
                         transition={{ duration: 0.3 }}
                         className="absolute inset-0 flex items-center justify-center overflow-hidden"
+                        style={{
+                          transform: "translate3d(0,0,0)",
+                          WebkitTransform: "translate3d(0,0,0)",
+                          backfaceVisibility: "hidden",
+                          WebkitBackfaceVisibility: "hidden"
+                        }}
                       >
                         <img 
                           src="https://appcdn.goqii.com/storeimg/83435_1780558423.png" 
                           alt="Coaching & Guidance"
-                          className="w-full h-full object-cover rounded-2xl"
+                          className="w-full h-full object-contain bg-[#0F172A] rounded-2xl"
                           referrerPolicy="no-referrer"
+                          loading="eager"
+                          style={{
+                            imageRendering: "-webkit-optimize-contrast",
+                            // @ts-ignore
+                            imageRendering: "high-quality",
+                            transform: "translate3d(0,0,0)",
+                            WebkitTransform: "translate3d(0,0,0)",
+                            backfaceVisibility: "hidden",
+                            WebkitBackfaceVisibility: "hidden"
+                          }}
                         />
                       </motion.div>
                     )}
@@ -325,12 +397,28 @@ export default function DailyHealthIntelligence() {
                         exit={{ opacity: 0, x: -20 }}
                         transition={{ duration: 0.3 }}
                         className="absolute inset-0 flex items-center justify-center overflow-hidden"
+                        style={{
+                          transform: "translate3d(0,0,0)",
+                          WebkitTransform: "translate3d(0,0,0)",
+                          backfaceVisibility: "hidden",
+                          WebkitBackfaceVisibility: "hidden"
+                        }}
                       >
                         <img 
                           src="https://appcdn.goqii.com/storeimg/70019_1780558199.png" 
                           alt="Rewards & Motivation"
-                          className="w-full h-full object-cover rounded-2xl"
+                          className="w-full h-full object-contain bg-[#0F172A] rounded-2xl"
                           referrerPolicy="no-referrer"
+                          loading="eager"
+                          style={{
+                            imageRendering: "-webkit-optimize-contrast",
+                            // @ts-ignore
+                            imageRendering: "high-quality",
+                            transform: "translate3d(0,0,0)",
+                            WebkitTransform: "translate3d(0,0,0)",
+                            backfaceVisibility: "hidden",
+                            WebkitBackfaceVisibility: "hidden"
+                          }}
                         />
                       </motion.div>
                     )}

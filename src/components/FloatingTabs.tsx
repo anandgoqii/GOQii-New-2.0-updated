@@ -1,6 +1,6 @@
 import { useState, useEffect, ComponentType } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { User, Building2, ShieldEllipsis } from "lucide-react";
+import { User, Building2, ShieldEllipsis, ShieldCheck } from "lucide-react";
 
 interface TabItem {
   id: string;
@@ -21,6 +21,12 @@ const TABS: TabItem[] = [
     label: "Enterprises",
     icon: Building2,
     targetId: "section-ecosystem",
+  },
+  {
+    id: "insurers",
+    label: "Insurers",
+    icon: ShieldCheck,
+    targetId: "section-stories",
   },
   {
     id: "public-health",

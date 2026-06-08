@@ -89,7 +89,7 @@ export default function TrustRegulatory() {
       desc: "UK National Cyber Security Centre Standards"
     },
     {
-      img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-7.png",
+      img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-8.png",
       title: "DCB0129",
       desc: "Clinical Risk Management for Health IT"
     }

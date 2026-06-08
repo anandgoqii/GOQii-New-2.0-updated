@@ -12,7 +12,7 @@ const STORIES = [
     subtext: "The biggest change wasn't my weight. It was building habits I could sustain.",
     metric: "15kg+",
     metricLabel: "Weight Loss",
-    videoClip: "https://appcdn.goqii.com/storeimg/2975_1779880105.png",
+    videoClip: "https://appcdn.goqii.com/storeimg/1455_1780915912.jpg",
     colorOverlay: "rgba(43, 196, 138, 0.04)",
     videoUrl: "https://www.youtube.com/embed/wfUk6-A891k",
     impact: [
@@ -56,7 +56,7 @@ const STORIES = [
     category: "PUBLIC HEALTH INITIATIVES",
     title: "HEALTHIER COMMUNITIES. BETTER OUTCOMES.",
     pillLabel: "Public Health",
-    desc: "Supporting governments and public health organizations through prevention-first healthcare and continuous population engagement.",
+    desc: "Supporting governments and public health systems through prevention-first healthcare and continuous population engagement.",
     subtext: "Extending preventive healthcare beyond hospitals and into everyday life.",
     metric: "15M+",
     metricLabel: "Population Scale",
@@ -64,9 +64,9 @@ const STORIES = [
     colorOverlay: "rgba(43, 196, 138, 0.04)",
     videoUrl: "https://www.youtube.com/embed/jMxC0WCxNYA",
     impact: [
-      { value: "Regional", label: "Health Programs" },
-      { value: "Population", label: "Scale Deployments" },
-      { value: "Community", label: "Health Initiatives" },
+      { value: "Regional Scale", label: "Deployments" },
+      { value: "Community Health", label: "Programs" },
+      { value: "Population Health", label: "Initiatives" },
     ],
     capabilities: [
       "Preventive Care Protocols",
@@ -75,6 +75,30 @@ const STORIES = [
       "Decentralized Risk Interception"
     ],
     cta: "Explore Public Health Solutions →"
+  },
+  {
+    category: "INSURANCE SOLUTIONS & RISK STRATIFICATION",
+    title: "PREVENTIVE HEALTH INTELLIGENCE FOR INSURERS.",
+    pillLabel: "Insurers",
+    desc: "Empowering insurance providers and actuarial systems to stratify risk, reward healthy habits automatically, and engage members before claims arise.",
+    subtext: "We integrated daily health data with risk stratification to lower loss ratios safely.",
+    metric: "34%",
+    metricLabel: "Claims Reduction",
+    videoClip: "https://appcdn.goqii.com/storeimg/74067_1733133593.png",
+    colorOverlay: "rgba(0, 173, 199, 0.04)",
+    videoUrl: "https://www.youtube.com/embed/ycTIWOo_F2g",
+    impact: [
+      { value: "34%", label: "Average Claims Reduction" },
+      { value: "1M+", label: "Lives Covered" },
+      { value: "S&P Global", label: "Validated Underwriting" },
+    ],
+    capabilities: [
+      "Predictive Claims Modeling",
+      "Health Risk Stratification",
+      "Automated Wellness Rewards",
+      "Preventive Health Engagement"
+    ],
+    cta: "Explore Insurer Solutions →"
   },
 ];
 
