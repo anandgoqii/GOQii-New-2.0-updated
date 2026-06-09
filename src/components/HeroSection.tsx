@@ -12,18 +12,20 @@ const slides = [
       { text: "before illness.", highlight: true }
     ],
     subtext: "Continuous health intelligence for people, enterprises and populations.",
-    bgImage: "https://appcdn.goqii.com/storeimg/70278_1780397805.png"
+    bgImage: "https://appcdn.goqii.com/storeimg/70278_1780397805.png",
+    mobileBgImage: "https://appcdn.goqii.com/storeimg/50283_1781000672.jpg"
   },
   {
     id: 2,
-    label: "THE GOQii PLATFORM",
+    label: "GOQii HealthEngage",
     lines: [
       { text: "Predict.", highlight: false },
       { text: "Personalize.", highlight: false },
       { text: "Prevent.", highlight: true }
     ],
     subtext: "GOQii transforms everyday health signals into intelligent actions and better outcomes.",
-    bgImage: "https://appcdn.goqii.com/storeimg/79890_1780900607.jpg"
+    bgImage: "https://appcdn.goqii.com/storeimg/79890_1780900607.jpg",
+    mobileBgImage: "https://appcdn.goqii.com/storeimg/54302_1781000743.jpg"
   },
   {
     id: 3,
@@ -33,13 +35,25 @@ const slides = [
       { text: "every human.", highlight: true }
     ],
     subtext: "Trusted by enterprises, insurers, healthcare providers and governments worldwide.",
-    bgImage: "https://appcdn.goqii.com/storeimg/33596_1780903515.jpg"
+    bgImage: "https://appcdn.goqii.com/storeimg/33596_1780903515.jpg",
+    mobileBgImage: "https://appcdn.goqii.com/storeimg/88832_1781000753.jpg"
   }
 ];
 
 export default function HeroSection({ onExplore }: { onExplore: () => void }) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
+  
+  // Detect if current screen width is mobile
+  useEffect(() => {
+    const checkMobileState = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobileState();
+    window.addEventListener("resize", checkMobileState);
+    return () => window.removeEventListener("resize", checkMobileState);
+  }, []);
   
   // Auto-play the slides
   useEffect(() => {
@@ -77,7 +91,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
               animate={{ opacity: 0.75 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.35 }}
-              src={slides[currentSlide].bgImage}
+              src={isMobile && slides[currentSlide].mobileBgImage ? slides[currentSlide].mobileBgImage : slides[currentSlide].bgImage}
               alt="Serene health reflection portrait"
               className="w-full h-full object-cover object-right md:object-right-center"
               referrerPolicy="no-referrer"

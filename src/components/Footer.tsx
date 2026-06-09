@@ -22,6 +22,38 @@ export default function Footer() {
         return;
       }
       
+      if (targetId === "section-trust-center-page") {
+        if (window.navigateToPage) {
+          window.navigateToPage("trust");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        return;
+      }
+      
+      if (targetId === "section-privacy-policy-page") {
+        if (window.navigateToPage) {
+          window.navigateToPage("privacy");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        return;
+      }
+      
+      if (targetId === "section-terms-of-service-page") {
+        if (window.navigateToPage) {
+          window.navigateToPage("terms");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        return;
+      }
+      
+      if (targetId === "section-careers-page") {
+        if (window.navigateToPage) {
+          window.navigateToPage("careers");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        return;
+      }
+      
       if (window.navigateToPage) {
         window.navigateToPage("home");
       }
@@ -52,7 +84,7 @@ export default function Footer() {
     enterprise: {
       title: "ENTERPRISE",
       links: [
-        { label: "Business to Enterprise", href: "https://goqii.com/healthengage" },
+        { label: "GOQii HealthEngage", href: "https://goqii.com/healthengage" },
         { label: "For Insurance", href: "https://goqii.com/healthengage-insurance" },
         { label: "For Pharma", href: "https://goqii.com/healthengage-pharma" },
         { label: "For Corporate", href: "https://goqii.com/healthengage-corporate" },
@@ -64,15 +96,15 @@ export default function Footer() {
       links: [
         { label: "About Us", href: "#section-about" },
         { label: "Contact Us", href: "#section-final" },
-        { label: "Careers", href: "#section-final" },
+        { label: "Careers", href: "#section-careers-page" },
       ]
     },
     trustLegal: {
       title: "TRUST & LEGAL",
       links: [
-        { label: "Trust Center", href: "#section-trust" },
-        { label: "Privacy Policy", href: "#" },
-        { label: "Terms of Service", href: "#" },
+        { label: "Trust Center", href: "#section-trust-center-page" },
+        { label: "Privacy Policy", href: "#section-privacy-policy-page" },
+        { label: "Terms of Service", href: "#section-terms-of-service-page" },
       ]
     }
   };

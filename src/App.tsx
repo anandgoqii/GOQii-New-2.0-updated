@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, ReactNode } from "react";
 import { motion } from "motion/react";
 import Header from "./components/Header";
 import FloatingTabs from "./components/FloatingTabs";
@@ -12,6 +12,7 @@ import DailyHealthIntelligence from "./components/DailyHealthIntelligence";
 import SectionXPrize from "./components/SectionXPrize";
 import ClinicalMetricsStrip from "./components/ClinicalMetricsStrip";
 import HumanStories from "./components/HumanStories";
+import TheGOQiiPlatform from "./components/TheGOQiiPlatform";
 import TrustRegulatory from "./components/TrustRegulatory";
 import Leadership from "./components/Leadership";
 import AboutGOQii from "./components/AboutGOQii";
@@ -19,15 +20,37 @@ import FinalCTA from "./components/FinalCTA";
 import Footer from "./components/Footer";
 import AboutPage from "./components/AboutPage";
 import SanjeeviniPage from "./components/SanjeeviniPage";
+import TrustCenterPage from "./components/TrustCenterPage";
+import PrivacyPolicyPage from "./components/PrivacyPolicyPage";
+import TermsOfServicePage from "./components/TermsOfServicePage";
+import CareersPage from "./components/CareersPage";
 
 declare global {
   interface Window {
-    navigateToPage?: (pageName: "home" | "about" | "sanjeevini") => void;
+    navigateToPage?: (pageName: "home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers") => void;
   }
 }
 
+interface ScrollRevealSectionProps {
+  children: ReactNode;
+}
+
+function ScrollRevealSection({ children }: ScrollRevealSectionProps) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 35 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+      className="w-full"
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<"home" | "about" | "sanjeevini">("home");
+  const [currentPage, setCurrentPage] = useState<"home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers">("home");
 
   useEffect(() => {
     // Detect initial route
@@ -36,9 +59,17 @@ export default function App() {
       setCurrentPage("sanjeevini");
     } else if (pathName === "about") {
       setCurrentPage("about");
+    } else if (pathName === "trust") {
+      setCurrentPage("trust");
+    } else if (pathName === "privacy") {
+      setCurrentPage("privacy");
+    } else if (pathName === "terms") {
+      setCurrentPage("terms");
+    } else if (pathName === "careers") {
+      setCurrentPage("careers");
     }
 
-    window.navigateToPage = (pageName: "home" | "about" | "sanjeevini") => {
+    window.navigateToPage = (pageName: "home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers") => {
       setCurrentPage(pageName);
       const urlPath = pageName === "home" ? "/" : `/${pageName}`;
       window.history.pushState(null, "", urlPath);
@@ -51,6 +82,14 @@ export default function App() {
         setCurrentPage("sanjeevini");
       } else if (currentPath === "about") {
         setCurrentPage("about");
+      } else if (currentPath === "trust") {
+        setCurrentPage("trust");
+      } else if (currentPath === "privacy") {
+        setCurrentPage("privacy");
+      } else if (currentPath === "terms") {
+        setCurrentPage("terms");
+      } else if (currentPath === "careers") {
+        setCurrentPage("careers");
       } else {
         setCurrentPage("home");
       }
@@ -89,46 +128,85 @@ export default function App() {
           <HeroSection onExplore={handleExplore} />
 
           {/* 2. Section 01: The Problem */}
-          <SectionProblem />
+          <ScrollRevealSection>
+            <SectionProblem />
+          </ScrollRevealSection>
 
           {/* 3. Section 02: The Gap */}
-          <SectionGap />
+          <ScrollRevealSection>
+            <SectionGap />
+          </ScrollRevealSection>
 
           {/* 4. Section 03: The Solution */}
-          <SectionSolution />
+          <ScrollRevealSection>
+            <SectionSolution />
+          </ScrollRevealSection>
 
           {/* 5. Section 04: The Connected Ecosystem */}
-          <ConnectedEcosystem />
+          <ScrollRevealSection>
+            <ConnectedEcosystem />
+          </ScrollRevealSection>
 
           {/* 7. Section 05: Alive O.S. */}
-          <AliveOS />
+          <ScrollRevealSection>
+            <AliveOS />
+          </ScrollRevealSection>
 
           {/* 8. Section 06: Daily Health Intelligence */}
-          <DailyHealthIntelligence />
+          <ScrollRevealSection>
+            <DailyHealthIntelligence />
+          </ScrollRevealSection>
 
           {/* 9. Section 06-XP: Sanjeevini Longevity and Science */}
-          <SectionXPrize />
+          <ScrollRevealSection>
+            <SectionXPrize />
+          </ScrollRevealSection>
 
           {/* 10. Clinical Proof Metrics Strip */}
-          <ClinicalMetricsStrip />
+          <ScrollRevealSection>
+            <ClinicalMetricsStrip />
+          </ScrollRevealSection>
 
-          {/* 11. Section 07: Human Stories */}
-          <HumanStories />
+          {/* 11. Section 07: GOQii HealthEngage */}
+          <ScrollRevealSection>
+            <TheGOQiiPlatform />
+          </ScrollRevealSection>
+
+          {/* 12. Section 08: Human Stories */}
+          <ScrollRevealSection>
+            <HumanStories />
+          </ScrollRevealSection>
 
           {/* 12. Section 08 & 09: Trust + Regulatory */}
-          <TrustRegulatory />
+          <ScrollRevealSection>
+            <TrustRegulatory />
+          </ScrollRevealSection>
 
           {/* 13. Section 10: Leadership */}
-          <Leadership />
+          <ScrollRevealSection>
+            <Leadership />
+          </ScrollRevealSection>
 
           {/* 14. Section 11: About GOQii Journey */}
-          <AboutGOQii />
+          <ScrollRevealSection>
+            <AboutGOQii />
+          </ScrollRevealSection>
 
           {/* 15. Section 14: Final CTA & Closing Interaction */}
-          <FinalCTA />
+          <ScrollRevealSection>
+            <FinalCTA />
+          </ScrollRevealSection>
         </>
       ) : currentPage === "about" ? (
         <AboutPage />
+      ) : currentPage === "trust" ? (
+        <TrustCenterPage />
+      ) : currentPage === "privacy" ? (
+        <PrivacyPolicyPage />
+      ) : currentPage === "terms" ? (
+        <TermsOfServicePage />
+      ) : currentPage === "careers" ? (
+        <CareersPage />
       ) : (
         <SanjeeviniPage />
       )}

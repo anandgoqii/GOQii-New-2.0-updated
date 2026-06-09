@@ -1,6 +1,6 @@
-import { useState, useEffect, ComponentType } from "react";
+import { useState, useEffect, useRef, ComponentType } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { User, Building2, ShieldEllipsis } from "lucide-react";
+import { User, Building2 } from "lucide-react";
 
 interface TabItem {
   id: string;
@@ -20,19 +20,15 @@ const TABS: TabItem[] = [
     id: "enterprises",
     label: "Enterprises",
     icon: Building2,
-    targetId: "section-ecosystem",
-  },
-  {
-    id: "public-health",
-    label: "Public Health",
-    icon: ShieldEllipsis,
-    targetId: "section-trust",
+    targetId: "section-platform",
   },
 ];
 
 export default function FloatingTabs() {
   const [activeTab, setActiveTab] = useState<string>("");
   const [isVisible, setIsVisible] = useState<boolean>(false);
+  const isClickScrolling = useRef(false);
+  const clickScrollTimeout = useRef<any>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,6 +40,8 @@ export default function FloatingTabs() {
       } else {
         setIsVisible(false);
       }
+
+      if (isClickScrolling.current) return;
 
       // Detect active section
       let currentActive = "";
@@ -67,11 +65,24 @@ export default function FloatingTabs() {
     // Run once at start
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (clickScrollTimeout.current) {
+        clearTimeout(clickScrollTimeout.current);
+      }
+    };
   }, []);
 
   const handleTabClick = (targetId: string, id: string) => {
     setActiveTab(id);
+    isClickScrolling.current = true;
+    if (clickScrollTimeout.current) {
+      clearTimeout(clickScrollTimeout.current);
+    }
+    clickScrollTimeout.current = setTimeout(() => {
+      isClickScrolling.current = false;
+    }, 1000);
+
     const element = document.getElementById(targetId);
     if (element) {
       const elementPosition = element.getBoundingClientRect().top + window.scrollY;

@@ -873,170 +873,36 @@ export default function AboutPage() {
                           </Map>
                         </APIProvider>
                       ) : (
-                        <AnimatePresence mode="wait">
-                          <motion.div
-                            key={selectedJurisdiction}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.5 }}
-                            className="absolute inset-0 w-full h-full"
-                          >
-                            {/* Dynamic SVG Styled Roads Map background */}
-                            <svg viewBox="0 0 500 375" className="w-full h-full opacity-90 select-none pointer-events-none" preserveAspectRatio="none">
-                              
-                              {/* Landmass background based on selected place */}
-                              {selectedJurisdiction === "US" && (
-                                <>
-                                  {/* Water Channel */}
-                                  <path d="M 0 0 Q 120 70 200 40 T 400 0" fill="none" stroke="#C5E1FE" strokeWidth="55" className="opacity-95" />
-                                  {/* Park Lands */}
-                                  <rect x="360" y="20" width="120" height="85" rx="8" fill="#D3F5D3" />
-                                  <rect x="230" y="170" width="90" height="50" rx="12" fill="#D4EFDF" />
-                                  
-                                  {/* Minor Grid streets */}
-                                  <path d="M0,80 L500,80 M0,160 L500,160 M0,240 L500,240 M0,320 L500,320" stroke="#FFFFFF" strokeWidth="3" />
-                                  <path d="M100,0 L100,375 M220,0 L220,375 M330,0 L330,375 M440,0 L440,375" stroke="#FFFFFF" strokeWidth="3" strokeDasharray="5,3" />
-
-                                  {/* Main Highways (Thick grey/yellow roads) */}
-                                  {/* El Camino Real curved path */}
-                                  <path d="M 120 375 Q 150 150 250 130 T 420 80" fill="none" stroke="#FFFFFF" strokeWidth="18" />
-                                  <path d="M 120 375 Q 150 150 250 130 T 420 80" fill="none" stroke="#D5E0D8" strokeWidth="14" />
-                                  
-                                  {/* Hwy 101 route */}
-                                  <path d="M 450 375 C 400 250 420 120 500 30" fill="none" stroke="#FFFFFF" strokeWidth="24" />
-                                  <path d="M 450 375 C 400 250 420 120 500 30" fill="none" stroke="#90C3D4" strokeWidth="20" />
-
-                                  {/* Labels of places */}
-                                  <text x="375" y="60" className="font-sans text-[8.5px] font-bold fill-slate-500">Burgess Park</text>
-                                  <text x="365" y="150" className="font-sans text-[8.5px] font-bold fill-slate-500">SRI International</text>
-                                  <text x="210" y="200" className="font-sans text-[8.5px] font-bold fill-slate-500 text-center">Stanford Univ</text>
-                                  <text x="180" y="212" className="font-sans text-[8px] font-semibold fill-slate-400">HQ - Silicon Valley</text>
-                                  <text x="440" y="300" className="font-sans text-[8.5px] font-bold fill-slate-500">Meta HQ</text>
-
-                                  {/* Road labels */}
-                                  <text x="175" y="280" transform="rotate(-65 175 280)" className="font-mono text-[7px] font-extrabold fill-slate-400 tracking-wider">El Camino Real</text>
-                                  <text x="440" y="240" transform="rotate(78 440 240)" className="font-mono text-[7.5px] font-bold fill-slate-600 tracking-wider">Highway 101</text>
-                                </>
-                              )}
-
-                              {selectedJurisdiction === "UK" && (
-                                <>
-                                  {/* Water Channel - River channel */}
-                                  <path d="M 0 320 C 150 350 300 280 500 340" fill="none" stroke="#C5E1FE" strokeWidth="70" className="opacity-95" />
-                                  {/* Park Lands */}
-                                  <rect x="180" y="90" width="130" height="90" rx="12" fill="#D3F5D3" />
-                                  <rect x="40" y="30" width="100" height="120" rx="6" fill="#D4EFDF" />
-
-                                  {/* Minor Grid streets */}
-                                  <path d="M0,100 L500,100 M0,200 L500,200 M0,300 L500,300" stroke="#FFFFFF" strokeWidth="3" />
-                                  <path d="M150,0 L150,375 M350,0 L350,375" stroke="#FFFFFF" strokeWidth="3" />
-
-                                  {/* Main Highways */}
-                                  <path d="M 300 375 L 300 0" fill="none" stroke="#FFFFFF" strokeWidth="18" />
-                                  <path d="M 300 375 L 300 0" fill="none" stroke="#D5E0D8" strokeWidth="14" />
-                                  
-                                  {/* Hangleton Link Rd selection */}
-                                  <path d="M 0 170 Q 250 170 500 120" fill="none" stroke="#FFFFFF" strokeWidth="22" />
-                                  <path d="M 0 170 Q 250 170 500 120" fill="none" stroke="#E5F1E2" strokeWidth="18" />
-
-                                  {/* Labels */}
-                                  <text x="210" y="140" className="font-sans text-[8.5px] font-bold fill-slate-500">Hove Park Playground</text>
-                                  <text x="50" y="90" className="font-sans text-[8.5px] font-bold fill-slate-500">Cuckmere Close Park</text>
-                                  <text x="350" y="80" className="font-sans text-[8.5px] font-bold fill-slate-500">Blatchington Mill</text>
-                                  <text x="340" y="240" className="font-sans text-[8.5px] font-bold fill-slate-500">Goldstone Retail</text>
-
-                                  {/* Road labels */}
-                                  <text x="290" y="250" transform="rotate(-90 290 250)" className="font-mono text-[7px] font-extrabold fill-slate-400 tracking-wider">West Way</text>
-                                </>
-                              )}
-
-                              {selectedJurisdiction === "IN" && (
-                                <>
-                                  {/* Water Channel - Mumbai Bay / Creek */}
-                                  <path d="M 380 0 C 320 150 420 300 500 375" fill="none" stroke="#C5E1FE" strokeWidth="120" />
-                                  {/* Park Lands */}
-                                  <rect x="20" y="40" width="140" height="90" rx="16" fill="#D3F5D3" />
-                                  <rect x="220" y="240" width="100" height="70" rx="8" fill="#D4EFDF" />
-
-                                  {/* Minor Grid streets */}
-                                  <path d="M0,120 L500,120 M0,240 L500,240" stroke="#FFFFFF" strokeWidth="2.5" />
-                                  <path d="M120,0 L120,375 M280,0 L280,375" stroke="#FFFFFF" strokeWidth="2.5" />
-
-                                  {/* Main Highways / Roads */}
-                                  <path d="M 250 0 C 250 150 120 280 120 375" fill="none" stroke="#FFFFFF" strokeWidth="20" />
-                                  <path d="M 250 0 C 250 150 120 280 120 375" fill="none" stroke="#D5E0D8" strokeWidth="16" />
-
-                                  {/* Trombay Freeway path */}
-                                  <path d="M 0 140 Q 220 160 500 240" fill="none" stroke="#FFFFFF" strokeWidth="24" />
-                                  <path d="M 0 140 Q 220 160 500 240" fill="none" stroke="#FCE8E6" strokeWidth="20" />
-
-                                  {/* Labels */}
-                                  <text x="40" y="90" className="font-sans text-[8.5px] font-bold fill-slate-500">BARC Nature Reserve</text>
-                                  <text x="240" y="80" className="font-sans text-[8.5px] font-bold fill-slate-500">Govandi Metro Station</text>
-                                  <text x="140" y="200" className="font-sans text-[8.5px] font-bold fill-slate-500">Fine Arts Society</text>
-                                  <text x="240" y="280" className="font-sans text-[8.5px] font-bold fill-slate-500">Tata Thermal Plant</text>
-
-                                  {/* Road labels */}
-                                  <text x="100" y="320" transform="rotate(-75 100 320)" className="font-mono text-[7px] font-extrabold fill-slate-400 tracking-wider">Govandi Station Rd</text>
-                                  <text x="320" y="210" transform="rotate(18 320 210)" className="font-mono text-[7.5px] font-bold fill-slate-600 tracking-wider">Sion - Trombay Rd</text>
-                                </>
-                              )}
-
-                              {/* Location Red Pin exactly centered */}
-                              <g transform="translate(250, 187)">
-                                {/* Pin glowing radar */}
-                                <circle cx="0" cy="0" r="16" fill="#EF4444" className="opacity-20 animate-ping" />
-                                <circle cx="0" cy="0" r="6" fill="#EF4444" className="opacity-40 animate-pulse" />
-                                
-                                {/* Map Pin custom label */}
-                                <g transform="translate(-15, -45)">
-                                  <rect x="0" y="0" width="30" height="15" rx="3" fill="#FFFFFF" stroke="#EF4444" strokeWidth="1" className="shadow-sm" />
-                                  <text x="15" y="11" textAnchor="middle" className="font-mono text-[8.5px] font-black fill-slate-800">
-                                    {selectedJurisdiction === "US" ? "300" : selectedJurisdiction === "UK" ? "BN3" : "400"}
-                                  </text>
-                                </g>
-
-                                {/* Standard Google Pin Path shape */}
-                                <path d="M0,0 C-8,-8 -12,-16 -12,-24 C-12,-32 -6,-36 0,-36 C6,-36 12,-32 12,-24 C12,-16 8,-8 0,0 Z" fill="#EA4335" />
-                                <circle cx="0" cy="-24" r="4.5" fill="#FFFFFF" />
-                              </g>
-
-                              {/* Highway signs */}
-                              {selectedJurisdiction === "US" && (
-                                <g transform="translate(425, 115)">
-                                  <rect width="15" height="10" rx="2" fill="#1B5E20" />
-                                  <text x="7.5" y="8" textAnchor="middle" className="font-sans text-[6.5px] font-bold fill-white">131</text>
-                                </g>
-                              )}
-                              {selectedJurisdiction === "UK" && (
-                                <g transform="translate(415, 145)">
-                                  <rect width="15" height="10" rx="2" fill="#0D47A1" />
-                                  <text x="7.5" y="8" textAnchor="middle" className="font-sans text-[6.5px] font-bold fill-white">A27</text>
-                                </g>
-                              )}
-
-                            </svg>
-                          </motion.div>
-                        </AnimatePresence>
+                        <iframe
+                          key={selectedJurisdiction}
+                          title={`GOQii Location - ${selectedJurisdiction}`}
+                          width="100%"
+                          height="100%"
+                          style={{ border: 0 }}
+                          className="absolute inset-0 w-full h-full"
+                          loading="lazy"
+                          allowFullScreen
+                          referrerPolicy="no-referrer-when-downgrade"
+                          src={`https://maps.google.com/maps?q=${encodeURIComponent(
+                            MAP_COMPONENTS[selectedJurisdiction as keyof typeof MAP_COMPONENTS].fullAddress
+                          )}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
+                        />
                       )}
                     </div>
 
                     {/* Interactive Google Map online/offline status overlay badge */}
                     <div className="absolute top-4 right-4 z-20 flex items-center gap-1.5 select-none">
-                      {HAS_VALID_MAPS_KEY ? (
-                        <div className="flex items-center gap-1.5 bg-emerald-50 focus:outline-hidden border border-emerald-500/30 text-emerald-600 font-mono text-[10px] font-black px-2.5 py-1 rounded-full shadow-sm text-center">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                          LIVE GOOGLE MAP
-                        </div>
-                      ) : (
+                      <div className="flex items-center gap-1.5 bg-emerald-50 focus:outline-hidden border border-emerald-500/30 text-emerald-600 font-mono text-[10px] font-black px-2.5 py-1 rounded-full shadow-sm text-center">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        LIVE GOOGLE MAP
+                      </div>
+                      {!HAS_VALID_MAPS_KEY && (
                         <button
                           onClick={() => setShowMapInstructions(true)}
-                          className="flex items-center gap-1.5 bg-amber-50 hover:bg-amber-100 border border-amber-500/30 text-amber-700 font-sans text-[10px] font-black px-3 py-1 rounded-full shadow-sm cursor-pointer hover:scale-[1.03] transition-all"
-                          title="Click to enable active Google Maps integration"
+                          className="w-5 h-5 rounded-full bg-white/90 hover:bg-white border border-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center font-sans font-bold text-xs cursor-pointer shadow-xs hover:scale-105 transition-all"
+                          title="Get API Setup Instructions"
                         >
-                          <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-bounce" />
-                          DEMO MODE (SETUP MAP)
+                          i
                         </button>
                       )}
                     </div>

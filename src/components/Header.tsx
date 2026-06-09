@@ -135,7 +135,7 @@ export default function Header() {
       dropdownItems: [
         { label: "Personal Care", desc: "1-on-1 certified human coaching tailored for preventative vitality.", targetId: "section-solution", href: "https://consult.goqii.com/" },
         { label: "Chronic Care", desc: "Intelligent symptom tracking, clinical logs, and expert compliance.", targetId: "section-solution" },
-        { label: "Insurance Plus", desc: "Active lifestyle rewards teamed with wellness policy upgrades.", targetId: "section-gap", href: "https://store.goqii.com/goqii-insureplus" },
+        { label: "Insure Plus", desc: "Active lifestyle rewards teamed with wellness policy upgrades.", targetId: "section-gap", href: "https://store.goqii.com/goqii-insureplus" },
         { label: "Longevity", desc: "Comprehensive cellular health biomarkers, DNA analytics, and ALIVE O.S.", targetId: "section-about", href: "https://goqii.com/superlife/" },
         { label: "Nutriforge", desc: "Custom diagnostics & precise nutrient-tracking integration loops.", targetId: "section-ecosystem", href: "https://goqii.com/nutrigenius" }
       ]
