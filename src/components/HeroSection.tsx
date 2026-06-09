@@ -76,7 +76,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
     <div
       id="hero-section"
       ref={sectionRef}
-      className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-[#F8FAFB] px-6 py-12 md:px-16 md:py-16 select-none"
+      className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-[#F8FAFB] py-12 md:py-16 select-none"
     >
       {/* Absolute image background with 20% parallax translation */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
@@ -116,104 +116,106 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
       <Particles count={25} color="bg-[#2BC48A]" speedMultiplier={0.8} />
 
       {/* Hero Content Area */}
-      <div className="relative z-10 max-w-3xl mr-auto my-auto flex flex-col items-start text-left mt-20 md:mt-32 w-full lg:pl-12">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -15 }}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="flex flex-col items-start text-left w-full min-h-[300px] sm:min-h-[260px] md:min-h-[320px] justify-center"
-          >
-            {/* Label */}
-            <div className="label-caps mb-6 md:mb-8 tracking-[0.25em] text-[#2BC48A] font-bold">
-              {slides[currentSlide].label}
-            </div>
-
-            {/* Big Large Typography (Reveal line by line using the explicit hero-heading class) */}
-            <h1 className="hero-heading text-[#0F172A] mb-8 flex flex-col items-start leading-[1.08] min-h-[84px] md:min-h-[112px] lg:min-h-[180px]">
-              {slides[currentSlide].lines.map((line, idx) => (
-                <span key={idx} className="block overflow-hidden pb-1">
-                  <span className={`inline-block ${line.highlight ? "text-[#2BC48A]" : "text-[#0F172A]"}`}>
-                    {line.text}
-                  </span>
-                </span>
-              ))}
-            </h1>
-
-            {/* Subtext */}
-            <p className="text-xs sm:text-sm md:text-base font-normal text-[#667085] max-w-md md:max-w-lg leading-relaxed mb-4">
-              <SmartText>{slides[currentSlide].subtext}</SmartText>
-            </p>
-
-            {/* XPRIZE Premium Badge */}
-            <div className="inline-flex items-center gap-3 bg-[#FFFFFF]/90 border border-[#E8EDF2] py-2.5 px-4 rounded-xl shadow-[0_8px_20px_rgba(15,23,42,0.02)] mt-4 mb-2">
-              <span className="text-lg">🏆</span>
-              <div className="flex flex-col text-left">
-                <span className="text-[11px] font-black tracking-wider text-[#0F172A] uppercase">
-                  XPRIZE Healthspan Semifinalist
-                </span>
-                <span className="text-[9px] font-extrabold text-[#667085] uppercase tracking-widest mt-0.5">
-                  $101M Global Competition
-                </span>
-              </div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
-          className="mt-4"
-        >
-          <motion.button
-            onClick={onExplore}
-            whileHover={{ scale: 1.02, boxShadow: "0 0 25px rgba(43, 196, 138, 0.3)" }}
-            whileTap={{ scale: 0.98 }}
-            className="px-8 py-4 bg-[#0F172A] text-white text-sm font-semibold tracking-wider uppercase rounded-full glow-accent cursor-pointer transition-shadow"
-          >
-            Explore GOQii
-          </motion.button>
-        </motion.div>
-
-        {/* Slide indicators / dots */}
-        <div className="flex items-center justify-start gap-3 mt-8">
-          {slides.map((slide, index) => (
-            <button
-              key={slide.id}
-              onClick={() => setCurrentSlide(index)}
-              className="group p-1 cursor-pointer transition-transform"
-              aria-label={`Go to slide ${index + 1}`}
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex-grow flex flex-col justify-center px-6 md:px-16">
+        <div className="relative max-w-3xl mr-auto my-auto flex flex-col items-start text-left mt-20 md:mt-32 w-full">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -15 }}
+              transition={{ duration: 0.35, ease: "easeInOut" }}
+              className="flex flex-col items-start text-left w-full min-h-[300px] sm:min-h-[260px] md:min-h-[320px] justify-center"
             >
-              <div
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  currentSlide === index ? "w-8 bg-[#2BC48A]" : "w-1.5 bg-[#667085]/30 hover:bg-[#667085]/60"
-                }`}
-              />
-            </button>
-          ))}
-        </div>
+              {/* Label */}
+              <div className="label-caps mb-6 md:mb-8 tracking-[0.25em] text-[#2BC48A] font-bold">
+                {slides[currentSlide].label}
+              </div>
 
-        {/* Enterprise Signals Proof Strip */}
-        <div className="relative z-10 w-full border-t border-[#E8EDF2] pt-5 mt-6 grid grid-cols-2 sm:grid-cols-4 gap-y-5 gap-x-4 text-left max-w-xl">
-          <div>
-            <div className="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight leading-none">5M+</div>
-            <div className="text-[9px] font-mono tracking-widest text-[#667085] uppercase mt-1 font-bold">Active Users</div>
+              {/* Big Large Typography (Reveal line by line using the explicit hero-heading class) */}
+              <h1 className="hero-heading text-[#0F172A] mb-8 flex flex-col items-start leading-[1.08] min-h-[84px] md:min-h-[112px] lg:min-h-[180px]">
+                {slides[currentSlide].lines.map((line, idx) => (
+                  <span key={idx} className="block overflow-hidden pb-1">
+                    <span className={`inline-block ${line.highlight ? "text-[#2BC48A]" : "text-[#0F172A]"}`}>
+                      {line.text}
+                    </span>
+                  </span>
+                ))}
+              </h1>
+
+              {/* Subtext */}
+              <p className="text-xs sm:text-sm md:text-base font-normal text-[#667085] max-w-md md:max-w-lg leading-relaxed mb-4">
+                <SmartText>{slides[currentSlide].subtext}</SmartText>
+              </p>
+
+              {/* XPRIZE Premium Badge */}
+              <div className="inline-flex items-center gap-3 bg-[#FFFFFF]/90 border border-[#E8EDF2] py-2.5 px-4 rounded-xl shadow-[0_8px_20px_rgba(15,23,42,0.02)] mt-4 mb-2">
+                <span className="text-lg">🏆</span>
+                <div className="flex flex-col text-left">
+                  <span className="text-[11px] font-black tracking-wider text-[#0F172A] uppercase">
+                    XPRIZE Healthspan Semifinalist
+                  </span>
+                  <span className="text-[9px] font-extrabold text-[#667085] uppercase tracking-widest mt-0.5">
+                    $101M Global Competition
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
+            className="mt-4"
+          >
+            <motion.button
+              onClick={onExplore}
+              whileHover={{ scale: 1.02, boxShadow: "0 0 25px rgba(43, 196, 138, 0.3)" }}
+              whileTap={{ scale: 0.98 }}
+              className="px-8 py-4 bg-[#0F172A] text-white text-sm font-semibold tracking-wider uppercase rounded-full glow-accent cursor-pointer transition-shadow"
+            >
+              Explore GOQii
+            </motion.button>
+          </motion.div>
+
+          {/* Slide indicators / dots */}
+          <div className="flex items-center justify-start gap-3 mt-8">
+            {slides.map((slide, index) => (
+              <button
+                key={slide.id}
+                onClick={() => setCurrentSlide(index)}
+                className="group p-1 cursor-pointer transition-transform"
+                aria-label={`Go to slide ${index + 1}`}
+              >
+                <div
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    currentSlide === index ? "w-8 bg-[#2BC48A]" : "w-1.5 bg-[#667085]/30 hover:bg-[#667085]/60"
+                  }`}
+                />
+              </button>
+            ))}
           </div>
-          <div>
-            <div className="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight leading-none">300+</div>
-            <div className="text-[9px] font-mono tracking-widest text-[#667085] uppercase mt-1 font-bold">Enterprise Partners</div>
-          </div>
-          <div>
-            <div className="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight leading-none">Fortune 500</div>
-            <div className="text-[9px] font-mono tracking-widest text-[#667085] uppercase mt-1 font-bold">Deployments</div>
-          </div>
-          <div>
-            <div className="text-base sm:text-lg font-black text-[#0F172A] tracking-tight leading-tight">NHS Primary Care</div>
-            <div className="text-[8.5px] font-mono tracking-wider text-[#667085] uppercase mt-0.5 font-bold leading-tight">Modality Partnership</div>
+
+          {/* Enterprise Signals Proof Strip */}
+          <div className="relative z-10 w-full border-t border-[#E8EDF2] pt-5 mt-6 grid grid-cols-2 sm:grid-cols-4 gap-y-5 gap-x-4 text-left max-w-xl">
+            <div>
+              <div className="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight leading-none">5M+</div>
+              <div className="text-[9px] font-mono tracking-widest text-[#667085] uppercase mt-1 font-bold">Active Users</div>
+            </div>
+            <div>
+              <div className="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight leading-none">300+</div>
+              <div className="text-[9px] font-mono tracking-widest text-[#667085] uppercase mt-1 font-bold">Enterprise Partners</div>
+            </div>
+            <div>
+              <div className="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight leading-none">Fortune 500</div>
+              <div className="text-[9px] font-mono tracking-widest text-[#667085] uppercase mt-1 font-bold">Deployments</div>
+            </div>
+            <div>
+              <div className="text-base sm:text-lg font-black text-[#0F172A] tracking-tight leading-tight">NHS Primary Care</div>
+              <div className="text-[8.5px] font-mono tracking-wider text-[#667085] uppercase mt-0.5 font-bold leading-tight">Modality Partnership</div>
+            </div>
           </div>
         </div>
       </div>
