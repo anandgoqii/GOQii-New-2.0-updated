@@ -257,7 +257,10 @@ export default function AliveOS() {
               {/* Soft decorative background glow */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] bg-[#2BC48A]/5 rounded-full blur-[65px] pointer-events-none z-0" />
 
-              <div className="relative z-10 w-full flex flex-col items-center justify-center gap-3">
+              <div 
+                className="relative z-10 w-full flex flex-col items-center justify-center gap-3"
+                style={{ transform: `scale(${scale})`, transformOrigin: "top center" }}
+              >
                 
                 {/* STAGE 1: AI Intelligence */}
                 <motion.div 
@@ -404,7 +407,7 @@ export default function AliveOS() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 items-center max-w-4xl mx-auto opacity-80 hover:opacity-100 transition-opacity duration-300">
             
             {/* Badge 1: HIPAA */}
-            <div className="flex items-center gap-3 justify-center sm:justify-start pl-2 sm:pl-6 border-r border-[#E8EDF2]/65 last:border-0">
+            <div className="flex items-center gap-3 justify-center sm:justify-start pl-2 sm:pl-6 border-r border-[#E8EDF2]/65 sm:border-r">
               <div className="w-10 h-10 rounded-full bg-[#E5F7F0] flex items-center justify-center text-[#2BC48A] shrink-0">
                 <ShieldCheck className="w-5.5 h-5.5" strokeWidth={2} />
               </div>
@@ -415,7 +418,7 @@ export default function AliveOS() {
             </div>
 
             {/* Badge 2: SOC 2 TYPE II */}
-            <div className="flex items-center gap-3 justify-center sm:justify-start pl-2 sm:pl-6 border-r border-[#E8EDF2]/65 last:border-0 md:border-r">
+            <div className="flex items-center gap-3 justify-center sm:justify-start pl-2 sm:pl-6 border-r-0 lg:border-r border-[#E8EDF2]/65">
               <div className="w-10 h-10 rounded-full bg-[#E5F7F0] flex items-center justify-center text-[#2BC48A] shrink-0">
                 <Lock className="w-5 h-5" strokeWidth={2} />
               </div>
@@ -426,7 +429,7 @@ export default function AliveOS() {
             </div>
 
             {/* Badge 3: GDPR Ready */}
-            <div className="flex items-center gap-3 justify-center sm:justify-start pl-2 sm:pl-6 border-r border-[#E8EDF2]/65 last:border-0">
+            <div className="flex items-center gap-3 justify-center sm:justify-start pl-2 sm:pl-6 border-r border-[#E8EDF2]/65 sm:border-r">
               <div className="w-10 h-10 rounded-full bg-[#E5F7F0] flex items-center justify-center text-[#2BC48A] shrink-0">
                 <BadgeCheck className="w-5.5 h-5.5" strokeWidth={2} />
               </div>
@@ -437,7 +440,7 @@ export default function AliveOS() {
             </div>
 
             {/* Badge 4: NHS DCB0129 */}
-            <div className="flex items-center gap-3 justify-center sm:justify-start pl-2 sm:pl-6 last:border-0">
+            <div className="flex items-center gap-3 justify-center sm:justify-start pl-2 sm:pl-6 border-0">
               <div className="w-10 h-10 rounded-full bg-[#E5F7F0] flex items-center justify-center text-[#2BC48A] shrink-0">
                 <Activity className="w-5.5 h-5.5" strokeWidth={2} />
               </div>

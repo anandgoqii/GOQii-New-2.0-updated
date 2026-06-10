@@ -413,7 +413,7 @@ export default function ConnectedEcosystem() {
           </div>
 
           {/* Module 3: Actions Completed */}
-          <div className="flex items-center gap-4 border-t lg:border-t-0 lg:border-l border-slate-200/60 pt-6 lg:pt-0 lg:pl-8">
+          <div className="flex items-center gap-4 border-t sm:border-t lg:border-t-0 lg:border-l border-slate-200/60 pt-6 sm:pt-6 lg:pt-0 sm:pl-0 lg:pl-8">
             {/* Glowing Icon Badge (Left) */}
             <div className="w-12 h-12 rounded-full bg-[#F3E8FF] text-[#A855F7] border border-[#A855F7]/40 flex items-center justify-center shrink-0">
               <CheckCircle className="w-6 h-6" />
@@ -433,7 +433,7 @@ export default function ConnectedEcosystem() {
           </div>
 
           {/* Module 4: Health Trend */}
-          <div className="flex items-center gap-4 border-t lg:border-t-0 lg:border-l border-slate-200/60 pt-6 lg:pt-0 lg:pl-8">
+          <div className="flex items-center gap-4 border-t sm:border-t lg:border-t-0 sm:border-l lg:border-l border-slate-200/60 pt-6 sm:pt-6 lg:pt-0 sm:pl-6 lg:pl-8">
             {/* Glowing Icon Badge (Left) */}
             <div className="w-12 h-12 rounded-full bg-[#FFEDD5] text-[#F97316] border border-[#F97316]/40 flex items-center justify-center shrink-0">
               <Flame className="w-6 h-6" />

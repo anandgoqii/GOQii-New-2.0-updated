@@ -189,7 +189,7 @@ export default function SectionXPrize() {
             <div className="relative w-full h-full rounded-[24px] overflow-hidden bg-[#FAFBFB] flex items-center justify-center p-4">
               <img
                 src="https://appcdn.goqii.com/storeimg/20784_1780386295.png"
-                alt="Sanjeevini Longevity Infographic"
+                alt="Sanjeevini Longevity Intelligence Framework"
                 className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-[1.025]"
                 referrerPolicy="no-referrer"
               />
