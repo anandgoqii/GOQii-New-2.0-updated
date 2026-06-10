@@ -43,22 +43,25 @@ export default function FloatingTabs() {
 
       if (isClickScrolling.current) return;
 
-      // Detect active section
+      // Detect active section based on respective section ranges
+      const rectIntel = document.getElementById("section-intelligence")?.getBoundingClientRect();
+      const rectPlatform = document.getElementById("section-platform")?.getBoundingClientRect();
+      const rectStories = document.getElementById("section-stories")?.getBoundingClientRect();
+
       let currentActive = "";
-      for (const tab of TABS) {
-        const element = document.getElementById(tab.targetId);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          // If the element is within the viewport
-          if (rect.top <= window.innerHeight * 0.4 && rect.bottom >= window.innerHeight * 0.1) {
-            currentActive = tab.id;
+      const threshold = window.innerHeight * 0.4;
+
+      if (rectIntel && rectIntel.top <= threshold) {
+        if (!rectPlatform || rectPlatform.top > threshold) {
+          currentActive = "individuals";
+        } else if (rectPlatform && rectPlatform.top <= threshold) {
+          if (!rectStories || rectStories.top > threshold) {
+            currentActive = "enterprises";
           }
         }
       }
-      
-      if (currentActive) {
-        setActiveTab(currentActive);
-      }
+
+      setActiveTab(currentActive);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
