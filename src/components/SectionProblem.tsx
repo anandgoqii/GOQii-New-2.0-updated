@@ -78,7 +78,7 @@ export default function SectionProblem() {
             className="absolute -inset-8 w-[calc(100%+64px)] h-[calc(100%+64px)] pointer-events-none"
           >
             <img
-              src="https://appcdn.goqii.com/storeimg/11912_1780901386.png"
+              src="https://appcdn.goqii.com/storeimg/69388_1781074885.png"
               alt="Behavior Change Ecosystem Visualization"
               className="w-full h-full object-cover brightness-100 contrast-[1.03] opacity-95 scale-100"
               referrerPolicy="no-referrer"
