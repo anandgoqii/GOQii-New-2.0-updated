@@ -133,7 +133,7 @@ export default function AliveOS() {
                     <h4 className="text-[15px] font-black text-[#0F172A] font-sans">DETECT</h4>
                   </div>
                   <p className="text-xs text-[#475467] leading-relaxed mt-1 font-sans">
-                    Continuously aggregates silent biological markers (resting HR, HRV, sleep metrics, blood diagnostics) to map your baseline and identify subtle signs of stress.
+                    Continuously aggregates biological markers (resting HR, HRV, sleep metrics, blood diagnostics) to map your baseline and identify subtle signs of stress.
                   </p>
                 </div>
                 {hoveredNode === "detection" && (
@@ -218,174 +218,173 @@ export default function AliveOS() {
               </div>
 
               <div className="flex items-center gap-2 mb-2">
-                <span className="inline-flex items-center justify-center py-1 px-2.5 rounded-full text-[9px] font-black tracking-wider bg-[#2BC48A] text-white uppercase select-none">
-                  PROPRIETARY MOTOR
+                <span className="inline-flex items-center justify-center py-1 px-2.5 rounded-full text-[9px] font-black tracking-wider bg-[#2BC48A] text-white uppercase select-none font-mono">
+                  PROPRIETARY ENGINE
                 </span>
                 <h4 className="text-sm font-black text-[#0F172A] uppercase tracking-wide">
                   Behavioral Neurocoding™
                 </h4>
               </div>
 
+              <div className="text-xs font-bold text-[#0F172A] mb-2 leading-relaxed">
+                The proprietary engine behind every GOQii prescription.
+              </div>
+
+              <p className="text-xs text-[#475467] leading-relaxed mb-2.5">
+                Built on more than a decade of real-world health engagement, Behavioral Neurocoding™ combines coaching, motivation, rewards, accountability, and habit science to help people turn health insights into lasting behavior change.
+              </p>
+
               <p className="text-xs text-[#475467] leading-relaxed mb-3">
-                At the core of the guidance phase resides our proprietary Behavioral Neurocoding™ model. It bypasses clinical friction, automated loop creation, and hardcodes sustainable health habits with zero cognitive drag.
+                Refined through millions of coaching interactions and continuous health journeys, it is the human layer that transforms recommendations into action.
               </p>
               
-              <div className="pl-3 border-l-2 border-[#2BC48A] text-[11px] leading-relaxed text-[#475467] italic font-medium">
-                "Bypassing clinical friction to establish permanent, automated daily healthy patterns."
+              <div className="mt-3 pt-3 border-t border-[#2BC48A]/10">
+                <div className="text-xs font-semibold text-[#0F172A] leading-relaxed pl-3 border-l-2 border-[#2BC48A]">
+                  AI identifies risk.<br />
+                  <span className="text-[#2BC48A]">Behavioral Neurocoding™</span> helps people act on it.
+                </div>
               </div>
             </div>
 
           </div>
 
-          {/* RIGHT COLUMN: RE-SIZED ALIVE O.S. NETWORK DIAGRAM */}
+          {/* RIGHT COLUMN: BEHAVIORAL NEUROCODING FLOW SCHEMA */}
           <div className="lg:col-span-5 flex justify-center h-full">
             <div 
               ref={graphicContainerRef}
-              className="relative w-full max-w-[420px] aspect-square bg-[#FAFBFB] border border-[#E8EDF2] rounded-[36px] shadow-[0_16px_36px_rgba(15,23,42,0.01)] overflow-hidden flex flex-col items-center justify-center mx-auto"
+              className="relative w-full max-w-[420px] bg-gradient-to-b from-[#FDFDFD] to-[#FAFBFB] border border-[#E8EDF2] rounded-[36px] shadow-[0_16px_36px_rgba(15,23,42,0.015)] p-5 sm:p-6 flex flex-col items-center justify-between mx-auto overflow-hidden text-left"
             >
-              {/* Inner Scaled Canvas wrapper */}
-              <div 
-                className="relative w-[480px] h-[480px] shrink-0 pointer-events-auto select-none"
-                style={{ 
-                  transform: `scale(${scale})`, 
-                  transformOrigin: "center center"
-                }}
-              >
-                {/* Soft grid overlay inside container */}
-                <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.2px,transparent_1.2px)] [background-size:24px_24px] opacity-35 pointer-events-none" />
+              {/* Soft decorative background glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] bg-[#2BC48A]/5 rounded-full blur-[65px] pointer-events-none z-0" />
 
-                {/* Highly aesthetic glowing atmosphere */}
-                <motion.div
-                  style={{ scale: coreGlowScale }}
-                  className="absolute w-[240px] h-[240px] rounded-full bg-gradient-to-tr from-[#2BC48A]/12 to-[#00ADC7]/2 blur-[50px] z-0 pointer-events-none top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2"
-                />
-
-                {/* SVG Network Fibre and Orbit Pipes */}
-                <svg 
-                  className="absolute inset-0 w-full h-full pointer-events-none z-0" 
-                  viewBox="0 0 480 480"
-                  fill="none"
+              <div className="relative z-10 w-full flex flex-col items-center justify-center gap-3">
+                
+                {/* STAGE 1: AI Intelligence */}
+                <motion.div 
+                  whileHover={{ y: -1 }}
+                  className="w-full bg-[#0F172A] text-white rounded-2xl p-3.5 border border-[#1E293B] shadow-[0_4px_12px_rgba(15,23,42,0.04)] flex items-center gap-3 relative group overflow-hidden"
                 >
-                  {/* Outer Concentric Orbit boundaries */}
-                  <circle cx="240" cy="216" r="95" stroke="#2BC48A" strokeWidth="0.8" strokeOpacity="0.08" />
-                  <circle cx="240" cy="216" r="135" stroke="#2BC48A" strokeWidth="0.8" strokeOpacity="0.06" />
-                  <circle cx="240" cy="216" r="175" stroke="#2BC48A" strokeWidth="0.8" strokeOpacity="0.04" />
+                  <div className="absolute -right-2 -bottom-2 opacity-[0.03] text-white pointer-events-none">
+                    <Activity className="w-16 h-16" />
+                  </div>
+                  <div className="w-8.5 h-8.5 rounded-xl bg-[#2BC48A]/10 border border-[#2BC48A]/25 text-[#2BC48A] flex items-center justify-center shrink-0">
+                    <Activity className="w-4.5 h-4.5 text-[#2BC48A]" />
+                  </div>
+                  <div>
+                    <div className="text-[9px] font-bold text-[#2BC48A] tracking-[0.15em] uppercase font-mono">STAGE 01 • INTELLIGENCE</div>
+                    <h4 className="text-xs sm:text-sm font-black tracking-wide font-sans mt-0.5">AI Intelligence</h4>
+                    <p className="text-[10px] text-[#94A3B8] leading-tight mt-0.5">Aggregates biomarkers & predicts risk trends</p>
+                  </div>
+                </motion.div>
 
-                  {/* Connecting lines from Nodes to Center Core (240, 216) */}
-                  <line 
-                    x1="64" y1="96" x2="240" y2="216" 
-                    stroke="#2BC48A" strokeWidth="1.5" strokeDasharray="3 3" strokeOpacity={hoveredNode === "detection" ? "0.6" : "0.18"} 
-                    className="transition-all duration-300"
-                  />
-                  <line 
-                    x1="416" y1="96" x2="240" y2="216" 
-                    stroke="#2BC48A" strokeWidth="1.5" strokeDasharray="3 3" strokeOpacity={hoveredNode === "prediction" ? "0.6" : "0.18"} 
-                    className="transition-all duration-300"
-                  />
-                  <line 
-                    x1="240" y1="392" x2="240" y2="216" 
-                    stroke="#2BC48A" strokeWidth="1.5" strokeDasharray="3 3" strokeOpacity={hoveredNode === "guidance" ? "0.6" : "0.18"} 
-                    className="transition-all duration-300"
-                  />
+                {/* Vertical Connector Line 1 */}
+                <div className="flex flex-col items-center my-0.5 shrink-0">
+                  <div className="w-[1.5px] h-4 bg-gradient-to-b from-[#0F172A] to-[#2BC48A]" />
+                  <div className="text-[9px] text-[#2BC48A] font-bold leading-none mt-0.5">↓</div>
+                </div>
 
-                  {/* Laser Pulses moving down the connectors */}
-                  <circle cx="168" cy="166" r="4.5" fill="#2BC48A" fillOpacity={hoveredNode === "detection" ? "1" : "0.4"} />
-                  {hoveredNode === "detection" && <circle cx="168" cy="166" r="9" fill="#2BC48A" fillOpacity="0.25" className="animate-ping" />}
+                {/* STAGE 2: Behavioral Neurocoding™ Center Hub */}
+                <motion.div 
+                  whileHover={{ scale: 1.005 }}
+                  className="w-full bg-[#F4FBF9] border-2 border-[#2BC48A] rounded-2xl p-4 shadow-[0_10px_20px_rgba(43,196,138,0.06)] relative group overflow-hidden"
+                >
+                  <div className="absolute right-0 top-0 p-3 opacity-10 pointer-events-none">
+                    <Zap className="w-12 h-12 text-[#2BC48A]" />
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8.5 h-8.5 rounded-xl bg-[#2BC48A]/15 border border-[#2BC48A]/35 text-[#2BC48A] flex items-center justify-center shrink-0">
+                      <Zap className="w-4.5 h-4.5" />
+                    </div>
+                    <div>
+                      <span className="inline-flex items-center justify-center py-0.5 px-2 rounded-full text-[8px] font-black tracking-wider bg-[#2BC48A] text-white uppercase font-mono">
+                        PROPRIETARY ENGINE
+                      </span>
+                      <h4 className="text-xs sm:text-sm font-black text-[#0F172A] tracking-wider uppercase font-sans mt-0.5">
+                        Behavioral Neurocoding™
+                      </h4>
+                    </div>
+                  </div>
+                  <p className="text-[10.5px] text-[#475467] font-medium leading-relaxed mt-2 pl-2 border-l-2 border-[#2BC48A]/40">
+                    The active translation system that overcomes friction, building permanent daily patterns.
+                  </p>
+                </motion.div>
 
-                  <circle cx="312" cy="166" r="4.5" fill="#2BC48A" fillOpacity={hoveredNode === "prediction" ? "1" : "0.4"} />
-                  {hoveredNode === "prediction" && <circle cx="312" cy="166" r="9" fill="#2BC48A" fillOpacity="0.25" className="animate-ping" />}
+                {/* Vertical Connector Line 2 */}
+                <div className="flex flex-col items-center my-0.5 shrink-0">
+                  <div className="w-[1.5px] h-4 bg-[#2BC48A]" />
+                  <div className="text-[9px] text-[#2BC48A] font-bold leading-none mt-0.5">↓</div>
+                </div>
 
-                  <circle cx="240" cy="288" r="4.5" fill="#2BC48A" fillOpacity={hoveredNode === "guidance" ? "1" : "0.4"} />
-                  {hoveredNode === "guidance" && <circle cx="240" cy="288" r="9" fill="#2BC48A" fillOpacity="0.25" className="animate-ping" />}
-                </svg>
+                {/* STAGE 3: Core 4 Action Channels Grid */}
+                <div className="grid grid-cols-2 gap-2 w-full">
+                  {/* Pillar: Coach */}
+                  <div className="bg-white border border-[#E8EDF2] hover:border-[#2BC48A]/40 rounded-xl p-2.5 flex flex-col items-start gap-1 transition-all duration-200 hover:shadow-[0_4px_12px_rgba(0,0,0,0.01)]">
+                    <div className="w-5.5 h-5.5 rounded-lg bg-indigo-50 text-indigo-500 flex items-center justify-center shrink-0">
+                      <User className="w-3.5 h-3.5" />
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-bold text-[#0F172A] font-sans">Coach</span>
+                      <p className="text-[9.5px] text-[#667085] leading-tight">Human accountability</p>
+                    </div>
+                  </div>
 
-                {/* CENTRAL ALIVE O.S. REPLICATING CORE MODULE */}
-                <div className="absolute top-[216px] left-[240px] -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center">
-                  <div className="absolute w-[170px] h-[170px] rounded-full border border-[#2BC48A]/10 animate-pulse duration-1000" />
-                  <div className="relative w-[130px] h-[130px] rounded-full bg-[#0E1B17] flex flex-col items-center justify-center shadow-[0_0_48px_rgba(43,196,138,0.22),inset_0_0_24px_rgba(43,196,138,0.45)] border border-[#2BC48A]/35">
-                    <span className="text-[12px] font-sans font-black tracking-[0.25em] text-[#2BC48A]">ALIVE O.S.</span>
-                    <span className="text-[8px] font-mono tracking-[0.22em] text-slate-400 mt-1 uppercase font-semibold">CORE ENGINE</span>
+                  {/* Pillar: Rewards */}
+                  <div className="bg-white border border-[#E8EDF2] hover:border-[#2BC48A]/40 rounded-xl p-2.5 flex flex-col items-start gap-1 transition-all duration-200 hover:shadow-[0_4px_12px_rgba(0,0,0,0.01)]">
+                    <div className="w-5.5 h-5.5 rounded-lg bg-amber-50 text-amber-500 flex items-center justify-center shrink-0">
+                      <Zap className="w-3.5 h-3.5" />
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-bold text-[#0F172A] font-sans">Rewards</span>
+                      <p className="text-[9.5px] text-[#667085] leading-tight">UHT positive loops</p>
+                    </div>
+                  </div>
+
+                  {/* Pillar: Accountability */}
+                  <div className="bg-white border border-[#E8EDF2] hover:border-[#2BC48A]/40 rounded-xl p-2.5 flex flex-col items-start gap-1 transition-all duration-200 hover:shadow-[0_4px_12px_rgba(0,0,0,0.01)]">
+                    <div className="w-5.5 h-5.5 rounded-lg bg-teal-50 text-teal-600 flex items-center justify-center shrink-0">
+                      <ShieldCheck className="w-3.5 h-3.5" />
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-bold text-[#0F172A] font-sans">Accountability</span>
+                      <p className="text-[9.5px] text-[#667085] leading-tight">Biometric feedback</p>
+                    </div>
+                  </div>
+
+                  {/* Pillar: Habits */}
+                  <div className="bg-white border border-[#E8EDF2] hover:border-[#2BC48A]/40 rounded-xl p-2.5 flex flex-col items-start gap-1 transition-all duration-200 hover:shadow-[0_4px_12px_rgba(0,0,0,0.01)]">
+                    <div className="w-5.5 h-5.5 rounded-lg bg-rose-50 text-rose-500 flex items-center justify-center shrink-0">
+                      <Target className="w-3.5 h-3.5" />
+                    </div>
+                    <div>
+                      <span className="text-[11px] font-bold text-[#0F172A] font-sans">Habits</span>
+                      <p className="text-[9.5px] text-[#667085] leading-tight">Coached routines</p>
+                    </div>
                   </div>
                 </div>
 
-                {/* NODE A: DETECTION */}
-                <motion.div
-                  style={{ left: "13.3%", top: "20%" }}
-                  className={`absolute -translate-x-1/2 -translate-y-1/2 z-20 w-[100px] h-[100px] rounded-full bg-white border flex flex-col items-center justify-center p-2 text-center group cursor-pointer transition-all duration-300 ${
-                    hoveredNode === "detection"
-                      ? "border-[#2BC48A] shadow-[0_12px_28px_rgba(43,196,138,0.08)]"
-                      : "border-[#E8EDF2] shadow-sm hover:border-[#2BC48A]/40"
-                  }`}
-                  onMouseEnter={() => setHoveredNode("detection")}
-                  onMouseLeave={() => setHoveredNode(null)}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <div className="w-7 h-7 rounded-full bg-[#FAFBFB] border border-[#E8EDF2] flex items-center justify-center text-[#2BC48A] mb-1">
-                    <Target className="w-4 h-4" strokeWidth={2.2} />
-                  </div>
-                  <h4 className="text-[8.5px] font-sans font-black tracking-[0.16em] text-[#0F172A] uppercase">
-                    DETECT
-                  </h4>
-                  <p className="text-[8px] font-sans text-[#667085] leading-tight font-semibold mt-0.5 max-w-[80px]">
-                    Identify Signals
-                  </p>
-                </motion.div>
-
-                {/* NODE B: PREDICTION */}
-                <motion.div
-                  style={{ left: "86.7%", top: "20%" }}
-                  className={`absolute -translate-x-1/2 -translate-y-1/2 z-20 w-[100px] h-[100px] rounded-full bg-white border flex flex-col items-center justify-center p-2 text-center group cursor-pointer transition-all duration-300 ${
-                    hoveredNode === "prediction"
-                      ? "border-[#2BC48A] shadow-[0_12px_28px_rgba(43,196,138,0.08)]"
-                      : "border-[#E8EDF2] shadow-sm hover:border-[#2BC48A]/40"
-                  }`}
-                  onMouseEnter={() => setHoveredNode("prediction")}
-                  onMouseLeave={() => setHoveredNode(null)}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <div className="w-7 h-7 rounded-full bg-[#FAFBFB] border border-[#E8EDF2] flex items-center justify-center text-[#2BC48A] mb-1">
-                    <TrendingUp className="w-4 h-4" strokeWidth={2.2} />
-                  </div>
-                  <h4 className="text-[8.5px] font-sans font-black tracking-[0.16em] text-[#0F172A] uppercase">
-                    PREDICT
-                  </h4>
-                  <p className="text-[8px] font-sans text-[#667085] leading-tight font-semibold mt-0.5 max-w-[80px]">
-                    Risk Horizons
-                  </p>
-                </motion.div>
-
-                {/* NODE C: GUIDANCE */}
-                <motion.div
-                  style={{ left: "50%", top: "81.6%" }}
-                  className={`absolute -translate-x-1/2 -translate-y-1/2 z-20 w-[100px] h-[100px] rounded-full bg-white border flex flex-col items-center justify-center p-2 text-center group cursor-pointer transition-all duration-300 ${
-                    hoveredNode === "guidance"
-                      ? "border-[#2BC48A] shadow-[0_12px_28px_rgba(43,196,138,0.08)]"
-                      : "border-[#E8EDF2] shadow-sm hover:border-[#2BC48A]/40"
-                  }`}
-                  onMouseEnter={() => setHoveredNode("guidance")}
-                  onMouseLeave={() => setHoveredNode(null)}
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <div className="w-7 h-7 rounded-full bg-[#FAFBFB] border border-[#E8EDF2] flex items-center justify-center text-[#2BC48A] mb-1">
-                    <User className="w-4 h-4" strokeWidth={2.2} />
-                  </div>
-                  <h4 className="text-[8.5px] font-sans font-black tracking-[0.16em] text-[#0F172A] uppercase">
-                    GUIDE
-                  </h4>
-                  <p className="text-[8px] font-sans text-[#667085] leading-tight font-semibold mt-0.5 max-w-[80px]">
-                    Decide Interventions
-                  </p>
-                </motion.div>
-
-                {/* Real-time status display centered at the very bottom inside the diagram container */}
-                <div className="absolute bottom-[24px] left-6 right-6 text-center">
-                  <p className="text-[10px] font-mono tracking-[0.18em] text-[#94A3B8] uppercase font-black transition-colors duration-200">
-                    {hoveredNode === "detection" && "Analyzing raw biosignals..."}
-                    {hoveredNode === "prediction" && "Compiling predictive risk patterns..."}
-                    {hoveredNode === "guidance" && "Formulating behavioral routines..."}
-                    {!hoveredNode && "Interactive telemetry system"}
-                  </p>
+                {/* Vertical Connector Line 3 */}
+                <div className="flex flex-col items-center my-0.5 shrink-0">
+                  <div className="w-[1.5px] h-4 bg-gradient-to-b from-[#2BC48A] to-[#00ADC7]" />
+                  <div className="text-[9px] text-[#00ADC7] font-bold leading-none mt-0.5">↓</div>
                 </div>
+
+                {/* STAGE 4: Better Outcomes */}
+                <motion.div 
+                  whileHover={{ y: 1 }}
+                  className="w-full bg-gradient-to-r from-[#2BC48A] to-[#00ADC7] text-white rounded-2xl p-3.5 border border-transparent shadow-[0_6px_20px_rgba(43,196,138,0.12)] flex items-center gap-3 relative overflow-hidden group"
+                >
+                  <div className="absolute -right-2 -bottom-2 opacity-10 text-white pointer-events-none">
+                    <TrendingUp className="w-16 h-16" />
+                  </div>
+                  <div className="w-8.5 h-8.5 rounded-xl bg-white/10 text-white flex items-center justify-center shrink-0">
+                    <TrendingUp className="w-4.5 h-4.5 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-[9px] font-bold text-teal-100 tracking-[0.15em] uppercase font-mono font-black">STAGE 04 • OUTCOME</div>
+                    <h4 className="text-xs sm:text-sm font-black tracking-wide font-sans mt-0.5 leading-none">Better Outcomes</h4>
+                    <p className="text-[10px] text-teal-50/90 leading-tight mt-1">Sustained premium health, vitality, and longevity</p>
+                  </div>
+                </motion.div>
 
               </div>
             </div>

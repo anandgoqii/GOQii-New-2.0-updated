@@ -170,7 +170,7 @@ export default function SectionSolution() {
                 </svg>
               </div>
               <span className="text-[13px] font-sans font-medium text-[#475467] leading-relaxed">
-                <span className="text-[#2BC48A] font-bold">Guidance</span> turns continuous knowledge into lasting cellular habits.
+                <span className="text-[#2BC48A] font-bold">Guidance</span> turns continuous knowledge into lasting healthy habits.
               </span>
             </div>
           </div>

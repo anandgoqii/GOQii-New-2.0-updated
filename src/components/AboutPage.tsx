@@ -159,8 +159,8 @@ export default function AboutPage() {
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-4xl sm:text-6xl lg:text-[84px] font-black tracking-tight text-[#0F172A] leading-[1.02] mb-8"
           >
-            Healthcare was built <br />
-            <span className="text-slate-400">to treat illness.</span> <br />
+            Health should begin <br />
+            <span className="text-slate-400">before illness.</span> <br />
             <span className="bg-gradient-to-r from-[#2BC48A] to-[#00ADC7] bg-clip-text text-transparent">
               We built it to prevent it.
             </span>

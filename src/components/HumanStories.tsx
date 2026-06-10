@@ -6,7 +6,7 @@ import SmartText from "./SmartText";
 const STORIES = [
   {
     category: "INDIVIDUAL METABOLIC HEALTH",
-    title: "FROM STRUGGLE TO TRANSFORMATION.",
+    title: "Member Health Transformation Story",
     pillLabel: "Individuals",
     desc: "Every health journey starts with a single decision. Meet people who improved their health through coaching, consistency, and small daily actions.",
     subtext: "The biggest change wasn't my weight. It was building habits I could sustain.",
