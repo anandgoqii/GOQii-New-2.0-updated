@@ -103,7 +103,7 @@ export default function SanjeeviniPage() {
               <div className="w-full h-full rounded-[18px] bg-slate-50 overflow-hidden flex items-center justify-center relative">
                 <img
                   src="https://appcdn.goqii.com/storeimg/20784_1780386295.png"
-                  alt="Sanjeevini Longevity Infographic"
+                  alt="Sanjeevini Longevity Intelligence Framework"
                   className="w-full h-full object-contain"
                   referrerPolicy="no-referrer"
                 />

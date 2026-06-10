@@ -92,7 +92,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.35 }}
               src={isMobile && slides[currentSlide].mobileBgImage ? slides[currentSlide].mobileBgImage : slides[currentSlide].bgImage}
-              alt="Serene health reflection portrait"
+              alt="GOQii Healthspan Hero Image"
               className="w-full h-full object-cover object-right md:object-right-center"
               referrerPolicy="no-referrer"
             />

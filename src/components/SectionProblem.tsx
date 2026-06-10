@@ -79,7 +79,7 @@ export default function SectionProblem() {
           >
             <img
               src="https://appcdn.goqii.com/storeimg/11912_1780901386.png"
-              alt="Subtle preventative clinical insight portrait"
+              alt="Behavior Change Ecosystem Visualization"
               className="w-full h-full object-cover brightness-100 contrast-[1.03] opacity-95 scale-100"
               referrerPolicy="no-referrer"
             />
