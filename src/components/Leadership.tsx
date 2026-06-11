@@ -19,27 +19,17 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "Founder & CEO",
       company: "GOQii Inc.",
       bio: "A leading global figure at the intersection of healthcare, gaming, and entrepreneurship. As Founder and CEO of GOQii, he has transformed preventive healthcare by integrating AI, technology, and gamification across India, the UK, and the Middle East.\n\nKnown globally as the \"Father of the Indian Gaming Industry,\" his early success with Indiagames culminated in its acquisition by The Walt Disney Company; he subsequently launched nCore Games, creator of FAU-G. Organises Mumbai Hacks for healthcare AI innovation. An avid marathon runner, trekker, and skydiver.",
-      image: "https://goqiimum.s3.ap-south-1.amazonaws.com/sanjivani/assets/images/Team-Vishal.png",
+      image: "https://appcdn.goqii.com/storeimg/95221_1781178862.png",
       highlights: ["Preventive Healthcare", "AI & Tech", "Gaming"],
       extraHighlights: "25+ Years in Tech & Health · Indiagames → Disney · GOQii",
       location: "Mumbai · Global"
-    },
-    {
-      name: "Champ Alreja",
-      role: "Co-Founder & Chief Business Officer",
-      company: "GOQii Inc.",
-      bio: "Radical in thought, meticulous in execution. Champ co-founded GOQii in 2014, bringing hardware engineering, behavioural product thinking, and commercial instinct to the company's growth. Before GOQii, he founded HitPlay — a gadget and consumer tech company built from scratch before Flipkart, before Amazon, at 24 with no playbook and no funding. As a product designer and inventor, he built GOQii's first lines of wearables from 2013 — at a time when the only comparable device was the original Fitbit Flex, which had no screen and no real-time feedback. His devices did. His career began as a Sound Engineer, giving him a ground-up understanding of how people interact with technology. He also conceived and built the GOQii Health Store — a scientifically designed rewards and retention engine grounded in behavioural economics and game theory, now one of the platform's most distinctive moats. Leads global BD and APAC expansion across Hong Kong, Singapore, and the Asia Pacific. A competitive tennis player who has built health discipline the same way he builds companies — one consistent rep at a time.",
-      image: "https://appcdn.goqii.com/storeimg/93100_1775110237.jpg",
-      highlights: ["Preventive Health", "Health Store", "APAC"],
-      extraHighlights: "Co-Founder · Wearables Pioneer · Health Store Architect",
-      location: "Hong Kong · Mumbai"
     },
     {
       name: "Sachin Janghel",
       role: "Co-Founder & CTO",
       company: "GOQii Inc.",
       bio: "The technology brain behind the entire GOQii ecosystem. Sachin co-founded GOQii in 2013 and has spent over a decade building one of the world's most comprehensive AI-driven preventive health platforms — from wearables and IoT devices to blockchain initiatives like the Universal Health Token (UHT). His career began with 11 years in game and interactive application development across mobile, online, and social platforms, including as Technology Director at Indiagames, India's #1 gaming company acquired by Disney UTV. At Disney UTV, he then led the build-out of Interactive TV platforms — satellite, digital cable, HITS, and IPTV. At GOQii, he leads AI-powered digital health solutions, remote patient monitoring, clinical workflow automation, and strategic technology partnerships with global insurers and healthcare providers. A football and hockey player who represented his home state at national level tournaments.",
-      image: "https://storage.googleapis.com/ksabupatest/2026/02/11/n2s3j/q3yh7jm2qs.webp",
+      image: "https://cskb8bjylqfsorzu.public.blob.vercel-storage.com/aakarimages/sachin1.png",
       highlights: ["AI & Healthtech", "Blockchain / UHT", "Gaming & IoT"],
       extraHighlights: "Co-Founder · 12+ Years Building GOQii · Disney UTV · UHT Core Team",
       location: "Saudi Arabia · Mumbai"
@@ -49,17 +39,27 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "Co-Founder & CEO, GOQii UK",
       company: "GOQii Inc.",
       bio: "Abhishek leads GOQii's UK operations and has been instrumental in building the brand's presence in one of the world's most demanding health markets. He brings over seven years at Nike across India, the USA, and the UK — spanning senior product and consumer roles — along with deep expertise in brand development, product marketing, PR, and social media. As Co-Founder and CMO from 2013, then COO, and now CEO of GOQii UK, he has grown the business from a startup into a recognised NHS-aligned health platform. A strong believer in sustainability and social impact, he has collaborated with global non-profits on key social projects. An ardent football fan, travel photographer, and long-distance motorbike rider.",
-      image: "https://appcdn.goqii.com/storeimg/69425_1775110219.jpg",
+      image: "https://cskb8bjylqfsorzu.public.blob.vercel-storage.com/aakarimages/Abhi.png",
       highlights: ["Brand & Marketing", "UK Market", "Consumer Health"],
       extraHighlights: "Co-Founder · CEO GOQii UK · Nike · IIM Calcutta",
       location: "London"
+    },
+    {
+      name: "Champ Alreja",
+      role: "Co-Founder & Chief Business Officer",
+      company: "GOQii Inc.",
+      bio: "Radical in thought, meticulous in execution. Champ co-founded GOQii in 2014, bringing hardware engineering, behavioural product thinking, and commercial instinct to the company's growth. Before GOQii, he founded HitPlay — a gadget and consumer tech company built from scratch before Flipkart, before Amazon, at 24 with no playbook and no funding. As a product designer and inventor, he built GOQii's first lines of wearables from 2013 — at a time when the only comparable device was the original Fitbit Flex, which had no screen and no real-time feedback. His devices did. His career began as a Sound Engineer, giving him a ground-up understanding of how people interact with technology. He also conceived and built the GOQii Health Store — a scientifically designed rewards and retention engine grounded in behavioural economics and game theory, now one of the platform's most distinctive moats. Leads global BD and APAC expansion across Hong Kong, Singapore, and the Asia Pacific. A competitive tennis player who has built health discipline the same way he builds companies — one consistent rep at a time.",
+      image: "https://cskb8bjylqfsorzu.public.blob.vercel-storage.com/aakarimages/champ.png",
+      highlights: ["Preventive Health", "Health Store", "APAC"],
+      extraHighlights: "Co-Founder · Wearables Pioneer · Health Store Architect",
+      location: "Hong Kong · Mumbai"
     },
     {
       name: "Krishna Kumar",
       role: "Chief Customer Officer",
       company: "GOQii Inc.",
       bio: "A passion for brands, mountains, and startups is what drives KK. At GOQii, he is Chief Customer Officer and leads overall marketing strategy and consumer engagement — building systems that help people make healthier choices and sustain them over time. His career began in advertising across networks including Publicis, Leo Burnett, and WPP (Mindshare), before he founded Media2win in 2004 — a digital agency that grew into one of India's top digital firms and won multiple industry awards. That brought him to GOQii, where he works at the intersection of technology, data, coaching, and behavioural science. Also a Core Team member at Universal Health Token (UHT), focused on marketing. Outside work, he scales 6000+ metre peaks in the Himalayas every year and runs multiple marathons — proof that he lives the preventive health philosophy he champions.",
-      image: "https://appcdn.goqii.com/storeimg/41869_1756732325.png",
+      image: "https://cskb8bjylqfsorzu.public.blob.vercel-storage.com/aakarimages/KK.png",
       highlights: ["Consumer Engagement", "Brand Strategy", "Digital Marketing"],
       extraHighlights: "CCO · Media2win Founder · UHT Core Team · Mindshare / WPP",
       location: "Mumbai"
@@ -69,7 +69,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "CFO & Head Corporate Development",
       company: "GOQii Inc.",
       bio: "Rohit leads finance and corporate development at GOQii, bringing deep expertise from his investment banking career at Jefferies, JM Financial, and Times Group. He has led 50+ PE/VC, M&A, and IPO transactions across India and the US. He built Jefferies India's Equity Capital Markets (ECM) desk from zero to a leading position. An alumnus of IIM Ahmedabad and IIT BHU, Rohit is passionate about sustainability and governance. He enjoys meditation and spending time with family.",
-      image: "https://appcdn.goqii.com/storeimg/57617_1775121635.jpg",
+      image: "https://cskb8bjylqfsorzu.public.blob.vercel-storage.com/aakarimages/Rohit.png",
       highlights: ["Corp Finance", "M&A", "Governance"],
       extraHighlights: "IIM Ahmedabad · Jefferies Alumnus · Finance Strategy",
       location: "USA · Mumbai"
@@ -79,7 +79,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "Chief Business Officer",
       company: "GOQii Inc.",
       bio: "Senior business leader with 23+ years spanning banking, insurance, and healthtech. At GOQii, Piyush leads P&L ownership and the banking, insurance, payments, and strategic initiatives verticals — building alliances with banks, fintechs, insurers, and governments. He launched industry-first contactless and wearable payment solutions and led global expansion at GOQii. Previously VP of Digital Insurance & Consumer Business at Marsh & McLennan (country head), Head of Consumer Banking Sales & Liabilities at Standard Chartered Bank, Regional Head at Barclays, and Bancassurance roles at Citibank. A specialist in strategic partnerships, payments ecosystems, and embedded finance across global markets.",
-      image: "https://appcdn.goqii.com/storeimg/92516_1776770962.jpg",
+      image: "https://appcdn.goqii.com/storeimg/46680_1781179108.png",
       highlights: ["Banking & Insurance", "Payments", "Strategic Partnerships"],
       extraHighlights: "23+ Years · Marsh · Standard Chartered · Barclays · Citibank",
       location: "UAE · Mumbai"
@@ -89,7 +89,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "Director",
       company: "GOQii Inc.",
       bio: "A Chartered Accountant with over 25 years in corporate finance and operations. Srini served as CFO of Bharti AXA Life Insurance, where he led finance, strategy, legal, compliance, and investment functions — including direct engagement with IRDA and the Ministry of Finance on complex policy issues. He later served as Independent Director at Aegon Life and Acko Insurance. Since founding CFO Bridge in 2011, he has become one of India's pioneers of the fractional CXO model, partnering with 500+ SMEs and startups across India, the US, and UAE. Also co-founder of CTO Bridge and CHRO Bridge. A passionate sleep advocate, Vipassana meditator, and yoga practitioner.",
-      image: "https://appcdn.goqii.com/storeimg/66392_1775110257.jpg",
+      image: "https://cskb8bjylqfsorzu.public.blob.vercel-storage.com/aakarimages/Shri.png",
       highlights: ["Finance & Governance", "Insurance", "Fractional CFO"],
       extraHighlights: "CA · Bharti AXA CFO · CFO Bridge Founder · 500+ SMEs",
       location: "Mumbai"
@@ -99,7 +99,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "Co-Founder, Master Coach & Head Nutritionist",
       company: "GOQii Inc.",
       bio: "India's foremost integrative and lifestyle medicine expert, and the clinical soul of GOQii's coaching model. Luke has consulted and treated over 20,000 patients globally — including cancer, Alzheimer's, diabetes, and rare metabolic syndromes — through his signature five-pillar framework: Cellular Nutrition, Adequate Exercise, Quality Sleep, Emotional Detox, and Spirit. His global community of 17M+ spans billionaires to A-listers across Bollywood, royal families in the Middle East, and elite athletes. Named Champion for Lifestyle & Wellness for Prime Minister Modi's Fit India Movement. Four-time bestselling author. Founder of You Care Lifestyle and the Lifeness Science Institute. Over 250 talks across the world.",
-      image: "https://goqiimum.s3.ap-south-1.amazonaws.com/sanjivani/assets/images/Team-Like-Counho.png",
+      image: "https://cskb8bjylqfsorzu.public.blob.vercel-storage.com/aakarimages/Luke.png",
       highlights: ["Integrative Medicine", "Holistic Nutrition", "Preventive Health"],
       extraHighlights: "17M+ Community · 20K+ Patients · PM Fit India Champion · Author",
       location: "Mumbai · Global"
@@ -109,7 +109,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "Chief Compliance & HR Officer",
       company: "GOQii Inc.",
       bio: "HR leader, talent strategist, and NLP Life Performance Coach driving people and AI synergy at GOQii. Kamal leads the company's compliance and human resources function, with a career spanning Accenture (Talent Acquisition Delivery Lead — Product Industry), ScaleneWorks (VP RPO Head), and senior HR business partner roles. Simultaneously serves as Group Head Human Resources at nCORE Games. Specialises in strategic HR planning, talent acquisition, employee relations, diversity and inclusion, succession planning, and coaching. An IIM Nagpur alumna, she brings a rare combination of enterprise rigour and startup agility to building GOQii's people infrastructure.",
-      image: "https://appcdn.goqii.com/storeimg/63860_1780914991.jpg",
+      image: "https://appcdn.goqii.com/storeimg/12935_1781178888.png",
       highlights: ["HR Strategy", "Talent & Culture", "Compliance"],
       extraHighlights: "CHRO · nCORE Group HR Head · Accenture · ScaleneWorks · IIM Nagpur",
       location: "Mumbai"
@@ -121,7 +121,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "MD, MegaDelta Capital",
       company: "GOQii Inc.",
       bio: "One of India's most respected venture investors with nearly two decades spanning early-stage and growth capital. Started at ICICI Venture in 2001, then joined NEA to lead their India platform for 10 years. Played an instrumental role in India's first Internet IPO, first 24-hour news channel, and first payments tech company. Independent board member of Info Edge Ltd — a multi-billion-dollar category leader.",
-      image: "https://appcdn.goqii.com/storeimg/40814_1775053051.jpg",
+      image: "https://cskb8bjylqfsorzu.public.blob.vercel-storage.com/aakarimages/Bela%20D.png",
       highlights: ["Venture Capital", "Consumer Tech", "Mumbai"],
       extraHighlights: "MD at MegaDelta Capital · Info Edge Director · ICICI Venture",
       location: "Mumbai"
@@ -131,7 +131,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "VP, Mitsui Healthcare",
       company: "GOQii Inc.",
       bio: "Physician-turned-strategist at Mitsui's global healthcare platform. Previously Parkway Pantai and IHH. HBS MBA; MBBS NUS.",
-      image: "https://appcdn.goqii.com/storeimg/4498_1776772013.jpg",
+      image: "https://cskb8bjylqfsorzu.public.blob.vercel-storage.com/aakarimages/chri.png",
       highlights: ["Healthcare Strategy", "HCIT"],
       extraHighlights: "Mitsui & Co · Harvard Business School · NUS Medicine",
       location: "Singapore"
@@ -141,7 +141,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "GP, Seedfund",
       company: "GOQii Inc.",
       bio: "Founding figure of India's tech and VC ecosystem. 40+ years across Hinditron and Seedfund. Former TiE Mumbai President.",
-      image: "https://appcdn.goqii.com/storeimg/58104_1776771948.jpg",
+      image: "https://cskb8bjylqfsorzu.public.blob.vercel-storage.com/aakarimages/Pravin%20Gandhi.png",
       highlights: ["Venture Capital", "Startups", "Mumbai"],
       extraHighlights: "Founding Figure of India's VC Ecosystem · Seedfund",
       location: "Mumbai"
@@ -151,10 +151,20 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "Founder & CEO",
       company: "GOQii Inc.",
       bio: "A leading global figure at the intersection of healthcare, gaming, and entrepreneurship. As Founder and CEO of GOQii, he has transformed preventive healthcare by integrating AI, technology, and gamification across India, the UK, and the Middle East.\n\nKnown globally as the \"Father of the Indian Gaming Industry,\" his early success with Indiagames culminated in its acquisition by The Walt Disney Company; he subsequently launched nCore Games, creator of FAU-G. Organises Mumbai Hacks for healthcare AI innovation. An avid marathon runner, trekker, and skydiver.",
-      image: "https://goqiimum.s3.ap-south-1.amazonaws.com/sanjivani/assets/images/Team-Vishal.png",
+      image: "https://appcdn.goqii.com/storeimg/95221_1781178862.png",
       highlights: ["Preventive Healthcare", "AI & Tech", "Gaming"],
       extraHighlights: "25+ Years in Tech & Health · Indiagames → Disney · GOQii",
       location: "Mumbai · Global"
+    },
+    {
+      name: "Amit Singhal",
+      role: "Former SVP Search — Google",
+      company: "Founder, Sitare Foundation",
+      bio: "The architect of modern Google Search. Joined Google as employee #176 in 2000 and spent 15 years as SVP and Google Fellow, rewriting the core ranking algorithm — a system serving over a billion daily users. Named by Fortune as one of the smartest people in tech; inducted into the National Academy of Engineering. PhD in Information Retrieval from Cornell. Post-Google, he founded Sitare Foundation to fund education for underprivileged Indian students through to US universities.",
+      image: "https://cskb8bjylqfsorzu.public.blob.vercel-storage.com/aakarimages/Amit.png",
+      highlights: ["Search / AI", "Engineering", "Philanthropy"],
+      extraHighlights: "Google employee #176 • 15 years leading Search | IIT Roorkee • Cornell PhD",
+      location: "USA"
     }
   ],
   advisory: [
@@ -203,7 +213,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "Former SVP Search — Google",
       company: "Founder, Sitare Foundation",
       bio: "The architect of modern Google Search. Joined Google as employee #176 in 2000 and spent 15 years as SVP and Google Fellow, rewriting the core ranking algorithm — a system serving over a billion daily users. Named by Fortune as one of the smartest people in tech; inducted into the National Academy of Engineering. PhD in Information Retrieval from Cornell. Post-Google, he founded Sitare Foundation to fund education for underprivileged Indian students through to US universities.",
-      image: "https://appcdn.goqii.com/storeimg/98313_1775053077.jpg",
+      image: "https://cskb8bjylqfsorzu.public.blob.vercel-storage.com/aakarimages/Amit.png",
       highlights: ["Search / AI", "Engineering", "Philanthropy"],
       extraHighlights: "Google employee #176 • 15 years leading Search | IIT Roorkee • Cornell PhD",
       location: "USA"
