@@ -173,7 +173,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "Co-Founder & Executive Chairman",
       company: "Animoca Brands",
       bio: "One of Asia's most influential tech entrepreneurs. Founded Asia's first free web and email provider in 1996, built Outblaze into a 75M-user platform before selling its messaging unit to IBM in 2009, then co-founded Animoca Brands — a global Web3 powerhouse with 500+ portfolio investments dedicated to digital property rights. WEF Global Leader of Tomorrow; Cointelegraph's Top 100 in Blockchain. Advisory board member of BAFTA; director of the Asian Youth Orchestra. Classically trained musician.",
-      image: "https://appcdn.goqii.com/storeimg/43195_1776772142.jpg",
+      image: "https://appcdn.goqii.com/storeimg/37296_1781251915.png",
       highlights: ["Web3 / NFTs", "Gaming", "Digital Ownership"],
       extraHighlights: "Animoca Brands • Outblaze • Dalton Lab",
       location: "Hong Kong"
@@ -183,7 +183,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "Seasoned Investor & former Insurance-Senior Exec",
       company: "DL Investments",
       bio: "Founder and CEO of DL Investments, focusing on the (re)insurance, insurtech, healthtech and wellness ecosystems in Asia; member of the Strategic Advisory Committee of HSBC's global Fintech Fund; a board member of Korea's largest online insurance company Kyobo Lifeplanet Life Insurance; a Global Advisory Board member of leading international Insurtech fund Eos Venture Partners; Venture Partner of Wings Capital Ventures.",
-      image: "https://appcdn.goqii.com/storeimg/60127_1776772180.jpg",
+      image: "https://appcdn.goqii.com/storeimg/77844_1781251891.png",
       highlights: ["Insurtech", "Healthtech", "PE / VC"],
       extraHighlights: "DL Investments | Swiss Re | PE Funds | Goldman Sachs",
       location: "Hong Kong"
@@ -193,7 +193,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "Entrepreneur-in-Residence",
       company: "Animoca Brands",
       bio: "Nearly 30 years building and backing technology businesses across Asia — from Web 1.0 through Web3. Co-founded or served as senior executive at 8 startups; 3 exited to publicly listed companies. Mentored and invested through HAX, Orbit/Chinaccelerator, and 500 Startups. Clinical Professor of Entrepreneurship at Peking University's Guanghua International MBA programme. A rare connector bridging Silicon Valley, China, and Southeast Asia.",
-      image: "https://appcdn.goqii.com/storeimg/8353_1776772221.jpg",
+      image: "https://appcdn.goqii.com/storeimg/58694_1781251928.png",
       highlights: ["Web3", "Startups", "Asia"],
       extraHighlights: "8 startups founded or led | Bali • HK • Beijing",
       location: "Bali · HK · Beijing"
@@ -203,7 +203,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "Group CEO & Partner",
       company: "Modality Partnership (NHS)",
       bio: "The executive who scaled the UK's largest NHS GP super-partnership from 25,000 patients to a national network reaching 12M+ citizens across 55+ sites and 135 GP partners. Honorary Professor of Practice at UCL GBSH and Honorary Fellow of the RCGP. Background spans Aetna (Managing Director, Health Management Services), Deloitte Consulting, and the NHS. Recognised by the Nuffield Trust, King's Fund, and Dartmouth Institute. Leading international health system partnerships across seven countries including Saudi Arabia, Vietnam, and South Africa — and GOQii's NHS clinical outcomes anchor.",
-      image: "https://appcdn.goqii.com/storeimg/15436_1776772268.jpg",
+      image: "https://appcdn.goqii.com/storeimg/91844_1781251940.png",
       highlights: ["NHS / Primary Care", "Digital Health", "International"],
       extraHighlights: "12M+ patients • 55+ NHS sites • 135 GP partners | UCL • RCGP Fellow",
       location: "London"
@@ -223,7 +223,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "Founder & CEO",
       company: "Shake and Bake Productions",
       bio: "Entrepreneur and award-winning executive producer behind Hacksaw Ridge, Rocketman, and Wheel of Time. Co-founded V.A.L.I.S. Studios — winner of an Emmy for the first VR summit of Everest. Active investor in Galaxy Interactive, A16z, and Vaxxinity. Board member of XPRIZE. Holds a JD-MBA from Northwestern and a BS from Georgetown's School of Foreign Service.",
-      image: "https://appcdn.goqii.com/storeimg/66343_1776772329.png",
+      image: "https://appcdn.goqii.com/storeimg/39753_1781251954.png",
       highlights: ["Entertainment", "Venture", "AI & VR"],
       extraHighlights: "20+ years in media & startups | Los Angeles",
       location: "Los Angeles"
@@ -233,7 +233,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "President",
       company: "GasEntec • Beacon Media",
       bio: "Global business executive and investment strategist who has orchestrated transactions exceeding $20 billion across energy, infrastructure, blockchain, and media. Former Managing Director at Kulczyk Investments SA, responsible for global energy and infrastructure footprints. Co-founder of Beacon Media; instrumental in bringing enterprise AI firm Beyond Limits into the UAE and wider GCC. Member of the International Energy Forum Industry Advisory Council and The Energy Council advisory board. Babson College alumnus and Trustee; member of the Young Presidents Organization since 2003.",
-      image: "https://appcdn.goqii.com/storeimg/67810_1776772436.jpg",
+      image: "https://appcdn.goqii.com/storeimg/47609_1781251967.png",
       highlights: ["Global Investments", "Energy & AI", "GCC / MENA"],
       extraHighlights: "$20B+ in transactions • Energy • Blockchain • Media | Dubai • GCC",
       location: "Dubai"
