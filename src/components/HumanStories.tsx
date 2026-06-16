@@ -26,7 +26,7 @@ const STORIES = [
       "Lifestyle Improvement Guides",
       "Continuous Companion Coaching"
     ],
-    cta: "Explore Individual Solutions →"
+    cta: "Get the App →"
   },
   {
     category: "CORPORATE HEALTH & WELLNESS",
@@ -50,7 +50,7 @@ const STORIES = [
       "Metabolic Risk Screenings",
       "Continuous Human Coaching"
     ],
-    cta: "Explore Enterprise Solutions →"
+    cta: "Book a Demo →"
   },
   {
     category: "PUBLIC HEALTH INITIATIVES",
@@ -74,7 +74,7 @@ const STORIES = [
       "Localized Community Engagement",
       "Decentralized Risk Interception"
     ],
-    cta: "Explore Public Health Solutions →"
+    cta: "Talk to Sales →"
   },
 ];
 

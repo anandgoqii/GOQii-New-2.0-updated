@@ -162,7 +162,7 @@ export default function SectionXPrize() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#0F172A] text-white text-sm font-semibold tracking-wider uppercase rounded-full hover:bg-[#2BC48A] transition-colors shadow-sm cursor-pointer"
             >
-              Explore Sanjeevini <span className="text-base">→</span>
+              See Platform <span className="text-base">→</span>
             </a>
             <a 
               href="https://goqii.com/sanjeevini"

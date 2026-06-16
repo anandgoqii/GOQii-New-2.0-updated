@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, FormEvent } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
+import { X, CheckCircle2, Apple, Play, Smartphone, ArrowRight, Sparkles, Watch, FlaskConical, Clipboard, User } from "lucide-react";
 import Particles from "./Particles";
 import SmartText from "./SmartText";
 
@@ -11,8 +12,8 @@ const slides = [
       { text: "Health should begin", highlight: false },
       { text: "before illness.", highlight: true }
     ],
-    subtext: "Continuous health intelligence for people, enterprises and populations.",
-    bgImage: "https://appcdn.goqii.com/storeimg/70278_1780397805.png",
+    subtext: "GOQii combines wearables, diagnostics, AI, and human coaching into one continuous health platform for individuals, employers, insurers, and healthcare providers.",
+    bgImage: "https://appcdn.goqii.com/storeimg/9522_1781597016.png",
     mobileBgImage: "https://appcdn.goqii.com/storeimg/50283_1781000672.jpg",
     objectPosition: "object-right-bottom md:object-right-bottom"
   },
@@ -24,10 +25,10 @@ const slides = [
       { text: "Personalize.", highlight: false },
       { text: "Prevent.", highlight: true }
     ],
-    subtext: "GOQii transforms everyday health signals into intelligent actions and better outcomes.",
-    bgImage: "https://appcdn.goqii.com/storeimg/79890_1780900607.jpg",
+    subtext: "GOQii combines wearables, diagnostics, AI, and human coaching into one continuous health platform for individuals, employers, insurers, and healthcare providers.",
+    bgImage: "https://appcdn.goqii.com/storeimg/82110_1781597042.jpg",
     mobileBgImage: "https://appcdn.goqii.com/storeimg/54302_1781000743.jpg",
-    objectPosition: "object-[#2BC48A]/10 object-right-bottom md:object-right-bottom"
+    objectPosition: "object-right-bottom md:object-right-bottom"
   },
   {
     id: 3,
@@ -36,8 +37,8 @@ const slides = [
       { text: "Intelligence for", highlight: false },
       { text: "every human.", highlight: true }
     ],
-    subtext: "Trusted by enterprises, insurers, healthcare providers and governments worldwide.",
-    bgImage: "https://appcdn.goqii.com/storeimg/33596_1780903515.jpg",
+    subtext: "GOQii combines wearables, diagnostics, AI, and human coaching into one continuous health platform for individuals, employers, insurers, and healthcare providers.",
+    bgImage: "https://appcdn.goqii.com/storeimg/77706_1781597055.jpg",
     mobileBgImage: "https://appcdn.goqii.com/storeimg/88832_1781000753.jpg",
     objectPosition: "object-right-bottom md:object-right-bottom"
   }
@@ -48,6 +49,12 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
   const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   
+  // Custom dialog modals state
+  const [isGetAppOpen, setIsGetAppOpen] = useState(false);
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+  const [demoForm, setDemoForm] = useState({ name: "", email: "", company: "", role: "Employer" });
+  const [demoSubmitted, setDemoSubmitted] = useState(false);
+
   // Detect if current screen width is mobile
   useEffect(() => {
     const checkMobileState = () => {
@@ -74,6 +81,19 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
   
   const yParallax = useTransform(scrollYProgress, [0, 1], ["0%", "6%"]);
   const imageScale = useTransform(scrollYProgress, [0, 1], [1.00, 1.04]);
+
+  const handleDemoSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    setDemoSubmitted(true);
+  };
+
+  const closeDemoModal = () => {
+    setIsBookDemoOpen(false);
+    setTimeout(() => {
+      setDemoSubmitted(false);
+      setDemoForm({ name: "", email: "", company: "", role: "Employer" });
+    }, 300);
+  };
 
   return (
     <div
@@ -128,7 +148,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.35, ease: "easeInOut" }}
-              className="flex flex-col items-start text-left w-full min-h-[300px] sm:min-h-[260px] md:min-h-[320px] justify-center"
+              className="flex flex-col items-start text-left w-full min-h-[300px] sm:min-h-[260px] md:min-h-[310px] justify-center"
             >
               {/* Label */}
               <div className="label-caps mb-6 md:mb-8 tracking-[0.25em] text-[#2BC48A] font-bold">
@@ -140,7 +160,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
                 {slides[currentSlide].id === 1 ? (
                   <>
                     <span>Health should begin&nbsp;</span>
-                    <span className="text-[#2BC48A]">before illness</span>
+                    <span className="text-[#2BC48A]">before illness.</span>
                   </>
                 ) : (
                   slides[currentSlide].lines.map((line, idx) => (
@@ -154,7 +174,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
               </h1>
 
               {/* Subtext */}
-              <p className="text-xs sm:text-sm md:text-base font-normal text-[#667085] max-w-md md:max-w-lg leading-relaxed mb-4">
+              <p className="text-xs sm:text-sm md:text-base font-normal text-[#667085] max-w-[340px] md:max-w-[420px] lg:max-w-[460px] xl:max-w-[480px] leading-relaxed mb-4">
                 <SmartText>{slides[currentSlide].subtext}</SmartText>
               </p>
 
@@ -173,20 +193,29 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
             </motion.div>
           </AnimatePresence>
 
-          {/* CTA */}
+          {/* CTA Group: Get the App & Book a Demo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
-            className="mt-4"
+            className="mt-6 flex flex-wrap items-center gap-4 relative z-10"
           >
             <motion.button
-              onClick={onExplore}
-              whileHover={{ scale: 1.02, boxShadow: "0 0 25px rgba(43, 196, 138, 0.3)" }}
-              whileTap={{ scale: 0.98 }}
-              className="px-8 py-4 bg-[#0F172A] text-white text-sm font-semibold tracking-wider uppercase rounded-full glow-accent cursor-pointer transition-shadow"
+              onClick={() => setIsGetAppOpen(true)}
+              whileHover={{ scale: 1.03, boxShadow: "0 10px 25px -5px rgba(43, 196, 138, 0.4)" }}
+              whileTap={{ scale: 0.97 }}
+              className="px-8 py-4 bg-[#2BC48A] text-white text-sm font-bold tracking-wider uppercase rounded-full cursor-pointer transition-shadow shadow-[0_4px_12px_rgba(43,196,138,0.2)]"
             >
-              Explore GOQii
+              Get the App
+            </motion.button>
+
+            <motion.button
+              onClick={() => setIsBookDemoOpen(true)}
+              whileHover={{ scale: 1.03, backgroundColor: "#E9FBF6" }}
+              whileTap={{ scale: 0.97 }}
+              className="px-8 py-4 bg-white text-[#0F172A] border border-[#E8EDF2] text-sm font-bold tracking-wider uppercase rounded-full cursor-pointer transition-colors shadow-sm"
+            >
+              Book a Demo
             </motion.button>
           </motion.div>
 
@@ -230,6 +259,254 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
         </div>
       </div>
 
+      {/* ================= MODAL: GET THE APP ================= */}
+      <AnimatePresence>
+        {isGetAppOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"
+              onClick={() => setIsGetAppOpen(false)}
+            />
+
+            <motion.div
+              initial={{ scale: 0.95, y: 15, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              exit={{ scale: 0.95, y: 10, opacity: 0 }}
+              transition={{ type: "spring", damping: 25 }}
+              className="relative w-full max-w-md bg-white border border-[#E8EDF2] shadow-2xl rounded-3xl p-6 md:p-8 z-10 text-left overflow-hidden"
+            >
+              <button
+                onClick={() => setIsGetAppOpen(false)}
+                className="absolute top-5 right-5 p-1.5 rounded-full border border-[#E8EDF2] hover:bg-slate-50 text-slate-500 hover:text-slate-800 transition-colors cursor-pointer"
+              >
+                <X className="w-4 h-4" />
+              </button>
+
+              <div className="space-y-6">
+                <div>
+                  <span className="inline-block bg-[#E5F7F0] text-[#2BC48A] font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full mb-3">
+                    Download GOQii
+                  </span>
+                  <h3 className="text-2xl font-black text-slate-900 tracking-tight leading-none">
+                    Start Your Healthspan Journey
+                  </h3>
+                  <p className="text-[#667085] text-xs mt-2 font-medium leading-relaxed">
+                    Access personalized diagnostics, certified coaching, AI risk evaluation, and wearable sync options directly in the mobile workspace.
+                  </p>
+                </div>
+
+                {/* QR Code and App Badges Section */}
+                <div className="flex flex-col sm:flex-row items-center gap-6 p-4 bg-[#F8FAFB] rounded-2xl border border-[#E8EDF2]">
+                  {/* QR Code Graphic Placeholder */}
+                  <div className="w-28 h-28 bg-white border border-[#E8EDF2] p-2 rounded-xl shrink-0 flex flex-col items-center justify-center relative shadow-inner">
+                    {/* Simulated QR Pattern */}
+                    <div className="w-full h-full relative opacity-90">
+                      <div className="absolute inset-x-0 top-0 h-1 bg-[#2BC48A]/10" />
+                      <div className="absolute top-0 left-0 w-6 h-6 border-2 border-[#0F172A]" />
+                      <div className="absolute top-0 right-0 w-6 h-6 border-2 border-[#0F172A]" />
+                      <div className="absolute bottom-0 left-0 w-6 h-6 border-2 border-[#0F172A]" />
+                      <div className="absolute top-2.5 left-2.5 w-1 h-1 bg-slate-800" />
+                      <div className="absolute top-4 left-3 w-2 h-1 bg-[#2BC48A]" />
+                      <div className="absolute top-2 right-4 w-1.5 h-1.5 bg-[#0F172A]" />
+                      <div className="absolute bottom-3 left-4 w-1 h-3 bg-slate-800" />
+                      <div className="absolute bottom-2.5 right-2.5 w-6 h-6 border-2 border-[#2BC48A]/50 bg-[#2BC48A]/5 flex items-center justify-center">
+                        <span className="text-[6px] font-black text-[#2BC48A]">GO</span>
+                      </div>
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white p-0.5 rounded shadow-sm">
+                        <img src="https://appcdn.goqii.com/storeimg/36455_1779860387.png" alt="" className="w-full h-full object-contain" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col gap-2.5 w-full">
+                    <span className="text-[10px] font-bold text-[#667085] uppercase tracking-wider text-center sm:text-left">
+                      Scan to install on iOS & Android
+                    </span>
+                    
+                    <a
+                      href="https://apps.apple.com/in/app/goqii-smart-preventative-healthcare/id916183921"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center sm:justify-start gap-2.5 bg-[#0F172A] text-white py-2 px-4 rounded-xl hover:bg-slate-800 transition-colors shadow-sm"
+                    >
+                      <Apple className="w-4.5 h-4.5 fill-white" />
+                      <div className="text-left font-sans">
+                        <div className="text-[8px] font-medium text-slate-300 leading-none">Download on the</div>
+                        <div className="text-xs font-black leading-tight mt-0.5">App Store</div>
+                      </div>
+                    </a>
+
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.goqii.doctor"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center sm:justify-start gap-2.5 bg-[#0F172A] text-white py-2 px-4 rounded-xl hover:bg-slate-800 transition-colors shadow-sm"
+                    >
+                      <Smartphone className="w-4.5 h-4.5" />
+                      <div className="text-left font-sans">
+                        <div className="text-[8px] font-medium text-slate-300 leading-none">Get it on</div>
+                        <div className="text-xs font-black leading-tight mt-0.5">Google Play</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center justify-center gap-2 text-slate-500 text-[11px] font-semibold">
+                  <span>✨ Semifinalist XPRIZE Healthspan</span>
+                  <span>•</span>
+                  <span>Trusted by 5M+ Users</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* ================= MODAL: BOOK A DEMO ================= */}
+      <AnimatePresence>
+        {isBookDemoOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"
+              onClick={closeDemoModal}
+            />
+
+            <motion.div
+              initial={{ scale: 0.95, y: 15, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              exit={{ scale: 0.95, y: 10, opacity: 0 }}
+              transition={{ type: "spring", damping: 25 }}
+              className="relative w-full max-w-md bg-white border border-[#E8EDF2] shadow-2xl rounded-3xl p-6 md:p-8 z-10 text-left overflow-hidden"
+            >
+              <button
+                onClick={closeDemoModal}
+                className="absolute top-5 right-5 p-1.5 rounded-full border border-[#E8EDF2] hover:bg-slate-50 text-slate-500 hover:text-slate-800 transition-colors cursor-pointer"
+              >
+                <X className="w-4 h-4" />
+              </button>
+
+              <AnimatePresence mode="wait">
+                {!demoSubmitted ? (
+                  <motion.div
+                    key="demo-input-view"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  >
+                    <div className="space-y-5">
+                      <div>
+                        <span className="inline-block bg-[#E5F7F0] text-[#2BC48A] font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full mb-3">
+                          Book a Consultation
+                        </span>
+                        <h3 className="text-2xl font-black text-slate-900 tracking-tight leading-none">
+                          Inquire for Your Organization
+                        </h3>
+                        <p className="text-[#667085] text-xs mt-2 font-medium leading-relaxed">
+                          Integrate our preventative biomarkers, clinical research support, and certified human coaching with your existing frameworks.
+                        </p>
+                      </div>
+
+                      <form onSubmit={handleDemoSubmit} className="space-y-3.5">
+                        <div className="space-y-1">
+                          <label className="text-[10px] font-black uppercase text-slate-500 tracking-wider">Your Name</label>
+                          <input
+                            required
+                            type="text"
+                            placeholder="Anand"
+                            className="w-full px-4 py-3 rounded-xl border border-[#E8EDF2] text-sm focus:outline-none focus:border-[#2BC48A] transition-colors"
+                            value={demoForm.name}
+                            onChange={(e) => setDemoForm({ ...demoForm, name: e.target.value })}
+                          />
+                        </div>
+
+                        <div className="space-y-1">
+                          <label className="text-[10px] font-black uppercase text-slate-500 tracking-wider">Corporate Email</label>
+                          <input
+                            required
+                            type="email"
+                            placeholder="anand@goqii.com"
+                            className="w-full px-4 py-3 rounded-xl border border-[#E8EDF2] text-sm focus:outline-none focus:border-[#2BC48A] transition-colors"
+                            value={demoForm.email}
+                            onChange={(e) => setDemoForm({ ...demoForm, email: e.target.value })}
+                          />
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-3">
+                          <div className="space-y-1">
+                            <label className="text-[10px] font-black uppercase text-slate-500 tracking-wider">Company</label>
+                            <input
+                              required
+                              type="text"
+                              placeholder="GOQii"
+                              className="w-full px-4 py-3 rounded-xl border border-[#E8EDF2] text-sm focus:outline-none focus:border-[#2BC48A] transition-colors"
+                              value={demoForm.company}
+                              onChange={(e) => setDemoForm({ ...demoForm, company: e.target.value })}
+                            />
+                          </div>
+
+                          <div className="space-y-1">
+                            <label className="text-[10px] font-black uppercase text-slate-500 tracking-wider font-sans">I am an</label>
+                            <select
+                              className="w-full px-4 py-3 rounded-xl border border-[#E8EDF2] text-sm focus:outline-none focus:border-[#2BC48A] transition-colors bg-white cursor-pointer"
+                              value={demoForm.role}
+                              onChange={(e) => setDemoForm({ ...demoForm, role: e.target.value })}
+                            >
+                              <option value="Employer">Employer</option>
+                              <option value="Insurer">Insurer</option>
+                              <option value="Healthcare Provider">Healthcare Provider</option>
+                              <option value="Individual Partner">Other Business Partner</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <button
+                          type="submit"
+                          className="w-full py-3.5 bg-gradient-to-r from-[#21C083] to-[#00ADC7] hover:shadow-lg text-white font-extrabold text-sm tracking-wider uppercase rounded-xl mt-2 transition-all cursor-pointer text-center"
+                        >
+                          Schedule Walkthrough
+                        </button>
+                      </form>
+                    </div>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="demo-success-view"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    className="flex flex-col items-center text-center py-6 space-y-4"
+                  >
+                    <div className="w-16 h-16 rounded-full bg-[#E5F7F0] text-[#2BC48A] flex items-center justify-center">
+                      <CheckCircle2 className="w-8 h-8" />
+                    </div>
+
+                    <div className="space-y-1.5">
+                      <h4 className="text-xl font-black text-slate-900 tracking-tight">Walkthrough Scheduled!</h4>
+                      <p className="text-[#667085] text-xs max-w-xs mx-auto leading-relaxed">
+                        Thank you, <span className="font-bold text-slate-800">{demoForm.name}</span>. A health solution consultant will reach back within 24 hours at <span className="font-bold text-slate-800">{demoForm.email}</span> to structure a custom walkthrough for <span className="font-bold text-slate-800">{demoForm.company}</span>.
+                      </p>
+                    </div>
+
+                    <button
+                      onClick={closeDemoModal}
+                      className="px-6 py-2.5 rounded-full border border-[#E8EDF2] text-xs font-bold hover:bg-slate-50 text-slate-700 transition-colors"
+                    >
+                      Done
+                    </button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
     </div>
   );

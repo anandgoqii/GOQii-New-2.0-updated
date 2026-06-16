@@ -19,6 +19,7 @@ interface Ecosystem {
   bgColor: string;
   borderColor: string;
   link: string;
+  ctaText: string;
 }
 
 const ECOSYSTEMS: Ecosystem[] = [
@@ -31,7 +32,8 @@ const ECOSYSTEMS: Ecosystem[] = [
     color: "#EC4899",
     bgColor: "bg-[#FDF2F8]",
     borderColor: "hover:border-pink-500/40 hover:shadow-[0_16px_40px_rgba(236,72,153,0.06)]",
-    link: "https://goqii.com/healthengage"
+    link: "https://goqii.com/healthengage",
+    ctaText: "See Platform"
   },
   {
     id: "insurance",
@@ -42,7 +44,8 @@ const ECOSYSTEMS: Ecosystem[] = [
     color: "#10B981",
     bgColor: "bg-[#ECFDF5]",
     borderColor: "hover:border-emerald-500/40 hover:shadow-[0_16px_40px_rgba(16,185,129,0.06)]",
-    link: "https://goqii.com/healthengage-insurance"
+    link: "https://goqii.com/healthengage-insurance",
+    ctaText: "Talk to Sales"
   },
   {
     id: "hospitals",
@@ -53,7 +56,8 @@ const ECOSYSTEMS: Ecosystem[] = [
     color: "#EF4444",
     bgColor: "bg-[#FEF2F2]",
     borderColor: "hover:border-red-500/40 hover:shadow-[0_16px_40px_rgba(239,68,68,0.06)]",
-    link: "https://go-qii-connected-care-7c49.vercel.app/"
+    link: "https://go-qii-connected-care-7c49.vercel.app/",
+    ctaText: "Book a Demo"
   },
   {
     id: "pharmaceuticals",
@@ -64,7 +68,8 @@ const ECOSYSTEMS: Ecosystem[] = [
     color: "#8B5CF6",
     bgColor: "bg-[#F5F3FF]",
     borderColor: "hover:border-violet-500/40 hover:shadow-[0_16px_40px_rgba(139,92,246,0.06)]",
-    link: "https://goqii.com/healthengage-pharma"
+    link: "https://goqii.com/healthengage-pharma",
+    ctaText: "Talk to Sales"
   },
   {
     id: "corporates",
@@ -75,7 +80,8 @@ const ECOSYSTEMS: Ecosystem[] = [
     color: "#00ADC7",
     bgColor: "bg-[#E0F2FE]/45",
     borderColor: "hover:border-[#00ADC7]/40 hover:shadow-[0_16px_40px_rgba(0,173,199,0.06)]",
-    link: "https://goqii.com/healthengage-corporate"
+    link: "https://goqii.com/healthengage-corporate",
+    ctaText: "Book a Demo"
   }
 ];
 
@@ -168,7 +174,7 @@ export default function TheGOQiiPlatform() {
                   </p>
                   
                   <div className="mt-4 flex items-center gap-1.5 text-[11px] font-extrabold tracking-tight" style={{ color: item.color }}>
-                    <span>Learn More</span>
+                    <span>{item.ctaText}</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>
                 </div>
@@ -181,25 +187,25 @@ export default function TheGOQiiPlatform() {
         </div>
 
         {/* Dynamic Connected Visual Footer of the Platform Section */}
-        <div className="mt-16 p-8 bg-slate-950 rounded-[32px] border border-slate-900 relative overflow-hidden text-center flex flex-col items-center justify-center">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(43,196,138,0.12),transparent_60%)] pointer-events-none" />
+        <div className="mt-16 p-8 bg-gradient-to-br from-[#F4FBF9] to-white rounded-[32px] border border-[#2BC48A]/20 shadow-[0_16px_40px_rgba(43,196,138,0.03)] relative overflow-hidden text-center flex flex-col items-center justify-center">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(43,196,138,0.08),transparent_70%)] pointer-events-none" />
           <div className="relative z-10 max-w-2xl">
             <span className="text-[10px] font-black tracking-[0.2em] text-[#2BC48A] uppercase block mb-3">
               ONE CONNECTED PREVENTATIVE PLATFORM
             </span>
-            <h4 className="text-lg sm:text-xl font-extrabold text-white mb-4 tracking-tight">
+            <h4 className="text-lg sm:text-xl font-extrabold text-[#0F172A] mb-4 tracking-tight">
               A single unified intelligence layer scaling across key global health ecosystems.
             </h4>
-            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs font-semibold text-slate-400 mt-6">
-              <span className="px-3.5 py-1.5 bg-slate-900 border border-slate-800/80 rounded-full">Wearables</span>
-              <span className="text-slate-700">•</span>
-              <span className="px-3.5 py-1.5 bg-slate-900 border border-slate-800/80 rounded-full">Diagnostics</span>
-              <span className="text-slate-700">•</span>
-              <span className="px-3.5 py-1.5 bg-slate-900 border border-slate-800/80 rounded-full">Coaching</span>
-              <span className="text-slate-700">•</span>
-              <span className="px-3.5 py-1.5 bg-slate-900 border border-slate-800/80 rounded-full">Health Records</span>
-              <span className="text-slate-700">•</span>
-              <span className="px-3.5 py-1.5 bg-slate-900 border border-slate-800/80 rounded-full">AI Intelligence</span>
+            <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs font-semibold text-slate-600 mt-6">
+              <span className="px-3.5 py-1.5 bg-white border border-[#2BC48A]/15 rounded-full shadow-sm hover:border-[#2BC48A]/30 transition-colors">Wearables</span>
+              <span className="text-slate-300">•</span>
+              <span className="px-3.5 py-1.5 bg-white border border-[#2BC48A]/15 rounded-full shadow-sm hover:border-[#2BC48A]/30 transition-colors">Diagnostics</span>
+              <span className="text-slate-300">•</span>
+              <span className="px-3.5 py-1.5 bg-white border border-[#2BC48A]/15 rounded-full shadow-sm hover:border-[#2BC48A]/30 transition-colors">Coaching</span>
+              <span className="text-slate-300">•</span>
+              <span className="px-3.5 py-1.5 bg-white border border-[#2BC48A]/15 rounded-full shadow-sm hover:border-[#2BC48A]/30 transition-colors">Health Records</span>
+              <span className="text-slate-300">•</span>
+              <span className="px-3.5 py-1.5 bg-white border border-[#2BC48A]/15 rounded-full shadow-sm hover:border-[#2BC48A]/30 transition-colors">AI Intelligence</span>
             </div>
           </div>
         </div>

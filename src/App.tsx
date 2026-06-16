@@ -3,11 +3,14 @@ import { motion } from "motion/react";
 import Header from "./components/Header";
 import FloatingTabs from "./components/FloatingTabs";
 import HeroSection from "./components/HeroSection";
+import ProofStrip from "./components/ProofStrip";
+import AudienceSelector from "./components/AudienceSelector";
 import SectionProblem from "./components/SectionProblem";
 import SectionGap from "./components/SectionGap";
 import SectionSolution from "./components/SectionSolution";
 import ConnectedEcosystem from "./components/ConnectedEcosystem";
 import AliveOS from "./components/AliveOS";
+import SolutionsEcosystem from "./components/SolutionsEcosystem";
 import DailyHealthIntelligence from "./components/DailyHealthIntelligence";
 import SectionXPrize from "./components/SectionXPrize";
 import ClinicalMetricsStrip from "./components/ClinicalMetricsStrip";
@@ -127,6 +130,16 @@ export default function App() {
           {/* 1. Hero Section */}
           <HeroSection onExplore={handleExplore} />
 
+          {/* Proof Strip with Social Proof and Partnership stats */}
+          <ScrollRevealSection>
+            <ProofStrip />
+          </ScrollRevealSection>
+
+          {/* Audience Selector Section */}
+          <ScrollRevealSection>
+            <AudienceSelector />
+          </ScrollRevealSection>
+
           {/* 2. Section 01: The Problem */}
           <ScrollRevealSection>
             <SectionProblem />
@@ -150,6 +163,11 @@ export default function App() {
           {/* 7. Section 05: Alive O.S. */}
           <ScrollRevealSection>
             <AliveOS />
+          </ScrollRevealSection>
+
+          {/* Solutions Ecosystem Section */}
+          <ScrollRevealSection>
+            <SolutionsEcosystem />
           </ScrollRevealSection>
 
           {/* 8. Section 06: Daily Health Intelligence */}

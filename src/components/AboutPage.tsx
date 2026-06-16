@@ -186,7 +186,7 @@ export default function AboutPage() {
               onClick={handleExploreEcosystem}
               className="px-8 py-4 sm:py-5 text-sm font-extrabold tracking-tight text-white bg-[#0F172A] rounded-full hover:bg-[#2BC48A] hover:scale-[1.02] shadow-[0_16px_32px_rgba(15,23,42,0.15)] transition-all duration-300 cursor-pointer flex items-center gap-2 group"
             >
-              <span>Explore the Ecosystem</span>
+              <span>See Platform</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
           </motion.div>
