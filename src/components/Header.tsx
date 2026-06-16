@@ -59,26 +59,13 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [mobileMenuOpen, activeDropdown, demoModalOpen]);
 
-  // Initialize Dark Mode based on preference or local state
+  // Ensure the application renders with its intended, elegant light style.
+  // Explicitly remove dark-theme class on mount to prevent shared localStorage/session conflicts.
   useEffect(() => {
-    const isDark = document.documentElement.classList.contains("dark") || localStorage.getItem("theme") === "dark";
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-      setDarkMode(true);
-    }
+    document.documentElement.classList.remove("dark");
+    localStorage.removeItem("theme"); // Clear any potentially conflicting shared localStorage theme key
+    setDarkMode(false);
   }, []);
-
-  const toggleDarkMode = () => {
-    if (darkMode) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setDarkMode(false);
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setDarkMode(true);
-    }
-  };
 
   const handleScrollTo = (targetId: string) => {
     // Intercept the About Us category to switch to the standalone stateful page
@@ -182,10 +169,10 @@ export default function Header() {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: isVisible ? 0 : -110, opacity: isVisible ? 1 : 0 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className={`w-full max-w-7xl border transition-all duration-300 rounded-full flex items-center justify-between px-6 md:px-8 py-2.5 md:py-3 select-none ${
+          className={`w-full max-w-7xl border border-slate-200/50 transition-all duration-300 rounded-full flex items-center justify-between px-6 md:px-8 py-2.5 md:py-3 select-none ${
             scrollProgress > 30
-              ? "bg-[#FFFFFF]/95 dark:bg-[#0B1220]/95 backdrop-blur-md border-[#E2E8F0] dark:border-[#1E293B] shadow-[0_16px_36px_rgba(15,23,42,0.08)] dark:shadow-[0_16px_36px_rgba(0,0,0,0.4)]"
-              : "bg-white/90 dark:bg-[#0B1220]/90 border-[#E8EDF2] dark:border-[#1E293B] shadow-[0_8px_16px_rgba(15,23,42,0.03)]"
+              ? "bg-white/95 backdrop-blur-md shadow-[0_16px_36px_rgba(15,23,42,0.08)]"
+              : "bg-white/90 shadow-[0_8px_16px_rgba(15,23,42,0.03)]"
           }`}
         >
           {/* Logo Brand Side */}

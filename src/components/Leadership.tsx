@@ -39,7 +39,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "Co-Founder & CEO, GOQii UK",
       company: "GOQii Inc.",
       bio: "Abhishek leads GOQii's UK operations and has been instrumental in building the brand's presence in one of the world's most demanding health markets. He brings over seven years at Nike across India, the USA, and the UK — spanning senior product and consumer roles — along with deep expertise in brand development, product marketing, PR, and social media. As Co-Founder and CMO from 2013, then COO, and now CEO of GOQii UK, he has grown the business from a startup into a recognised NHS-aligned health platform. A strong believer in sustainability and social impact, he has collaborated with global non-profits on key social projects. An ardent football fan, travel photographer, and long-distance motorbike rider.",
-      image: "https://appcdn.goqii.com/storeimg/19061_1781259973.png",
+      image: "https://appcdn.goqii.com/storeimg/42684_1781265347.png",
       highlights: ["Brand & Marketing", "UK Market", "Consumer Health"],
       extraHighlights: "Co-Founder · CEO GOQii UK · Nike · IIM Calcutta",
       location: "London"
@@ -79,7 +79,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       role: "Chief Business Officer",
       company: "GOQii Inc.",
       bio: "Senior business leader with 23+ years spanning banking, insurance, and healthtech. At GOQii, Piyush leads P&L ownership and the banking, insurance, payments, and strategic initiatives verticals — building alliances with banks, fintechs, insurers, and governments. He launched industry-first contactless and wearable payment solutions and led global expansion at GOQii. Previously VP of Digital Insurance & Consumer Business at Marsh & McLennan (country head), Head of Consumer Banking Sales & Liabilities at Standard Chartered Bank, Regional Head at Barclays, and Bancassurance roles at Citibank. A specialist in strategic partnerships, payments ecosystems, and embedded finance across global markets.",
-      image: "https://appcdn.goqii.com/storeimg/46680_1781179108.png",
+      image: "https://appcdn.goqii.com/storeimg/51996_1781265652.png",
       highlights: ["Banking & Insurance", "Payments", "Strategic Partnerships"],
       extraHighlights: "23+ Years · Marsh · Standard Chartered · Barclays · Citibank",
       location: "UAE · Mumbai"
