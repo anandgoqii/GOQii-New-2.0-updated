@@ -3,18 +3,7 @@ import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
 import Particles from "./Particles";
 import SmartText from "./SmartText";
 
-interface SlideItem {
-  id: number;
-  label: string;
-  lines: { text: string; highlight: boolean }[];
-  subtext: string;
-  bgImage: string;
-  mobileBgImage?: string;
-  tabletBgImage?: string;
-  objectPosition: string;
-}
-
-const slides: SlideItem[] = [
+const slides = [
   {
     id: 1,
     label: "Operating System for Human Health",
@@ -23,9 +12,8 @@ const slides: SlideItem[] = [
       { text: "before illness.", highlight: true }
     ],
     subtext: "Continuous health intelligence for people, enterprises and populations.",
-    bgImage: "https://appcdn.goqii.com/storeimg/38777_1781592621.png",
-    mobileBgImage: "https://appcdn.goqii.com/storeimg/66005_1781592639.png",
-    tabletBgImage: "https://appcdn.goqii.com/storeimg/19959_1781592653.png",
+    bgImage: "https://appcdn.goqii.com/storeimg/70278_1780397805.png",
+    mobileBgImage: "https://appcdn.goqii.com/storeimg/50283_1781000672.jpg",
     objectPosition: "object-right-bottom md:object-right-bottom"
   },
   {
@@ -57,25 +45,17 @@ const slides: SlideItem[] = [
 
 export default function HeroSection({ onExplore }: { onExplore: () => void }) {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [screenSize, setScreenSize] = useState<"mobile" | "tablet" | "desktop">("desktop");
+  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   
-  // Detect if current screen matches mobile, tablets/small-laptops or desktop
+  // Detect if current screen width is mobile
   useEffect(() => {
-    const checkState = () => {
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-      if (width < 768) {
-        setScreenSize("mobile");
-      } else if (width <= 1440 || height <= 900) {
-        setScreenSize("tablet");
-      } else {
-        setScreenSize("desktop");
-      }
+    const checkMobileState = () => {
+      setIsMobile(window.innerWidth < 768);
     };
-    checkState();
-    window.addEventListener("resize", checkState);
-    return () => window.removeEventListener("resize", checkState);
+    checkMobileState();
+    window.addEventListener("resize", checkMobileState);
+    return () => window.removeEventListener("resize", checkMobileState);
   }, []);
   
   // Auto-play the slides
@@ -114,13 +94,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
               animate={{ opacity: 0.75 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.35 }}
-              src={
-                screenSize === "mobile" && slides[currentSlide].mobileBgImage
-                  ? slides[currentSlide].mobileBgImage
-                  : screenSize === "tablet" && slides[currentSlide].tabletBgImage
-                  ? slides[currentSlide].tabletBgImage
-                  : slides[currentSlide].bgImage
-              }
+              src={isMobile && slides[currentSlide].mobileBgImage ? slides[currentSlide].mobileBgImage : slides[currentSlide].bgImage}
               alt="GOQii Healthspan Hero Image"
               className={`w-full h-full object-cover ${slides[currentSlide].objectPosition || "object-right-bottom"}`}
               referrerPolicy="no-referrer"
