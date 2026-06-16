@@ -63,14 +63,14 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
     return () => clearInterval(timer);
   }, []);
 
-  // Create 20% parallax scrolling effect on the image
+  // Create subtle parallax scrolling effect on the image
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"]
   });
   
-  const yParallax = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
-  const imageScale = useTransform(scrollYProgress, [0, 1], [1.02, 1.08]);
+  const yParallax = useTransform(scrollYProgress, [0, 1], ["0%", "6%"]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1.00, 1.04]);
 
   return (
     <div
@@ -78,11 +78,11 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
       ref={sectionRef}
       className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-[#F8FAFB] py-12 md:py-16 select-none"
     >
-      {/* Absolute image background with 20% parallax translation */}
+      {/* Absolute image background with subtle parallax translation */}
       <div className="absolute inset-0 w-full h-full z-0 overflow-hidden">
         <motion.div
           style={{ y: yParallax, scale: imageScale }}
-          className="relative w-full h-full origin-center"
+          className="absolute -top-[3%] left-0 w-full h-[106%] origin-center"
         >
           <AnimatePresence mode="wait">
             <motion.img
@@ -93,7 +93,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
               transition={{ duration: 0.35 }}
               src={isMobile && slides[currentSlide].mobileBgImage ? slides[currentSlide].mobileBgImage : slides[currentSlide].bgImage}
               alt="GOQii Healthspan Hero Image"
-              className="w-full h-full object-cover object-right md:object-right-center"
+              className="w-full h-full object-cover object-right md:object-right"
               referrerPolicy="no-referrer"
             />
           </AnimatePresence>
