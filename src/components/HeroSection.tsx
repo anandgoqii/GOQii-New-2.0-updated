@@ -3,7 +3,18 @@ import { motion, AnimatePresence, useScroll, useTransform } from "motion/react";
 import Particles from "./Particles";
 import SmartText from "./SmartText";
 
-const slides = [
+interface SlideItem {
+  id: number;
+  label: string;
+  lines: { text: string; highlight: boolean }[];
+  subtext: string;
+  bgImage: string;
+  mobileBgImage?: string;
+  tabletBgImage?: string;
+  objectPosition: string;
+}
+
+const slides: SlideItem[] = [
   {
     id: 1,
     label: "Operating System for Human Health",
@@ -12,8 +23,10 @@ const slides = [
       { text: "before illness.", highlight: true }
     ],
     subtext: "Continuous health intelligence for people, enterprises and populations.",
-    bgImage: "https://appcdn.goqii.com/storeimg/70278_1780397805.png",
-    mobileBgImage: "https://appcdn.goqii.com/storeimg/50283_1781000672.jpg"
+    bgImage: "https://appcdn.goqii.com/storeimg/38777_1781592621.png",
+    mobileBgImage: "https://appcdn.goqii.com/storeimg/66005_1781592639.png",
+    tabletBgImage: "https://appcdn.goqii.com/storeimg/19959_1781592653.png",
+    objectPosition: "object-right-bottom md:object-right-bottom"
   },
   {
     id: 2,
@@ -25,7 +38,8 @@ const slides = [
     ],
     subtext: "GOQii transforms everyday health signals into intelligent actions and better outcomes.",
     bgImage: "https://appcdn.goqii.com/storeimg/79890_1780900607.jpg",
-    mobileBgImage: "https://appcdn.goqii.com/storeimg/54302_1781000743.jpg"
+    mobileBgImage: "https://appcdn.goqii.com/storeimg/54302_1781000743.jpg",
+    objectPosition: "object-[#2BC48A]/10 object-right-bottom md:object-right-bottom"
   },
   {
     id: 3,
@@ -36,23 +50,32 @@ const slides = [
     ],
     subtext: "Trusted by enterprises, insurers, healthcare providers and governments worldwide.",
     bgImage: "https://appcdn.goqii.com/storeimg/33596_1780903515.jpg",
-    mobileBgImage: "https://appcdn.goqii.com/storeimg/88832_1781000753.jpg"
+    mobileBgImage: "https://appcdn.goqii.com/storeimg/88832_1781000753.jpg",
+    objectPosition: "object-right-bottom md:object-right-bottom"
   }
 ];
 
 export default function HeroSection({ onExplore }: { onExplore: () => void }) {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
+  const [screenSize, setScreenSize] = useState<"mobile" | "tablet" | "desktop">("desktop");
   const sectionRef = useRef<HTMLDivElement>(null);
   
-  // Detect if current screen width is mobile
+  // Detect if current screen matches mobile, tablets/small-laptops or desktop
   useEffect(() => {
-    const checkMobileState = () => {
-      setIsMobile(window.innerWidth < 768);
+    const checkState = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      if (width < 768) {
+        setScreenSize("mobile");
+      } else if (width <= 1440 || height <= 900) {
+        setScreenSize("tablet");
+      } else {
+        setScreenSize("desktop");
+      }
     };
-    checkMobileState();
-    window.addEventListener("resize", checkMobileState);
-    return () => window.removeEventListener("resize", checkMobileState);
+    checkState();
+    window.addEventListener("resize", checkState);
+    return () => window.removeEventListener("resize", checkState);
   }, []);
   
   // Auto-play the slides
@@ -91,9 +114,15 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
               animate={{ opacity: 0.75 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.35 }}
-              src={isMobile && slides[currentSlide].mobileBgImage ? slides[currentSlide].mobileBgImage : slides[currentSlide].bgImage}
+              src={
+                screenSize === "mobile" && slides[currentSlide].mobileBgImage
+                  ? slides[currentSlide].mobileBgImage
+                  : screenSize === "tablet" && slides[currentSlide].tabletBgImage
+                  ? slides[currentSlide].tabletBgImage
+                  : slides[currentSlide].bgImage
+              }
               alt="GOQii Healthspan Hero Image"
-              className="w-full h-full object-cover object-right md:object-right"
+              className={`w-full h-full object-cover ${slides[currentSlide].objectPosition || "object-right-bottom"}`}
               referrerPolicy="no-referrer"
             />
           </AnimatePresence>
@@ -133,7 +162,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
               </div>
 
               {/* Big Large Typography (Reveal line by line using the explicit hero-heading class) */}
-              <h1 className="hero-heading text-[#0F172A] mb-8 flex flex-col items-start leading-[1.08] min-h-[84px] md:min-h-[112px] lg:min-h-[180px]">
+              <h1 className="hero-heading text-[#0F172A] mb-8 flex flex-col items-start leading-[1.08] min-h-[84px] sm:min-h-[112px] lg:min-h-[140px] xl:min-h-[180px]">
                 {slides[currentSlide].id === 1 ? (
                   <>
                     <span>Health should begin&nbsp;</span>

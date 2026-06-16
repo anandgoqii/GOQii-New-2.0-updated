@@ -214,7 +214,7 @@ export default function DailyHealthIntelligence() {
           </div>
 
           {/* RIGHT COLUMN: PREMIUM MOBILE DEVICE MOCKUP */}
-          <div className="lg:col-span-7 flex justify-center items-center w-full min-h-[450px] sm:min-h-[580px] relative">
+          <div className="lg:col-span-7 flex justify-center items-center w-full min-h-[400px] sm:min-h-[500px] lg:min-h-[530px] xl:min-h-[580px] relative">
             
             {/* Ambient Background Glow matching the active feature */}
             <AnimatePresence mode="wait">
@@ -237,7 +237,7 @@ export default function DailyHealthIntelligence() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-full max-w-[260px] sm:max-w-[320px] h-[500px] sm:h-[620px] bg-[#090D16] rounded-[40px] sm:rounded-[48px] p-2 sm:p-2.5 shadow-[0_32px_80px_rgba(15,23,42,0.18)] border-[3px] sm:border-[4px] border-[#222E42] z-10 overflow-hidden flex flex-col"
+              className="relative w-full max-w-[240px] sm:max-w-[280px] lg:max-w-[305px] xl:max-w-[320px] h-[450px] sm:h-[530px] lg:h-[570px] xl:h-[620px] bg-[#090D16] rounded-[36px] sm:rounded-[48px] p-2 sm:p-2.5 shadow-[0_32px_80px_rgba(15,23,42,0.18)] border-[3px] sm:border-[4px] border-[#222E42] z-10 overflow-hidden flex flex-col"
             >
               {/* Dynamic App Content Body */}
               <div 

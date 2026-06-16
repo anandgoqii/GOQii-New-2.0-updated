@@ -145,10 +145,10 @@ export default function SectionXPrize() {
               </div>
               <div className="flex flex-col text-left">
                 <span className="text-xs font-extrabold text-[#0F172A] leading-tight font-sans">
-                  Behavioral Neurocoding™
+                  Behavioral Neurocoding
                 </span>
                 <span className="text-[10px] text-[#667085] font-medium leading-normal mt-0.5">
-                  Proprietary habit framing layer converting scientific protocols into autonomous biological compliance.
+                   Proprietary habit framing layer converting scientific protocols into autonomous biological compliance.
                 </span>
               </div>
             </div>

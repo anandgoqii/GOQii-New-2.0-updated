@@ -1,15 +1,12 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 import { 
-  Building2, 
-  ShieldCheck, 
-  Heart, 
-  Pill, 
-  Layers, 
   ArrowRight,
-  ShieldAlert,
-  Sparkles,
-  ClipboardList
+  Briefcase,
+  HeartHandshake,
+  Pill,
+  ShieldCheck,
+  Stethoscope
 } from "lucide-react";
 
 interface Ecosystem {
@@ -30,7 +27,7 @@ const ECOSYSTEMS: Ecosystem[] = [
     title: "HEALTHENGAGE",
     subtitle: "A configurable health engagement platform enabling healthcare organizations to launch prevention, wellness, chronic care, and population health programs at scale.",
     desc: "Built for providers, payers, employers, and healthcare ecosystems.",
-    icon: Layers,
+    icon: HeartHandshake,
     color: "#EC4899",
     bgColor: "bg-[#FDF2F8]",
     borderColor: "hover:border-pink-500/40 hover:shadow-[0_16px_40px_rgba(236,72,153,0.06)]",
@@ -52,7 +49,7 @@ const ECOSYSTEMS: Ecosystem[] = [
     title: "HOSPITALS",
     subtitle: "Extending patient engagement beyond hospital walls through remote monitoring, coaching, follow-up care, and preventive pathways.",
     desc: "Supporting continuity of care across the entire patient journey.",
-    icon: Heart,
+    icon: Stethoscope,
     color: "#EF4444",
     bgColor: "bg-[#FEF2F2]",
     borderColor: "hover:border-red-500/40 hover:shadow-[0_16px_40px_rgba(239,68,68,0.06)]",
@@ -74,7 +71,7 @@ const ECOSYSTEMS: Ecosystem[] = [
     title: "CORPORATES",
     subtitle: "Workforce wellbeing, employee engagement, preventive health programs, and organizational health intelligence.",
     desc: "Supporting healthier, more productive workforces through scalable health and wellness programs.",
-    icon: Building2,
+    icon: Briefcase,
     color: "#00ADC7",
     bgColor: "bg-[#E0F2FE]/45",
     borderColor: "hover:border-[#00ADC7]/40 hover:shadow-[0_16px_40px_rgba(0,173,199,0.06)]",
@@ -145,8 +142,14 @@ export default function TheGOQiiPlatform() {
               >
                 {/* Visual Highlight background badge */}
                 <div className="flex flex-col gap-5">
-                  <div className={`w-12 h-12 rounded-2xl ${item.bgColor} flex items-center justify-center transition-all duration-300 group-hover:scale-105 shrink-0`}>
-                    <Icon className="w-6 h-6 transition-transform duration-300" style={{ color: item.color }} />
+                  <div 
+                    className="w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-105 shrink-0 bg-[#F8FAFB] border border-[#E8EDF2]"
+                    style={{ 
+                      backgroundColor: isHovered ? `${item.color}14` : undefined,
+                      borderColor: isHovered ? `${item.color}40` : undefined
+                    }}
+                  >
+                    <Icon className="w-5.5 h-5.5 transition-transform duration-300" style={{ color: item.color }} strokeWidth={1.65} />
                   </div>
 
                   <div>
