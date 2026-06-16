@@ -289,20 +289,36 @@ export default function SolutionsEcosystem() {
                       href="https://apps.apple.com/in/app/goqii-smart-preventative-healthcare/id916183921"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center sm:justify-start gap-2 bg-[#0F172A] text-white py-2 px-4 rounded-xl hover:bg-slate-800 transition-colors shadow-sm text-center"
+                      className="flex items-center justify-center sm:justify-start gap-2.5 bg-[#0F172A] text-white py-2 px-4 rounded-xl hover:bg-slate-800 transition-colors shadow-sm"
                     >
-                      <Apple className="w-4 h-4" />
-                      <span className="text-[11px] font-black tracking-wide uppercase">App Store (iOS)</span>
+                      <img
+                        src="https://appcdn.goqii.com/storeimg/80934_1781605746.png"
+                        alt="App Store"
+                        className="w-4.5 h-4.5 object-contain"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="text-left font-sans">
+                        <div className="text-[8px] font-medium text-slate-300 leading-none">Download on the</div>
+                        <div className="text-xs font-black leading-tight mt-0.5">App Store</div>
+                      </div>
                     </a>
 
                     <a
                       href="https://play.google.com/store/apps/details?id=com.goqii.doctor"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center sm:justify-start gap-2 bg-[#0F172A] text-white py-2 px-4 rounded-xl hover:bg-slate-800 transition-colors shadow-sm text-center"
+                      className="flex items-center justify-center sm:justify-start gap-2.5 bg-[#0F172A] text-white py-2 px-4 rounded-xl hover:bg-slate-800 transition-colors shadow-sm"
                     >
-                      <Smartphone className="w-4 h-4" />
-                      <span className="text-[11px] font-black tracking-wide uppercase">Play Store (Android)</span>
+                      <img
+                        src="https://appcdn.goqii.com/storeimg/23798_1781605739.png"
+                        alt="Google Play"
+                        className="w-4.5 h-4.5 object-contain"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="text-left font-sans">
+                        <div className="text-[8px] font-medium text-slate-300 leading-none">Get it on</div>
+                        <div className="text-xs font-black leading-tight mt-0.5">Google Play</div>
+                      </div>
                     </a>
                   </div>
                 </div>

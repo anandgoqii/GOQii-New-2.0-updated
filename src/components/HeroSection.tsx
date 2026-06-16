@@ -320,7 +320,12 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
                       rel="noopener noreferrer"
                       className="flex items-center justify-center sm:justify-start gap-2.5 bg-[#0F172A] text-white py-2 px-4 rounded-xl hover:bg-slate-800 transition-colors shadow-sm"
                     >
-                      <Apple className="w-4.5 h-4.5 fill-white" />
+                      <img
+                        src="https://appcdn.goqii.com/storeimg/80934_1781605746.png"
+                        alt="App Store"
+                        className="w-4.5 h-4.5 object-contain"
+                        referrerPolicy="no-referrer"
+                      />
                       <div className="text-left font-sans">
                         <div className="text-[8px] font-medium text-slate-300 leading-none">Download on the</div>
                         <div className="text-xs font-black leading-tight mt-0.5">App Store</div>
@@ -333,7 +338,12 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
                       rel="noopener noreferrer"
                       className="flex items-center justify-center sm:justify-start gap-2.5 bg-[#0F172A] text-white py-2 px-4 rounded-xl hover:bg-slate-800 transition-colors shadow-sm"
                     >
-                      <Smartphone className="w-4.5 h-4.5" />
+                      <img
+                        src="https://appcdn.goqii.com/storeimg/23798_1781605739.png"
+                        alt="Google Play"
+                        className="w-4.5 h-4.5 object-contain"
+                        referrerPolicy="no-referrer"
+                      />
                       <div className="text-left font-sans">
                         <div className="text-[8px] font-medium text-slate-300 leading-none">Get it on</div>
                         <div className="text-xs font-black leading-tight mt-0.5">Google Play</div>
