@@ -334,8 +334,8 @@ export default function Leadership() {
       {/* Header Tag Index Layout */}
       <div className="w-full max-w-7xl mx-auto mb-10 flex flex-col items-start font-sans">
         <div className="flex items-center gap-4 text-xs tracking-wide">
-          <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">10</span>
-          <span className="text-[#E2E8F0] font-light text-sm">/</span>
+          <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">12</span>
+          <span className="text-[#E2E8F0] font-light text-sm">|</span>
           <span className="font-semibold text-[#667085] text-[11px] tracking-[0.25em] uppercase font-sans">
             OUR PEOPLE
           </span>
@@ -372,14 +372,14 @@ export default function Leadership() {
         </div>
 
         {/* Right Tab Controllers */}
-        <div className="lg:col-span-6 flex flex-wrap lg:justify-end gap-2.5 self-end lg:mt-0 mt-8">
+        <div className="lg:col-span-6 flex flex-nowrap overflow-x-auto lg:overflow-x-visible lg:justify-end gap-2.5 self-end lg:mt-0 mt-8 w-full lg:w-auto pb-2 lg:pb-0 select-none scrollbar-none">
           {TAB_LABELS.map((tab) => {
             const active = activeTab === tab.key;
             return (
               <button
                 key={tab.key}
                 onClick={() => setActiveTab(tab.key)}
-                className={`px-5 py-2.5 rounded-full text-[11px] font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer flex items-center gap-2 ${
+                className={`px-5 py-2.5 rounded-full text-[11px] font-bold tracking-wider uppercase transition-all duration-300 cursor-pointer flex items-center gap-2 shrink-0 ${
                   active
                     ? "bg-[#0A1120] text-white shadow-sm border border-[#0A1120]"
                     : "bg-white border border-[#E2E8F0] text-[#667085] hover:bg-slate-50"

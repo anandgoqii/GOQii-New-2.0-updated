@@ -15,7 +15,6 @@ import DailyHealthIntelligence from "./components/DailyHealthIntelligence";
 import SectionXPrize from "./components/SectionXPrize";
 import ClinicalMetricsStrip from "./components/ClinicalMetricsStrip";
 import HumanStories from "./components/HumanStories";
-import TheGOQiiPlatform from "./components/TheGOQiiPlatform";
 import TrustRegulatory from "./components/TrustRegulatory";
 import Leadership from "./components/Leadership";
 import AboutGOQii from "./components/AboutGOQii";
@@ -183,11 +182,6 @@ export default function App() {
           {/* 10. Clinical Proof Metrics Strip */}
           <ScrollRevealSection>
             <ClinicalMetricsStrip />
-          </ScrollRevealSection>
-
-          {/* 11. Section 07: GOQii HealthEngage */}
-          <ScrollRevealSection>
-            <TheGOQiiPlatform />
           </ScrollRevealSection>
 
           {/* 12. Section 08: Human Stories */}

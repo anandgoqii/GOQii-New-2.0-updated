@@ -26,7 +26,6 @@ export default function TrustCenterPage() {
     { name: "ISO 13485", desc: "Medical devices quality management systems standard." },
     { name: "CDSCO", desc: "Central Drugs Standard Control Organisation alignment for clinical compliance." },
     { name: "Cyber Essentials", desc: "UK government-backed scheme safeguarding against common cyber threats." },
-    { name: "DCB0129", desc: "Clinical risk management standards for health IT systems." },
     { name: "DPDPA Readiness", desc: "Preparedness for the Digital Personal Data Protection Act to secure user privacy." },
     { name: "FDA Registered Class II", desc: "Federal Drug Administration quality registration for eligible platform components." }
   ];

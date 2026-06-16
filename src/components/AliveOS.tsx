@@ -5,11 +5,9 @@ import {
   ArrowRight, 
   User, 
   TrendingUp, 
-  BadgeCheck, 
   Zap, 
   ShieldCheck, 
   Activity, 
-  Lock,
   Watch,
   FlaskConical,
   Clipboard,
@@ -506,65 +504,6 @@ export default function AliveOS() {
               </div>
 
             </div>
-          </div>
-
-        </div>
-
-        {/* ================= 7. COMPLIANCE & TRUST STRIP ================= */}
-        <div className="w-full pt-12 mt-16 border-t border-[#E8EDF2]">
-          
-          <div className="text-center mb-6">
-            <span className="text-[9px] font-mono font-black tracking-[0.22em] text-[#94A3B8] uppercase block">
-              CLINICAL COMPLIANCE & REGULATORY ALIGNMENT
-            </span>
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 items-center max-w-4xl mx-auto opacity-80 hover:opacity-100 transition-opacity duration-300">
-            
-            {/* Badge 1: HIPAA */}
-            <div className="flex items-center gap-3 justify-center sm:justify-start pl-2 sm:pl-6 border-r border-[#E8EDF2]/65 sm:border-r">
-              <div className="w-10 h-10 rounded-full bg-[#E5F7F0] flex items-center justify-center text-[#2BC48A] shrink-0">
-                <ShieldCheck className="w-5.5 h-5.5" strokeWidth={2} />
-              </div>
-              <div className="text-left font-sans">
-                <div className="text-xs font-black text-[#0F172A] tracking-tight leading-tight">HIPAA Compliant</div>
-                <div className="text-[9px] font-medium text-[#667085] mt-0.5 leading-none">PHI Data Secured</div>
-              </div>
-            </div>
-
-            {/* Badge 2: SOC 2 TYPE II */}
-            <div className="flex items-center gap-3 justify-center sm:justify-start pl-2 sm:pl-6 border-r-0 lg:border-r border-[#E8EDF2]/65">
-              <div className="w-10 h-10 rounded-full bg-[#E5F7F0] flex items-center justify-center text-[#2BC48A] shrink-0">
-                <Lock className="w-5 h-5" strokeWidth={2} />
-              </div>
-              <div className="text-left font-sans">
-                <div className="text-xs font-black text-[#0F172A] tracking-tight leading-tight">SOC 2 Type II</div>
-                <div className="text-[9px] font-medium text-[#667085] mt-0.5 leading-none">Audited Safe Infra</div>
-              </div>
-            </div>
-
-            {/* Badge 3: GDPR Ready */}
-            <div className="flex items-center gap-3 justify-center sm:justify-start pl-2 sm:pl-6 border-r border-[#E8EDF2]/65 sm:border-r">
-              <div className="w-10 h-10 rounded-full bg-[#E5F7F0] flex items-center justify-center text-[#2BC48A] shrink-0">
-                <BadgeCheck className="w-5.5 h-5.5" strokeWidth={2} />
-              </div>
-              <div className="text-left font-sans">
-                <div className="text-xs font-black text-[#0F172A] tracking-tight leading-tight">GDPR Ready</div>
-                <div className="text-[9px] font-medium text-[#667085] mt-0.5 leading-none">Global Privacy Standards</div>
-              </div>
-            </div>
-
-            {/* Badge 4: NHS DCB0129 */}
-            <div className="flex items-center gap-3 justify-center sm:justify-start pl-2 sm:pl-6 border-0">
-              <div className="w-10 h-10 rounded-full bg-[#E5F7F0] flex items-center justify-center text-[#2BC48A] shrink-0">
-                <Activity className="w-5.5 h-5.5" strokeWidth={2} />
-              </div>
-              <div className="text-left font-sans">
-                <div className="text-xs font-black text-[#0F172A] tracking-tight leading-tight">DCB0129 Clinical</div>
-                <div className="text-[9px] font-medium text-[#667085] mt-0.5 leading-none">UK NHS Safety Aligned</div>
-              </div>
-            </div>
-
           </div>
 
         </div>

@@ -300,25 +300,13 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
 
                 {/* QR Code and App Badges Section */}
                 <div className="flex flex-col sm:flex-row items-center gap-6 p-4 bg-[#F8FAFB] rounded-2xl border border-[#E8EDF2]">
-                  {/* QR Code Graphic Placeholder */}
-                  <div className="w-28 h-28 bg-white border border-[#E8EDF2] p-2 rounded-xl shrink-0 flex flex-col items-center justify-center relative shadow-inner">
-                    {/* Simulated QR Pattern */}
-                    <div className="w-full h-full relative opacity-90">
-                      <div className="absolute inset-x-0 top-0 h-1 bg-[#2BC48A]/10" />
-                      <div className="absolute top-0 left-0 w-6 h-6 border-2 border-[#0F172A]" />
-                      <div className="absolute top-0 right-0 w-6 h-6 border-2 border-[#0F172A]" />
-                      <div className="absolute bottom-0 left-0 w-6 h-6 border-2 border-[#0F172A]" />
-                      <div className="absolute top-2.5 left-2.5 w-1 h-1 bg-slate-800" />
-                      <div className="absolute top-4 left-3 w-2 h-1 bg-[#2BC48A]" />
-                      <div className="absolute top-2 right-4 w-1.5 h-1.5 bg-[#0F172A]" />
-                      <div className="absolute bottom-3 left-4 w-1 h-3 bg-slate-800" />
-                      <div className="absolute bottom-2.5 right-2.5 w-6 h-6 border-2 border-[#2BC48A]/50 bg-[#2BC48A]/5 flex items-center justify-center">
-                        <span className="text-[6px] font-black text-[#2BC48A]">GO</span>
-                      </div>
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-white p-0.5 rounded shadow-sm">
-                        <img src="https://appcdn.goqii.com/storeimg/36455_1779860387.png" alt="" className="w-full h-full object-contain" />
-                      </div>
-                    </div>
+                  {/* Real QR Code Image */}
+                  <div className="w-28 h-28 bg-white border border-[#E8EDF2] p-1.5 rounded-xl shrink-0 flex items-center justify-center relative shadow-sm">
+                    <img
+                      src="https://appcdn.goqii.com/storeimg/94397_1781604569.png"
+                      alt="Download GOQii APP"
+                      className="w-full h-full object-contain"
+                    />
                   </div>
 
                   <div className="flex flex-col gap-2.5 w-full">

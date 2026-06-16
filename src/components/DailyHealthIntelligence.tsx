@@ -103,7 +103,7 @@ export default function DailyHealthIntelligence() {
         <div className="w-full text-left mb-16">
           {/* Tag, Numbering */}
           <div className="flex items-center gap-4 text-xs mb-8 font-sans">
-            <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">06</span>
+            <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">07</span>
             <span className="text-[#E2E8F0] font-light text-sm">|</span>
             <span className="font-semibold text-[#667085] text-[11px] tracking-[0.25em] uppercase">
               DAILY HEALTH INTELLIGENCE

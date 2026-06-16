@@ -19,7 +19,7 @@ interface SolutionCard {
   id: string;
   title: string;
   tagline: string;
-  descriptions: string[];
+  description: string;
   icon: any;
   ctaText: string;
   ctaType: "app" | "demo" | "doc" | "contact";
@@ -30,10 +30,7 @@ const SOLUTIONS: SolutionCard[] = [
     id: "individuals",
     title: "INDIVIDUALS",
     tagline: "Preventive Longevity",
-    descriptions: [
-      "Personalized health coaching, diagnostics, wearables, and longevity guidance designed to help people prevent illness before it starts.",
-      "Supporting healthier lifestyles through continuous monitoring, real-time insights, and sustainable behavior change."
-    ],
+    description: "Personalized coaching, diagnostics, wearables, and health guidance designed to help people live healthier, longer lives.",
     icon: User,
     ctaText: "Get the App",
     ctaType: "app"
@@ -42,10 +39,7 @@ const SOLUTIONS: SolutionCard[] = [
     id: "enterprises",
     title: "ENTERPRISES",
     tagline: "Corporate Wellbeing",
-    descriptions: [
-      "Workforce wellbeing, employee engagement, preventive health programs, and organizational health intelligence.",
-      "Supporting healthier, more productive workforces through scalable health and wellness programs."
-    ],
+    description: "Workforce health programs that improve employee wellbeing, engagement, and productivity.",
     icon: Building2,
     ctaText: "Book a Demo",
     ctaType: "demo"
@@ -54,10 +48,7 @@ const SOLUTIONS: SolutionCard[] = [
     id: "insurance",
     title: "INSURANCE",
     tagline: "Incentivized Prevention",
-    descriptions: [
-      "Reduce claims costs, improve member engagement, and reward healthier behaviors through continuous health intelligence.",
-      "Helping insurers shift from reactive care to prevention-driven member health management."
-    ],
+    description: "Reduce claims and improve member engagement through prevention-first health programs.",
     icon: ShieldCheck,
     ctaText: "Talk to Sales",
     ctaType: "doc"
@@ -66,10 +57,7 @@ const SOLUTIONS: SolutionCard[] = [
     id: "providers",
     title: "PROVIDERS",
     tagline: "Clinical Expansion",
-    descriptions: [
-      "Extend care beyond the clinic through continuous monitoring, patient engagement, and data-driven care pathways.",
-      "Supporting proactive healthcare delivery and better long-term patient outcomes."
-    ],
+    description: "Extend care beyond the clinic with continuous monitoring and patient engagement.",
     icon: HeartPulse,
     ctaText: "Book a Demo",
     ctaType: "contact"
@@ -77,11 +65,8 @@ const SOLUTIONS: SolutionCard[] = [
   {
     id: "pharma",
     title: "PHARMA",
-    tagline: "Next-gen Care & Tracking",
-    descriptions: [
-      "Patient support programs, adherence initiatives, and real-world health engagement powered by continuous data and coaching.",
-      "Helping pharmaceutical organizations improve patient outcomes beyond treatment."
-    ],
+    tagline: "Next-Gen Care & Tracking",
+    description: "Support patient adherence and health outcomes through connected care programs.",
     icon: FlaskConical,
     ctaText: "Talk to Sales",
     ctaType: "contact"
@@ -89,11 +74,8 @@ const SOLUTIONS: SolutionCard[] = [
   {
     id: "health-engage",
     title: "HEALTH ENGAGE",
-    tagline: "Population-scale Health",
-    descriptions: [
-      "Population-scale health engagement programs designed for governments, public health systems, and large-scale wellness initiatives.",
-      "Driving preventive healthcare adoption through data, coaching, and continuous engagement."
-    ],
+    tagline: "Population-Scale Health",
+    description: "Drive preventive healthcare programs across communities, cities, and public health systems.",
     icon: Sparkles,
     ctaText: "See Platform",
     ctaType: "demo"
@@ -145,27 +127,20 @@ export default function SolutionsEcosystem() {
         
         {/* Section Header & Subtitles */}
         <div className="text-left max-w-4xl mb-12 md:mb-16">
-          <span className="text-[10px] font-sans font-black tracking-[0.25em] text-[#2BC48A] uppercase mb-3 block">
-            STAKEHOLDER SYNERGY
-          </span>
-          <h2 id="solutions-ecosystem-title" className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0F172A] tracking-tight font-sans">
-            SOLUTIONS ECOSYSTEM
-          </h2>
-          <p id="solutions-ecosystem-lead" className="text-base font-bold text-[#2BC48A] mt-2.5 max-w-2xl font-sans">
-            One platform. Multiple healthcare stakeholders.
-          </p>
-          <p className="text-sm text-slate-500 mt-4 max-w-3xl leading-relaxed font-sans font-medium">
-            GOQii powers preventive health, continuous monitoring, engagement, and longevity outcomes across individuals, employers, insurers, healthcare providers, pharmaceutical organizations, and public health ecosystems.
-          </p>
-
-          <div className="mt-8 pt-6 border-t border-slate-200/60 max-w-3xl">
-            <h3 id="solutions-ecosystem-intro-sub" className="text-sm sm:text-base font-extrabold text-[#0F172A] racking-tight leading-snug">
-              Designed for every participant in the healthcare ecosystem
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-500 mt-2 font-medium leading-relaxed max-w-3xl">
-              Whether you&apos;re managing your personal health, supporting a workforce, improving insurance outcomes, extending patient care, or driving population health initiatives, GOQii provides a unified platform powered by continuous intelligence and human coaching.
-            </p>
+          {/* Label structure: 06 | SOLUTIONS ECOSYSTEM */}
+          <div className="flex items-center gap-4 text-xs mb-8 font-sans">
+            <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">06</span>
+            <span className="text-[#E2E8F0] font-light text-sm">|</span>
+            <span className="font-semibold text-[#667085] text-[11px] tracking-[0.25em] uppercase">
+              Solutions Ecosystem
+            </span>
           </div>
+          <h2 id="solutions-ecosystem-title" className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0F172A] tracking-tight font-sans">
+            One platform. Multiple healthcare stakeholders.
+          </h2>
+          <p className="text-sm text-slate-500 mt-4 max-w-3xl leading-relaxed font-sans font-medium">
+            GOQii helps individuals, employers, insurers, providers, pharma organizations, and public health systems improve health outcomes through continuous intelligence and human coaching.
+          </p>
         </div>
 
         {/* Dynamic Equal-Height Card Grid: 2 rows x 3 columns on desktop */}
@@ -201,13 +176,11 @@ export default function SolutionsEcosystem() {
                     {card.tagline}
                   </h4>
 
-                  {/* Body descriptions */}
-                  <div className="space-y-3">
-                    {card.descriptions.map((desc, i) => (
-                      <p key={i} className="text-xs text-slate-500 font-sans font-semibold leading-relaxed">
-                        <SmartText>{desc}</SmartText>
-                      </p>
-                    ))}
+                  {/* Body description */}
+                  <div>
+                    <p className="text-xs text-slate-500 font-sans font-semibold leading-relaxed">
+                      <SmartText>{card.description}</SmartText>
+                    </p>
                   </div>
                 </div>
 
@@ -232,28 +205,28 @@ export default function SolutionsEcosystem() {
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-16 p-8 bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 rounded-3xl border border-slate-800 relative overflow-hidden text-left"
+          className="mt-16 p-8 bg-gradient-to-r from-[#F4FBF8] to-[#EAF7F2] rounded-3xl border border-[#2BC48A]/20 relative overflow-hidden text-left shadow-sm"
         >
-          <div className="absolute right-0 bottom-0 top-0 w-1/3 bg-gradient-to-l from-[#2BC48A]/5 to-transparent pointer-events-none" />
-          <div className="relative z-10 max-w-4xl flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-12">
+          <div className="absolute right-0 bottom-0 top-0 w-1/3 bg-gradient-to-l from-[#2BC48A]/10 to-transparent pointer-events-none" />
+          <div className="relative z-10 w-full flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-12">
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-2 h-2 rounded-full bg-[#2BC48A] animate-pulse" />
                 <span className="text-[9px] font-mono tracking-widest text-[#2BC48A] uppercase font-black">
-                  UNIFIED ECOSYSTEM MATRIX
+                  ALIVE O.S. INTEGRATION
                 </span>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-white tracking-tight">
-                One Intelligence Layer. Multiple Outcomes.
+              <h3 className="text-lg sm:text-xl font-black text-slate-900 tracking-tight">
+                Powered by ALIVE O.S.
               </h3>
-              <p className="text-xs text-slate-400 mt-2 leading-relaxed max-w-2xl font-medium">
-                All solutions are powered by ALIVE O.S., GOQii&apos;s continuous health intelligence engine that combines wearables, diagnostics, AI, and human coaching to deliver measurable health outcomes at scale.
+              <p className="text-xs text-slate-600 mt-2 leading-relaxed max-w-2xl font-semibold">
+                GOQii&apos;s continuous intelligence platform combining wearables, diagnostics, AI, and human coaching.
               </p>
             </div>
 
             <button
               onClick={() => handleCtaClick("demo", "Solutions Ecosystem")}
-              className="px-6 py-3 bg-[#2BC48A] hover:bg-[#2bc48ab3] text-white font-extrabold text-xs tracking-wider uppercase rounded-xl shrink-0 cursor-pointer transition-colors shadow-lg shadow-[#2BC48A]/10 text-center"
+              className="px-6 py-3 bg-[#2BC48A] hover:bg-[#229e6f] text-white font-extrabold text-xs tracking-wider uppercase rounded-xl shrink-0 cursor-pointer transition-colors shadow-lg shadow-[#2BC48A]/15 text-center"
             >
               Consult an Expert
             </button>
@@ -302,17 +275,13 @@ export default function SolutionsEcosystem() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center gap-6 p-4 bg-[#F8FAFB] rounded-2xl border border-[#E8EDF2]">
-                  {/* QR Pattern visual */}
-                  <div className="w-24 h-24 bg-white border border-[#E8EDF2] p-2 rounded-xl shrink-0 flex items-center justify-center relative shadow-inner">
-                    <div className="w-full h-full relative opacity-90">
-                      <div className="absolute top-0 left-0 w-5 h-5 border-2 border-[#0F172A]" />
-                      <div className="absolute top-0 right-0 w-5 h-5 border-2 border-[#0F172A]" />
-                      <div className="absolute bottom-0 left-0 w-5 h-5 border-2 border-[#0F172A]" />
-                      <div className="absolute bottom-1 right-1 w-4 h-4 bg-[#2BC48A]/10 border border-[#2BC48A]/40" />
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4.5 h-4.5 bg-white p-0.5 rounded shadow-sm">
-                        <img src="https://appcdn.goqii.com/storeimg/36455_1779860387.png" alt="" className="w-full h-full object-contain" />
-                      </div>
-                    </div>
+                  {/* Real QR Code Image */}
+                  <div className="w-24 h-24 bg-white border border-[#E8EDF2] p-1.5 rounded-xl shrink-0 flex items-center justify-center relative shadow-sm">
+                    <img
+                      src="https://appcdn.goqii.com/storeimg/94397_1781604569.png"
+                      alt="Download GOQii APP"
+                      className="w-full h-full object-contain"
+                    />
                   </div>
 
                   <div className="flex flex-col gap-2 w-full">

@@ -87,11 +87,6 @@ export default function TrustRegulatory() {
       img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-7.png",
       title: "Cyber Essentials",
       desc: "UK National Cyber Security Centre Standards"
-    },
-    {
-      img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-8.png",
-      title: "DCB0129",
-      desc: "Clinical Risk Management for Health IT"
     }
   ];
 
@@ -113,7 +108,7 @@ export default function TrustRegulatory() {
         {/* Header Tag Index Layout */}
         <div className="w-full max-w-6xl mx-auto mb-16 text-left flex flex-col items-start font-sans">
           <div className="flex items-center gap-4 text-xs mb-8 font-sans">
-            <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">09</span>
+            <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">10</span>
             <span className="text-[#E2E8F0] font-light text-sm">|</span>
             <span className="font-semibold text-[#667085] text-[11px] tracking-[0.25em] uppercase">
               GLOBAL IMPACT
@@ -336,8 +331,8 @@ export default function TrustRegulatory() {
         {/* Header Tag Index Layout */}
         <div className="w-full max-w-6xl mx-auto mb-10 flex flex-col items-start font-sans">
           <div className="flex items-center gap-4 text-xs tracking-wide">
-            <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">10</span>
-            <span className="text-[#E2E8F0] font-light text-sm">|</span>
+            <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">11</span>
+            <span className="text-[#E2E8F0] font-light text-sm font-sans">|</span>
             <span className="font-semibold text-[#667085] text-[11px] tracking-[0.25em] uppercase">
               SECURE BY DESIGN
             </span>

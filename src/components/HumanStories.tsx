@@ -93,9 +93,9 @@ export default function HumanStories() {
       <div className="w-full max-w-6xl mx-auto mb-10 text-left">
         {/* Section Index Marker */}
         <div className="flex items-center gap-4 text-xs mb-8 font-sans">
-          <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">08</span>
+          <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">09</span>
           <span className="text-[#E2E8F0] font-light text-sm">|</span>
-          <span className="font-semibold text-[#667085] text-[11px] tracking-[0.25em] uppercase">
+          <span className="font-semibold text-[#667085] text-[11px] tracking-[0.25em] uppercase font-sans">
             HUMAN STORIES
           </span>
         </div>

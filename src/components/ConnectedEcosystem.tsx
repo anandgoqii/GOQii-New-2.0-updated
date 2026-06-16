@@ -25,6 +25,15 @@ export default function ConnectedEcosystem() {
 
       {/* Main Core Centered Typography Headers (Pristine Visual Hierarchy) */}
       <div className="w-full max-w-4xl mx-auto text-center mb-8 relative z-10">
+        {/* Label structure: 04 | THE CONNECTED ECOSYSTEM */}
+        <div className="flex items-center justify-center gap-4 text-xs mb-8 font-sans">
+          <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">04</span>
+          <span className="text-[#E2E8F0] font-light text-sm">|</span>
+          <span className="font-semibold text-[#667085] text-[11px] tracking-[0.25em] uppercase">
+            The Connected Ecosystem
+          </span>
+        </div>
+
         <h2 className="text-3xl sm:text-4xl md:text-[46px] font-black tracking-tight text-slate-900 leading-[1.12] mb-6 font-sans">
           GOQii combines AI, wearables, coaching,<br className="hidden md:block" />
           {" "}and preventive intelligence into one<br className="hidden md:block" />
@@ -370,7 +379,7 @@ export default function ConnectedEcosystem() {
         </div>
 
         {/* ================= GORGEOUS BOTTOM METRICS GRID BAR ================= */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-3 xl:gap-8 p-5 sm:p-6 lg:p-4 xl:p-8 bg-[#F8FAFB] border border-[#E8EDF2] rounded-[28px] mt-16 relative z-10 text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-4 xl:gap-8 p-5 sm:p-6 lg:p-6 xl:p-8 bg-[#F8FAFB] border border-[#E8EDF2] rounded-[28px] mt-16 relative z-10 text-left">
           
           {/* Module 1: Live Signals */}
           <div className="flex items-center gap-3 xl:gap-4">
@@ -380,73 +389,73 @@ export default function ConnectedEcosystem() {
             </div>
             {/* Metrics Info (Right) */}
             <div className="flex flex-col min-w-0">
-              <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#2BC48A] mb-0.5 font-sans truncate">
+              <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#2BC48A] mb-0.5 font-sans">
                 Live Signals
               </span>
-              <span className="text-2xl sm:text-[27px] lg:text-xl xl:text-[27px] font-black text-[#0F172A] tracking-tight leading-none mb-1 font-sans">
+              <span className="text-2xl sm:text-[27px] lg:text-lg xl:text-xl 2xl:text-[27px] font-black text-[#0F172A] tracking-tight leading-none mb-1 font-sans">
                 128
               </span>
-              <span className="text-[11px] font-medium text-slate-500 font-sans truncate">
+              <span className="text-[11px] font-medium text-slate-500 font-sans">
                 Active right now
               </span>
             </div>
           </div>
 
           {/* Module 2: Insights Generated */}
-          <div className="flex items-center gap-3 xl:gap-4 border-t sm:border-t-0 sm:border-l border-slate-200/60 pt-6 sm:pt-0 sm:pl-6 lg:pl-3 xl:pl-8">
+          <div className="flex items-center gap-3 xl:gap-4 border-t sm:border-t-0 sm:border-l border-slate-200/60 pt-6 sm:pt-0 sm:pl-6 lg:pl-4 xl:pl-8">
             {/* Glowing Icon Badge (Left) */}
             <div className="w-12 h-12 rounded-full bg-[#E0F2FE] text-[#00ADC7] border border-[#00ADC7]/20 flex items-center justify-center shrink-0">
               <TrendingUp className="w-6 h-6" />
             </div>
             {/* Metrics Info (Right) */}
             <div className="flex flex-col min-w-0">
-              <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#00ADC7] mb-0.5 font-sans truncate">
+              <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#00ADC7] mb-0.5 font-sans">
                 Insights Generated
               </span>
-              <span className="text-2xl sm:text-[27px] lg:text-xl xl:text-[27px] font-black text-[#0F172A] tracking-tight leading-none mb-1 font-sans">
+              <span className="text-2xl sm:text-[27px] lg:text-lg xl:text-xl 2xl:text-[27px] font-black text-[#0F172A] tracking-tight leading-none mb-1 font-sans">
                 24
               </span>
-              <span className="text-[11px] font-medium text-slate-500 font-sans truncate">
+              <span className="text-[11px] font-medium text-slate-500 font-sans">
                 In the last hour
               </span>
             </div>
           </div>
 
           {/* Module 3: Actions Completed */}
-          <div className="flex items-center gap-3 xl:gap-4 border-t sm:border-t lg:border-t-0 lg:border-l border-slate-200/60 pt-6 sm:pt-6 lg:pt-0 sm:pl-0 lg:pl-3 xl:pl-8">
+          <div className="flex items-center gap-3 xl:gap-4 border-t sm:border-t lg:border-t-0 lg:border-l border-slate-200/60 pt-6 sm:pt-6 lg:pt-0 sm:pl-0 lg:pl-4 xl:pl-8">
             {/* Glowing Icon Badge (Left) */}
             <div className="w-12 h-12 rounded-full bg-[#F3E8FF] text-[#A855F7] border border-[#A855F7]/40 flex items-center justify-center shrink-0">
               <CheckCircle className="w-6 h-6" />
             </div>
             {/* Metrics Info (Right) */}
             <div className="flex flex-col min-w-0">
-              <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#A855F7] mb-0.5 font-sans truncate">
+              <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#A855F7] mb-0.5 font-sans">
                 Actions Completed
               </span>
-              <span className="text-2xl sm:text-[27px] lg:text-xl xl:text-[27px] font-black text-[#0F172A] tracking-tight leading-none mb-1 font-sans">
+              <span className="text-2xl sm:text-[27px] lg:text-lg xl:text-xl 2xl:text-[27px] font-black text-[#0F172A] tracking-tight leading-none mb-1 font-sans">
                 96%
               </span>
-              <span className="text-[11px] font-medium text-slate-500 font-sans truncate">
+              <span className="text-[11px] font-medium text-slate-500 font-sans">
                 Daily goal progress
               </span>
             </div>
           </div>
 
           {/* Module 4: Health Trend */}
-          <div className="flex items-center gap-3 xl:gap-4 border-t sm:border-t lg:border-t-0 sm:border-l lg:border-l border-slate-200/60 pt-6 sm:pt-6 lg:pt-0 sm:pl-6 lg:pl-3 xl:pl-8">
+          <div className="flex items-center gap-3 xl:gap-4 border-t sm:border-t lg:border-t-0 sm:border-l lg:border-l border-slate-200/60 pt-6 sm:pt-6 lg:pt-0 sm:pl-6 lg:pl-4 xl:pl-8">
             {/* Glowing Icon Badge (Left) */}
             <div className="w-12 h-12 rounded-full bg-[#FFEDD5] text-[#F97316] border border-[#F97316]/40 flex items-center justify-center shrink-0">
               <Flame className="w-6 h-6" />
             </div>
             {/* Metrics Info (Right) */}
             <div className="flex flex-col min-w-0">
-              <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#F97316] mb-0.5 font-sans truncate">
+              <span className="text-[11px] font-extrabold uppercase tracking-wider text-[#F97316] mb-0.5 font-sans">
                 Health Trend
               </span>
-              <span className="text-2xl sm:text-[27px] lg:text-[21px] xl:text-[27px] font-black text-[#0F172A] tracking-tight leading-none mb-1 font-sans">
+              <span className="text-2xl sm:text-[27px] lg:text-lg xl:text-xl 2xl:text-[27px] font-black text-[#0F172A] tracking-tight leading-none mb-1 font-sans">
                 Improving
               </span>
-              <span className="text-[11px] font-medium text-slate-500 font-sans truncate">
+              <span className="text-[11px] font-medium text-slate-500 font-sans">
                 Great going!
               </span>
             </div>

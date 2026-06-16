@@ -317,17 +317,13 @@ export default function AudienceSelector() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center gap-6 p-4 bg-[#F8FAFB] rounded-2xl border border-[#E8EDF2]">
-                  {/* Inner QR placeholder card */}
-                  <div className="w-24 h-24 bg-white border border-[#E8EDF2] p-2 rounded-xl shrink-0 flex items-center justify-center relative shadow-inner">
-                    <div className="w-full h-full relative opacity-90">
-                      <div className="absolute top-0 left-0 w-5 h-5 border-2 border-[#0F172A]" />
-                      <div className="absolute top-0 right-0 w-5 h-5 border-2 border-[#0F172A]" />
-                      <div className="absolute bottom-0 left-0 w-5 h-5 border-2 border-[#0F172A]" />
-                      <div className="absolute bottom-1 right-1 w-4 h-4 bg-[#2BC48A]/10 border border-[#2BC48A]/40" />
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4.5 h-4.5 bg-white p-0.5 rounded shadow-sm">
-                        <img src="https://appcdn.goqii.com/storeimg/36455_1779860387.png" alt="" className="w-full h-full object-contain" />
-                      </div>
-                    </div>
+                  {/* Real QR Code Image */}
+                  <div className="w-24 h-24 bg-white border border-[#E8EDF2] p-1.5 rounded-xl shrink-0 flex items-center justify-center relative shadow-sm">
+                    <img
+                      src="https://appcdn.goqii.com/storeimg/94397_1781604569.png"
+                      alt="Download GOQii APP"
+                      className="w-full h-full object-contain"
+                    />
                   </div>
 
                   <div className="flex flex-col gap-2 w-full">
@@ -393,7 +389,7 @@ export default function AudienceSelector() {
                     <div className="space-y-5">
                       <div>
                         <span className="inline-block bg-[#E5F7F0] text-[#2BC48A] font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full mb-3">
-                          Corporate consultation
+                          {demoRole === "Insurer" ? "Insurer Consultation" : demoRole === "Healthcare Provider" ? "Clinical Collaboration" : "Corporate consultation"}
                         </span>
                         <h3 className="text-2xl font-black text-slate-900 tracking-tight leading-none">
                           Inquire for {demoRole} Solutions
