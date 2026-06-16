@@ -271,7 +271,7 @@ export default function DailyHealthIntelligence() {
                         <img 
                           src="https://appcdn.goqii.com/storeimg/96020_1780557384.png" 
                           alt="Nutrition Intelligence"
-                          className="w-full h-full object-contain bg-[#0F172A] rounded-2xl"
+                          className="w-full h-full object-cover bg-[#0F172A]"
                           referrerPolicy="no-referrer"
                           loading="eager"
                           style={{
@@ -305,7 +305,7 @@ export default function DailyHealthIntelligence() {
                         <img 
                           src="https://appcdn.goqii.com/storeimg/82027_1780557626.png" 
                           alt="S.A.F.E. Score Analysis"
-                          className="w-full h-full object-contain bg-[#0F172A] rounded-2xl"
+                          className="w-full h-full object-cover bg-[#0F172A]"
                           referrerPolicy="no-referrer"
                           loading="eager"
                           style={{
@@ -339,7 +339,7 @@ export default function DailyHealthIntelligence() {
                         <img 
                           src="https://appcdn.goqii.com/storeimg/62662_1780558012.png" 
                           alt="Secure Health Locker"
-                          className="w-full h-full object-contain bg-[#0F172A] rounded-2xl"
+                          className="w-full h-full object-cover bg-[#0F172A]"
                           referrerPolicy="no-referrer"
                           loading="eager"
                           style={{
@@ -373,7 +373,7 @@ export default function DailyHealthIntelligence() {
                         <img 
                           src="https://appcdn.goqii.com/storeimg/83435_1780558423.png" 
                           alt="Coaching & Guidance"
-                          className="w-full h-full object-contain bg-[#0F172A] rounded-2xl"
+                          className="w-full h-full object-cover bg-[#0F172A]"
                           referrerPolicy="no-referrer"
                           loading="eager"
                           style={{
@@ -407,7 +407,7 @@ export default function DailyHealthIntelligence() {
                         <img 
                           src="https://appcdn.goqii.com/storeimg/70019_1780558199.png" 
                           alt="Rewards & Motivation"
-                          className="w-full h-full object-contain bg-[#0F172A] rounded-2xl"
+                          className="w-full h-full object-cover bg-[#0F172A]"
                           referrerPolicy="no-referrer"
                           loading="eager"
                           style={{

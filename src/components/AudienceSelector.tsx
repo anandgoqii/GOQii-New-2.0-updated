@@ -189,11 +189,10 @@ export default function AudienceSelector() {
               {/* Left Side: Overview & Core Description */}
               <div className="lg:col-span-7 flex flex-col justify-between text-left space-y-6">
                 <div>
-                  <div className="flex items-center gap-3 mb-2.5">
+                  <div className="mb-2.5">
                     <span className="text-[10px] bg-[#E5F7F0] text-[#2BC48A] py-1 px-3 rounded-full font-bold tracking-wider uppercase font-mono">
                       {activeAudience.title}
                     </span>
-                    <span className="text-[11px] font-bold text-slate-400 select-none">// PLATFORM ANGLE</span>
                   </div>
                   
                   <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight leading-snug">

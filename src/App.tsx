@@ -1,7 +1,6 @@
 import { useState, useEffect, ReactNode } from "react";
 import { motion } from "motion/react";
 import Header from "./components/Header";
-import FloatingTabs from "./components/FloatingTabs";
 import HeroSection from "./components/HeroSection";
 import ProofStrip from "./components/ProofStrip";
 import AudienceSelector from "./components/AudienceSelector";
@@ -13,7 +12,6 @@ import AliveOS from "./components/AliveOS";
 import SolutionsEcosystem from "./components/SolutionsEcosystem";
 import DailyHealthIntelligence from "./components/DailyHealthIntelligence";
 import SectionXPrize from "./components/SectionXPrize";
-import ClinicalMetricsStrip from "./components/ClinicalMetricsStrip";
 import HumanStories from "./components/HumanStories";
 import TrustRegulatory from "./components/TrustRegulatory";
 import Leadership from "./components/Leadership";
@@ -120,9 +118,6 @@ export default function App() {
       {/* Global Floating Header Navigation Bar */}
       <Header />
 
-      {/* Floating Audience Group Tabs Navigation (Individuals, Enterprises, Public Health) */}
-      {currentPage === "home" && <FloatingTabs />}
-
       {/* Main Content Router */}
       {currentPage === "home" ? (
         <>
@@ -177,11 +172,6 @@ export default function App() {
           {/* 9. Section 06-XP: Sanjeevini Longevity and Science */}
           <ScrollRevealSection>
             <SectionXPrize />
-          </ScrollRevealSection>
-
-          {/* 10. Clinical Proof Metrics Strip */}
-          <ScrollRevealSection>
-            <ClinicalMetricsStrip />
           </ScrollRevealSection>
 
           {/* 12. Section 08: Human Stories */}

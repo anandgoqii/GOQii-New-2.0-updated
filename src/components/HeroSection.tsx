@@ -38,7 +38,7 @@ const slides = [
       { text: "every human.", highlight: true }
     ],
     subtext: "GOQii combines wearables, diagnostics, AI, and human coaching into one continuous health platform for individuals, employers, insurers, and healthcare providers.",
-    bgImage: "https://appcdn.goqii.com/storeimg/77706_1781597055.jpg",
+    bgImage: "https://appcdn.goqii.com/storeimg/30233_1781615916.jpg",
     mobileBgImage: "https://appcdn.goqii.com/storeimg/88832_1781000753.jpg",
     objectPosition: "object-right-bottom md:object-right-bottom"
   }
@@ -111,12 +111,13 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
             <motion.img
               key={currentSlide}
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.75 }}
+              animate={{ opacity: 0.95 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.35 }}
               src={isMobile && slides[currentSlide].mobileBgImage ? slides[currentSlide].mobileBgImage : slides[currentSlide].bgImage}
               alt="GOQii Healthspan Hero Image"
               className={`w-full h-full object-cover ${slides[currentSlide].objectPosition || "object-right-bottom"}`}
+              style={{ imageRendering: "auto" }}
               referrerPolicy="no-referrer"
             />
           </AnimatePresence>
