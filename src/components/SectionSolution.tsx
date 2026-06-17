@@ -65,7 +65,7 @@ export default function SectionSolution() {
       </div>
 
       {/* Main Curved Box Section Container */}
-      <div className="relative w-full max-w-6xl mx-auto bg-white border border-[#E8EDF2] rounded-[36px] md:rounded-[48px] p-8 sm:p-12 md:p-16 shadow-[0_32px_80px_rgba(15,23,42,0.02)] overflow-hidden z-10">
+      <div className="relative w-full max-w-6xl mx-auto bg-white border border-[#E8EDF2] rounded-[24px] sm:rounded-[36px] md:rounded-[48px] p-5 sm:p-12 md:p-16 shadow-[0_32px_80px_rgba(15,23,42,0.02)] overflow-hidden z-10">
         
         {/* Subtle decorative internal blur orb for premium feel */}
         <div className="absolute top-0 right-0 w-80 h-80 bg-[#2BC48A]/5 rounded-full blur-3xl pointer-events-none -translate-y-12 translate-x-12" />

@@ -71,7 +71,7 @@ export default function SanjeeviniPage() {
         </p>
 
         {/* Film / Infographic Card Panel */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-[#FAFBFB] border border-[#E8EDF2] p-8 sm:p-12 rounded-[40px] shadow-[0_24px_50px_rgba(15,23,42,0.015)] mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center bg-[#FAFBFB] border border-[#E8EDF2] p-5 sm:p-12 rounded-[24px] sm:rounded-[40px] shadow-[0_24px_50px_rgba(15,23,42,0.015)] mb-20">
           <div className="lg:col-span-6 text-left">
             <span className="text-[10px] font-sans font-black tracking-[0.25em] text-[#2BC48A] uppercase mb-4 block">
               THE RESEARCH MISSION
@@ -84,11 +84,11 @@ export default function SanjeeviniPage() {
             </p>
             
             {/* XPrize Sanjeevini Logo */}
-            <div className="flex items-center gap-6 mt-8 p-4 bg-white border border-[#E8EDF2] rounded-2xl self-start">
+            <div className="flex flex-row items-center gap-4 sm:gap-6 mt-8 p-4 bg-white border border-[#E8EDF2] rounded-2xl self-start max-w-full">
               <img
                 src="https://appcdn.goqii.com/storeimg/96760_1780031032.png"
                 alt="XPrize Sanjeevini Logo"
-                className="h-10 w-auto object-contain"
+                className="h-10 sm:h-12 w-auto object-contain"
                 referrerPolicy="no-referrer"
               />
               <div className="text-left">
@@ -99,8 +99,8 @@ export default function SanjeeviniPage() {
           </div>
 
           <div className="lg:col-span-6 flex justify-center w-full">
-            <div className="relative w-full max-w-[480px] aspect-[4/3] bg-white border border-[#E8EDF2] p-2 rounded-[24px]">
-              <div className="w-full h-full rounded-[18px] bg-slate-50 overflow-hidden flex items-center justify-center relative">
+            <div className="relative w-full max-w-[480px] aspect-[4/3] bg-white border border-[#E8EDF2] p-2 rounded-[20px] sm:rounded-[24px]">
+              <div className="w-full h-full rounded-[14px] sm:rounded-[18px] bg-slate-50 overflow-hidden flex items-center justify-center relative">
                 <img
                   src="https://appcdn.goqii.com/storeimg/20784_1780386295.png"
                   alt="Sanjeevini Longevity Intelligence Framework"
@@ -112,9 +112,52 @@ export default function SanjeeviniPage() {
           </div>
         </div>
 
+        {/* ================= VISUAL TIMELINE ================= */}
+        <div className="mb-20 bg-[#FAFBFB] rounded-[24px] sm:rounded-[40px] border border-[#E8EDF2] p-5 sm:p-12 relative overflow-hidden">
+          <div className="text-left sm:text-center mb-10">
+            <span className="text-[11px] font-sans font-black tracking-[0.25em] text-[#2BC48A] uppercase mb-2 block">
+              OUR JOURNEY
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight">
+              Sanjeevini Development Milestones
+            </h2>
+          </div>
+
+          <div className="relative">
+            {/* Connection line on desktop */}
+            <div className="hidden md:block absolute top-[21px] left-8 right-8 h-[2px] bg-[#E8EDF2] z-0" />
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+              {[
+                { year: "2023", title: "Finalist", desc: "Selected as an official XPRIZE Healthspan Semifinalist" },
+                { year: "2024", title: "Clinical Validation", desc: "Rigorous clinical trials in biological age diagnostics" },
+                { year: "2025", title: "AI Enhancement", desc: "Integration of deep predictive longevity neural networks" },
+                { year: "2026", title: "Global Scale", desc: "Launch of international preventative age-reversal cohorts" }
+              ].map((item, idx) => (
+                <div key={idx} className="flex flex-col items-start text-left group">
+                  {/* Circle Indicator */}
+                  <div className="w-11 h-11 rounded-full bg-white border-2 border-[#2BC48A] flex items-center justify-center font-black text-xs text-[#2BC48A] shadow-md mb-4 group-hover:bg-[#2BC48A] group-hover:text-white transition-all duration-300 transform group-hover:scale-105">
+                    {item.year}
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="text-sm font-black text-[#0F172A] tracking-tight flex items-center gap-1.5 mb-1.5 justify-start uppercase">
+                    <span className="text-[#2BC48A] font-extrabold">{item.year}</span>
+                    <span className="text-slate-300 font-normal">→</span>
+                    <span>{item.title}</span>
+                  </div>
+                  <p className="text-xs text-[#667085] leading-relaxed font-semibold max-w-[220px] md:max-w-none">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Pillars Grid */}
         <div className="mb-20">
-          <div className="text-center mb-12">
+          <div className="text-left sm:text-center mb-12">
             <span className="text-[11px] font-sans font-black tracking-[0.25em] text-[#2BC48A] uppercase mb-2 block">
               SYSTEM MECHANICS
             </span>
@@ -123,13 +166,13 @@ export default function SanjeeviniPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {pillars.map((pillar, index) => {
               const Icon = pillar.icon;
               return (
                 <div
                   key={index}
-                  className="bg-white border border-[#E8EDF2] p-8 rounded-[28px] hover:border-[#2BC48A]/35 transition-all duration-300 shadow-[0_12px_24px_rgba(0,0,0,0.005)]"
+                  className="bg-white border border-[#E8EDF2] p-5 sm:p-8 rounded-[20px] sm:rounded-[28px] hover:border-[#2BC48A]/35 transition-all duration-300 shadow-[0_12px_24px_rgba(0,0,0,0.005)]"
                 >
                   <div className="w-12 h-12 rounded-2xl bg-[#E5F7F0] flex items-center justify-center text-[#2BC48A] mb-6">
                     <Icon className="w-5.5 h-5.5" />
@@ -147,13 +190,13 @@ export default function SanjeeviniPage() {
         </div>
 
         {/* Call To Action Block */}
-        <div className="bg-[#0F172A] rounded-[44px] p-8 sm:p-16 text-center text-white relative overflow-hidden shadow-2xl">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] h-[80%] border border-slate-800 opacity-40 pointer-events-none rounded-3xl" />
+        <div className="bg-[#0F172A] rounded-[24px] sm:rounded-[44px] p-6 sm:p-16 text-center text-white relative overflow-hidden shadow-2xl">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[95%] h-[90%] sm:w-[90%] sm:h-[80%] border border-slate-800 opacity-40 pointer-events-none rounded-3xl" />
           
           <span className="text-[10px] font-sans font-black tracking-[0.25em] text-[#2BC48A] uppercase mb-4 block">
             ACCELERATE HEALTHSPAN
           </span>
-          <h2 className="text-3xl sm:text-5xl font-black tracking-tight mb-6 leading-tight max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-5xl font-black tracking-tight mb-6 leading-tight max-w-2xl mx-auto">
             Ready to live healthier, for longer?
           </h2>
           <p className="text-slate-400 text-sm sm:text-base max-w-lg mx-auto mb-10 leading-relaxed font-medium">
@@ -163,13 +206,13 @@ export default function SanjeeviniPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               onClick={handleBackToHome}
-              className="px-8 py-4 bg-[#2BC48A] hover:bg-emerald-500 text-white text-xs font-bold tracking-widest uppercase rounded-full transition-colors cursor-pointer"
+              className="w-full sm:w-auto px-8 py-4 bg-[#2BC48A] hover:bg-emerald-500 text-white text-xs font-bold tracking-widest uppercase rounded-full transition-colors cursor-pointer"
             >
               Back to Home
             </button>
             <a
               href="mailto:sanjeevini@goqii.com"
-              className="px-8 py-4 bg-transparent border border-slate-700 hover:border-white text-white text-xs font-bold tracking-widest uppercase rounded-full transition-colors cursor-pointer"
+              className="w-full sm:w-auto px-8 py-4 bg-transparent border border-slate-700 hover:border-white text-white text-xs font-bold tracking-widest uppercase rounded-full transition-colors cursor-pointer text-center"
             >
               Inquire Now
             </a>

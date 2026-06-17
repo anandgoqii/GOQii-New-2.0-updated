@@ -194,11 +194,11 @@ export default function AliveOS() {
             </div>
 
             {/* BEHAVIORAL NEUROCODING CALLOUT BOX */}
-            <div className="rounded-2xl bg-gradient-to-br from-[#021F17] via-[#043325] to-[#01140F] p-5 sm:p-6 text-white border border-[#2BC48A]/20 shadow-[0_20px_40px_rgba(4,42,30,0.12)] relative overflow-hidden font-sans">
+            <div className="rounded-2xl bg-gradient-to-br from-[#F4FBF7] via-[#E8F7F0] to-[#DCF7EB] p-5 sm:p-6 text-slate-800 border border-[#2BC48A]/30 shadow-[0_20px_40px_rgba(43,196,138,0.06)] relative overflow-hidden font-sans">
               
               {/* Neural wire glow effect */}
               <div className="absolute right-0 bottom-0 pointer-events-none translate-x-3 translate-y-3 z-0">
-                <svg viewBox="0 0 200 180" className="w-[180px] h-[160px] text-[#2BC48A] opacity-25" fill="none" stroke="currentColor">
+                <svg viewBox="0 0 200 180" className="w-[180px] h-[160px] text-[#2BC48A] opacity-[0.14]" fill="none" stroke="currentColor">
                   <path d="M100,20 C60,20 30,50 30,90 C30,120 50,140 70,150 C75,152 80,155 85,160 C90,165 95,170 100,170 C105,170 110,165 115,160 C120,155 125,152 130,150 C150,140 170,120 170,90 C170,50 140,20 100,20 Z" strokeWidth="1" strokeDasharray="3 3" />
                   <path d="M100,30 C80,45 60,60 60,90 C60,110 75,130 100,140 C125,130 140,110 140,90 C140,60 120,45 100,30 Z" strokeWidth="1" />
                   <circle cx="100" cy="30" r="3.5" fill="#2BC48A" />
@@ -210,29 +210,37 @@ export default function AliveOS() {
                 </svg>
               </div>
 
-              <div className="flex flex-col gap-1.5 mb-3 relative z-10">
-                <span className="self-start inline-flex items-center justify-center py-0.5 px-2 rounded bg-[#2BC48A] text-white text-[8px] font-black tracking-wider uppercase font-mono leading-none">
+              <div className="flex flex-col gap-1.5 mb-4 relative z-10">
+                <span className="self-start inline-flex items-center justify-center py-0.5 px-2 rounded bg-[#E5F7F0] text-[#047857] text-[8px] font-black tracking-wider uppercase font-mono leading-none">
                   PROPRIETARY ENGINE
                 </span>
-                <h4 className="text-[17px] font-black text-white tracking-wide uppercase font-sans mt-1">
+                <h4 className="text-[17px] font-black text-slate-900 tracking-wide uppercase font-sans mt-1">
                   BEHAVIORAL NEUROCODING
                 </h4>
-                <div className="text-xs font-semibold text-[#2BC48A] font-sans leading-none -mt-0.5">
+                <div className="text-xs font-semibold text-[#047857] font-sans leading-none -mt-0.5">
                   The Human Action Layer
                 </div>
               </div>
 
-              <p className="text-[11.5px] text-[#A3B5C0] leading-relaxed mb-4 relative z-10">
-                Refined through a decade of real-world coaching engagement, this architecture combines habit science with constant accountability to help users convert biometrics into lasting daily behaviors.
-              </p>
-              
-              <div className="rounded-xl border border-[#2BC48A]/30 bg-[#021812] px-3.5 py-3 flex items-start gap-2.5 relative z-10 shadow-inner">
-                <div className="mt-0.5 shrink-0 bg-[#2BC48A]/15 p-1 rounded-md">
-                  <Zap className="w-3.5 h-3.5 text-[#2BC48A]" strokeWidth={2.5} />
+              <div className="space-y-4 relative z-10 mb-4 font-semibold">
+                <p className="text-[13px] text-slate-800 font-extrabold font-sans leading-relaxed">
+                  GOQii's proprietary behavior engine transforms health signals into sustainable lifestyle change.
+                </p>
+                
+                <div className="flex flex-col gap-2 pl-3 border-l-2 border-[#2BC48A]/60 text-xs font-black text-[#047857] tracking-wide font-sans">
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#2BC48A] shrink-0" />
+                    Not just tracking.
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#2BC48A] shrink-0" />
+                    Not just coaching.
+                  </div>
                 </div>
-                <div className="text-[11px] text-white/90 leading-normal font-sans font-medium">
-                  AI identifies the potential health risks; <span className="text-[#2BC48A] font-bold">Behavioral Neurocoding guides action.</span>
-                </div>
+
+                <p className="text-[12px] text-slate-500 leading-relaxed font-semibold font-sans">
+                  A system designed to change behavior at scale.
+                </p>
               </div>
 
             </div>
@@ -302,12 +310,12 @@ export default function AliveOS() {
               </div>
 
               {/* ALIVE O.S. INTELLIGENCE ENGINE BLOCK */}
-              <div className="w-full bg-[#090D16] text-white rounded-2xl p-4 border border-[#1E293B] shadow-[0_8px_24px_rgba(15,23,42,0.15)] flex items-center gap-4 relative overflow-hidden z-20 group">
+              <div className="w-full bg-gradient-to-r from-[#F0FDF4] to-[#ECFDF5] text-slate-900 rounded-2xl p-4 border border-emerald-100 shadow-[0_8px_24px_rgba(43,196,138,0.06)] flex items-center gap-4 relative overflow-hidden z-20 group">
                 {/* Grid Overlay Detail */}
-                <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:16px_16px] opacity-20 pointer-events-none" />
+                <div className="absolute inset-0 bg-[radial-gradient(#a7f3d0_1px,transparent_1px)] [background-size:16px_16px] opacity-[0.22] pointer-events-none" />
                 
                 {/* Radar / Heartbeat wave left */}
-                <div className="w-10 h-10 rounded-full bg-[#2BC48A]/10 border border-[#2BC48A]/30 flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(43,196,138,0.15)]">
+                <div className="w-10 h-10 rounded-full bg-[#E5F7F0] border border-[#2BC48A]/35 flex items-center justify-center shrink-0 shadow-[0_0_12px_rgba(43,196,138,0.1)]">
                   <svg className="w-6 h-6 text-[#2BC48A]" viewBox="0 0 40 30" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
                     <path d="M 0 15 L 12 15 L 16 5 L 20 25 L 24 11 L 26 18 L 28 15 L 40 15" />
                   </svg>
@@ -315,16 +323,16 @@ export default function AliveOS() {
 
                 <div className="flex-1 relative z-10">
                   <div className="flex items-center gap-2">
-                    <span className="text-[13px] font-black text-white tracking-widest font-sans">ALIVE O.S.</span>
-                    <span className="text-[10px] bg-[#2BC48A]/15 text-[#2BC48A] py-0.5 px-2 rounded-full font-black tracking-wider uppercase font-mono border border-[#2BC48A]/15 scale-95 origin-left">
+                    <span className="text-[13px] font-black text-slate-900 tracking-widest font-sans">ALIVE O.S.</span>
+                    <span className="text-[10px] bg-[#E5F7F0] text-[#047857] py-0.5 px-2 rounded-full font-black tracking-wider uppercase font-mono border border-[#2BC48A]/10 scale-95 origin-left">
                       INTELLIGENCE ENGINE
                     </span>
                   </div>
-                  <div className="text-[10px] sm:text-[11px] text-[#94A3B8] leading-normal mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-0.5">
-                    <span>AI models</span><span className="text-slate-700">•</span>
-                    <span>Risk algorithms</span><span className="text-slate-700">•</span>
-                    <span>Clinical rules</span><span className="text-slate-700">•</span>
-                    <span className="text-white font-medium">Longitudinal health memory</span>
+                  <div className="text-[10px] sm:text-[11px] text-slate-600 font-semibold leading-normal mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-0.5">
+                    <span>AI models</span><span className="text-emerald-300">•</span>
+                    <span>Risk algorithms</span><span className="text-emerald-300">•</span>
+                    <span>Clinical rules</span><span className="text-emerald-300">•</span>
+                    <span className="text-[#047857] font-extrabold">Longitudinal health memory</span>
                   </div>
                 </div>
               </div>
@@ -423,61 +431,61 @@ export default function AliveOS() {
               </div>
 
               {/* BEHAVIORAL NEUROCODING BLOCK (GREEN PILL & PILLARS) */}
-              <div className="w-full bg-[#054E3B] bg-gradient-to-br from-[#044030] via-[#06503B] to-[#033427] text-white rounded-2xl p-4 border border-emerald-800/10 shadow-[0_8px_24px_rgba(4,78,59,0.1)] relative overflow-hidden z-20 flex flex-col">
-                <div className="absolute right-0 bottom-0 opacity-[0.04] pointer-events-none">
-                  <Brain className="w-24 h-24 text-white" />
+              <div className="w-full bg-gradient-to-br from-[#E6FDF4] via-[#F0FDF4] to-[#DCF7EB] text-slate-900 rounded-2xl p-4 border border-[#2BC48A]/25 shadow-[0_8px_24px_rgba(43,196,138,0.06)] relative overflow-hidden z-20 flex flex-col">
+                <div className="absolute right-0 bottom-0 opacity-[0.05] pointer-events-none">
+                  <Brain className="w-24 h-24 text-[#2BC48A]" />
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-white/10 border border-white/10 flex items-center justify-center shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-[#2BC48A]/10 border border-[#2BC48A]/25 flex items-center justify-center shrink-0">
                     <Brain className="w-4.5 h-4.5 text-[#2BC48A]" strokeWidth={2} />
                   </div>
                   <div>
-                    <h4 className="text-xs sm:text-sm font-black tracking-wide uppercase text-white font-sans">
+                    <h4 className="text-xs sm:text-sm font-black tracking-wide uppercase text-slate-900 font-sans">
                       BEHAVIORAL NEUROCODING
                     </h4>
-                    <p className="text-[10px] text-[#A3E3CD] leading-tight font-medium mt-0.5">
+                    <p className="text-[10px] text-[#047857] leading-tight font-bold mt-0.5">
                       Human motivation engine that turns insights into consistent daily actions.
                     </p>
                   </div>
                 </div>
 
                 {/* Grid row splitting the 4 action columns */}
-                <div className="grid grid-cols-4 pt-3 mt-3 border-t border-emerald-500/20 text-center gap-1.5">
+                <div className="grid grid-cols-4 pt-3 mt-3 border-t border-[#2BC48A]/20 text-center gap-1.5">
                   {/* Coach */}
                   <div className="flex flex-col items-center">
-                    <div className="w-5.5 h-5.5 rounded bg-white/10 flex items-center justify-center text-[#2BC48A] shrink-0 mb-1">
+                    <div className="w-5.5 h-5.5 rounded bg-[#2BC48A]/15 flex items-center justify-center text-[#047857] shrink-0 mb-1">
                       <User className="w-3 h-3" />
                     </div>
-                    <span className="text-[10px] font-bold text-white leading-tight">Coach</span>
-                    <span className="text-[7.5px] text-[#A3E3CD] leading-snug mt-0.5 block scale-90 sm:scale-100">Human accountability</span>
+                    <span className="text-[10px] font-black text-slate-900 leading-tight">Coach</span>
+                    <span className="text-[7.5px] text-slate-650 font-semibold leading-snug mt-0.5 block scale-90 sm:scale-100">Human accountability</span>
                   </div>
 
                   {/* Rewards */}
                   <div className="flex flex-col items-center">
-                    <div className="w-5.5 h-5.5 rounded bg-white/10 flex items-center justify-center text-[#2BC48A] shrink-0 mb-1">
+                    <div className="w-5.5 h-5.5 rounded bg-[#2BC48A]/15 flex items-center justify-center text-[#047857] shrink-0 mb-1">
                       <Zap className="w-3 h-3" />
                     </div>
-                    <span className="text-[10px] font-bold text-white leading-tight">Rewards</span>
-                    <span className="text-[7.5px] text-[#A3E3CD] leading-snug mt-0.5 block scale-90 sm:scale-100">Uplift positive loops</span>
+                    <span className="text-[10px] font-black text-slate-900 leading-tight">Rewards</span>
+                    <span className="text-[7.5px] text-slate-650 font-semibold leading-snug mt-0.5 block scale-90 sm:scale-100">Uplift positive loops</span>
                   </div>
 
                   {/* Accountability */}
                   <div className="flex flex-col items-center">
-                    <div className="w-5.5 h-5.5 rounded bg-white/10 flex items-center justify-center text-[#2BC48A] shrink-0 mb-1">
+                    <div className="w-5.5 h-5.5 rounded bg-[#2BC48A]/15 flex items-center justify-center text-[#047857] shrink-0 mb-1">
                       <ShieldCheck className="w-3 h-3" />
                     </div>
-                    <span className="text-[10px] font-bold text-white leading-tight">Acc.</span>
-                    <span className="text-[7.5px] text-[#A3E3CD] leading-snug mt-0.5 block scale-90 sm:scale-100">Biometric feedback</span>
+                    <span className="text-[10px] font-black text-slate-900 leading-tight">Acc.</span>
+                    <span className="text-[7.5px] text-slate-650 font-semibold leading-snug mt-0.5 block scale-90 sm:scale-100">Biometric feedback</span>
                   </div>
 
                   {/* Habits */}
                   <div className="flex flex-col items-center">
-                    <div className="w-5.5 h-5.5 rounded bg-white/10 flex items-center justify-center text-[#2BC48A] shrink-0 mb-1">
+                    <div className="w-5.5 h-5.5 rounded bg-[#2BC48A]/15 flex items-center justify-center text-[#047857] shrink-0 mb-1">
                       <Check className="w-3 h-3" />
                     </div>
-                    <span className="text-[10px] font-bold text-white leading-tight">Habits</span>
-                    <span className="text-[7.5px] text-[#A3E3CD] leading-snug mt-0.5 block scale-90 sm:scale-100">Behavioral routines</span>
+                    <span className="text-[10px] font-black text-slate-900 leading-tight">Habits</span>
+                    <span className="text-[7.5px] text-slate-650 font-semibold leading-snug mt-0.5 block scale-90 sm:scale-100">Behavioral routines</span>
                   </div>
                 </div>
 

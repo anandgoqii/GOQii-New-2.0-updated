@@ -183,8 +183,8 @@ export default function HumanStories() {
             </motion.div>
           </AnimatePresence>
 
-          {/* Floated Metric Glass Plate Card on top left of visualizer screen */}
-          <div className="absolute top-6 left-6 z-20">
+          {/* Floated Metric Glass Plate Card on top left of visualizer screen - Hidden on mobile to keep background image fully visible */}
+          <div className="absolute top-3 left-3 sm:top-6 sm:left-6 z-20 hidden sm:block">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeIndex}
@@ -192,20 +192,20 @@ export default function HumanStories() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 15 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                className="bg-[#0b0f17]/70 backdrop-blur-md border border-white/10 px-6 py-4 rounded-[20px] text-white shadow-xl flex items-center gap-4"
+                className="bg-[#0b0f17]/70 backdrop-blur-md border border-white/10 px-3.5 py-2.5 sm:px-6 sm:py-4 rounded-[16px] sm:rounded-[20px] text-white shadow-xl flex items-center gap-2.5 sm:gap-4"
               >
-                <div className="text-3xl sm:text-4xl font-black font-sans tracking-tight text-[#2BC48A]">
+                <div className="text-xl sm:text-4xl font-black font-sans tracking-tight text-[#2BC48A]">
                   {activeStory.metric}
                 </div>
                 
                 {/* Visual vertical separation stroke */}
-                <div className="w-[1px] h-8 bg-white/15" />
+                <div className="w-[1px] h-6 sm:h-8 bg-white/15" />
 
                 <div className="flex flex-col text-left">
-                  <span className="text-xs font-bold tracking-wider text-white uppercase leading-normal">
+                  <span className="text-[10px] sm:text-xs font-bold tracking-wider text-white uppercase leading-normal">
                     {activeStory.metricLabel}
                   </span>
-                  <span className="text-[10px] text-slate-300 font-medium opacity-80 mt-0.5">
+                  <span className="text-[9px] sm:text-[10px] text-slate-300 font-medium opacity-80 mt-0.5">
                     Metric Index
                   </span>
                 </div>
@@ -213,16 +213,16 @@ export default function HumanStories() {
             </AnimatePresence>
           </div>
 
-          {/* Floated "Watch the story" Button with glass outline on bottom left */}
+          {/* Floated "Watch the story" Button with glass outline on bottom left - Circular & ultra-compact on mobile */}
           {activeStory.videoUrl && (
             <button
               onClick={() => setIsPlayingVideo(true)}
-              className="absolute bottom-6 left-6 z-20 flex items-center gap-3 bg-white px-5 py-3 rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.15)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] transition-all duration-300 group cursor-pointer"
+              className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6 z-20 flex items-center gap-2 sm:gap-3 bg-white p-2.5 sm:px-5 sm:py-3 rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.15)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.25)] transition-all duration-300 group cursor-pointer"
             >
-              <div className="w-8 h-8 rounded-full bg-[#E5F7F0] flex items-center justify-center text-[#2BC48A] group-hover:scale-110 transition-transform duration-300">
-                <Play className="w-3.5 h-3.5 fill-current ml-0.5" strokeWidth={2.5} />
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#E5F7F0] flex items-center justify-center text-[#2BC48A] group-hover:scale-110 transition-transform duration-300 shrink-0">
+                <Play className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 fill-current ml-0.5" strokeWidth={2.5} />
               </div>
-              <div className="flex flex-col text-left">
+              <div className="hidden sm:flex flex-col text-left">
                 <span className="text-xs font-bold text-[#0F172A] leading-tight flex items-center">Watch the story</span>
                 <span className="text-[10px] text-[#667085] font-medium mt-0.5">3:45 min</span>
               </div>

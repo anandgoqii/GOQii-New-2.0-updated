@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, ChevronDown, Moon, Sun, ArrowRight, CheckCircle2, User, Mail, Building2, Users } from "lucide-react";
+import BookDemoModal from "./BookDemoModal";
 
 interface MenuItem {
   label: string;
@@ -16,14 +17,6 @@ export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [darkMode, setDarkMode] = useState(false);
   const [demoModalOpen, setDemoModalOpen] = useState(false);
-  const [demoSubmitted, setDemoSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    company: "",
-    teamSize: "10-100",
-    goal: "Corporate Wellness"
-  });
 
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
@@ -128,39 +121,9 @@ export default function Header() {
       ]
     },
     { label: "Sanjeevini", key: "sanjeevini", href: "https://goqii.com/sanjeevini" },
-    { label: "Plans", key: "plans", targetId: "section-aliveos" },
+    { label: "Plans", key: "plans", href: "https://go-qii-global-plans.vercel.app/" },
     { label: "Contact", key: "contact", targetId: "section-final" }
   ];
-
-  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setDemoSubmitted(true);
-    setTimeout(() => {
-      // Sinks temporary local submit simulation state
-    }, 2000);
-  };
-
-  const resetDemoModal = () => {
-    setDemoModalOpen(false);
-    // Extra timeout to prevent jarring visual flash
-    setTimeout(() => {
-      setDemoSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        teamSize: "10-100",
-        goal: "Corporate Wellness"
-      });
-    }, 300);
-  };
 
   return (
     <>
@@ -367,207 +330,7 @@ export default function Header() {
         )}
       </AnimatePresence>
 
-      {/* Interactive Request a Demo Modal Dialog */}
-      <AnimatePresence>
-        {demoModalOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            {/* Modal Glass Backdrop */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"
-              onClick={resetDemoModal}
-            />
-
-            {/* Modal Panel Box */}
-            <motion.div
-              initial={{ scale: 0.95, y: 15, opacity: 0 }}
-              animate={{ scale: 1, y: 0, opacity: 1 }}
-              exit={{ scale: 0.95, y: 10, opacity: 0 }}
-              transition={{ type: "spring", damping: 25 }}
-              className="relative w-full max-w-lg bg-white dark:bg-[#0B1220] border border-slate-100 dark:border-slate-800 shadow-[0_24px_60px_rgba(15,23,42,0.15)] rounded-3xl p-6 md:p-8 z-10 text-left overflow-hidden"
-            >
-              {/* Close Button corner */}
-              <button
-                onClick={resetDemoModal}
-                className="absolute top-5 right-5 p-1.5 rounded-full border border-slate-100 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900 text-slate-500 hover:text-slate-800 transition-colors cursor-pointer"
-              >
-                <X className="w-4 h-4" />
-              </button>
-
-              {/* Form Content or Successful Confirmation State */}
-              <AnimatePresence mode="wait">
-                {!demoSubmitted ? (
-                  <motion.div
-                    key="demo-form"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="space-y-6"
-                  >
-                    <div>
-                      <div className="inline-block bg-[#E5F7F0] dark:bg-[#073C27] text-[#21C083] font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full mb-3">
-                        Interactive Platform Demo
-                      </div>
-                      <h3 className="text-2xl font-black text-slate-900 dark:text-white tracking-tight leading-none">
-                        Request Ecosystem Demo
-                      </h3>
-                      <p className="text-slate-500 dark:text-slate-400 text-xs mt-2 font-medium leading-relaxed">
-                        Schedule a continuous walkthrough of the ALIVE O.S., smart biomarker trackers, and employee health integrations with our experts.
-                      </p>
-                    </div>
-
-                    <form onSubmit={handleFormSubmit} className="space-y-4">
-                      {/* Name Row */}
-                      <div className="space-y-1.5">
-                        <label className="text-[11px] font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">
-                          Full Name
-                        </label>
-                        <div className="relative flex items-center">
-                          <User className="absolute left-4 w-4 h-4 text-slate-400" />
-                          <input
-                            required
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleFormChange}
-                            placeholder="e.g. Dr. Sarah Connor"
-                            className="w-full pl-11 pr-4 py-3 text-sm rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 focus:outline-none focus:border-[#21C083] dark:focus:border-[#21C083] dark:text-white text-slate-800 transition-colors"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Email Row */}
-                      <div className="space-y-1.5">
-                        <label className="text-[11px] font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">
-                          Business Email
-                        </label>
-                        <div className="relative flex items-center">
-                          <Mail className="absolute left-4 w-4 h-4 text-slate-400" />
-                          <input
-                            required
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleFormChange}
-                            placeholder="sconnor@medical.org"
-                            className="w-full pl-11 pr-4 py-3 text-sm rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 focus:outline-none focus:border-[#21C083] dark:focus:border-[#21C083] dark:text-white text-slate-800 transition-colors"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Company Info */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="space-y-1.5">
-                          <label className="text-[11px] font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">
-                            Company / Network
-                          </label>
-                          <div className="relative flex items-center">
-                            <Building2 className="absolute left-4 w-4 h-4 text-slate-400" />
-                            <input
-                              required
-                              type="text"
-                              name="company"
-                              value={formData.company}
-                              onChange={handleFormChange}
-                              placeholder="GOQii Health Inc"
-                              className="w-full pl-11 pr-4 py-3 text-sm rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 focus:outline-none focus:border-[#21C083] dark:focus:border-[#21C083] dark:text-white text-slate-800 transition-colors"
-                            />
-                          </div>
-                        </div>
-
-                        <div className="space-y-1.5">
-                          <label className="text-[11px] font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">
-                            Team Size
-                          </label>
-                          <div className="relative flex items-center">
-                            <Users className="absolute left-4 w-4 h-4 text-slate-400" />
-                            <select
-                              name="teamSize"
-                              value={formData.teamSize}
-                              onChange={handleFormChange}
-                              className="w-full pl-11 pr-4 py-3 text-sm rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 focus:outline-none focus:border-[#21C083] dark:focus:border-[#21C083] dark:text-white text-slate-800 transition-colors appearance-none cursor-pointer"
-                            >
-                              <option value="1-10">1 - 10 members</option>
-                              <option value="10-100">10 - 100 members</option>
-                              <option value="100-500">100 - 500 members</option>
-                              <option value="500+">500+ members</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Dropdown goal */}
-                      <div className="space-y-1.5">
-                        <label className="text-[11px] font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">
-                          Primary Integration Goal
-                        </label>
-                        <select
-                          name="goal"
-                          value={formData.goal}
-                          onChange={handleFormChange}
-                          className="w-full px-4 py-3 text-sm rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 focus:outline-none focus:border-[#21C083] dark:focus:border-[#21C083] dark:text-white text-slate-800 transition-colors appearance-none cursor-pointer"
-                        >
-                          <option value="Corporate Wellness">Employee Wellness & Insurance Savings</option>
-                          <option value="Clinical Biomarkers">Clinical Trials & Biomarker Intelligence</option>
-                          <option value="Personal Coaching Partner">Whitelabel Coaching Integration</option>
-                          <option value="Other">General Strategic Exploration</option>
-                        </select>
-                      </div>
-
-                      <button
-                        type="submit"
-                        className="w-full py-4 rounded-xl bg-gradient-to-r from-[#21C083] to-[#00ADC7] hover:shadow-lg hover:shadow-emerald-500/15 text-white text-sm font-extrabold uppercase mt-4 transition-all duration-300 cursor-pointer"
-                      >
-                        Submit Request Info
-                      </button>
-                    </form>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="demo-success"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    className="flex flex-col items-center justify-center text-center py-8 space-y-4"
-                  >
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1, rotate: 360 }}
-                      transition={{ type: "spring", stiffness: 150, damping: 10 }}
-                    >
-                      <CheckCircle2 className="w-16 h-16 text-[#21C083]" />
-                    </motion.div>
-
-                    <div className="space-y-2">
-                      <h4 className="text-2xl font-black text-slate-900 dark:text-white tracking-tight">
-                        Demo Request Received!
-                      </h4>
-                      <p className="text-[#667085] dark:text-slate-400 text-xs leading-relaxed max-w-sm">
-                        Thank you, <span className="font-bold text-slate-800 dark:text-white">{formData.name}</span>! Our health solutions architect has sent a confirmation email to <span className="font-bold text-slate-800 dark:text-white">{formData.email}</span>.
-                      </p>
-                    </div>
-
-                    <div className="bg-slate-50 dark:bg-slate-900 p-4 rounded-2xl w-full text-slate-500 dark:text-slate-400 text-[11px] leading-relaxed text-left font-semibold">
-                      📋 Your summary:<br />
-                      - Company: <span className="text-slate-700 dark:text-slate-200">{formData.company}</span><br />
-                      - Goal: <span className="text-slate-700 dark:text-slate-200">{formData.goal}</span>
-                    </div>
-
-                    <button
-                      onClick={resetDemoModal}
-                      className="px-6 py-2.5 rounded-full border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold hover:bg-slate-50 dark:hover:bg-slate-900 transition-all cursor-pointer"
-                    >
-                      Back to Experience
-                    </button>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
+      <BookDemoModal isOpen={demoModalOpen} onClose={() => setDemoModalOpen(false)} />
     </>
   );
 }

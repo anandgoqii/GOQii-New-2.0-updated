@@ -1,112 +1,44 @@
-import React from "react";
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef, useState } from "react";
+import React, { useState } from "react";
+import { ArrowRight } from "lucide-react";
 import Particles from "./Particles";
+import ContactUsModal from "./ContactUsModal";
 
 export default function FinalCTA() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
-
-  // Hook scroll progress specifically for the exit fading sequence
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
-
-  // At the scroll end (progress from 0.4 to 0.95), everything fades to 0 except the main title
-  const fadeOutElements = useTransform(scrollYProgress, [0.1, 0.65], [1, 0]);
-  const scaleGlow = useTransform(scrollYProgress, [0, 0.7], [1, 1.3]);
-  const titleY = useTransform(scrollYProgress, [0.1, 0.7], [0, 15]);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim()) {
-      setSubmitted(true);
-      setEmail("");
-    }
-  };
+  const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
-    <div
-      id="section-final"
-      ref={containerRef}
-      className="relative h-[150vh] w-full bg-[#F8FAFB]"
-    >
-      {/* Sticky viewport content that stays in place while scrolling through this 150vh exit track */}
-      <div className="sticky top-0 left-0 w-full h-screen flex flex-col justify-center items-center overflow-hidden px-6 text-center select-none">
-        
-        {/* Large faded circular glow background */}
-        <motion.div
-          style={{ scale: scaleGlow, opacity: fadeOutElements }}
-          className="absolute w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-[#2BC48A]/15 to-[#F8FAFB] blur-[70px] pointer-events-none z-0"
-        />
-
-        {/* Slow particle movements */}
-        <motion.div style={{ opacity: fadeOutElements }} className="absolute inset-0 z-0">
-          <Particles count={15} color="bg-[#2BC48A]" speedMultiplier={0.6} />
-        </motion.div>
-
-        {/* The main core headline - remains visible */}
-        <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center justify-center">
-          <motion.h2
-            style={{ y: titleY }}
-            className="text-3xl sm:text-4xl md:text-6xl font-extrabold tracking-tighter text-[#0F172A] leading-[0.9] text-center"
-          >
-            Human health deserves <br />
-            <span className="text-[#2BC48A]">better systems.</span>
-          </motion.h2>
-
-          {/* Subtext - Fades away */}
-          <motion.p
-            style={{ opacity: fadeOutElements }}
-            className="text-lg md:text-2xl font-normal text-[#667085] mt-8 mb-12 tracking-wide"
-          >
-            Welcome to GOQii 2.0
-          </motion.p>
-
-          {/* Email input join form - Fades away */}
-          <motion.div
-            style={{ opacity: fadeOutElements }}
-            className="w-full max-w-md z-20"
-          >
-            {submitted ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="p-4 rounded-xl bg-white border border-[#E8EDF2] text-[#2BC48A] font-semibold text-sm shadow-xs"
-              >
-                Thank you. Welcome to the future.
-              </motion.div>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 w-full">
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="flex-1 px-6 py-4 rounded-full bg-white border border-[#E8EDF2] focus:border-[#2BC48A] focus:outline-none text-sm text-[#0F172A]"
-                />
-                <button
-                  type="submit"
-                  className="px-8 py-4 bg-[#0F172A] text-white text-xs font-bold tracking-widest uppercase rounded-full hover:bg-slate-800 transition-colors pointer-events-auto cursor-pointer flex items-center justify-center"
-                >
-                  Join The Future
-                </button>
-              </form>
-            )}
-          </motion.div>
-
-          {/* Scroll down hints at start of section */}
-          <motion.div
-            style={{ opacity: fadeOutElements }}
-            className="absolute bottom-[-140px] font-mono text-[9px] text-[#667085] tracking-widest uppercase"
-          >
-            KEEP SCROLLING TO SEAL EXPERIENCE
-          </motion.div>
-        </div>
+    <section id="section-final" className="relative w-full bg-[#0F172A] py-16 px-6 overflow-hidden border-t border-slate-800">
+      {/* Background Particles Decoration */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
+        <Particles count={25} color="bg-[#2BC48A]" speedMultiplier={0.4} />
       </div>
-    </div>
+
+      {/* Decorative Radial Glowing Accents */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-emerald-500/10 blur-[120px] pointer-events-none" />
+
+      <div className="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-none mb-4">
+          Ready to make <span className="text-[#2BC48A]">health continuous?</span>
+        </h2>
+        
+        <p className="max-w-2xl text-sm sm:text-base md:text-lg text-slate-300 font-medium leading-relaxed mb-8">
+          Discover how GOQii helps individuals, employers, insurers, and providers turn health data into meaningful action.
+        </p>
+
+        <button
+          onClick={() => setIsContactOpen(true)}
+          className="px-10 py-4.5 bg-[#2BC48A] hover:bg-emerald-400 text-[#0F172A] font-extrabold text-xs sm:text-sm tracking-widest uppercase rounded-full transition-all hover:scale-[1.03] shadow-[0_10px_25px_rgba(43,196,138,0.30)] flex items-center justify-center gap-2 cursor-pointer"
+        >
+          <span>Contact Us</span>
+          <ArrowRight className="w-4 h-4" />
+        </button>
+      </div>
+
+      {/* ================= MODAL: CONTACT US ================= */}
+      <ContactUsModal
+        isOpen={isContactOpen}
+        onClose={() => setIsContactOpen(false)}
+      />
+    </section>
   );
 }

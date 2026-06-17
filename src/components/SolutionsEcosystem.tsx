@@ -1,4 +1,4 @@
-import { useState, FormEvent } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { 
   User, 
@@ -14,6 +14,7 @@ import {
   Apple
 } from "lucide-react";
 import SmartText from "./SmartText";
+import BookDemoModal from "./BookDemoModal";
 
 interface SolutionCard {
   id: string;
@@ -86,29 +87,24 @@ export default function SolutionsEcosystem() {
   const [isGetAppOpen, setIsGetAppOpen] = useState(false);
   const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
   const [demoRole, setDemoRole] = useState("Individual");
-  const [demoForm, setDemoForm] = useState({ name: "", email: "", company: "" });
-  const [demoSubmitted, setDemoSubmitted] = useState(false);
 
   const handleCtaClick = (type: "app" | "demo" | "doc" | "contact", roleName: string) => {
     if (type === "app") {
       setIsGetAppOpen(true);
     } else {
-      setDemoRole(roleName);
+      let finalRole = roleName;
+      if (roleName === "ENTERPRISES") {
+        finalRole = "EmployerOnly";
+      } else if (roleName === "INSURANCE") {
+        finalRole = "InsurerOnly";
+      } else if (roleName === "PROVIDERS") {
+        finalRole = "ProviderOnly";
+      } else if (roleName === "PHARMA") {
+        finalRole = "PharmaOnly";
+      }
+      setDemoRole(finalRole);
       setIsBookDemoOpen(true);
     }
-  };
-
-  const handleDemoSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setDemoSubmitted(true);
-  };
-
-  const closeDemoModal = () => {
-    setIsBookDemoOpen(false);
-    setTimeout(() => {
-      setDemoSubmitted(false);
-      setDemoForm({ name: "", email: "", company: "" });
-    }, 300);
   };
 
   return (
@@ -329,131 +325,7 @@ export default function SolutionsEcosystem() {
       </AnimatePresence>
 
       {/* ================= INLINE MODAL: CONSULTATION CHANNELS ================= */}
-      <AnimatePresence>
-        {isBookDemoOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"
-              onClick={closeDemoModal}
-            />
-
-            <motion.div
-              initial={{ scale: 0.95, y: 15, opacity: 0 }}
-              animate={{ scale: 1, y: 0, opacity: 1 }}
-              exit={{ scale: 0.95, y: 10, opacity: 0 }}
-              transition={{ type: "spring", damping: 25 }}
-              className="relative w-full max-w-md bg-white border border-[#E8EDF2] shadow-2xl rounded-3xl p-6 md:p-8 z-10 text-left overflow-hidden"
-            >
-              <button
-                onClick={closeDemoModal}
-                className="absolute top-5 right-5 p-1.5 rounded-full border border-[#E8EDF2] hover:bg-slate-50 text-slate-500 hover:text-slate-800 transition-colors cursor-pointer"
-              >
-                <X className="w-4 h-4" />
-              </button>
-
-              <AnimatePresence mode="wait">
-                {!demoSubmitted ? (
-                  <motion.div
-                    key="solutions-demo-form"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                  >
-                    <div className="space-y-5">
-                      <div>
-                        <span className="inline-block bg-[#E5F7F0] text-[#2BC48A] font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full mb-3">
-                          ECOSYSTEM SOLUTIONS
-                        </span>
-                        <h3 className="text-2xl font-black text-slate-900 tracking-tight leading-none">
-                          Inquire for {demoRole}
-                        </h3>
-                        <p className="text-[#667085] text-xs mt-2 font-medium leading-relaxed">
-                          Integrate our preventative biomarkers, clinical research support, and certified human coaching with your existing frameworks.
-                        </p>
-                      </div>
-
-                      <form onSubmit={handleDemoSubmit} className="space-y-3.5">
-                        <div className="space-y-1">
-                          <label className="text-[10px] font-black uppercase text-slate-500 tracking-wider">Your Name</label>
-                          <input
-                            required
-                            type="text"
-                            placeholder="Anand"
-                            className="w-full px-4 py-3 rounded-xl border border-[#E8EDF2] text-sm focus:outline-none focus:border-[#2BC48A] transition-colors"
-                            value={demoForm.name}
-                            onChange={(e) => setDemoForm({ ...demoForm, name: e.target.value })}
-                          />
-                        </div>
-
-                        <div className="space-y-1">
-                          <label className="text-[10px] font-black uppercase text-slate-500 tracking-wider">Corporate Email</label>
-                          <input
-                            required
-                            type="email"
-                            placeholder="anand@goqii.com"
-                            className="w-full px-4 py-3 rounded-xl border border-[#E8EDF2] text-sm focus:outline-none focus:border-[#2BC48A] transition-colors"
-                            value={demoForm.email}
-                            onChange={(e) => setDemoForm({ ...demoForm, email: e.target.value })}
-                          />
-                        </div>
-
-                        <div className="space-y-1">
-                          <label className="text-[10px] font-black uppercase text-slate-500 tracking-wider">Organization / Entity</label>
-                          <input
-                            required
-                            type="text"
-                            placeholder="GOQii"
-                            className="w-full px-4 py-3 rounded-xl border border-[#E8EDF2] text-sm focus:outline-none focus:border-[#2BC48A] transition-colors"
-                            value={demoForm.company}
-                            onChange={(e) => setDemoForm({ ...demoForm, company: e.target.value })}
-                          />
-                        </div>
-
-                        <button
-                          type="submit"
-                          className="w-full py-3.5 bg-[#2BC48A] hover:bg-[#25b57e] transition-colors text-white font-extrabold text-sm tracking-wider uppercase rounded-xl mt-2 cursor-pointer text-center"
-                        >
-                          Send Inquire Proposal
-                        </button>
-                      </form>
-                    </div>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="solutions-demo-success"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    className="flex flex-col items-center text-center py-6 space-y-4"
-                  >
-                    <div className="w-16 h-16 rounded-full bg-[#E5F7F0] text-[#2BC48A] flex items-center justify-center">
-                      <CheckCircle2 className="w-8 h-8" />
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <h4 className="text-xl font-black text-slate-900 tracking-tight">Walkthrough Scheduled!</h4>
-                      <p className="text-[#667085] text-xs max-w-xs mx-auto leading-relaxed">
-                        Thank you, <span className="font-bold text-slate-800">{demoForm.name}</span>. A health solution consultant will reach back within 24 hours at <span className="font-bold text-slate-800">{demoForm.email}</span> to structure a custom walkthrough for <span className="font-bold text-slate-800">{demoForm.company}</span>.
-                      </p>
-                    </div>
-
-                    <button
-                      onClick={closeDemoModal}
-                      className="px-6 py-2.5 rounded-full border border-[#E8EDF2] text-xs font-bold hover:bg-slate-50 text-slate-700 transition-colors"
-                    >
-                      Done
-                    </button>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
+      <BookDemoModal isOpen={isBookDemoOpen} onClose={() => setIsBookDemoOpen(false)} initialRole={demoRole} />
 
     </section>
   );

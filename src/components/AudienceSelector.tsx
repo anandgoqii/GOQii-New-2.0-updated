@@ -1,7 +1,8 @@
-import { useState, FormEvent } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { User, Building2, ShieldCheck, HeartPulse, Sparkles, CheckCircle2, ArrowRight, X, PhoneCall, FileText } from "lucide-react";
 import SmartText from "./SmartText";
+import BookDemoModal from "./BookDemoModal";
 
 interface AudienceCard {
   id: string;
@@ -69,7 +70,7 @@ const AUDIENCES: AudienceCard[] = [
     icon: HeartPulse,
     metric: { value: "94%", label: "Long-term Adherence Rate" },
     bullets: [
-      "Seamless integration with EHR & EMR data loops",
+      "Works with your existing clinical systems and patient records",
       "Coached transitional care management tracking",
       "Real-time alerts on physiological drift metrics"
     ],
@@ -83,36 +84,21 @@ export default function AudienceSelector() {
   const [isGetAppOpen, setIsGetAppOpen] = useState(false);
   const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
   const [demoRole, setDemoRole] = useState("Employer");
-  const [demoForm, setDemoForm] = useState({ name: "", email: "", company: "" });
-  const [demoSubmitted, setDemoSubmitted] = useState(false);
   
   // Handlers for localized CTA routing
   const handleCtaClick = (type: "app" | "demo" | "doc" | "contact") => {
     if (type === "app") {
       setIsGetAppOpen(true);
     } else if (type === "demo") {
-      setDemoRole("Employer");
+      setDemoRole("EmployerOnly");
       setIsBookDemoOpen(true);
     } else if (type === "doc") {
-      setDemoRole("Insurer");
+      setDemoRole("InsurerOnly");
       setIsBookDemoOpen(true);
     } else if (type === "contact") {
-      setDemoRole("Healthcare Provider");
+      setDemoRole("ProviderOnly");
       setIsBookDemoOpen(true);
     }
-  };
-
-  const handleDemoSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    setDemoSubmitted(true);
-  };
-
-  const closeDemoModal = () => {
-    setIsBookDemoOpen(false);
-    setTimeout(() => {
-      setDemoSubmitted(false);
-      setDemoForm({ name: "", email: "", company: "" });
-    }, 300);
   };
 
   const activeAudience = AUDIENCES.find((aud) => aud.id === activeTab) || AUDIENCES[0];
@@ -236,33 +222,33 @@ export default function AudienceSelector() {
 
               {/* Right Side: Visual Accent & Key Metric Highlight Card (Bento Block style) */}
               <div className="lg:col-span-5 flex flex-col justify-center">
-                <div className="relative rounded-2xl bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-white p-6 sm:p-8 border border-slate-800 flex flex-col justify-between overflow-hidden relative shadow-[0_12px_32px_rgba(0,0,0,0.15)] h-full min-h-[220px]">
+                <div className="relative rounded-2xl bg-gradient-to-br from-[#F4FBF9] to-[#E6FDF4] text-[#0F172A] p-6 sm:p-8 border border-[#2BC48A]/20 flex flex-col justify-between overflow-hidden shadow-[0_12px_32px_rgba(43,196,138,0.05)] h-full min-h-[220px]">
                   
                   {/* Absolute visual wireframes */}
                   <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#2BC48A]/5 to-transparent pointer-events-none" />
-                  <div className="absolute right-0 top-0 p-4 opacity-[0.05] pointer-events-none">
+                  <div className="absolute right-0 top-0 p-4 opacity-[0.08] pointer-events-none">
                     <Sparkles className="w-24 h-24 text-[#2BC48A]" />
                   </div>
 
                   <div className="relative z-10">
-                    <span className="text-[9px] font-mono tracking-widest text-[#2BC48A] uppercase font-black leading-none block">
+                    <span className="text-[9px] font-mono tracking-widest text-[#047857] uppercase font-black leading-none block">
                       CORE AUDIENCE METRIC
                     </span>
                     
-                    <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight mt-3 leading-none font-sans">
+                    <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0F172A] tracking-tight mt-3 leading-none font-sans">
                       {activeAudience.metric.value}
                     </div>
                     
-                    <div className="text-[11px] font-black text-slate-300 tracking-wider uppercase mt-1">
+                    <div className="text-[11px] font-black text-[#047857] tracking-wider uppercase mt-1">
                       {activeAudience.metric.label}
                     </div>
                   </div>
 
-                  <div className="relative z-10 pt-4 border-t border-slate-800/80 mt-4 text-left">
-                    <div className="text-[10px] text-slate-400 font-sans uppercase font-bold leading-normal">
+                  <div className="relative z-10 pt-4 border-t border-[#2BC48A]/15 mt-4 text-left">
+                    <div className="text-[10px] text-slate-500 font-sans uppercase font-bold leading-normal">
                       Verified Impact Strategy
                     </div>
-                    <p className="text-xs text-slate-300 font-sans leading-relaxed mt-1">
+                    <p className="text-xs text-slate-600 font-sans leading-relaxed mt-1">
                       GOQii continuous telemetry combined with human coaching structures accountable behaviors to validate daily clinical outcomes.
                     </p>
                   </div>
@@ -370,138 +356,7 @@ export default function AudienceSelector() {
       </AnimatePresence>
 
       {/* ================= MODAL: AUDIENCE SPECIFIC DEMO CONSULTATION ================= */}
-      <AnimatePresence>
-        {isBookDemoOpen && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-slate-950/60 backdrop-blur-sm"
-              onClick={closeDemoModal}
-            />
-
-            <motion.div
-              initial={{ scale: 0.95, y: 15, opacity: 0 }}
-              animate={{ scale: 1, y: 0, opacity: 1 }}
-              exit={{ scale: 0.95, y: 10, opacity: 0 }}
-              transition={{ type: "spring", damping: 25 }}
-              className="relative w-full max-w-md bg-white border border-[#E8EDF2] shadow-2xl rounded-3xl p-6 md:p-8 z-10 text-left overflow-hidden"
-            >
-              <button
-                onClick={closeDemoModal}
-                className="absolute top-5 right-5 p-1.5 rounded-full border border-[#E8EDF2] hover:bg-slate-50 text-slate-500 hover:text-slate-800 transition-colors cursor-pointer"
-              >
-                <X className="w-4 h-4" />
-              </button>
-
-              <AnimatePresence mode="wait">
-                {!demoSubmitted ? (
-                  <motion.div
-                    key="audience-demo-input"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                  >
-                    <div className="space-y-5">
-                      <div>
-                        <span className="inline-block bg-[#E5F7F0] text-[#2BC48A] font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full mb-3">
-                          {demoRole === "Insurer" ? "Insurer Consultation" : demoRole === "Healthcare Provider" ? "Clinical Collaboration" : "Corporate consultation"}
-                        </span>
-                        <h3 className="text-2xl font-black text-slate-900 tracking-tight leading-none">
-                          Inquire for {demoRole} Solutions
-                        </h3>
-                        <p className="text-[#667085] text-xs mt-2 font-medium leading-relaxed">
-                          Integrate our preventative biomarkers, clinical research support, and certified human coaching with your existing frameworks.
-                        </p>
-                      </div>
-
-                      <form onSubmit={handleDemoSubmit} className="space-y-3.5">
-                        <div className="space-y-1">
-                          <label className="text-[10px] font-black uppercase text-slate-500 tracking-wider">Your Name</label>
-                          <input
-                            required
-                            type="text"
-                            placeholder="Anand"
-                            className="w-full px-4 py-3 rounded-xl border border-[#E8EDF2] text-sm focus:outline-none focus:border-[#2BC48A] transition-colors"
-                            value={demoForm.name}
-                            onChange={(e) => setDemoForm({ ...demoForm, name: e.target.value })}
-                          />
-                        </div>
-
-                        <div className="space-y-1">
-                          <label className="text-[10px] font-black uppercase text-slate-500 tracking-wider">Corporate Email</label>
-                          <input
-                            required
-                            type="email"
-                            placeholder="anand@goqii.com"
-                            className="w-full px-4 py-3 rounded-xl border border-[#E8EDF2] text-sm focus:outline-none focus:border-[#2BC48A] transition-colors"
-                            value={demoForm.email}
-                            onChange={(e) => setDemoForm({ ...demoForm, email: e.target.value })}
-                          />
-                        </div>
-
-                        <div className="space-y-1">
-                          <label className="text-[10px] font-black uppercase text-slate-500 tracking-wider">Company / Entity</label>
-                          <input
-                            required
-                            type="text"
-                            placeholder="GOQii"
-                            className="w-full px-4 py-3 rounded-xl border border-[#E8EDF2] text-sm focus:outline-none focus:border-[#2BC48A] transition-colors"
-                            value={demoForm.company}
-                            onChange={(e) => setDemoForm({ ...demoForm, company: e.target.value })}
-                          />
-                        </div>
-
-                        <div className="space-y-1">
-                          <label className="text-[10px] font-black uppercase text-slate-500 tracking-wider font-sans">Perspective Type</label>
-                          <div className="w-full px-4 py-3 rounded-xl border border-[#E8EDF2] text-sm bg-slate-50 font-bold text-slate-700 select-none">
-                            {demoRole}
-                          </div>
-                        </div>
-
-                        <button
-                          type="submit"
-                          className="w-full py-3.5 bg-gradient-to-r from-[#21C083] to-[#00ADC7] hover:shadow-lg text-white font-extrabold text-sm tracking-wider uppercase rounded-xl mt-2 transition-all cursor-pointer text-center"
-                        >
-                          Request Professional Consultation
-                        </button>
-                      </form>
-                    </div>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="audience-demo-success"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    className="flex flex-col items-center text-center py-6 space-y-4"
-                  >
-                    <div className="w-16 h-16 rounded-full bg-[#E5F7F0] text-[#2BC48A] flex items-center justify-center">
-                      <CheckCircle2 className="w-8 h-8" />
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <h4 className="text-xl font-black text-slate-900 tracking-tight">Consultation Requested!</h4>
-                      <p className="text-[#667085] text-xs max-w-xs mx-auto leading-relaxed">
-                        Thank you, <span className="font-bold text-slate-800">{demoForm.name}</span>. A clinical/corporate health specialist will email you within 24 hours at <span className="font-bold text-slate-800">{demoForm.email}</span> to structure a custom walkthrough customized for <span className="font-bold text-slate-800">{demoForm.company}</span> under our <span className="font-bold text-emerald-600">{demoRole}</span> program scope.
-                      </p>
-                    </div>
-
-                    <button
-                      onClick={closeDemoModal}
-                      className="px-6 py-2.5 rounded-full border border-[#E8EDF2] text-xs font-bold hover:bg-slate-50 text-slate-700 transition-colors"
-                    >
-                      Done
-                    </button>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
+      <BookDemoModal isOpen={isBookDemoOpen} onClose={() => setIsBookDemoOpen(false)} initialRole={demoRole} />
 
     </div>
   );

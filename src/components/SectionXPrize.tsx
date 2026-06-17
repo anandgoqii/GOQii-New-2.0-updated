@@ -184,9 +184,9 @@ export default function SectionXPrize() {
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-[540px] aspect-[4/3.2] bg-white border border-[#E8EDF2] rounded-[32px] overflow-hidden p-2 shadow-[0_16px_40px_rgba(15,23,42,0.02)] flex items-center justify-center group"
+            className="relative w-full max-w-[540px] aspect-[4/3.2] bg-white border border-[#E8EDF2] rounded-[24px] sm:rounded-[32px] overflow-hidden p-2 shadow-[0_16px_40px_rgba(15,23,42,0.02)] flex items-center justify-center group"
           >
-            <div className="relative w-full h-full rounded-[24px] overflow-hidden bg-[#FAFBFB] flex items-center justify-center p-4">
+            <div className="relative w-full h-full rounded-[18px] sm:rounded-[24px] overflow-hidden bg-[#FAFBFB] flex items-center justify-center p-4">
               <img
                 src="https://appcdn.goqii.com/storeimg/20784_1780386295.png"
                 alt="Sanjeevini Longevity Intelligence Framework"
@@ -196,6 +196,8 @@ export default function SectionXPrize() {
             </div>
           </motion.div>
         </div>
+
+
 
       </div>
     </div>
