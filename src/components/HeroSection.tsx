@@ -26,7 +26,7 @@ const slides = [
       { text: "Prevent.", highlight: true }
     ],
     subtext: "GOQii combines wearables, diagnostics, AI, and human coaching into one continuous health platform for individuals, employers, insurers, and healthcare providers.",
-    bgImage: "https://appcdn.goqii.com/storeimg/82110_1781597042.jpg",
+    bgImage: "https://appcdn.goqii.com/storeimg/48777_1781616000.jpg",
     mobileBgImage: "https://appcdn.goqii.com/storeimg/54302_1781000743.jpg",
     objectPosition: "object-right-bottom md:object-right-bottom"
   },
