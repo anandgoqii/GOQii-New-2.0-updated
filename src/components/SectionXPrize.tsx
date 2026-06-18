@@ -215,10 +215,10 @@ export default function SectionXPrize() {
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
             {[
-              { year: "2023", title: "Finalist", desc: "Selected as an official XPRIZE Healthspan Semifinalist" },
-              { year: "2024", title: "Clinical Validation", desc: "Rigorous clinical trials in biological age diagnostics" },
-              { year: "2025", title: "AI Enhancement", desc: "Integration of deep predictive longevity neural networks" },
-              { year: "2026", title: "Global Scale", desc: "Launch of international preventative age-reversal cohorts" }
+              { year: "2023", title: "Entered XPRIZE Healthspan", desc: "Sanjeevini submitted its longevity platform and research framework to the $101M XPRIZE Healthspan competition." },
+              { year: "2024", title: "Top 40 Milestone Winner", desc: "Recognized as one of the Top 40 milestone-winning teams worldwide and the only award-winning team from India." },
+              { year: "2025", title: "AI-Powered Longevity Platform", desc: "Enhanced the platform with AI-driven biomarker analysis, predictive health intelligence, and personalized longevity guidance." },
+              { year: "2026", title: "Final Round Validation", desc: "Advancing toward final validation with integrated diagnostics, coaching, behavioral neurocoding™, and continuous health intelligence." }
             ].map((item, idx) => (
               <div key={idx} className="flex flex-col items-start text-left group">
                 {/* Circle Indicator */}
@@ -228,8 +228,6 @@ export default function SectionXPrize() {
                 
                 {/* Content */}
                 <div className="text-sm font-black text-[#0F172A] tracking-tight flex items-center gap-1.5 mb-1.5 justify-start uppercase">
-                  <span className="text-[#2BC48A] font-extrabold">{item.year}</span>
-                  <span className="text-slate-300 font-normal">→</span>
                   <span>{item.title}</span>
                 </div>
                 <p className="text-xs text-[#667085] leading-relaxed font-semibold max-w-[220px] md:max-w-none">

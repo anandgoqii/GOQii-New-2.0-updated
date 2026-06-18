@@ -105,16 +105,16 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
           style={{ y: yParallax, scale: imageScale }}
           className="absolute -top-[3%] left-0 w-full h-[106%] origin-center"
         >
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             <motion.img
               key={currentSlide}
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.95 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.35 }}
+              transition={{ duration: 0.45 }}
               src={isMobile && slides[currentSlide].mobileBgImage ? slides[currentSlide].mobileBgImage : slides[currentSlide].bgImage}
               alt="GOQii Healthspan Hero Image"
-              className={`w-full h-full object-cover ${slides[currentSlide].objectPosition || "object-right-bottom"}`}
+              className={`absolute inset-0 w-full h-full object-cover ${slides[currentSlide].objectPosition || "object-right-bottom"}`}
               style={{ imageRendering: "auto" }}
               referrerPolicy="no-referrer"
             />
@@ -147,7 +147,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.35, ease: "easeInOut" }}
-              className="flex flex-col items-start text-left w-full min-h-[300px] sm:min-h-[260px] md:min-h-[310px] justify-center"
+              className="flex flex-col items-start text-left w-full min-h-[460px] sm:min-h-[390px] md:min-h-[380px] lg:min-h-[370px] justify-start"
             >
               {/* Label */}
               <div className="label-caps mb-6 md:mb-8 tracking-[0.25em] text-[#2BC48A] font-bold">
@@ -155,11 +155,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
               </div>
 
               {/* Big Large Typography (Reveal line by line using the explicit hero-heading class) */}
-              <h1 className={`hero-heading text-[#0F172A] mb-8 flex flex-col items-start leading-[1.08] ${
-                slides[currentSlide].id === 2
-                  ? "min-h-[84px] sm:min-h-[112px] lg:min-h-[140px] xl:min-h-[180px]"
-                  : "min-h-[56px] sm:min-h-[76px] lg:min-h-[96px] xl:min-h-[120px]"
-              }`}>
+              <h1 className="hero-heading text-[#0F172A] mb-8 flex flex-col items-start leading-[1.08] min-h-[110px] sm:min-h-[130px] lg:min-h-[160px] xl:min-h-[180px]">
                 {slides[currentSlide].id === 1 ? (
                   <>
                     <span>Health should begin&nbsp;</span>
