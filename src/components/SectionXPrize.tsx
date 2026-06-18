@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef, useState } from "react";
-import { Globe, Play } from "lucide-react";
+import { Globe, Play, X } from "lucide-react";
 
 // Import the generated pristine DNA structure asset
 import dnaStructureImage from "../assets/images/goqii_dna_structure_1780319199140.png";
@@ -34,6 +34,7 @@ const emeraldSparkles = [
 export default function SectionXPrize() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   // Translate scroll sequence to standard subtle parallax for core background glow
   const { scrollYProgress } = useScroll({
@@ -164,15 +165,13 @@ export default function SectionXPrize() {
             >
               See Platform <span className="text-base">→</span>
             </a>
-            <a 
-              href="https://goqii.com/sanjeevini"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button 
+              onClick={() => setIsVideoOpen(true)}
               className="inline-flex items-center justify-center gap-2.5 text-sm font-semibold tracking-wide text-[#475467] hover:text-[#2BC48A] transition-colors px-6 py-3.5 rounded-full border border-[#E8EDF2] bg-white cursor-pointer"
             >
               <Play className="w-3.5 h-3.5 fill-current ml-0.5" strokeWidth={2.5} />
               Watch the film
-            </a>
+            </button>
           </div>
 
         </div>
@@ -197,9 +196,80 @@ export default function SectionXPrize() {
           </motion.div>
         </div>
 
-
-
       </div>
+
+      {/* ================= VISUAL TIMELINE ================= */}
+      <div className="mt-20 w-full max-w-6xl mx-auto bg-white rounded-[24px] sm:rounded-[32px] border border-[#E8EDF2] p-5 sm:p-10 relative overflow-hidden z-10 shadow-sm">
+        <div className="text-left sm:text-center mb-10">
+          <span className="text-[11px] font-sans font-black tracking-[0.25em] text-[#2BC48A] uppercase mb-2 block">
+            OUR JOURNEY
+          </span>
+          <h3 className="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight">
+            Sanjeevini Development Milestones
+          </h3>
+        </div>
+
+        <div className="relative">
+          {/* Connection line on desktop */}
+          <div className="hidden md:block absolute top-[21px] left-8 right-8 h-[2px] bg-[#E8EDF2] z-0" />
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+            {[
+              { year: "2023", title: "Finalist", desc: "Selected as an official XPRIZE Healthspan Semifinalist" },
+              { year: "2024", title: "Clinical Validation", desc: "Rigorous clinical trials in biological age diagnostics" },
+              { year: "2025", title: "AI Enhancement", desc: "Integration of deep predictive longevity neural networks" },
+              { year: "2026", title: "Global Scale", desc: "Launch of international preventative age-reversal cohorts" }
+            ].map((item, idx) => (
+              <div key={idx} className="flex flex-col items-start text-left group">
+                {/* Circle Indicator */}
+                <div className="w-11 h-11 rounded-full bg-white border-2 border-[#2BC48A] flex items-center justify-center font-black text-xs text-[#2BC48A] shadow-md mb-4 group-hover:bg-[#2BC48A] group-hover:text-white transition-all duration-300 transform group-hover:scale-105">
+                  {item.year}
+                </div>
+                
+                {/* Content */}
+                <div className="text-sm font-black text-[#0F172A] tracking-tight flex items-center gap-1.5 mb-1.5 justify-start uppercase">
+                  <span className="text-[#2BC48A] font-extrabold">{item.year}</span>
+                  <span className="text-slate-300 font-normal">→</span>
+                  <span>{item.title}</span>
+                </div>
+                <p className="text-xs text-[#667085] leading-relaxed font-semibold max-w-[220px] md:max-w-none">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Video Popup Modal */}
+      {isVideoOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/85 backdrop-blur-md">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="relative w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+          >
+            {/* Close Button */}
+            <button 
+              onClick={() => setIsVideoOpen(false)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-950/60 hover:bg-[#2BC48A] text-white flex items-center justify-center transition-all cursor-pointer border border-white/20"
+              aria-label="Close video player"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <iframe 
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/hQbBmRuAbOQ?autoplay=1&rel=0" 
+              title="Sanjeevini Longevity and Science Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowFullScreen
+            />
+          </motion.div>
+        </div>
+      )}
+
     </div>
   );
 }

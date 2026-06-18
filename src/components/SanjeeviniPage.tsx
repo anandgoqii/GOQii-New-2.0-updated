@@ -1,7 +1,9 @@
 import { motion } from "motion/react";
-import { ArrowLeft, Brain, ShieldCheck, Heart, Sparkles, Activity, Award } from "lucide-react";
+import { useState } from "react";
+import { ArrowLeft, Brain, ShieldCheck, Heart, Sparkles, Activity, Award, Play, X } from "lucide-react";
 
 export default function SanjeeviniPage() {
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
   const handleBackToHome = () => {
     if (window.navigateToPage) {
       window.navigateToPage("home");
@@ -66,9 +68,19 @@ export default function SanjeeviniPage() {
           <span className="text-[#2BC48A]">Extending Healthy Lifespan.</span>
         </h1>
 
-        <p className="text-lg sm:text-xl text-[#475467] font-medium max-w-3xl leading-relaxed mb-10">
+        <p className="text-lg sm:text-xl text-[#475467] font-medium max-w-3xl leading-relaxed mb-8">
           A global health intelligence initiative combining longevity science, diagnostics, coaching, AI, and continuous tracking to help people live healthier for decades longer.
         </p>
+
+        <div className="flex flex-wrap gap-4 mb-12">
+          <button
+            onClick={() => setIsVideoOpen(true)}
+            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-[#0F172A] text-white text-xs font-bold tracking-widest uppercase rounded-full hover:bg-[#2BC48A] transition-colors shadow-sm cursor-pointer"
+          >
+            <Play className="w-3.5 h-3.5 fill-current mr-0.5" strokeWidth={2.5} />
+            Watch the Film
+          </button>
+        </div>
 
         {/* Film / Infographic Card Panel */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center bg-[#FAFBFB] border border-[#E8EDF2] p-5 sm:p-12 rounded-[24px] sm:rounded-[40px] shadow-[0_24px_50px_rgba(15,23,42,0.015)] mb-20">
@@ -220,6 +232,36 @@ export default function SanjeeviniPage() {
         </div>
 
       </div>
+
+      {/* Video Popup Modal */}
+      {isVideoOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/85 backdrop-blur-md">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            className="relative w-full max-w-4xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+          >
+            {/* Close Button */}
+            <button 
+              onClick={() => setIsVideoOpen(false)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-950/60 hover:bg-[#2BC48A] text-white flex items-center justify-center transition-all cursor-pointer border border-white/20"
+              aria-label="Close video player"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            <iframe 
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/hQbBmRuAbOQ?autoplay=1&rel=0" 
+              title="Sanjeevini Longevity and Science Video"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowFullScreen
+            />
+          </motion.div>
+        </div>
+      )}
+
     </motion.div>
   );
 }

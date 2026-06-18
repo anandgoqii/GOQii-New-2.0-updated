@@ -120,7 +120,7 @@ export default function Header() {
         { label: "Nutriforge", desc: "Custom diagnostics & precise nutrient-tracking integration loops.", targetId: "section-ecosystem", href: "https://goqii.com/nutrigenius" }
       ]
     },
-    { label: "Sanjeevini", key: "sanjeevini", href: "https://goqii.com/sanjeevini" },
+    { label: "Sanjeevini", key: "sanjeevini", targetId: "section-xprize" },
     { label: "Plans", key: "plans", href: "https://go-qii-global-plans.vercel.app/" },
     { label: "Contact", key: "contact", targetId: "section-final" }
   ];
