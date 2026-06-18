@@ -1,22 +1,9 @@
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
 import SmartText from "./SmartText";
 
 export default function SectionProblem() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // Parallax effect of 10% on the image relative to scroll
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const yParallax = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
-
   return (
     <div
       id="section-problem"
-      ref={containerRef}
       className="relative min-h-[90vh] w-full flex flex-col justify-center items-center overflow-hidden bg-white py-12 md:py-20 px-6 md:px-16"
     >
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -69,25 +56,14 @@ export default function SectionProblem() {
 
         </div>
 
-        {/* Right Column: Embedded Portrait (with soft realistic shadowing & green concentric signal rings) */}
-        <div className="lg:col-span-7 relative w-full aspect-[5/4] sm:aspect-[4/3] rounded-[32px] overflow-hidden bg-white border border-[#E8EDF2]/40 shadow-xs">
-          
-          {/* Real movement inside the frame */}
-          <motion.div
-            style={{ y: yParallax }}
-            className="absolute -inset-8 w-[calc(100%+64px)] h-[calc(100%+64px)] pointer-events-none"
-          >
-            <img
-              src="https://appcdn.goqii.com/storeimg/69388_1781074885.png"
-              alt="Behavior Change Ecosystem Visualization"
-              className="w-full h-full object-cover brightness-100 contrast-[1.03] opacity-95 scale-100"
-              referrerPolicy="no-referrer"
-            />
-          </motion.div>
-
-
-          {/* Smooth overlay shading mapping window shadow feel */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/[0.02] via-transparent to-transparent pointer-events-none" />
+        {/* Right Column: Embedded Portrait (with soft realistic shadowing, showcasing entire image/data fully) */}
+        <div className="lg:col-span-7 relative w-full rounded-[24px] sm:rounded-[32px] overflow-hidden bg-white border border-[#E8EDF2]/60 shadow-[0_12px_36px_rgba(15,23,42,0.03)] hover:shadow-[0_20px_50px_rgba(15,23,42,0.06)] transition-all duration-500">
+          <img
+            src="https://appcdn.goqii.com/storeimg/69388_1781074885.png"
+            alt="Behavior Change Ecosystem Visualization"
+            className="w-full h-auto block object-contain select-none scale-100"
+            referrerPolicy="no-referrer"
+          />
         </div>
 
       </div>

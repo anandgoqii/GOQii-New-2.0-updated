@@ -24,6 +24,7 @@ interface SolutionCard {
   icon: any;
   ctaText: string;
   ctaType: "app" | "demo" | "doc" | "contact";
+  href?: string;
 }
 
 const SOLUTIONS: SolutionCard[] = [
@@ -74,12 +75,13 @@ const SOLUTIONS: SolutionCard[] = [
   },
   {
     id: "health-engage",
-    title: "HEALTH ENGAGE",
+    title: "HEALTHENGAGE",
     tagline: "Population-Scale Health",
     description: "Drive preventive healthcare programs across communities, cities, and public health systems.",
     icon: Sparkles,
     ctaText: "See Platform",
-    ctaType: "demo"
+    ctaType: "demo",
+    href: "https://goqii.com/healthengage"
   }
 ];
 
@@ -182,13 +184,25 @@ export default function SolutionsEcosystem() {
 
                 {/* Footer Link Button */}
                 <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-start">
-                  <button
-                    onClick={() => handleCtaClick(card.ctaType, card.title)}
-                    className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#2BC48A] group-hover:text-[#2BC48A] hover:underline cursor-pointer tracking-wider uppercase"
-                  >
-                    <span>{card.ctaText}</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                  </button>
+                  {card.href ? (
+                    <a
+                      href={card.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#2BC48A] group-hover:text-[#2BC48A] hover:underline cursor-pointer tracking-wider uppercase"
+                    >
+                      <span>{card.ctaText}</span>
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                    </a>
+                  ) : (
+                    <button
+                      onClick={() => handleCtaClick(card.ctaType, card.title)}
+                      className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#2BC48A] group-hover:text-[#2BC48A] hover:underline cursor-pointer tracking-wider uppercase"
+                    >
+                      <span>{card.ctaText}</span>
+                      <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                    </button>
+                  )}
                 </div>
               </motion.div>
             );
