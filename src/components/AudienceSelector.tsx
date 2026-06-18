@@ -127,8 +127,8 @@ export default function AudienceSelector() {
           </p>
         </div>
 
-        {/* 1. HORIZONTAL TABS SELECTOR PANEL FOR DESKTIPS & HIGHLIGHT INDICATORS */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10 w-full max-w-4xl mx-auto">
+        {/* 1. HORIZONTAL TABS SELECTOR PANEL FOR DESKTOPS & HIGHLIGHT INDICATORS */}
+        <div className="flex md:flex-wrap md:justify-center overflow-x-auto gap-3.5 mb-10 w-full max-w-4xl mx-auto no-scrollbar scroll-smooth px-4 md:px-0">
           {AUDIENCES.map((aud) => {
             const Icon = aud.icon;
             const isActive = activeTab === aud.id;
@@ -136,9 +136,9 @@ export default function AudienceSelector() {
               <button
                 key={aud.id}
                 onClick={() => setActiveTab(aud.id)}
-                className={`flex items-center gap-2.5 px-6 py-4 rounded-xl border text-xs sm:text-sm font-bold tracking-tight cursor-pointer transition-all duration-300 relative select-none ${
+                className={`flex items-center gap-2.5 px-6 py-4 rounded-xl border text-xs sm:text-sm font-bold tracking-tight cursor-pointer transition-all duration-300 relative select-none shrink-0 ${
                   isActive
-                    ? "bg-[#F4FBF9] border-[#2BC48A]/60 text-[#0F172A] shadow-sm font-black"
+                    ? "bg-[#E6FDF4] border-[#2BC48A] text-[#0F172A] shadow-sm font-black ring-1 ring-[#2BC48A]/30"
                     : "bg-white border-[#E8EDF2] text-slate-500 hover:text-slate-800 hover:border-[#2BC48A]/30 hover:bg-[#FAFBFB]"
                 }`}
               >
@@ -148,13 +148,6 @@ export default function AudienceSelector() {
                   <Icon className="w-4 h-4" />
                 </div>
                 <span>{aud.title}</span>
-                {isActive && (
-                  <motion.div 
-                    layoutId="activeTabUnderbar" 
-                    className="absolute bottom-[-1px] left-8 right-8 h-[2px] bg-[#2BC48A]"
-                    transition={{ type: "spring", stiffness: 350, damping: 25 }}
-                  />
-                )}
               </button>
             );
           })}

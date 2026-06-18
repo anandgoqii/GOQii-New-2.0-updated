@@ -191,60 +191,45 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
 
                   {/* Horizontal visual tracks [ For Me ], [ For Employers ], [ For Insurers ], [ For Providers ] */}
                   <div className="flex flex-wrap gap-2">
-                    <button
-                      onClick={() => {
-                        document.getElementById("section-solution")?.scrollIntoView({ behavior: "smooth" });
-                      }}
+                    <a
+                      href="https://consult.goqii.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-[#2BC48A]/20 bg-white hover:bg-[#E5F7F0] hover:border-[#2BC48A] text-[9.5px] font-black uppercase text-slate-800 tracking-wider transition-all cursor-pointer shadow-xs"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-[#2BC48A]" />
                       For Me
-                    </button>
+                    </a>
 
-                    <button
-                      onClick={() => {
-                        document.getElementById("audience-selector")?.scrollIntoView({ behavior: "smooth" });
-                        setTimeout(() => {
-                          const btns = Array.from(document.querySelectorAll("button, div"));
-                          const match = btns.find(el => el.textContent?.includes("Enterprises"));
-                          if (match) (match as HTMLElement).click();
-                        }, 600);
-                      }}
+                    <a
+                      href="https://goqii.com/healthengage-corporate"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 bg-white hover:bg-[#E5F7F0] hover:border-[#2BC48A] text-[9.5px] font-black uppercase text-slate-800 tracking-wider transition-all cursor-pointer shadow-xs"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
                       For Employers
-                    </button>
+                    </a>
 
-                    <button
-                      onClick={() => {
-                        document.getElementById("audience-selector")?.scrollIntoView({ behavior: "smooth" });
-                        setTimeout(() => {
-                          const btns = Array.from(document.querySelectorAll("button, div"));
-                          const match = btns.find(el => el.textContent?.includes("Insurers"));
-                          if (match) (match as HTMLElement).click();
-                        }, 600);
-                      }}
+                    <a
+                      href="https://goqii.com/healthengage-insurance"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 bg-white hover:bg-[#E5F7F0] hover:border-[#2BC48A] text-[9.5px] font-black uppercase text-slate-800 tracking-wider transition-all cursor-pointer shadow-xs"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
                       For Insurers
-                    </button>
+                    </a>
 
-                    <button
-                      onClick={() => {
-                        document.getElementById("audience-selector")?.scrollIntoView({ behavior: "smooth" });
-                        setTimeout(() => {
-                          const btns = Array.from(document.querySelectorAll("button, div"));
-                          const match = btns.find(el => el.textContent?.includes("Public Health"));
-                          if (match) (match as HTMLElement).click();
-                        }, 600);
-                      }}
+                    <a
+                      href="https://go-qii-connected-care-7c49.vercel.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-slate-200 bg-white hover:bg-[#E5F7F0] hover:border-[#2BC48A] text-[9.5px] font-black uppercase text-slate-800 tracking-wider transition-all cursor-pointer shadow-xs"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
                       For Providers
-                    </button>
+                    </a>
                   </div>
                 </div>
               )}
