@@ -140,55 +140,55 @@ export default function SectionGap() {
           {/* 1. Backdrop Grid Details & Ambient Lines */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 500 500">
             {/* Soft backdrop rings around center */}
-            <circle cx="250" cy="250" r="160" fill="none" stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.04" />
-            <circle cx="250" cy="250" r="135" fill="none" stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.03" />
+            <circle cx="250" cy="220" r="160" fill="none" stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.04" />
+            <circle cx="250" cy="220" r="135" fill="none" stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.03" />
             
             {/* Sleep line (Top) */}
             <motion.line 
-              x1="250" y1="90" x2="250" y2="250" 
+              x1="250" y1="60" x2="250" y2="220" 
               stroke="#2BC48A" strokeWidth="1.2" strokeOpacity="0.3" strokeDasharray="3 3"
               style={{ opacity: sleepOpacity }}
             />
             {/* Nutrition line (Right) */}
             <motion.line 
-              x1="410" y1="250" x2="250" y2="250" 
+              x1="410" y1="220" x2="250" y2="220" 
               stroke="#2BC48A" strokeWidth="1.2" strokeOpacity="0.3" strokeDasharray="3 3"
               style={{ opacity: nutritionOpacity }}
             />
             {/* Recovery line (Bottom) */}
             <motion.line 
-              x1="250" y1="410" x2="250" y2="250" 
+              x1="250" y1="380" x2="250" y2="220" 
               stroke="#2BC48A" strokeWidth="1.2" strokeOpacity="0.3" strokeDasharray="3 3"
               style={{ opacity: recoveryOpacity }}
             />
             {/* Movement line (Left) */}
             <motion.line 
-              x1="90" y1="250" x2="250" y2="250" 
+              x1="90" y1="220" x2="250" y2="220" 
               stroke="#2BC48A" strokeWidth="1.2" strokeOpacity="0.3" strokeDasharray="3 3"
               style={{ opacity: movementOpacity }}
             />
             
             {/* Coaching line (Top-Left) */}
             <motion.line 
-              x1="155" y1="155" x2="250" y2="250" 
+              x1="155" y1="125" x2="250" y2="220" 
               stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.2" strokeDasharray="3 3"
               style={{ opacity: coachingOpacity }}
             />
             {/* AI Guidance line (Top-Right) */}
             <motion.line 
-              x1="345" y1="155" x2="250" y2="250" 
+              x1="345" y1="125" x2="250" y2="220" 
               stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.2" strokeDasharray="3 3"
               style={{ opacity: aiOpacity }}
             />
             {/* Diagnostics line (Bottom-Right) */}
             <motion.line 
-              x1="345" y1="345" x2="250" y2="250" 
+              x1="345" y1="315" x2="250" y2="220" 
               stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.2" strokeDasharray="3 3"
               style={{ opacity: diagnosticsOpacity }}
             />
             {/* Motivation Reward line (Bottom-Left) */}
             <motion.line 
-              x1="155" y1="345" x2="250" y2="250" 
+              x1="155" y1="315" x2="250" y2="220" 
               stroke="#2BC48A" strokeWidth="1" strokeOpacity="0.2" strokeDasharray="3 3"
               style={{ opacity: motivationOpacity }}
             />
@@ -197,7 +197,7 @@ export default function SectionGap() {
           {/* 2. CENTRAL HUMAN NODE */}
           <motion.div
             style={{ opacity: humanOpacity, scale: humanScale }}
-            className="absolute left-[250px] top-[250px] -ml-11 -mt-11 z-10 w-22 h-22 rounded-full bg-[#FAFBFB] flex items-center justify-center border-2 border-[#2BC48A]/40 shadow-[0_4px_24px_rgba(43,196,138,0.06)] group"
+            className="absolute left-[250px] top-[220px] -ml-11 -mt-11 z-10 w-22 h-22 rounded-full bg-[#FAFBFB] flex items-center justify-center border-2 border-[#2BC48A]/40 shadow-[0_4px_24px_rgba(43,196,138,0.06)] group"
           >
             <div className="relative flex items-center justify-center">
               <svg viewBox="0 0 24 24" className="w-10 h-10 text-[#2BC48A]/90 transition-transform duration-300 group-hover:scale-105" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round">
@@ -214,7 +214,7 @@ export default function SectionGap() {
           {/* SLEEP (Top) */}
           <motion.div
             style={{ opacity: sleepOpacity, scale: sleepScale }}
-            className={`absolute left-[250px] top-[90px] -ml-10 -mt-10 z-20 w-20 h-20 rounded-full bg-white border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
+            className={`absolute left-[250px] top-[60px] -ml-10 -mt-10 z-20 w-20 h-20 rounded-full bg-white border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
               hoveredNode === "sleep" ? "border-[#2BC48A] shadow-[0_8px_24px_rgba(43,196,138,0.12)]" : "border-[#E8EDF2] shadow-sm"
             }`}
             onMouseEnter={() => setHoveredNode("sleep")}
@@ -227,7 +227,7 @@ export default function SectionGap() {
           {/* NUTRITION (Right) */}
           <motion.div
             style={{ opacity: nutritionOpacity, scale: nutritionScale }}
-            className={`absolute left-[410px] top-[250px] -ml-10 -mt-10 z-20 w-20 h-20 rounded-full bg-white border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
+            className={`absolute left-[410px] top-[220px] -ml-10 -mt-10 z-20 w-20 h-20 rounded-full bg-white border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
               hoveredNode === "nutrition" ? "border-[#2BC48A] shadow-[0_8px_24px_rgba(43,196,138,0.12)]" : "border-[#E8EDF2] shadow-sm"
             }`}
             onMouseEnter={() => setHoveredNode("nutrition")}
@@ -240,7 +240,7 @@ export default function SectionGap() {
           {/* RECOVERY (Bottom) */}
           <motion.div
             style={{ opacity: recoveryOpacity, scale: recoveryScale }}
-            className={`absolute left-[250px] top-[410px] -ml-10 -mt-10 z-20 w-20 h-20 rounded-full bg-white border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
+            className={`absolute left-[250px] top-[380px] -ml-10 -mt-10 z-20 w-20 h-20 rounded-full bg-white border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
               hoveredNode === "recovery" ? "border-[#2BC48A] shadow-[0_8px_24px_rgba(43,196,138,0.12)]" : "border-[#E8EDF2] shadow-sm"
             }`}
             onMouseEnter={() => setHoveredNode("recovery")}
@@ -253,7 +253,7 @@ export default function SectionGap() {
           {/* MOVEMENT (Left) */}
           <motion.div
             style={{ opacity: movementOpacity, scale: movementScale }}
-            className={`absolute left-[90px] top-[250px] -ml-10 -mt-10 z-20 w-20 h-20 rounded-full bg-white border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
+            className={`absolute left-[90px] top-[220px] -ml-10 -mt-10 z-20 w-20 h-20 rounded-full bg-white border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
               hoveredNode === "movement" ? "border-[#2BC48A] shadow-[0_8px_24px_rgba(43,196,138,0.12)]" : "border-[#E8EDF2] shadow-sm"
             }`}
             onMouseEnter={() => setHoveredNode("movement")}
@@ -268,7 +268,7 @@ export default function SectionGap() {
           {/* COACHING (Top-Left) */}
           <motion.div
             style={{ opacity: coachingOpacity, scale: coachingScale }}
-            className={`absolute left-[155px] top-[155px] -ml-[34px] -mt-[34px] z-20 w-[68px] h-[68px] rounded-full bg-slate-50 border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
+            className={`absolute left-[155px] top-[125px] -ml-[34px] -mt-[34px] z-20 w-[68px] h-[68px] rounded-full bg-slate-50 border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
               hoveredNode === "coaching" ? "border-[#00ADC7] bg-white shadow-[0_6px_20px_rgba(0,173,199,0.1)]" : "border-[#E2E8F0] shadow-sm"
             }`}
             onMouseEnter={() => setHoveredNode("coaching")}
@@ -281,7 +281,7 @@ export default function SectionGap() {
           {/* AI GUIDANCE (Top-Right) */}
           <motion.div
             style={{ opacity: aiOpacity, scale: aiScale }}
-            className={`absolute left-[345px] top-[155px] -ml-[34px] -mt-[34px] z-20 w-[68px] h-[68px] rounded-full bg-slate-50 border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
+            className={`absolute left-[345px] top-[125px] -ml-[34px] -mt-[34px] z-20 w-[68px] h-[68px] rounded-full bg-slate-50 border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
               hoveredNode === "ai" ? "border-[#A855F7] bg-white shadow-[0_6px_20px_rgba(168,85,247,0.1)]" : "border-[#E2E8F0] shadow-sm"
             }`}
             onMouseEnter={() => setHoveredNode("ai")}
@@ -294,7 +294,7 @@ export default function SectionGap() {
           {/* DIAGNOSTICS (Bottom-Right) */}
           <motion.div
             style={{ opacity: diagnosticsOpacity, scale: diagnosticsScale }}
-            className={`absolute left-[345px] top-[345px] -ml-[34px] -mt-[34px] z-20 w-[68px] h-[68px] rounded-full bg-slate-50 border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
+            className={`absolute left-[345px] top-[315px] -ml-[34px] -mt-[34px] z-20 w-[68px] h-[68px] rounded-full bg-slate-50 border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
               hoveredNode === "diagnostics" ? "border-[#F97316] bg-white shadow-[0_6px_20px_rgba(249,115,22,0.1)]" : "border-[#E2E8F0] shadow-sm"
             }`}
             onMouseEnter={() => setHoveredNode("diagnostics")}
@@ -307,7 +307,7 @@ export default function SectionGap() {
           {/* MOTIVATION / REWARDS (Bottom-Left) */}
           <motion.div
             style={{ opacity: motivationOpacity, scale: motivationScale }}
-            className={`absolute left-[155px] top-[345px] -ml-[34px] -mt-[34px] z-20 w-[68px] h-[68px] rounded-full bg-slate-50 border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
+            className={`absolute left-[155px] top-[315px] -ml-[34px] -mt-[34px] z-20 w-[68px] h-[68px] rounded-full bg-slate-50 border transition-all duration-300 flex flex-col items-center justify-center cursor-pointer ${
               hoveredNode === "motivation" ? "border-[#EAB308] bg-white shadow-[0_6px_20px_rgba(234,179,8,0.1)]" : "border-[#E2E8F0] shadow-sm"
             }`}
             onMouseEnter={() => setHoveredNode("motivation")}
