@@ -48,9 +48,9 @@ export default function SectionXPrize() {
     <div
       id="section-xprize"
       ref={containerRef}
-      className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-[#FAFBFB] py-14 px-4 sm:px-6 md:px-16 border-t border-[#E8EDF2]"
+      className="relative min-h-0 lg:min-h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-[#FAFBFB] py-14 lg:py-20 px-4 sm:px-6 md:px-16 border-t border-[#E8EDF2]"
     >
-      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center z-10">
+      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center z-10">
         
         {/* ================= LEFT COLUMN: TEXT LAYOUT & STEP PROCESS FLOW ================= */}
         <div className="lg:col-span-5 flex flex-col justify-center text-left">
@@ -199,7 +199,7 @@ export default function SectionXPrize() {
       </div>
 
       {/* ================= VISUAL TIMELINE ================= */}
-      <div className="mt-20 w-full max-w-6xl mx-auto bg-white rounded-[24px] sm:rounded-[32px] border border-[#E8EDF2] p-5 sm:p-10 relative overflow-hidden z-10 shadow-sm">
+      <div className="mt-20 w-full max-w-7xl mx-auto bg-white rounded-[24px] sm:rounded-[32px] border border-[#E8EDF2] p-5 sm:p-10 relative overflow-hidden z-10 shadow-sm">
         <div className="text-left sm:text-center mb-10">
           <span className="text-[11px] font-sans font-black tracking-[0.25em] text-[#2BC48A] uppercase mb-2 block">
             OUR JOURNEY

@@ -68,7 +68,7 @@ export default function TrustCenterPage() {
       <div className="absolute top-0 right-0 w-[60vw] h-[60vw] bg-[#2BC48A]/3 blur-[140px] rounded-full pointer-events-none -z-10" />
       <div className="absolute bottom-10 left-0 w-[45vw] h-[45vw] bg-emerald-100/10 blur-[110px] rounded-full pointer-events-none -z-10" />
 
-      <div className="max-w-6xl mx-auto px-6 pt-32 pb-24 md:pt-40">
+      <div className="max-w-7xl mx-auto px-6 pt-32 pb-24 md:pt-40">
         {/* Back navigation button */}
         <button
           onClick={handleBackToHome}

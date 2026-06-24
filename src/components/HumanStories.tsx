@@ -90,7 +90,7 @@ export default function HumanStories() {
     >
       
       {/* 1. Subtitle & Title Header Layout */}
-      <div className="w-full max-w-6xl mx-auto mb-10 text-left">
+      <div className="w-full max-w-7xl mx-auto mb-10 text-left">
         {/* Section Index Marker */}
         <div className="flex items-center gap-4 text-xs mb-8 font-sans">
           <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">09</span>
@@ -124,7 +124,7 @@ export default function HumanStories() {
       </div>
 
       {/* 1.5. FLOATING STORY TABS */}
-      <div className="w-full max-w-6xl mx-auto mb-10 flex justify-center px-4">
+      <div className="w-full max-w-7xl mx-auto mb-10 flex justify-center px-4">
         <div className="flex flex-wrap sm:inline-flex bg-white border border-[#E8EDF2] p-1.5 rounded-[22px] sm:rounded-full shadow-[0_12px_32px_rgba(15,23,42,0.03)] backdrop-blur-md relative gap-1 sm:gap-2 isolate justify-center">
           {STORIES.map((story, i) => {
             const isActive = activeIndex === i;
@@ -156,7 +156,7 @@ export default function HumanStories() {
       </div>
 
       {/* 2. Main Large Immersive Viewport + Story Panel Grid */}
-      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch bg-white border border-[#E8EDF2] rounded-[32px] overflow-hidden p-6 md:p-8 shadow-[0_24px_64px_rgba(15,23,42,0.015)]">
+      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch bg-white border border-[#E8EDF2] rounded-[32px] overflow-hidden p-6 md:p-8 shadow-[0_24px_64px_rgba(15,23,42,0.015)]">
         
         {/* Left Column Visualizer: Realistic, full-color landscape background */}
         <div className="lg:col-span-6 relative aspect-[4/3] lg:aspect-auto lg:min-h-[480px] rounded-[24px] bg-slate-950 overflow-hidden flex items-center justify-center">

@@ -329,7 +329,7 @@ export default function Leadership() {
   return (
     <div
       id="section-leadership"
-      className="relative min-h-screen w-full flex flex-col justify-center bg-[#FAFBFB] py-14 px-4 sm:px-6 md:px-16 overflow-hidden select-none border-t border-[#E8EDF2]"
+      className="relative min-h-0 lg:min-h-screen w-full flex flex-col justify-center bg-[#FAFBFB] py-14 lg:py-20 px-4 sm:px-6 md:px-16 overflow-hidden select-none border-t border-[#E8EDF2]"
     >
       {/* Header Tag Index Layout */}
       <div className="w-full max-w-7xl mx-auto mb-10 flex flex-col items-start font-sans">

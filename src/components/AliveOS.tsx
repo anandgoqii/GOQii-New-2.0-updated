@@ -52,7 +52,7 @@ export default function AliveOS() {
       <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:32px_32px] opacity-40 pointer-events-none" />
 
       {/* Main Curved Box Section Container */}
-      <div className="relative w-full max-w-6xl mx-auto bg-white border border-[#E8EDF2] rounded-[36px] md:rounded-[48px] p-6 sm:p-10 md:p-16 shadow-[0_32px_80px_rgba(15,23,42,0.02)] overflow-hidden z-10">
+      <div className="relative w-full max-w-7xl mx-auto bg-white border border-[#E8EDF2] rounded-[36px] md:rounded-[48px] p-6 sm:p-10 md:p-16 shadow-[0_32px_80px_rgba(15,23,42,0.02)] overflow-hidden z-10">
         
         {/* Soft internal gradient ambient highlights */}
         <div className="absolute top-0 right-0 w-[450px] h-[450px] bg-[#2BC48A]/[0.02] rounded-full blur-[100px] pointer-events-none -translate-y-1/3 translate-x-1/3" />

@@ -312,7 +312,7 @@ export default function CareersPage() {
       <div className="absolute bottom-20 left-0 w-[45vw] h-[45vw] bg-[#00ADC7]/3 blur-[110px] rounded-full pointer-events-none -z-10" />
 
       {/* Main Container */}
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
         
         {/* Back Link */}
         <button

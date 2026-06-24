@@ -86,7 +86,7 @@ export default function AboutGOQii() {
   return (
     <div
       id="section-about"
-      className="relative min-h-screen w-full flex flex-col justify-center bg-[#FAFBFB] py-14 px-4 sm:px-6 md:px-16 overflow-hidden select-none border-t border-[#E8EDF2]"
+      className="relative min-h-0 lg:min-h-screen w-full flex flex-col justify-center bg-[#FAFBFB] py-14 lg:py-20 px-4 sm:px-6 md:px-16 overflow-hidden select-none border-t border-[#E8EDF2]"
     >
       {/* Two-Column Grid Layout */}
       <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start z-10">

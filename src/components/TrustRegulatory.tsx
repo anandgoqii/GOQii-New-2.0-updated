@@ -106,7 +106,7 @@ export default function TrustRegulatory() {
       <div id="section-trust" className="py-10 md:py-16 px-4 sm:px-6 md:px-16 w-full flex flex-col items-center justify-center">
         
         {/* Header Tag Index Layout */}
-        <div className="w-full max-w-6xl mx-auto mb-16 text-left flex flex-col items-start font-sans">
+        <div className="w-full max-w-7xl mx-auto mb-16 text-left flex flex-col items-start font-sans">
           <div className="flex items-center gap-4 text-xs mb-8 font-sans">
             <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">10</span>
             <span className="text-[#E2E8F0] font-light text-sm">|</span>
@@ -130,14 +130,14 @@ export default function TrustRegulatory() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[#667085] text-base sm:text-lg font-medium mt-6 max-w-3xl font-sans"
+            className="text-[#667085] text-base sm:text-lg font-medium mt-6 max-w-4xl lg:max-w-none font-sans"
           >
             Driving measurable health outcomes across populations, organizations, and healthcare systems.
           </motion.p>
         </div>
 
         {/* ================= GLOBAL SCALE PARTNERS MARQUEE CARD ================= */}
-        <div className="w-full max-w-6xl mx-auto bg-white border border-[#E8EDF2] rounded-[24px] p-8 sm:p-10 shadow-[0_12px_32px_rgba(15,23,42,0.01)] mb-12 overflow-hidden relative">
+        <div className="w-full max-w-7xl mx-auto bg-white border border-[#E8EDF2] rounded-[24px] p-8 sm:p-10 shadow-[0_12px_32px_rgba(15,23,42,0.01)] mb-12 overflow-hidden relative">
           <div className="text-[10px] font-sans font-black tracking-[0.2em] text-[#2BC48A] uppercase mb-6 text-center select-none opacity-85">
             GLOBAL PARTNERS & SCALE
           </div>
@@ -187,7 +187,7 @@ export default function TrustRegulatory() {
         </div>
 
         {/* ================= METRIC CARDS GRID ================= */}
-        <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           
           {/* Card 1: Lives Covered */}
           <motion.div
@@ -329,7 +329,7 @@ export default function TrustRegulatory() {
       <div id="section-regulatory" className="py-14 px-4 sm:px-6 md:px-16 w-full flex flex-col items-center justify-center bg-[#FAFBFB] border-t border-[#E8EDF2]">
         
         {/* Header Tag Index Layout */}
-        <div className="w-full max-w-6xl mx-auto mb-10 flex flex-col items-start font-sans">
+        <div className="w-full max-w-7xl mx-auto mb-10 flex flex-col items-start font-sans">
           <div className="flex items-center gap-4 text-xs tracking-wide">
             <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">11</span>
             <span className="text-[#E2E8F0] font-light text-sm font-sans">|</span>
@@ -340,7 +340,7 @@ export default function TrustRegulatory() {
         </div>
 
         {/* Two-Column Header Layout (Title/Desc on Left, Concentric Circles/Shield on Right) */}
-        <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
+        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center mb-16">
           
           {/* Left Column: Content */}
           <div className="lg:col-span-7 text-left flex flex-col justify-center">

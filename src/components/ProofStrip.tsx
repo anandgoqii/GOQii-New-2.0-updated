@@ -43,7 +43,7 @@ export default function ProofStrip() {
       <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] rounded-full bg-blue-500/[0.01] blur-[80px] pointer-events-none" />
 
       <div className="w-full max-w-7xl mx-auto px-6 md:px-16 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-8 md:gap-x-12 divide-y sm:divide-y-0 lg:divide-x divide-[#E8EDF2]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-8 md:gap-x-12">
           {PROOF_ITEMS.map((item, index) => {
             const Icon = item.icon;
             return (
@@ -54,7 +54,11 @@ export default function ProofStrip() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
                 className={`flex flex-col items-start text-left group ${
-                  index > 0 ? "pt-6 sm:pt-0 lg:pl-8 xl:pl-10" : "lg:pr-4"
+                  index > 0 ? "pt-6 sm:pt-0 border-t sm:border-t-0 border-[#E8EDF2]/60" : ""
+                } ${
+                  index > 0 ? "lg:border-l lg:pl-8 xl:pl-10 border-[#E8EDF2]/60" : ""
+                } ${
+                  index === 1 || index === 3 ? "sm:border-l sm:pl-8 border-[#E8EDF2]/60 lg:border-l lg:pl-8 xl:pl-10" : ""
                 }`}
               >
                 {/* Header block combining Icon + Value */}

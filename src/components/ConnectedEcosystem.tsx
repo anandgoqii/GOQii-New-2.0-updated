@@ -18,7 +18,7 @@ export default function ConnectedEcosystem() {
   return (
     <div
       id="section-ecosystem"
-      className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-[#F8FAFB] py-20 px-4 sm:px-6 md:px-16"
+      className="relative min-h-0 lg:min-h-screen w-full flex flex-col justify-center items-center overflow-hidden bg-[#F8FAFB] py-14 lg:py-20 px-4 sm:px-6 md:px-16"
     >
       {/* Background Decorative Mesh Grids */}
       <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-70 pointer-events-none" />
@@ -35,17 +35,15 @@ export default function ConnectedEcosystem() {
         </div>
 
         <h2 className="text-3xl sm:text-4xl md:text-[46px] font-black tracking-tight text-slate-900 leading-[1.12] mb-6 font-sans">
-          GOQii combines AI, wearables, coaching,<br className="hidden md:block" />
-          {" "}and preventive intelligence into one<br className="hidden md:block" />
-          {" "}continuous <span className="text-[#2BC48A]">health ecosystem.</span>
+          One platform for <span className="text-[#2BC48A]">smarter, healthier living.</span>
         </h2>
-        <p className="text-slate-500 text-base md:text-lg font-sans font-medium tracking-tight max-w-xl mx-auto mt-4 leading-relaxed">
-          Every signal. Every insight. Every day — working together for a healthier you.
+        <p className="text-slate-500 text-base md:text-lg font-sans font-medium tracking-tight max-w-2xl mx-auto mt-4 leading-relaxed">
+          AI, wearables, coaching, and preventive health working together.
         </p>
       </div>
 
       {/* ================= STUNNING PREMIUM LIGHT ECOSYSTEM CARD (FIXED AS PER DEVICE WINDOW & LIGHT THEME) ================= */}
-      <div className="w-full max-w-5xl bg-white border border-[#E8EDF2] rounded-[36px] sm:rounded-[40px] p-6 sm:p-10 md:p-12 shadow-[0_24px_50px_rgba(15,23,42,0.03)] relative overflow-hidden">
+      <div className="w-full max-w-7xl bg-white border border-[#E8EDF2] rounded-[36px] sm:rounded-[40px] p-6 sm:p-10 md:p-12 shadow-[0_24px_50px_rgba(15,23,42,0.03)] relative overflow-hidden">
         
         {/* Subtle ambient radial highlights */}
         <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-emerald-500/[0.03] rounded-full blur-[100px] pointer-events-none" />
@@ -198,7 +196,7 @@ export default function ConnectedEcosystem() {
           <div className="flex flex-col items-center justify-center relative py-12 lg:py-0 order-1 lg:order-2 h-full min-h-[290px]">
             
             {/* Concentric rings decoration with heavy glowing aura */}
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="absolute w-[285px] h-[285px] flex items-center justify-center pointer-events-none">
               
               {/* Orbit dash boundary track */}
               <div className={`absolute w-[285px] h-[285px] rounded-full border border-dashed transition-all duration-700 ${

@@ -53,8 +53,14 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState<"home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers">("home");
 
   useEffect(() => {
-    // Detect initial route
-    const pathName = window.location.pathname.replace(/^\/|\/$/g, "");
+    // Detect initial route safeguards
+    let pathName = "";
+    try {
+      pathName = window.location.pathname.replace(/^\/|\/$/g, "");
+    } catch (e) {
+      console.warn("Failed to read window.location.pathname:", e);
+    }
+
     if (pathName === "sanjeevini") {
       setCurrentPage("sanjeevini");
     } else if (pathName === "about") {
@@ -72,12 +78,26 @@ export default function App() {
     window.navigateToPage = (pageName: "home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers") => {
       setCurrentPage(pageName);
       const urlPath = pageName === "home" ? "/" : `/${pageName}`;
-      window.history.pushState(null, "", urlPath);
-      window.scrollTo({ top: 0, behavior: "instant" as any });
+      try {
+        window.history.pushState(null, "", urlPath);
+      } catch (e) {
+        console.warn("Skipping pushState inside iframe sandbox restriction:", e);
+      }
+      try {
+        window.scrollTo({ top: 0, behavior: "auto" });
+      } catch (e) {
+        console.warn("Failed to scrollTo top:", e);
+      }
     };
 
     const handlePopState = () => {
-      const currentPath = window.location.pathname.replace(/^\/|\/$/g, "");
+      let currentPath = "";
+      try {
+        currentPath = window.location.pathname.replace(/^\/|\/$/g, "");
+      } catch (e) {
+        console.warn("Failed to read location.pathname in popstate:", e);
+      }
+
       if (currentPath === "sanjeevini") {
         setCurrentPage("sanjeevini");
       } else if (currentPath === "about") {
@@ -95,11 +115,19 @@ export default function App() {
       }
     };
 
-    window.addEventListener("popstate", handlePopState);
+    try {
+      window.addEventListener("popstate", handlePopState);
+    } catch (e) {
+      console.warn("Failed to bind popstate:", e);
+    }
 
     return () => {
       window.navigateToPage = undefined;
-      window.removeEventListener("popstate", handlePopState);
+      try {
+        window.removeEventListener("popstate", handlePopState);
+      } catch (e) {
+        console.warn("Failed to unbind popstate:", e);
+      }
     };
   }, []);
 

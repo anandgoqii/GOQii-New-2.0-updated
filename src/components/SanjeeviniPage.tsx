@@ -46,7 +46,7 @@ export default function SanjeeviniPage() {
       <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-emerald-100/10 blur-[100px] rounded-full pointer-events-none -z-10" />
 
       {/* Hero Header Area */}
-      <div className="max-w-6xl mx-auto px-6 pt-32 pb-16 md:pt-40">
+      <div className="max-w-7xl mx-auto px-6 pt-32 pb-16 md:pt-40">
         
         {/* Back navigation */}
         <button

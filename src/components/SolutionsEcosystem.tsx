@@ -112,7 +112,7 @@ export default function SolutionsEcosystem() {
   return (
     <section 
       id="solutions-ecosystem-section" 
-      className="relative w-full bg-[#F8FAFC] py-20 md:py-[120px] overflow-hidden border-b border-[#E8EDF2]"
+      className="relative w-full bg-[#F8FAFC] py-10 md:py-16 overflow-hidden border-b border-[#E8EDF2]"
     >
       {/* Refined architectural graphics in corners */}
       <div className="absolute top-0 right-0 w-[450px] h-[450px] rounded-full bg-[#2BC48A]/[0.015] blur-[100px] pointer-events-none" />
@@ -124,16 +124,16 @@ export default function SolutionsEcosystem() {
       <div className="w-full max-w-7xl mx-auto px-6 md:px-16 relative z-10">
         
         {/* Section Header & Subtitles */}
-        <div className="text-left max-w-4xl mb-12 md:mb-16">
+        <div className="text-left max-w-4xl mb-8 md:mb-10">
           {/* Label structure: 06 | SOLUTIONS ECOSYSTEM */}
-          <div className="flex items-center gap-4 text-xs mb-8 font-sans">
+          <div className="flex items-center gap-4 text-xs mb-4 font-sans">
             <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">06</span>
             <span className="text-[#E2E8F0] font-light text-sm">|</span>
             <span className="font-semibold text-[#667085] text-[11px] tracking-[0.25em] uppercase">
               Solutions Ecosystem
             </span>
           </div>
-          <h2 id="solutions-ecosystem-title" className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0F172A] tracking-tight font-sans">
+          <h2 id="solutions-ecosystem-title" className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0F172A] tracking-tight font-sans leading-[1.12]">
             One platform. Multiple healthcare stakeholders.
           </h2>
           <p className="text-sm text-slate-500 mt-4 max-w-3xl leading-relaxed font-sans font-medium">
@@ -142,65 +142,66 @@ export default function SolutionsEcosystem() {
         </div>
 
         {/* Dynamic Equal-Height Card Grid: 2 rows x 3 columns on desktop */}
-        <div id="solutions-cards-grid" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        <div id="solutions-cards-grid" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 items-stretch">
           {SOLUTIONS.map((card, idx) => {
             const Icon = card.icon;
             return (
               <motion.div
                 key={card.id}
                 id={`solutions-card-${card.id}`}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
-                whileHover={{ y: -6, transition: { duration: 0.25 } }}
-                className="group bg-white border border-[#E8EDF2] hover:border-[#2BC48A]/45 hover:shadow-xl rounded-2xl p-6 sm:p-8 flex flex-col justify-between h-full transition-all duration-300 relative"
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                className="group bg-white border border-[#E8EDF2] hover:border-[#2BC48A]/45 hover:shadow-lg rounded-xl p-5 flex flex-col justify-between h-full transition-all duration-300 relative"
               >
                 {/* Active Accent Border Strip */}
-                <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-[#21C083] to-[#00ADC7] rounded-t-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-[#21C083] to-[#00ADC7] rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div>
-                  {/* Small Icon at Top */}
-                  <div className="w-10 h-10 rounded-xl bg-[#E5F7F0] text-[#2BC48A] flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-[#2BC48A] group-hover:text-white group-hover:scale-110 shadow-sm">
-                    <Icon className="w-5 h-5" strokeWidth={2} />
+                  {/* Icon & Title Row Side-by-Side to save heavy vertical space */}
+                  <div className="flex items-start gap-3.5 mb-3">
+                    <div className="w-9 h-9 rounded-lg bg-[#E5F7F0] text-[#2BC48A] flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-[#2BC48A] group-hover:text-white shadow-sm">
+                      <Icon className="w-4.5 h-4.5" strokeWidth={2.5} />
+                    </div>
+                    <div>
+                      <div className="text-[9px] font-bold tracking-[0.15em] text-[#2BC48A] uppercase leading-none mb-1">
+                        {card.title}
+                      </div>
+                      <h4 className="text-sm sm:text-base font-black text-slate-900 tracking-tight leading-tight group-hover:text-[#2BC48A] transition-colors">
+                        {card.tagline}
+                      </h4>
+                    </div>
                   </div>
-
-                  {/* Card Header Title representing segment */}
-                  <div className="text-[10px] font-bold tracking-[0.15em] text-[#2BC48A] uppercase mb-1">
-                    {card.title}
-                  </div>
-
-                  <h4 className="text-base sm:text-lg font-black text-slate-900 tracking-tight mb-4 group-hover:text-[#2BC48A] transition-colors leading-tight">
-                    {card.tagline}
-                  </h4>
 
                   {/* Body description */}
-                  <div>
-                    <p className="text-xs text-slate-500 font-sans font-semibold leading-relaxed">
+                  <div className="mt-2.5">
+                    <p className="text-[11px] sm:text-xs text-slate-500 font-sans font-semibold leading-relaxed">
                       <SmartText>{card.description}</SmartText>
                     </p>
                   </div>
                 </div>
 
                 {/* Footer Link Button */}
-                <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-start">
+                <div className="pt-3 mt-4 border-t border-slate-100 flex items-center justify-start">
                   {card.href ? (
                     <a
                       href={card.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#2BC48A] group-hover:text-[#2BC48A] hover:underline cursor-pointer tracking-wider uppercase"
+                      className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-extrabold text-[#2BC48A] group-hover:text-[#2BC48A] hover:underline cursor-pointer tracking-wider uppercase"
                     >
                       <span>{card.ctaText}</span>
-                      <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                      <ArrowRight className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-1" />
                     </a>
                   ) : (
                     <button
                       onClick={() => handleCtaClick(card.ctaType, card.title)}
-                      className="inline-flex items-center gap-1.5 text-xs font-extrabold text-[#2BC48A] group-hover:text-[#2BC48A] hover:underline cursor-pointer tracking-wider uppercase"
+                      className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-extrabold text-[#2BC48A] group-hover:text-[#2BC48A] hover:underline cursor-pointer tracking-wider uppercase"
                     >
                       <span>{card.ctaText}</span>
-                      <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+                      <ArrowRight className="w-3 h-3 transition-transform duration-300 group-hover:translate-x-1" />
                     </button>
                   )}
                 </div>
@@ -215,28 +216,27 @@ export default function SolutionsEcosystem() {
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="mt-16 p-8 bg-gradient-to-r from-[#F4FBF8] to-[#EAF7F2] rounded-3xl border border-[#2BC48A]/20 relative overflow-hidden text-left shadow-sm"
+          className="mt-8 p-4 sm:p-5 bg-gradient-to-r from-[#F4FBF8] to-[#EAF7F2] rounded-2xl border border-[#2BC48A]/20 relative overflow-hidden text-left shadow-sm"
         >
           <div className="absolute right-0 bottom-0 top-0 w-1/3 bg-gradient-to-l from-[#2BC48A]/10 to-transparent pointer-events-none" />
-          <div className="relative z-10 w-full flex flex-col md:flex-row md:items-center justify-between gap-6 md:gap-12">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="w-2 h-2 rounded-full bg-[#2BC48A] animate-pulse" />
-                <span className="text-[9px] font-mono tracking-widest text-[#2BC48A] uppercase font-black">
-                  ALIVE O.S. INTEGRATION
-                </span>
+          <div className="relative z-10 w-full flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-6">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-[#E5F7F0] text-[#2BC48A] flex items-center justify-center shrink-0 shadow-sm">
+                <Sparkles className="w-4 h-4" />
               </div>
-              <h3 className="text-lg sm:text-xl font-black text-slate-900 tracking-tight">
-                Powered by ALIVE O.S.
-              </h3>
-              <p className="text-xs text-slate-600 mt-2 leading-relaxed max-w-2xl font-semibold">
-                GOQii&apos;s continuous intelligence platform combining wearables, diagnostics, AI, and human coaching.
-              </p>
+              <div>
+                <h3 className="text-sm font-black text-slate-900 tracking-tight leading-tight">
+                  Powered by ALIVE O.S.
+                </h3>
+                <p className="text-[11px] text-slate-600 mt-0.5 leading-normal max-w-xl font-medium">
+                  GOQii&apos;s continuous intelligence platform combining wearables, diagnostics, AI, and human coaching.
+                </p>
+              </div>
             </div>
 
             <button
               onClick={() => handleCtaClick("demo", "Solutions Ecosystem")}
-              className="px-6 py-3 bg-[#2BC48A] hover:bg-[#229e6f] text-white font-extrabold text-xs tracking-wider uppercase rounded-xl shrink-0 cursor-pointer transition-colors shadow-lg shadow-[#2BC48A]/15 text-center"
+              className="px-4 py-2.5 bg-[#2BC48A] hover:bg-[#229e6f] text-white font-extrabold text-[10px] tracking-wider uppercase rounded-lg shrink-0 cursor-pointer transition-colors shadow-md shadow-[#2BC48A]/15 text-center w-full sm:w-auto"
             >
               Consult an Expert
             </button>

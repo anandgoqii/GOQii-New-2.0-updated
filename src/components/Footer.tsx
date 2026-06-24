@@ -21,6 +21,14 @@ export default function Footer() {
         }
         return;
       }
+
+      if (targetId === "section-xprize" || targetId === "sanjeevini") {
+        if (window.navigateToPage) {
+          window.navigateToPage("sanjeevini");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        return;
+      }
       
       if (targetId === "section-trust-center-page") {
         if (window.navigateToPage) {
@@ -79,6 +87,7 @@ export default function Footer() {
         { label: "SuperLife", href: "https://goqii.com/superlife/" },
         { label: "Personal Care", href: "https://consult.goqii.com/" },
         { label: "SmartRx", href: "https://smartrx.goqii.com/" },
+        { label: "Sanjeevini", href: "#section-xprize" },
       ]
     },
     enterprise: {

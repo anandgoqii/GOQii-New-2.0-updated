@@ -95,9 +95,9 @@ export default function DailyHealthIntelligence() {
   return (
     <div
       id="section-intelligence"
-      className="relative min-h-screen w-full bg-[#FAFBFB] py-16 md:py-24 px-4 sm:px-6 md:px-16 border-t border-[#E8EDF2]"
+      className="relative min-h-0 lg:min-h-screen w-full bg-[#FAFBFB] py-14 lg:py-24 px-4 sm:px-6 md:px-16 border-t border-[#E8EDF2]"
     >
-      <div className="w-full max-w-6xl mx-auto z-10">
+      <div className="w-full max-w-7xl mx-auto z-10">
         
         {/* ================= HEADER LAYOUT ================= */}
         <div className="w-full text-left mb-16">

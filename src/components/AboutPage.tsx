@@ -73,7 +73,7 @@ const ARCHITECTURE_STEPS: StepItem[] = [
 ];
 
 const GOOGLE_MAPS_API_KEY =
-  process.env.GOOGLE_MAPS_PLATFORM_KEY ||
+  (typeof process !== 'undefined' ? (process.env || {}).GOOGLE_MAPS_PLATFORM_KEY : '') ||
   (import.meta as any).env?.VITE_GOOGLE_MAPS_PLATFORM_KEY ||
   (globalThis as any).GOOGLE_MAPS_PLATFORM_KEY ||
   '';
@@ -183,7 +183,7 @@ export default function AboutPage() {
 
       {/* SECTION 3: CORE ARCHITECTURE */}
       <section className="py-20 md:py-32 px-4 sm:px-8 lg:px-16 w-full bg-white relative overflow-hidden">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           
           <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
             <span className="text-[#2BC48A] font-mono text-xs sm:text-sm font-extrabold tracking-widest uppercase mb-4 block">
@@ -273,7 +273,7 @@ export default function AboutPage() {
       <section className="py-24 md:py-32 px-4 sm:px-8 lg:px-16 w-full bg-[#FAFBFB] border-t border-[#E8EDF2] relative overflow-hidden">
         <div className="absolute top-[30%] left-[-10%] w-[350px] h-[350px] bg-[#2BC48A]/3 rounded-full blur-[100px] pointer-events-none" />
         
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
           
           {/* LEFT COLUMN: HIGH-POLISHED COACH & CLINICAL FEEDBACK CARD */}
           <div className="lg:col-span-6 flex justify-center items-center">
@@ -497,7 +497,7 @@ export default function AboutPage() {
             {/* Soft decorative background glow */}
             <div className="absolute top-[20%] right-[5%] w-[400px] h-[400px] bg-[#2BC48A]/3 rounded-full blur-[120px] pointer-events-none" />
             
-            <div className="max-w-6xl mx-auto flex flex-col items-center">
+            <div className="max-w-7xl mx-auto flex flex-col items-center">
               
               <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
                 <span className="text-[#2BC48A] font-mono text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3 block">

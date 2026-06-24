@@ -17,6 +17,7 @@ export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [darkMode, setDarkMode] = useState(false);
   const [demoModalOpen, setDemoModalOpen] = useState(false);
+  const [expandedMobileItem, setExpandedMobileItem] = useState<string | null>(null);
 
   const [isVisible, setIsVisible] = useState(true);
   const lastScrollY = useRef(0);
@@ -55,8 +56,16 @@ export default function Header() {
   // Ensure the application renders with its intended, elegant light style.
   // Explicitly remove dark-theme class on mount to prevent shared localStorage/session conflicts.
   useEffect(() => {
-    document.documentElement.classList.remove("dark");
-    localStorage.removeItem("theme"); // Clear any potentially conflicting shared localStorage theme key
+    try {
+      document.documentElement.classList.remove("dark");
+    } catch (e) {
+      console.warn("Failed to modify document classList:", e);
+    }
+    try {
+      localStorage.removeItem("theme"); // Clear any potentially conflicting shared localStorage theme key
+    } catch (e) {
+      console.warn("localStorage is not available within sandbox context:", e);
+    }
     setDarkMode(false);
   }, []);
 
@@ -67,6 +76,17 @@ export default function Header() {
       setActiveDropdown(null);
       if (window.navigateToPage) {
         window.navigateToPage("about");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      return;
+    }
+
+    // Intercept the Sanjeevini category to switch to the standalone stateful page
+    if (targetId === "section-xprize") {
+      setMobileMenuOpen(false);
+      setActiveDropdown(null);
+      if (window.navigateToPage) {
+        window.navigateToPage("sanjeevini");
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
       return;
@@ -271,10 +291,15 @@ export default function Header() {
 
               <div className="space-y-3 pb-6 flex-grow">
                 {menuItems.map((item) => {
+                  const hasDropdown = !!item.dropdownItems;
                   const isExternal = !!item.href;
+                  const isExpanded = expandedMobileItem === item.key;
                   const Element = isExternal ? "a" : "button";
+                  
                   const extraProps = isExternal
                     ? { href: item.href, target: "_blank", rel: "noopener noreferrer", onClick: () => setMobileMenuOpen(false) }
+                    : hasDropdown
+                    ? { onClick: () => setExpandedMobileItem(isExpanded ? null : item.key) }
                     : { onClick: () => item.targetId && handleScrollTo(item.targetId) };
 
                   return (
@@ -284,12 +309,25 @@ export default function Header() {
                         className="w-full text-left px-4 py-3 rounded-xl font-bold text-slate-800 dark:text-slate-100 text-base hover:bg-slate-50 dark:hover:bg-slate-900/50 flex justify-between items-center cursor-pointer block"
                       >
                         {item.label}
-                        <ArrowRight className="w-4 h-4 text-slate-400" />
+                        {hasDropdown ? (
+                          <ChevronDown className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${isExpanded ? "rotate-180 text-[#2BC48A]" : ""}`} />
+                        ) : (
+                          <ArrowRight className="w-4 h-4 text-slate-400" />
+                        )}
                       </Element>
 
-                    {item.dropdownItems && (
-                      <div className="pl-6 border-l-2 border-slate-100 dark:border-slate-850 space-y-1">
-                        {item.dropdownItems.map((drop) => {
+                    {hasDropdown && isExpanded && (
+                      <div className="pl-6 border-l-2 border-slate-100 dark:border-slate-800 space-y-1 mt-1">
+                        {/* Option to navigate to parent section overview directly */}
+                        {item.targetId && (
+                          <button
+                            onClick={() => item.targetId && handleScrollTo(item.targetId)}
+                            className="w-full text-left px-3 py-2 rounded-lg text-xs font-bold text-[#2BC48A] hover:bg-slate-50 dark:hover:bg-slate-900/40 cursor-pointer block"
+                          >
+                            Overview →
+                          </button>
+                        )}
+                        {item.dropdownItems?.map((drop) => {
                           const isExternal = !!drop.href;
                           const Element = isExternal ? "a" : "button";
                           const extraProps = isExternal

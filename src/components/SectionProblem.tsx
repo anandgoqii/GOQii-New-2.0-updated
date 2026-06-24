@@ -4,9 +4,9 @@ export default function SectionProblem() {
   return (
     <div
       id="section-problem"
-      className="relative min-h-[90vh] w-full flex flex-col justify-center items-center overflow-hidden bg-white py-12 md:py-20 px-6 md:px-16"
+      className="relative min-h-0 lg:min-h-[90vh] w-full flex flex-col justify-center items-center overflow-hidden bg-white py-12 md:py-20 px-6 md:px-16"
     >
-      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
         {/* Left Column: Text Content and Label */}
         <div className="lg:col-span-5 flex flex-col justify-center text-left">
@@ -56,12 +56,12 @@ export default function SectionProblem() {
 
         </div>
 
-        {/* Right Column: Embedded Portrait (with soft realistic shadowing, showcasing entire image/data fully) */}
-        <div className="lg:col-span-7 relative w-full rounded-[24px] sm:rounded-[32px] overflow-hidden bg-white border border-[#E8EDF2]/60 shadow-[0_12px_36px_rgba(15,23,42,0.03)] hover:shadow-[0_20px_50px_rgba(15,23,42,0.06)] transition-all duration-500">
+        {/* Right Column: Embedded Portrait (with padding to prevent any clipping, showcasing entire image/data fully) */}
+        <div className="lg:col-span-7 relative w-full rounded-[24px] sm:rounded-[32px] bg-white border border-[#E8EDF2]/60 shadow-[0_12px_36px_rgba(15,23,42,0.03)] hover:shadow-[0_20px_50px_rgba(15,23,42,0.06)] transition-all duration-500 p-3 sm:p-5 md:p-6 overflow-hidden">
           <img
             src="https://appcdn.goqii.com/storeimg/69388_1781074885.png"
             alt="Behavior Change Ecosystem Visualization"
-            className="w-full h-auto block object-contain select-none scale-100"
+            className="w-full h-auto block object-contain select-none rounded-xl sm:rounded-2xl"
             referrerPolicy="no-referrer"
           />
         </div>
