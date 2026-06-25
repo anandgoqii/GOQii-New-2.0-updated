@@ -428,7 +428,7 @@ export default function TrustRegulatory() {
           </div>
 
           {/* Right Column: Dynamic Shield concentric circles visualization */}
-          <div className="lg:col-span-5 flex items-center justify-center relative min-h-[300px] select-none pointer-events-none">
+          <div className="hidden lg:flex lg:col-span-5 items-center justify-center relative min-h-[300px] select-none pointer-events-none">
             
             {/* Outer dotted circles with small pulsing green dots */}
             <div className="absolute w-[280px] h-[280px] rounded-full border border-dashed border-[#E2E8F0]/80 flex items-center justify-center">
