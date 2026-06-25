@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const STEPS = [
   {
@@ -34,6 +34,23 @@ const STEPS = [
 
 export default function SectionSolution() {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+  const [activeMobileIdx, setActiveMobileIdx] = useState(0);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const scrollLeft = container.scrollLeft;
+    const totalWidth = container.scrollWidth;
+    const clientWidth = container.clientWidth;
+    
+    if (clientWidth > 0) {
+      const stepWidth = totalWidth / STEPS.length;
+      const index = Math.round(scrollLeft / stepWidth);
+      const clampedIndex = Math.max(0, Math.min(STEPS.length - 1, index));
+      setActiveMobileIdx(clampedIndex);
+    }
+  };
 
   return (
     <div
@@ -83,14 +100,18 @@ export default function SectionSolution() {
             <div className="w-full h-full border-t-[2px] border-dashed border-[#2BC48A]/30 relative" />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-20">
+          <div 
+            ref={scrollRef}
+            onScroll={handleScroll}
+            className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 gap-5 -mx-6 px-6 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible sm:snap-none sm:pb-0 sm:gap-6 relative z-20 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          >
             {STEPS.map((step, idx) => {
               const isHovered = hoveredIdx === idx;
               
               return (
                 <motion.div
                   key={step.num}
-                  className="relative bg-white border border-[#E8EDF2] hover:border-[#2BC48A]/40 rounded-[24px] flex flex-col overflow-hidden cursor-pointer transition-all duration-400 shadow-[0_8px_30px_rgba(15,23,42,0.02)] hover:shadow-[0_20px_50px_rgba(43,196,138,0.08)] group"
+                  className="relative bg-white border border-[#E8EDF2] hover:border-[#2BC48A]/40 rounded-[24px] flex flex-col overflow-hidden cursor-pointer transition-all duration-400 shadow-[0_8px_30px_rgba(15,23,42,0.02)] hover:shadow-[0_20px_50px_rgba(43,196,138,0.08)] group shrink-0 w-[290px] max-w-[85vw] snap-center sm:shrink sm:w-auto sm:snap-align-none"
                   onMouseEnter={() => setHoveredIdx(idx)}
                   onMouseLeave={() => setHoveredIdx(null)}
                   whileHover={{ y: -6 }}
@@ -139,6 +160,32 @@ export default function SectionSolution() {
                 </motion.div>
               );
             })}
+          </div>
+
+          {/* Mobile indicator dots */}
+          <div className="flex sm:hidden justify-center items-center gap-2 mt-4 pb-2">
+            {STEPS.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  if (scrollRef.current) {
+                    const container = scrollRef.current;
+                    const cardWidth = container.scrollWidth / STEPS.length;
+                    container.scrollTo({
+                      left: idx * cardWidth,
+                      behavior: "smooth"
+                    });
+                    setActiveMobileIdx(idx);
+                  }
+                }}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  activeMobileIdx === idx 
+                    ? "w-6 bg-[#2BC48A]" 
+                    : "w-2 bg-[#E8EDF2] hover:bg-[#2BC48A]/40"
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
           </div>
 
         </div>

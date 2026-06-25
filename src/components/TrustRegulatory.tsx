@@ -47,6 +47,24 @@ function AnimatedCounter({ endValue, suffix = "", prefix = "", duration = 2000 }
 }
 
 export default function TrustRegulatory() {
+  const [activeMobileIdx, setActiveMobileIdx] = useState(0);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const scrollLeft = container.scrollLeft;
+    const totalWidth = container.scrollWidth;
+    const clientWidth = container.clientWidth;
+    
+    if (clientWidth > 0) {
+      const cardWidth = totalWidth / 4;
+      const index = Math.round(scrollLeft / cardWidth);
+      const clampedIndex = Math.max(0, Math.min(3, index));
+      setActiveMobileIdx(clampedIndex);
+    }
+  };
+
   const certificates = [
     {
       img: "https://goqii.com/goqii_uk_home/assets/images/img-cetificate-6.png",
@@ -187,7 +205,11 @@ export default function TrustRegulatory() {
         </div>
 
         {/* ================= METRIC CARDS GRID ================= */}
-        <div className="w-full max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div 
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 gap-6 -mx-5 px-5 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible sm:snap-none sm:pb-0 sm:gap-6 relative z-10 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+        >
           
           {/* Card 1: Lives Covered */}
           <motion.div
@@ -195,7 +217,7 @@ export default function TrustRegulatory() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col items-center text-center bg-white border border-[#E8EDF2] rounded-[32px] p-8 shadow-[0_16px_48px_rgba(15,23,42,0.015)]"
+            className="flex flex-col items-center text-center bg-white border border-[#E8EDF2] rounded-[32px] p-8 shadow-[0_16px_48px_rgba(15,23,42,0.015)] shrink-0 w-[270px] max-w-[85vw] snap-center sm:shrink sm:w-auto sm:snap-align-none"
           >
             <div className="relative mb-6 flex items-center justify-center">
               <div className="absolute w-16 h-16 rounded-full bg-[#E5F7F0]/60 -z-10 blur-[8px]" />
@@ -225,7 +247,7 @@ export default function TrustRegulatory() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="flex flex-col items-center text-center bg-white border border-[#E8EDF2] rounded-[32px] p-8 shadow-[0_16px_48px_rgba(15,23,42,0.015)]"
+            className="flex flex-col items-center text-center bg-white border border-[#E8EDF2] rounded-[32px] p-8 shadow-[0_16px_48px_rgba(15,23,42,0.015)] shrink-0 w-[270px] max-w-[85vw] snap-center sm:shrink sm:w-auto sm:snap-align-none"
           >
             <div className="relative mb-6 flex items-center justify-center">
               <div className="absolute w-16 h-16 rounded-full bg-[#E5F7F0]/60 -z-10 blur-[8px]" />
@@ -255,7 +277,7 @@ export default function TrustRegulatory() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="flex flex-col items-center text-center bg-white border border-[#E8EDF2] rounded-[32px] p-8 shadow-[0_16px_48px_rgba(15,23,42,0.015)]"
+            className="flex flex-col items-center text-center bg-white border border-[#E8EDF2] rounded-[32px] p-8 shadow-[0_16px_48px_rgba(15,23,42,0.015)] shrink-0 w-[270px] max-w-[85vw] snap-center sm:shrink sm:w-auto sm:snap-align-none"
           >
             <div className="relative mb-6 flex items-center justify-center">
               <div className="absolute w-16 h-16 rounded-full bg-[#E5F7F0]/60 -z-10 blur-[8px]" />
@@ -285,7 +307,7 @@ export default function TrustRegulatory() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-            className="flex flex-col items-center text-center bg-white border border-[#E8EDF2] rounded-[32px] p-8 shadow-[0_16px_48px_rgba(15,23,42,0.015)]"
+            className="flex flex-col items-center text-center bg-white border border-[#E8EDF2] rounded-[32px] p-8 shadow-[0_16px_48px_rgba(15,23,42,0.015)] shrink-0 w-[270px] max-w-[85vw] snap-center sm:shrink sm:w-auto sm:snap-align-none"
           >
             <div className="relative mb-6 flex items-center justify-center">
               <div className="absolute w-16 h-16 rounded-full bg-[#E5F7F0]/60 -z-10 blur-[8px]" />
@@ -309,6 +331,32 @@ export default function TrustRegulatory() {
             </p>
           </motion.div>
 
+        </div>
+
+        {/* Mobile indicator dots */}
+        <div className="flex sm:hidden justify-center items-center gap-2 mt-3">
+          {[0, 1, 2, 3].map((idx) => (
+            <button
+              key={idx}
+              onClick={() => {
+                if (scrollRef.current) {
+                  const container = scrollRef.current;
+                  const cardWidth = container.scrollWidth / 4;
+                  container.scrollTo({
+                    left: idx * cardWidth,
+                    behavior: "smooth"
+                  });
+                  setActiveMobileIdx(idx);
+                }
+              }}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                activeMobileIdx === idx 
+                  ? "w-6 bg-[#2BC48A]" 
+                  : "w-2 bg-[#E8EDF2] hover:bg-[#2BC48A]/40"
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
         </div>
 
         {/* ================= BOTTOM BANNER PILL ================= */}

@@ -99,8 +99,8 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
       ref={sectionRef}
       className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-[#F8FAFB] py-12 md:py-16 select-none"
     >
-      {/* Absolute image background with subtle parallax translation - only visible on desktop/tablet to prevent mobile text overlapping */}
-      <div className="absolute inset-0 w-full h-full z-0 overflow-hidden hidden md:block">
+      {/* Absolute image background with subtle parallax translation - visible on all screens */}
+      <div className="absolute inset-0 w-full h-full z-0 overflow-hidden block">
         <motion.div
           style={{ y: yParallax, scale: imageScale }}
           className="absolute -top-[3%] left-0 w-full h-[106%] origin-center"
@@ -124,7 +124,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
           <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] rounded-full bg-[#2BC48A]/3 blur-[90px] pointer-events-none" />
           
           {/* Left-to-right legibility mask gradient specifically for left-aligned text */}
-          <div className="absolute inset-y-0 left-0 w-full md:w-[65%] bg-gradient-to-r from-[#F8FAFB]/75 via-[#F8FAFB]/30 to-transparent z-[1]" />
+          <div className="absolute inset-y-0 left-0 w-full md:w-[65%] bg-gradient-to-r from-[#F8FAFB]/92 md:from-[#F8FAFB]/75 via-[#F8FAFB]/75 md:via-[#F8FAFB]/30 to-[#F8FAFB]/40 md:to-transparent z-[1]" />
           
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#F8FAFB]/50" />
           <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#F8FAFB] to-transparent" />

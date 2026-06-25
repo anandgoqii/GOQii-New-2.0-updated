@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface Member {
   name: string;
@@ -20,7 +20,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       company: "GOQii Inc.",
       bio: "A leading global figure at the intersection of healthcare, gaming, and entrepreneurship. As Founder and CEO of GOQii, he has transformed preventive healthcare by integrating AI, technology, and gamification across India, the UK, and the Middle East.\n\nKnown globally as the \"Father of the Indian Gaming Industry,\" his early success with Indiagames culminated in its acquisition by The Walt Disney Company; he subsequently launched nCore Games, creator of FAU-G. Organises Mumbai Hacks for healthcare AI innovation. An avid marathon runner, trekker, and skydiver.",
       image: "https://appcdn.goqii.com/storeimg/95221_1781178862.png",
-      highlights: ["Preventive Healthcare", "AI & Tech", "Gaming"],
+      highlights: ["Preventive Healthcare", "AI, Tech & Gaming"],
       extraHighlights: "25+ Years in Tech & Health · Indiagames → Disney · GOQii",
       location: "Mumbai · Global"
     },
@@ -152,7 +152,7 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       company: "GOQii Inc.",
       bio: "A leading global figure at the intersection of healthcare, gaming, and entrepreneurship. As Founder and CEO of GOQii, he has transformed preventive healthcare by integrating AI, technology, and gamification across India, the UK, and the Middle East.\n\nKnown globally as the \"Father of the Indian Gaming Industry,\" his early success with Indiagames culminated in its acquisition by The Walt Disney Company; he subsequently launched nCore Games, creator of FAU-G. Organises Mumbai Hacks for healthcare AI innovation. An avid marathon runner, trekker, and skydiver.",
       image: "https://appcdn.goqii.com/storeimg/95221_1781178862.png",
-      highlights: ["Preventive Healthcare", "AI & Tech", "Gaming"],
+      highlights: ["Preventive Healthcare", "AI, Tech & Gaming"],
       extraHighlights: "25+ Years in Tech & Health · Indiagames → Disney · GOQii",
       location: "Mumbai · Global"
     },
@@ -313,6 +313,32 @@ const TAB_LABELS = [
 export default function Leadership() {
   const [activeTab, setActiveTab] = useState("leadership");
   const [selectedMember, setSelectedMember] = useState<Member | null>(null);
+  const [activeMobileIdx, setActiveMobileIdx] = useState(0);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  // Reset activeMobileIdx when activeTab changes
+  useEffect(() => {
+    setActiveMobileIdx(0);
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft = 0;
+    }
+  }, [activeTab]);
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const scrollLeft = container.scrollLeft;
+    const totalWidth = container.scrollWidth;
+    const clientWidth = container.clientWidth;
+    const itemsCount = LEADERSHIP_DATA[activeTab].length;
+    
+    if (clientWidth > 0 && itemsCount > 0) {
+      const cardWidth = totalWidth / itemsCount;
+      const index = Math.round(scrollLeft / cardWidth);
+      const clampedIndex = Math.max(0, Math.min(itemsCount - 1, index));
+      setActiveMobileIdx(clampedIndex);
+    }
+  };
 
   // Lock background scroll when modal is active
   useEffect(() => {
@@ -399,11 +425,13 @@ export default function Leadership() {
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
+            ref={scrollRef}
+            onScroll={handleScroll}
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.4 }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5"
+            className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 gap-5 -mx-5 px-5 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 sm:overflow-visible sm:snap-none sm:pb-0 sm:gap-5 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
           >
             {LEADERSHIP_DATA[activeTab].map((member, index) => (
               <motion.div
@@ -412,7 +440,7 @@ export default function Leadership() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 onClick={() => setSelectedMember(member)}
-                className="bg-white border border-[#E8EDF2] rounded-[24px] p-2.5 flex flex-col shadow-[0_4px_20px_rgba(15,23,42,0.015)] hover:shadow-[0_12px_32px_rgba(15,23,42,0.035)] hover:border-[#2BC48A] transition-all duration-300 group cursor-pointer relative"
+                className="bg-white border border-[#E8EDF2] rounded-[24px] p-2.5 flex flex-col shadow-[0_4px_20px_rgba(15,23,42,0.015)] hover:shadow-[0_12px_32px_rgba(15,23,42,0.035)] hover:border-[#2BC48A] transition-all duration-300 group cursor-pointer relative shrink-0 w-[265px] max-w-[85vw] snap-center sm:shrink sm:w-auto sm:snap-align-none"
               >
                 {/* Image wrapper with aspect ratio aspect-[4/5] */}
                 <div className="relative w-full aspect-[4/5] overflow-hidden rounded-[18px]">
@@ -477,6 +505,33 @@ export default function Leadership() {
             ))}
           </motion.div>
         </AnimatePresence>
+
+        {/* Mobile indicator dots */}
+        <div className="flex sm:hidden justify-center items-center gap-1.5 mt-2">
+          {LEADERSHIP_DATA[activeTab].map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => {
+                if (scrollRef.current) {
+                  const container = scrollRef.current;
+                  const itemsCount = LEADERSHIP_DATA[activeTab].length;
+                  const cardWidth = container.scrollWidth / itemsCount;
+                  container.scrollTo({
+                    left: idx * cardWidth,
+                    behavior: "smooth"
+                  });
+                  setActiveMobileIdx(idx);
+                }
+              }}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                activeMobileIdx === idx 
+                  ? "w-5 bg-[#2BC48A]" 
+                  : "w-1.5 bg-[#E8EDF2] hover:bg-[#2BC48A]/40"
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Global Mind Bottom Pill Indicator */}

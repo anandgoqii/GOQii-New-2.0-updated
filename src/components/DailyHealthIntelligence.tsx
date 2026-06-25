@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { useState, useEffect, ComponentType } from "react";
+import { useState, useEffect, ComponentType, useRef } from "react";
 import { 
   Camera, 
   Apple, 
@@ -73,23 +73,23 @@ const FEATURES: FeatureItem[] = [
 
 export default function DailyHealthIntelligence() {
   const [activeTab, setActiveTab] = useState<string>("nutrition");
-  const [cycleCount, setCycleCount] = useState<number>(0);
+  const scrollTabsRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveTab((prev) => {
-        const currentIndex = FEATURES.findIndex((f) => f.id === prev);
-        const nextIndex = (currentIndex + 1) % FEATURES.length;
-        return FEATURES[nextIndex].id;
-      });
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [cycleCount]);
+    if (scrollTabsRef.current) {
+      const activeEl = scrollTabsRef.current.querySelector('[data-active="true"]');
+      if (activeEl) {
+        activeEl.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "center"
+        });
+      }
+    }
+  }, [activeTab]);
 
   const handleTabClick = (id: string) => {
     setActiveTab(id);
-    setCycleCount((prev) => prev + 1);
   };
 
   return (
@@ -123,7 +123,7 @@ export default function DailyHealthIntelligence() {
         </div>
 
         {/* ================= TWO-COLUMN INTERACTIVE PANEL ================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="hidden lg:grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* LEFT COLUMN: MINIMALIST INTERACTIVE FEATURE LIST */}
           <div className="lg:col-span-5 flex flex-col justify-center">
@@ -178,19 +178,7 @@ export default function DailyHealthIntelligence() {
                             {feat.desc}
                           </p>
                           
-                          {/* Animated Progress line duration pointer (5s) */}
-                          {isActive && (
-                            <div className="w-24 h-[3px] bg-slate-200/60 rounded-full overflow-hidden mt-3.5 relative">
-                              <motion.div 
-                                key={`progress-${feat.id}-${cycleCount}`}
-                                initial={{ width: "0%" }}
-                                animate={{ width: "100%" }}
-                                transition={{ duration: 5, ease: "linear" }}
-                                className="h-full absolute left-0 top-0 rounded-full"
-                                style={{ backgroundColor: feat.themeColor }}
-                              />
-                            </div>
-                          )}
+
                         </div>
                       </div>
 
@@ -432,6 +420,140 @@ export default function DailyHealthIntelligence() {
             </motion.div>
           </div>
 
+        </div>
+
+        {/* ================= MOBILE INTERACTIVE LAYOUT (lg:hidden) ================= */}
+        <div className="block lg:hidden w-full mt-2">
+          {/* Swipable Tabs Track */}
+          <div 
+            ref={scrollTabsRef}
+            className="flex overflow-x-auto gap-2.5 pb-4 px-1 -mx-4 sm:mx-0 snap-x scroll-smooth [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          >
+            {FEATURES.map((feat) => {
+              const isActive = activeTab === feat.id;
+              const FeatIcon = feat.icon;
+              return (
+                <button
+                  key={feat.id}
+                  onClick={() => handleTabClick(feat.id)}
+                  data-active={isActive ? "true" : "false"}
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-full border text-sm font-bold tracking-tight transition-all duration-300 snap-center shrink-0 cursor-pointer"
+                  style={{
+                    borderColor: isActive ? `${feat.themeColor}50` : "#E2E8F0",
+                    backgroundColor: isActive ? `${feat.themeColor}12` : "#FFFFFF",
+                    color: isActive ? "#0F172A" : "#64748B",
+                    boxShadow: isActive ? `0 4px 12px ${feat.themeColor}12` : "none"
+                  }}
+                >
+                  <div 
+                    className="w-5 h-5 rounded-md flex items-center justify-center transition-all duration-300"
+                    style={{ 
+                      backgroundColor: isActive ? `${feat.themeColor}15` : "transparent",
+                      color: isActive ? feat.themeColor : "#64748B"
+                    }}
+                  >
+                    <FeatIcon className="w-3.5 h-3.5" />
+                  </div>
+                  <span>{feat.title}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Mobile screen mock + centered sub text */}
+          <div className="flex flex-col items-center justify-center mt-2">
+            {/* Ambient Background Glow matching the active feature */}
+            <div className="relative w-full flex justify-center items-center min-h-[350px] xs:min-h-[390px]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`mobile-glow-${activeTab}`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 0.15, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0 w-60 h-60 rounded-full blur-[60px] pointer-events-none z-0 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                  style={{
+                    backgroundColor: FEATURES.find(f => f.id === activeTab)?.themeColor || "#2BC48A"
+                  }}
+                />
+              </AnimatePresence>
+
+              {/* Hardware Chassis */}
+              <div
+                className="relative w-full max-w-[210px] xs:max-w-[230px] h-[390px] xs:h-[430px] bg-[#090D16] rounded-[36px] p-1.5 xs:p-2 shadow-[0_20px_50px_rgba(15,23,42,0.12)] border-[3px] border-[#222E42] z-10 overflow-hidden flex flex-col"
+              >
+                <div 
+                  className="flex-1 bg-[#0F172A] rounded-[31px] overflow-hidden relative flex flex-col shadow-inner border border-white/5 p-0"
+                >
+                  {/* Screens Slider with AnimatePresence */}
+                  <div className="flex-1 relative z-20 overflow-hidden text-left bg-[#0F172A]">
+                    <AnimatePresence mode="wait">
+                      {FEATURES.map((feat) => {
+                        if (feat.id !== activeTab) return null;
+                        let imgSrc = "https://appcdn.goqii.com/storeimg/96020_1780557384.png";
+                        if (feat.id === "safe-score") imgSrc = "https://appcdn.goqii.com/storeimg/82027_1780557626.png";
+                        else if (feat.id === "locker") imgSrc = "https://appcdn.goqii.com/storeimg/62662_1780558012.png";
+                        else if (feat.id === "coaching") imgSrc = "https://appcdn.goqii.com/storeimg/83435_1780558423.png";
+                        else if (feat.id === "rewards") imgSrc = "https://appcdn.goqii.com/storeimg/70019_1780558199.png";
+
+                        return (
+                          <motion.div
+                            key={`mobile-screen-${feat.id}`}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            transition={{ duration: 0.3 }}
+                            className="absolute inset-0 flex items-center justify-center overflow-hidden bg-[#0F172A]"
+                          >
+                            <img 
+                              src={imgSrc} 
+                              alt={feat.title}
+                              className="w-full h-full object-cover"
+                              referrerPolicy="no-referrer"
+                              loading="eager"
+                            />
+                          </motion.div>
+                        );
+                      })}
+                    </AnimatePresence>
+                  </div>
+                  {/* Simulated Home Indicator bar */}
+                  <div className="absolute bottom-1.5 left-1/2 -translate-x-1/2 w-20 h-1 bg-white/30 rounded-full z-30" />
+                </div>
+              </div>
+            </div>
+
+            {/* Sub text that appears/animates below the screen */}
+            <div className="w-full max-w-[340px] mt-4 px-2 text-center">
+              <AnimatePresence mode="wait">
+                {FEATURES.map((feat) => {
+                  if (feat.id !== activeTab) return null;
+                  return (
+                    <motion.div
+                      key={`desc-${feat.id}`}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.3 }}
+                      className="flex flex-col items-center"
+                    >
+                      <h3 
+                        className="text-lg font-extrabold tracking-tight font-sans mb-1.5 transition-colors duration-200 animate-fade-in"
+                        style={{ color: feat.themeColor }}
+                      >
+                        {feat.title}
+                      </h3>
+                      <p className="text-sm font-medium text-[#475467] leading-relaxed font-sans">
+                        {feat.desc}
+                      </p>
+
+
+                    </motion.div>
+                  );
+                })}
+              </AnimatePresence>
+            </div>
+          </div>
         </div>
 
       </div>

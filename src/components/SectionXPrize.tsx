@@ -35,6 +35,23 @@ export default function SectionXPrize() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [hoveredNode, setHoveredNode] = useState<string | null>(null);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [activeMilestoneIdx, setActiveMilestoneIdx] = useState(0);
+  const milestoneScrollRef = useRef<HTMLDivElement | null>(null);
+
+  const handleMilestoneScroll = () => {
+    if (!milestoneScrollRef.current) return;
+    const container = milestoneScrollRef.current;
+    const scrollLeft = container.scrollLeft;
+    const totalWidth = container.scrollWidth;
+    const clientWidth = container.clientWidth;
+    
+    if (clientWidth > 0) {
+      const cardWidth = totalWidth / 4;
+      const index = Math.round(scrollLeft / cardWidth);
+      const clampedIndex = Math.max(0, Math.min(3, index));
+      setActiveMilestoneIdx(clampedIndex);
+    }
+  };
 
   // Translate scroll sequence to standard subtle parallax for core background glow
   const { scrollYProgress } = useScroll({
@@ -213,14 +230,18 @@ export default function SectionXPrize() {
           {/* Connection line on desktop */}
           <div className="hidden md:block absolute top-[21px] left-8 right-8 h-[2px] bg-[#E8EDF2] z-0" />
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+          <div 
+            ref={milestoneScrollRef}
+            onScroll={handleMilestoneScroll}
+            className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 gap-6 -mx-5 px-5 md:mx-0 md:px-0 md:grid md:grid-cols-4 md:overflow-visible md:snap-none md:pb-0 md:gap-8 relative z-10 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          >
             {[
               { year: "2023", title: "Entered XPRIZE Healthspan", desc: "Sanjeevini submitted its longevity platform and research framework to the $101M XPRIZE Healthspan competition." },
               { year: "2024", title: "Top 40 Milestone Winner", desc: "Recognized as one of the Top 40 milestone-winning teams worldwide and the only award-winning team from India." },
               { year: "2025", title: "AI-Powered Longevity Platform", desc: "Enhanced the platform with AI-driven biomarker analysis, predictive health intelligence, and personalized longevity guidance." },
               { year: "2026", title: "Final Round Validation", desc: "Advancing toward final validation with integrated diagnostics, coaching, behavioral neurocoding™, and continuous health intelligence." }
             ].map((item, idx) => (
-              <div key={idx} className="flex flex-col items-start text-left group">
+              <div key={idx} className="flex flex-col items-start text-left group shrink-0 w-[270px] max-w-[85vw] snap-center md:shrink md:w-auto md:snap-align-none">
                 {/* Circle Indicator */}
                 <div className="w-11 h-11 rounded-full bg-white border-2 border-[#2BC48A] flex items-center justify-center font-black text-xs text-[#2BC48A] shadow-md mb-4 group-hover:bg-[#2BC48A] group-hover:text-white transition-all duration-300 transform group-hover:scale-105">
                   {item.year}
@@ -236,6 +257,32 @@ export default function SectionXPrize() {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Mobile indicator dots */}
+        <div className="flex md:hidden justify-center items-center gap-2 mt-2">
+          {[0, 1, 2, 3].map((idx) => (
+            <button
+              key={idx}
+              onClick={() => {
+                if (milestoneScrollRef.current) {
+                  const container = milestoneScrollRef.current;
+                  const cardWidth = container.scrollWidth / 4;
+                  container.scrollTo({
+                    left: idx * cardWidth,
+                    behavior: "smooth"
+                  });
+                  setActiveMilestoneIdx(idx);
+                }
+              }}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                activeMilestoneIdx === idx 
+                  ? "w-6 bg-[#2BC48A]" 
+                  : "w-2 bg-[#E8EDF2] hover:bg-[#2BC48A]/40"
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
         </div>
       </div>
 

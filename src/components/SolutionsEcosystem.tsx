@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { 
   User, 
@@ -89,6 +89,23 @@ export default function SolutionsEcosystem() {
   const [isGetAppOpen, setIsGetAppOpen] = useState(false);
   const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
   const [demoRole, setDemoRole] = useState("Individual");
+  const [activeMobileIdx, setActiveMobileIdx] = useState(0);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const scrollLeft = container.scrollLeft;
+    const totalWidth = container.scrollWidth;
+    const clientWidth = container.clientWidth;
+    
+    if (clientWidth > 0) {
+      const cardWidth = totalWidth / SOLUTIONS.length;
+      const index = Math.round(scrollLeft / cardWidth);
+      const clampedIndex = Math.max(0, Math.min(SOLUTIONS.length - 1, index));
+      setActiveMobileIdx(clampedIndex);
+    }
+  };
 
   const handleCtaClick = (type: "app" | "demo" | "doc" | "contact", roleName: string) => {
     if (type === "app") {
@@ -142,7 +159,12 @@ export default function SolutionsEcosystem() {
         </div>
 
         {/* Dynamic Equal-Height Card Grid: 2 rows x 3 columns on desktop */}
-        <div id="solutions-cards-grid" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 items-stretch">
+        <div 
+          id="solutions-cards-grid" 
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 gap-5 -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:snap-none md:pb-0 md:gap-6 items-stretch relative z-20 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+        >
           {SOLUTIONS.map((card, idx) => {
             const Icon = card.icon;
             return (
@@ -154,7 +176,7 @@ export default function SolutionsEcosystem() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.4, delay: idx * 0.05 }}
                 whileHover={{ y: -4, transition: { duration: 0.2 } }}
-                className="group bg-white border border-[#E8EDF2] hover:border-[#2BC48A]/45 hover:shadow-lg rounded-xl p-5 flex flex-col justify-between h-full transition-all duration-300 relative"
+                className="group bg-white border border-[#E8EDF2] hover:border-[#2BC48A]/45 hover:shadow-lg rounded-xl p-5 flex flex-col justify-between h-full transition-all duration-300 relative shrink-0 w-[285px] max-w-[82vw] snap-center md:shrink md:w-auto md:snap-align-none"
               >
                 {/* Active Accent Border Strip */}
                 <div className="absolute top-0 inset-x-0 h-[2.5px] bg-gradient-to-r from-[#21C083] to-[#00ADC7] rounded-t-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -208,6 +230,32 @@ export default function SolutionsEcosystem() {
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Mobile indicator dots */}
+        <div className="flex md:hidden justify-center items-center gap-2 mt-2 pb-4">
+          {SOLUTIONS.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => {
+                if (scrollRef.current) {
+                  const container = scrollRef.current;
+                  const cardWidth = container.scrollWidth / SOLUTIONS.length;
+                  container.scrollTo({
+                    left: idx * cardWidth,
+                    behavior: "smooth"
+                  });
+                  setActiveMobileIdx(idx);
+                }
+              }}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                activeMobileIdx === idx 
+                  ? "w-6 bg-[#2BC48A]" 
+                  : "w-2 bg-[#E8EDF2] hover:bg-[#2BC48A]/40"
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
         </div>
 
         {/* Equal-Height Outcomes Bottom Strip */}
