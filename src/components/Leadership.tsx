@@ -10,6 +10,8 @@ interface Member {
   highlights?: string[];
   extraHighlights?: string;
   location?: string;
+  shortBio?: string;
+  expertise?: string[];
 }
 
 const LEADERSHIP_DATA: Record<string, Member[]> = {
@@ -199,14 +201,22 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       location: "Bali · HK · Beijing"
     },
     {
-      name: "Prof Vincent Sai",
-      role: "Group CEO & Partner",
-      company: "Modality Partnership (NHS)",
-      bio: "The executive who scaled the UK's largest NHS GP super-partnership from 25,000 patients to a national network reaching 12M+ citizens across 55+ sites and 135 GP partners. Honorary Professor of Practice at UCL GBSH and Honorary Fellow of the RCGP. Background spans Aetna (Managing Director, Health Management Services), Deloitte Consulting, and the NHS. Recognised by the Nuffield Trust, King's Fund, and Dartmouth Institute. Leading international health system partnerships across seven countries including Saudi Arabia, Vietnam, and South Africa — and GOQii's NHS clinical outcomes anchor.",
+      name: "Vincent Sai",
+      role: "CEO & Partner, Modality Partnership (UK)",
+      company: "Modality Partnership",
+      bio: "Vincent Sai is the CEO and Partner of Modality Partnership, an award-winning NHS GP super partnership delivering primary and community healthcare services across the United Kingdom. Since joining in 2015, he has led significant diversification and expansion, transforming Modality into the largest partnership of its kind in the UK.\n\nVincent is widely recognized for his expertise in primary care, population health management, and large-scale healthcare transformation across public and private healthcare systems in the UK and internationally. He is the only non-clinical owner within a national partnership comprising over 130 GP partners.\n\nPrior to Modality, Vincent served as Chief Executive of Aetna Health Management Services and advised public and private sector clients across the United States, Australia, Hong Kong, South Korea, and Indonesia during his tenure at Deloitte Consulting.\n\nHe was recently awarded the Honorary Fellowship of the Royal College of General Practitioners (RCGP) for his outstanding contribution to General Practice. He is also a Fellow of the Institute of Chartered Accountants in England and Wales and Australia & New Zealand, a Health Executive in Residence at the Global Business School for Health, University College London (UCL), a Visiting Fellow at London South Bank University (LSBU), and an expert guest lecturer at the University of Brighton.",
       image: "https://appcdn.goqii.com/storeimg/91844_1781251940.png",
-      highlights: ["NHS / Primary Care", "Digital Health", "International"],
-      extraHighlights: "12M+ patients • 55+ NHS sites • 135 GP partners | UCL • RCGP Fellow",
-      location: "London"
+      highlights: ["Primary Care Transformation", "Population Health Management"],
+      extraHighlights: "Modality Partnership (UK) • RCGP Fellow • UCL Health Executive",
+      location: "UK",
+      shortBio: "Vincent Sai is the CEO and Partner of Modality Partnership, the UK's largest NHS GP super partnership delivering primary and community healthcare services at scale. He brings deep expertise in primary care transformation, population health management, and large-scale healthcare innovation across both public and private sectors internationally.",
+      expertise: [
+        "Primary Care Transformation",
+        "Population Health Management",
+        "Healthcare Strategy & Innovation",
+        "Large-Scale Health System Transformation",
+        "Global Healthcare Leadership"
+      ]
     },
     {
       name: "Amit Singhal",
@@ -488,14 +498,21 @@ export default function Leadership() {
                   </h3>
 
                   {/* Member Role */}
-                  <p className="text-[10px] sm:text-[11px] font-semibold text-[#667085] leading-normal mb-5 flex-grow">
+                  <p className={`text-[10px] sm:text-[11px] font-semibold text-[#667085] leading-normal ${member.shortBio ? "mb-2" : "mb-5 flex-grow"}`}>
                     {member.role}
                   </p>
+
+                  {/* Optional Short Bio on card */}
+                  {member.shortBio && (
+                    <p className="text-[11px] text-[#475467] leading-relaxed mb-4 flex-grow font-medium line-clamp-3">
+                      {member.shortBio}
+                    </p>
+                  )}
 
                   {/* Plus Trigger Button */}
                   <div className="flex items-center justify-between mt-auto">
                     <span className="text-[10px] font-bold text-[#2BC48A] group-hover:underline">
-                      Full Bio &rarr;
+                      View Bio &rarr;
                     </span>
                   </div>
 
@@ -635,6 +652,34 @@ export default function Leadership() {
 
                 {/* Divider */}
                 <div className="w-full h-[1px] bg-slate-100 mb-6" />
+
+                {/* Optional Expertise section */}
+                {selectedMember.expertise && (
+                  <div className="mb-6">
+                    <h3 className="text-xs font-black text-[#0F172A] uppercase tracking-widest mb-3 flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#2BC48A]" />
+                      Expertise
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedMember.expertise.map((exp) => (
+                        <span
+                          key={exp}
+                          className="px-3 py-1.5 bg-[#FAFBFB] text-[#475467] text-[11px] sm:text-[12px] font-bold rounded-lg border border-slate-100 shadow-[0_1px_2px_rgba(0,0,0,0.01)]"
+                        >
+                          {exp}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Optional Bio Heading */}
+                {selectedMember.expertise && (
+                  <h3 className="text-xs font-black text-[#0F172A] uppercase tracking-widest mb-3 flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#2BC48A]" />
+                    Bio
+                  </h3>
+                )}
 
                 {/* Decription/Bio Narrative (Formatted by Newlines) */}
                 <div className="text-[#475467] text-[13px] sm:text-[14px] leading-relaxed font-medium space-y-4 flex-grow pr-1">
