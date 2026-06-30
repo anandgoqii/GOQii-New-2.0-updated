@@ -52,7 +52,7 @@ const slides = [
     ],
     subtext: "GOQii combines AI, diagnostics, wearables and human coaching into one connected health platform.",
     bgImage: "https://appcdn.goqii.com/storeimg/70526_1781689373.jpg",
-    mobileBgImage: "https://appcdn.goqii.com/storeimg/50283_1781000672.jpg",
+    mobileBgImage: "https://appcdn.goqii.com/storeimg/70822_1782800887.jpg",
     objectPosition: "object-right-bottom md:object-right-bottom"
   }
 ];
