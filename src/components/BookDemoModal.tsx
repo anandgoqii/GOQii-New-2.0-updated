@@ -76,7 +76,7 @@ export default function BookDemoModal({ isOpen, onClose, initialRole }: BookDemo
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto">
           {/* Backdrop Overlay */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -92,7 +92,7 @@ export default function BookDemoModal({ isOpen, onClose, initialRole }: BookDemo
             animate={{ scale: 1, y: 0, opacity: 1 }}
             exit={{ scale: 0.95, y: 10, opacity: 0 }}
             transition={{ type: "spring", damping: 25 }}
-            className="relative w-full max-w-lg bg-white dark:bg-[#0B1220] border border-[#E8EDF2] dark:border-slate-800 shadow-[0_24px_64px_rgba(0,0,0,0.15)] rounded-3xl p-6 sm:p-8 z-10 text-left overflow-hidden"
+            className="relative w-full max-w-lg bg-white dark:bg-[#0B1220] border border-[#E8EDF2] dark:border-slate-800 shadow-[0_24px_64px_rgba(0,0,0,0.15)] rounded-3xl p-6 sm:p-8 z-10 text-left my-8 max-h-[90vh] overflow-y-auto"
           >
             {/* Top Branding Accent Bar */}
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#2BC48A]" />

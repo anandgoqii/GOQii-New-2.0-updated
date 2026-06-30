@@ -198,7 +198,7 @@ export default function SolutionsEcosystem() {
                   </div>
 
                   {/* Body description */}
-                  <div className="mt-2.5">
+                  <div className="mt-2.5 min-h-[54px] sm:min-h-[64px] flex items-start">
                     <p className="text-[11px] sm:text-xs text-slate-500 font-sans font-semibold leading-relaxed">
                       <SmartText>{card.description}</SmartText>
                     </p>

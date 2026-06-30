@@ -25,8 +25,7 @@ const STORIES = [
       "Weight & Metabolic Management",
       "Lifestyle Improvement Guides",
       "Continuous Companion Coaching"
-    ],
-    cta: "Get the App →"
+    ]
   },
   {
     category: "CORPORATE HEALTH & WELLNESS",
@@ -49,8 +48,7 @@ const STORIES = [
       "Active Workplace Performance",
       "Metabolic Risk Screenings",
       "Continuous Human Coaching"
-    ],
-    cta: "Book a Demo →"
+    ]
   },
   {
     category: "PUBLIC HEALTH INITIATIVES",
@@ -73,8 +71,7 @@ const STORIES = [
       "Population Health Intelligence",
       "Localized Community Engagement",
       "Decentralized Risk Interception"
-    ],
-    cta: "Talk to Sales →"
+    ]
   },
 ];
 
@@ -310,12 +307,7 @@ export default function HumanStories() {
                 </div>
               </div>
 
-              {/* Explore Link */}
-              <div className="pt-4">
-                <button className="inline-flex items-center gap-2 group text-sm font-extrabold text-[#0F172A] hover:text-[#2BC48A] transition-colors duration-300 cursor-pointer">
-                  <span>{activeStory.cta}</span>
-                </button>
-              </div>
+
 
             </motion.div>
           </AnimatePresence>
