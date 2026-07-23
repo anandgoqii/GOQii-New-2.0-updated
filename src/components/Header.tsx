@@ -121,11 +121,11 @@ export default function Header() {
       key: "enterprise",
       targetId: "section-ecosystem",
       dropdownItems: [
-        { label: "HealthEngage Platform", desc: "Advanced B2B digital health & lifestyle coaching platform.", targetId: "section-ecosystem", href: "https://goqii.com/healthengage" },
-        { label: "For Insurance", desc: "Intelligent health risk scoring & premium reduction programs.", targetId: "section-gap", href: "https://goqii.com/healthengage-insurance" },
-        { label: "For Pharma", desc: "Real-world evidence collection & clinical trial diagnostics.", targetId: "section-aliveos", href: "https://goqii.com/healthengage-pharma" },
-        { label: "For Hospital", desc: "Post-discharge continuous monitoring & outpatient integration.", targetId: "section-trust", href: "https://go-qii-connected-care-7c49.vercel.app/" },
-        { label: "For Corporate", desc: "Scale executive health parameters & reduce employee absenteeism.", targetId: "section-ecosystem", href: "https://goqii.com/healthengage-corporate" }
+        { label: "HealthEngage Platform", desc: "AI-powered engagement, monitoring, and health insights.", targetId: "section-ecosystem", href: "https://goqii.com/healthengage" },
+        { label: "For Insurance", desc: "Preventive health engagement that helps reduce risk and claims.", targetId: "section-gap", href: "https://goqii.com/healthengage-insurance" },
+        { label: "For Pharma", desc: "Patient engagement, adherence, and real-world health insights.", targetId: "section-aliveos", href: "https://goqii.com/healthengage-pharma" },
+        { label: "For Health Care providers", desc: "Continuous patient monitoring and care beyond the hospital.", targetId: "section-trust", href: "https://go-qii-connected-care-7c49.vercel.app/" },
+        { label: "For Corporate", desc: "Preventive workforce health that improves engagement and productivity.", targetId: "section-ecosystem", href: "https://goqii.com/healthengage-corporate" }
       ]
     },
     {
@@ -134,14 +134,12 @@ export default function Header() {
       targetId: "section-solution",
       dropdownItems: [
         { label: "Personal Care", desc: "1-on-1 certified human coaching tailored for preventative vitality.", targetId: "section-solution", href: "https://consult.goqii.com/" },
-        { label: "Chronic Care", desc: "Intelligent symptom tracking, clinical logs, and expert compliance.", targetId: "section-solution" },
         { label: "Insure Plus", desc: "Active lifestyle rewards teamed with wellness policy upgrades.", targetId: "section-gap", href: "https://store.goqii.com/goqii-insureplus" },
-        { label: "Longevity", desc: "Comprehensive cellular health biomarkers, DNA analytics, and ALIVE O.S.", targetId: "section-about", href: "https://goqii.com/superlife/" },
-        { label: "Nutriforge", desc: "Custom diagnostics & precise nutrient-tracking integration loops.", targetId: "section-ecosystem", href: "https://goqii.com/nutrigenius" }
+        { label: "SuperLife", desc: "Science-led longevity for a healthier, longer life.", targetId: "section-about", href: "https://goqii.com/superlife/" },
+        { label: "NutriGenius", desc: "AI-powered food recognition and smart nutrition tracking.", targetId: "section-ecosystem", href: "https://goqii.com/nutrigenius" }
       ]
     },
-    { label: "Sanjeevini", key: "sanjeevini", targetId: "section-xprize" },
-    { label: "Plans", key: "plans", href: "https://go-qii-global-plans.vercel.app/" },
+    { label: "Project Sanjeevini", key: "sanjeevini", href: "https://goqii.com/sanjeevini" },
     { label: "Contact", key: "contact", targetId: "section-final" }
   ];
 

@@ -82,22 +82,22 @@ export default function Footer() {
 
   const footerLinks = {
     consumer: {
-      title: "CONSUMER",
+      title: "PERSONAL SOLUTIONS",
       links: [
-        { label: "SuperLife", href: "https://goqii.com/superlife/" },
         { label: "Personal Care", href: "https://consult.goqii.com/" },
-        { label: "SmartRx", href: "https://smartrx.goqii.com/" },
-        { label: "Sanjeevini", href: "#section-xprize" },
+        { label: "Insure Plus", href: "https://store.goqii.com/goqii-insureplus" },
+        { label: "Super Life", href: "https://goqii.com/superlife/" },
+        { label: "NutriGenius", href: "https://goqii.com/nutrigenius" },
       ]
     },
     enterprise: {
-      title: "ENTERPRISE",
+      title: "ENTERPRISE SOLUTIONS",
       links: [
         { label: "GOQii HealthEngage", href: "https://goqii.com/healthengage" },
         { label: "For Insurance", href: "https://goqii.com/healthengage-insurance" },
         { label: "For Pharma", href: "https://goqii.com/healthengage-pharma" },
         { label: "For Corporate", href: "https://goqii.com/healthengage-corporate" },
-        { label: "For Hospital", href: "https://go-qii-connected-care-7c49.vercel.app/" },
+        { label: "For Health Care providers", href: "https://go-qii-connected-care-7c49.vercel.app/" },
       ]
     },
     company: {

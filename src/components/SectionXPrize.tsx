@@ -77,7 +77,7 @@ export default function SectionXPrize() {
             <span className="font-semibold text-[#2BC48A] text-sm tracking-wide">08</span>
             <span className="text-[#E2E8F0] font-light text-sm">|</span>
             <span className="font-semibold text-[#667085] text-[11px] tracking-[0.25em] uppercase">
-              SANJEEVINI
+              PROJECT SANJEEVINI
             </span>
           </div>
 
@@ -222,7 +222,7 @@ export default function SectionXPrize() {
             OUR JOURNEY
           </span>
           <h3 className="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight">
-            Sanjeevini Development Milestones
+            Project Sanjeevini Development Milestones
           </h3>
         </div>
 
@@ -236,7 +236,7 @@ export default function SectionXPrize() {
             className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 gap-6 -mx-5 px-5 md:mx-0 md:px-0 md:grid md:grid-cols-4 md:overflow-visible md:snap-none md:pb-0 md:gap-8 relative z-10 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
           >
             {[
-              { year: "2023", title: "Entered XPRIZE Healthspan", desc: "Sanjeevini submitted its longevity platform and research framework to the $101M XPRIZE Healthspan competition." },
+              { year: "2023", title: "Entered XPRIZE Healthspan", desc: "Project Sanjeevini submitted its longevity platform and research framework to the $101M XPRIZE Healthspan competition." },
               { year: "2024", title: "Top 40 Milestone Winner", desc: "Recognized as one of the Top 40 milestone-winning teams worldwide and the only award-winning team from India." },
               { year: "2025", title: "AI-Powered Longevity Platform", desc: "Enhanced the platform with AI-driven biomarker analysis, predictive health intelligence, and personalized longevity guidance." },
               { year: "2026", title: "Final Round Validation", desc: "Advancing toward final validation with integrated diagnostics, coaching, behavioral neurocoding™, and continuous health intelligence." }

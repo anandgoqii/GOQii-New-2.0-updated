@@ -81,7 +81,7 @@ export default function SanjeeviniPage() {
 
         {/* Heading */}
         <h1 className="text-4xl sm:text-5xl lg:text-[68px] font-black tracking-tight text-[#0F172A] leading-[1.05] mb-6 max-w-4xl">
-          Sanjeevini.<br />
+          Project Sanjeevini.<br />
           <span className="text-[#2BC48A]">Extending Healthy Lifespan.</span>
         </h1>
 
@@ -109,7 +109,7 @@ export default function SanjeeviniPage() {
               Pushing back the boundaries of biological age.
             </h2>
             <p className="text-[#64748B] text-sm leading-relaxed mb-6 font-medium">
-              Sanjeevini was built to solve the ultimate challenge of modern health: compressing morbidity. By pairing state-of-the-art diagnostic screening with automated behavioral compliance, we are moving the threshold of wellness from disease treatment to continuous biological rejuvenation.
+              Project Sanjeevini was built to solve the ultimate challenge of modern health: compressing morbidity. By pairing state-of-the-art diagnostic screening with automated behavioral compliance, we are moving the threshold of wellness from disease treatment to continuous biological rejuvenation.
             </p>
             
             {/* XPrize Sanjeevini Logo */}
@@ -148,7 +148,7 @@ export default function SanjeeviniPage() {
               OUR JOURNEY
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight">
-              Sanjeevini Development Milestones
+              Project Sanjeevini Development Milestones
             </h2>
           </div>
 
@@ -162,7 +162,7 @@ export default function SanjeeviniPage() {
               className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 gap-6 -mx-5 px-5 md:mx-0 md:px-0 md:grid md:grid-cols-4 md:overflow-visible md:snap-none md:pb-0 md:gap-8 relative z-10 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
             >
               {[
-                { year: "2023", title: "Entered XPRIZE Healthspan", desc: "Sanjeevini submitted its longevity platform and research framework to the $101M XPRIZE Healthspan competition." },
+                { year: "2023", title: "Entered XPRIZE Healthspan", desc: "Project Sanjeevini submitted its longevity platform and research framework to the $101M XPRIZE Healthspan competition." },
                 { year: "2024", title: "Top 40 Milestone Winner", desc: "Recognized as one of the Top 40 milestone-winning teams worldwide and the only award-winning team from India." },
                 { year: "2025", title: "AI-Powered Longevity Platform", desc: "Enhanced the platform with AI-driven biomarker analysis, predictive health intelligence, and personalized longevity guidance." },
                 { year: "2026", title: "Final Round Validation", desc: "Advancing toward final validation with integrated diagnostics, coaching, behavioral neurocoding™, and continuous health intelligence." }
@@ -257,7 +257,7 @@ export default function SanjeeviniPage() {
             Ready to live healthier, for longer?
           </h2>
           <p className="text-slate-400 text-sm sm:text-base max-w-lg mx-auto mb-10 leading-relaxed font-medium">
-            Contact our clinical Research division to inquire about Sanjeevini cohort enrollments, partner deployments, and longevity tracking pilots.
+            Contact our clinical Research division to inquire about Project Sanjeevini cohort enrollments, partner deployments, and longevity tracking pilots.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

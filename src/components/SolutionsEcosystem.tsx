@@ -31,8 +31,8 @@ const SOLUTIONS: SolutionCard[] = [
   {
     id: "individuals",
     title: "INDIVIDUALS",
-    tagline: "Preventive Longevity",
-    description: "Personalized coaching, diagnostics, wearables, and health guidance designed to help people live healthier, longer lives.",
+    tagline: "SuperLife",
+    description: "Science-led longevity for a healthier, longer life.",
     icon: User,
     ctaText: "Get the App",
     ctaType: "app"
