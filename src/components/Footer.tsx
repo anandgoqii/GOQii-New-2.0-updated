@@ -81,145 +81,105 @@ export default function Footer() {
   };
 
   const footerLinks = {
-    consumer: {
+    personal: {
       title: "PERSONAL SOLUTIONS",
       links: [
         { label: "Personal Care", href: "https://consult.goqii.com/" },
         { label: "Insure Plus", href: "https://store.goqii.com/goqii-insureplus" },
-        { label: "Super Life", href: "https://goqii.com/superlife/" },
+        { label: "SuperLife", href: "https://goqii.com/superlife/" },
         { label: "NutriGenius", href: "https://goqii.com/nutrigenius" },
       ]
     },
     enterprise: {
-      title: "ENTERPRISE SOLUTIONS",
+      title: "ENTERPRISE",
       links: [
-        { label: "GOQii HealthEngage", href: "https://goqii.com/healthengage" },
+        { label: "HealthEngage", href: "https://goqii.com/healthengage" },
         { label: "For Insurance", href: "https://goqii.com/healthengage-insurance" },
         { label: "For Pharma", href: "https://goqii.com/healthengage-pharma" },
+        { label: "For Healthcare Providers", href: "https://go-qii-connected-care-7c49.vercel.app/" },
         { label: "For Corporate", href: "https://goqii.com/healthengage-corporate" },
-        { label: "For Health Care providers", href: "https://go-qii-connected-care-7c49.vercel.app/" },
+      ]
+    },
+    innovation: {
+      title: "INNOVATION",
+      links: [
+        { label: "Sanjeevini", href: "https://goqii.com/sanjeevini" },
+        { label: "UHT", href: "https://goqii.com/" },
+      ]
+    },
+    resources: {
+      title: "RESOURCES",
+      links: [
+        { label: "India Fit Report", href: "https://goqii.com/indiafitreport" },
+        { label: "Smart Science", href: "https://goqii.com/" },
+        { label: "Smart Guide", href: "https://goqii.com/" },
+        { label: "Blog", href: "https://blog.goqii.com/" },
       ]
     },
     company: {
       title: "COMPANY",
       links: [
         { label: "About Us", href: "#section-about" },
-        { label: "Contact Us", href: "#section-final" },
         { label: "Careers", href: "#section-careers-page" },
+        { label: "Contact Us", href: "#section-final" },
       ]
     },
-    trustLegal: {
-      title: "TRUST & LEGAL",
+    support: {
+      title: "SUPPORT",
       links: [
-        { label: "Trust Center", href: "#section-trust-center-page" },
-        { label: "Privacy Policy", href: "#section-privacy-policy-page" },
-        { label: "Terms of Service", href: "#section-terms-of-service-page" },
+        { label: "FAQs", href: "https://goqii.com/faq" },
+        { label: "Startup Guide", href: "https://goqii.com/" },
+        { label: "Track Order", href: "https://store.goqii.com/" },
+        { label: "Warranty", href: "https://goqii.com/warranty" },
       ]
     }
   };
+
+  const regions = ["India", "United States", "United Kingdom"];
+
+  const legalLinks = [
+    { label: "Privacy Policy", href: "#section-privacy-policy-page" },
+    { label: "Terms of Service", href: "#section-terms-of-service-page" },
+    { label: "Trust Center", href: "#section-trust-center-page" },
+  ];
 
   return (
     <footer className="relative w-full bg-white border-t border-[#E8EDF2] py-14 sm:py-20 px-6 md:px-12 lg:px-16 select-none overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col">
         
-        {/* Top Section: Link Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 lg:gap-16 mb-16 sm:mb-20">
+        {/* Top Section: 6 Navigation Columns */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-8 mb-16 sm:mb-20">
           
-          {/* Column 1: Consumer */}
-          <div className="flex flex-col">
-            <h3 className="text-[11px] sm:text-xs font-black tracking-[0.16em] text-[#0F172A] uppercase mb-5 sm:mb-6">
-              {footerLinks.consumer.title}
-            </h3>
-            <ul className="flex flex-col gap-3.5">
-              {footerLinks.consumer.links.map((link, idx) => (
-                <li key={idx}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => handleLinkClick(e, link.href)}
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-sm sm:text-[15px] font-medium text-[#64748B] hover:text-[#2BC48A] transition-colors duration-200"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 2: Enterprise */}
-          <div className="flex flex-col">
-            <h3 className="text-[11px] sm:text-xs font-black tracking-[0.16em] text-[#0F172A] uppercase mb-5 sm:mb-6">
-              {footerLinks.enterprise.title}
-            </h3>
-            <ul className="flex flex-col gap-3.5">
-              {footerLinks.enterprise.links.map((link, idx) => (
-                <li key={idx}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => handleLinkClick(e, link.href)}
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-sm sm:text-[15px] font-medium text-[#64748B] hover:text-[#2BC48A] transition-colors duration-200"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 3: Company */}
-          <div className="flex flex-col">
-            <h3 className="text-[11px] sm:text-xs font-black tracking-[0.16em] text-[#0F172A] uppercase mb-5 sm:mb-6">
-              {footerLinks.company.title}
-            </h3>
-            <ul className="flex flex-col gap-3.5">
-              {footerLinks.company.links.map((link, idx) => (
-                <li key={idx}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => handleLinkClick(e, link.href)}
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-sm sm:text-[15px] font-medium text-[#64748B] hover:text-[#2BC48A] transition-colors duration-200"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Column 4: Trust & Legal */}
-          <div className="flex flex-col">
-            <h3 className="text-[11px] sm:text-xs font-black tracking-[0.16em] text-[#0F172A] uppercase mb-5 sm:mb-6">
-              {footerLinks.trustLegal.title}
-            </h3>
-            <ul className="flex flex-col gap-3.5">
-              {footerLinks.trustLegal.links.map((link, idx) => (
-                <li key={idx}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => handleLinkClick(e, link.href)}
-                    target={link.href.startsWith("http") ? "_blank" : undefined}
-                    rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                    className="text-sm sm:text-[15px] font-medium text-[#64748B] hover:text-[#2BC48A] transition-colors duration-200"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {Object.entries(footerLinks).map(([key, group]) => (
+            <div key={key} className="flex flex-col">
+              <h3 className="text-[11px] sm:text-xs font-black tracking-[0.16em] text-[#0F172A] uppercase mb-4 sm:mb-5">
+                {group.title}
+              </h3>
+              <ul className="flex flex-col gap-3">
+                {group.links.map((link, idx) => (
+                  <li key={idx}>
+                    <a
+                      href={link.href}
+                      onClick={(e) => handleLinkClick(e, link.href)}
+                      target={link.href.startsWith("http") ? "_blank" : undefined}
+                      rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                      className="text-xs sm:text-sm font-medium text-[#64748B] hover:text-[#2BC48A] transition-colors duration-200"
+                    >
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
         </div>
 
         {/* Divider line */}
-        <div className="w-full h-[1px] bg-[#F1F5F9] mb-8" />
+        <div className="w-full h-[1px] bg-[#F1F5F9] mb-10" />
 
-        {/* Bottom Section: Branding & Social Icons */}
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-12">
+        {/* Branding Tagline & Social Row */}
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-12 mb-10">
           
           {/* Logo & Vision Tagline */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 max-w-2xl">
@@ -234,7 +194,7 @@ export default function Footer() {
             </div>
             
             <p className="text-sm sm:text-[15px] font-medium text-[#64748B] leading-relaxed">
-              Transforming healthcare from reactive treatment to continuous, AI-driven prevention.
+              Transforming healthcare from reactive treatment to continuous, intelligent prevention.
             </p>
           </div>
 
@@ -307,10 +267,46 @@ export default function Footer() {
 
         </div>
 
-        {/* Mini tiny footer copyright line */}
-        <div className="mt-10 pt-4 flex flex-col sm:flex-row sm:justify-between gap-4 border-t border-[#F1F5F9]/60 text-[11px] font-medium text-[#94A3B8]">
-          <span>&copy; {currentYear} GOQii Technologies Private Limited. All rights reserved.</span>
-          <span>Health IoT &amp; Preventive Smart Coaching Integrated System</span>
+        {/* Region & Legal Bar */}
+        <div className="pt-6 border-t border-[#F1F5F9] flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs font-medium text-[#64748B]">
+          
+          {/* Region */}
+          <div className="flex items-center gap-2">
+            <span className="font-bold text-[#0F172A] uppercase tracking-wider text-[10px]">Region:</span>
+            <div className="flex items-center gap-2 text-[#64748B]">
+              {regions.map((region, idx) => (
+                <React.Fragment key={region}>
+                  <span className="hover:text-[#0F172A] cursor-pointer transition-colors">{region}</span>
+                  {idx < regions.length - 1 && <span className="text-[#CBD5E1]">|</span>}
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+
+          {/* Legal Links */}
+          <div className="flex items-center gap-3">
+            <span className="font-bold text-[#0F172A] uppercase tracking-wider text-[10px] hidden sm:inline">Legal:</span>
+            <div className="flex items-center gap-3">
+              {legalLinks.map((link, idx) => (
+                <React.Fragment key={link.label}>
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleLinkClick(e, link.href)}
+                    className="hover:text-[#2BC48A] transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                  {idx < legalLinks.length - 1 && <span className="text-[#CBD5E1]">|</span>}
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-8 text-[11px] font-medium text-[#94A3B8]">
+          © {currentYear} GOQii Technologies Private Limited. All rights reserved.
         </div>
 
       </div>
