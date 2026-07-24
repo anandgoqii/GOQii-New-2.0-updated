@@ -119,6 +119,7 @@ export default function Footer() {
         { label: "Personal Care", href: "https://consult.goqii.com/" },
         { label: "Insure Plus", href: "https://store.goqii.com/goqii-insureplus" },
         { label: "SuperLife", href: "https://goqii.com/superlife/" },
+        { label: "SmartRx", href: "https://smartrx.goqii.com/" },
         { label: "NutriGenius", href: "https://goqii.com/nutrigenius" },
       ]
     },
@@ -144,7 +145,7 @@ export default function Footer() {
       links: [
         { label: "India Fit Report", href: "https://www.indiafit.org/" },
         { label: "Smart Science", href: "#section-smart-science" },
-        { label: "Smart Guide", href: "https://goqii.com/" },
+        { label: "Smart Guide", href: "https://goqii.com/goqiiIndia/startupguide.html" },
         { label: "Blog", href: "https://goqii.com/blog/" },
       ]
     },
@@ -160,7 +161,7 @@ export default function Footer() {
       title: "SUPPORT",
       links: [
         { label: "FAQs", href: "#section-faq-page" },
-        { label: "Startup Guide", href: "#section-faq-page" },
+        { label: "Startup Guide", href: "https://goqii.com/goqiiIndia/startupguide.html" },
         { label: "Track Order", href: "#section-trackingorder-page" },
         { label: "Warranty", href: "#section-warranty-page" },
       ]

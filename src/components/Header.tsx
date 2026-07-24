@@ -180,6 +180,7 @@ export default function Header() {
         { label: "Personal Care", desc: "1-on-1 certified human coaching tailored for preventative vitality.", targetId: "section-solution", href: "https://consult.goqii.com/" },
         { label: "Insure Plus", desc: "Active lifestyle rewards teamed with wellness policy upgrades.", targetId: "section-gap", href: "https://store.goqii.com/goqii-insureplus" },
         { label: "SuperLife", desc: "Science-led longevity for a healthier, longer life.", targetId: "section-about", href: "https://goqii.com/superlife/" },
+        { label: "SmartRx", desc: "Doctor-led, personalized weight management.", targetId: "section-solution", href: "https://smartrx.goqii.com/" },
         { label: "NutriGenius", desc: "AI-powered food recognition and smart nutrition tracking.", targetId: "section-ecosystem", href: "https://goqii.com/nutrigenius" }
       ]
     },
