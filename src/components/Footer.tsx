@@ -61,6 +61,38 @@ export default function Footer() {
         }
         return;
       }
+
+      if (targetId === "section-faq-page" || targetId === "faqs" || targetId === "support") {
+        if (window.navigateToPage) {
+          window.navigateToPage("faqs");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        return;
+      }
+
+      if (targetId === "section-warranty-page" || targetId === "warranty" || targetId === "claim-warranty") {
+        if (window.navigateToPage) {
+          window.navigateToPage("warranty");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        return;
+      }
+
+      if (targetId === "section-smart-science" || targetId === "smart-science" || targetId === "science") {
+        if (window.navigateToPage) {
+          window.navigateToPage("smart-science");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        return;
+      }
+
+      if (targetId === "section-trackingorder-page" || targetId === "trackingorder" || targetId === "track-order" || targetId === "trackorder") {
+        if (window.navigateToPage) {
+          window.navigateToPage("trackingorder");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        return;
+      }
       
       if (window.navigateToPage) {
         window.navigateToPage("home");
@@ -96,7 +128,7 @@ export default function Footer() {
         { label: "HealthEngage", href: "https://goqii.com/healthengage" },
         { label: "For Insurance", href: "https://goqii.com/healthengage-insurance" },
         { label: "For Pharma", href: "https://goqii.com/healthengage-pharma" },
-        { label: "For Healthcare Providers", href: "https://go-qii-connected-care-7c49.vercel.app/" },
+        { label: "For Health Care Providers", href: "https://go-qii-connected-care-7c49.vercel.app/" },
         { label: "For Corporate", href: "https://goqii.com/healthengage-corporate" },
       ]
     },
@@ -104,16 +136,16 @@ export default function Footer() {
       title: "INNOVATION",
       links: [
         { label: "Sanjeevini", href: "https://goqii.com/sanjeevini" },
-        { label: "UHT", href: "https://goqii.com/" },
+        { label: "UHT", href: "https://uht.goqii.com/homepage" },
       ]
     },
     resources: {
       title: "RESOURCES",
       links: [
-        { label: "India Fit Report", href: "https://goqii.com/indiafitreport" },
-        { label: "Smart Science", href: "https://goqii.com/" },
+        { label: "India Fit Report", href: "https://www.indiafit.org/" },
+        { label: "Smart Science", href: "#section-smart-science" },
         { label: "Smart Guide", href: "https://goqii.com/" },
-        { label: "Blog", href: "https://blog.goqii.com/" },
+        { label: "Blog", href: "https://goqii.com/blog/" },
       ]
     },
     company: {
@@ -127,10 +159,10 @@ export default function Footer() {
     support: {
       title: "SUPPORT",
       links: [
-        { label: "FAQs", href: "https://goqii.com/faq" },
-        { label: "Startup Guide", href: "https://goqii.com/" },
-        { label: "Track Order", href: "https://store.goqii.com/" },
-        { label: "Warranty", href: "https://goqii.com/warranty" },
+        { label: "FAQs", href: "#section-faq-page" },
+        { label: "Startup Guide", href: "#section-faq-page" },
+        { label: "Track Order", href: "#section-trackingorder-page" },
+        { label: "Warranty", href: "#section-warranty-page" },
       ]
     }
   };

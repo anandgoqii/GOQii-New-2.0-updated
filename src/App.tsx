@@ -24,10 +24,14 @@ import TrustCenterPage from "./components/TrustCenterPage";
 import PrivacyPolicyPage from "./components/PrivacyPolicyPage";
 import TermsOfServicePage from "./components/TermsOfServicePage";
 import CareersPage from "./components/CareersPage";
+import FaqPage from "./components/FaqPage";
+import WarrantyPage from "./components/WarrantyPage";
+import SmartSciencePage from "./components/SmartSciencePage";
+import TrackOrderPage from "./components/TrackOrderPage";
 
 declare global {
   interface Window {
-    navigateToPage?: (pageName: "home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers") => void;
+    navigateToPage?: (pageName: "home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers" | "faqs" | "warranty" | "smart-science" | "trackingorder") => void;
   }
 }
 
@@ -50,7 +54,7 @@ function ScrollRevealSection({ children }: ScrollRevealSectionProps) {
 }
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<"home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers">("home");
+  const [currentPage, setCurrentPage] = useState<"home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers" | "faqs" | "warranty" | "smart-science" | "trackingorder">("home");
 
   useEffect(() => {
     // Detect initial route safeguards
@@ -73,9 +77,17 @@ export default function App() {
       setCurrentPage("terms");
     } else if (pathName === "careers") {
       setCurrentPage("careers");
+    } else if (pathName === "faqs" || pathName === "support") {
+      setCurrentPage("faqs");
+    } else if (pathName === "warranty" || pathName === "claim-warranty") {
+      setCurrentPage("warranty");
+    } else if (pathName === "smart-science" || pathName === "science") {
+      setCurrentPage("smart-science");
+    } else if (pathName === "trackingorder" || pathName === "track-order" || pathName === "trackorder") {
+      setCurrentPage("trackingorder");
     }
 
-    window.navigateToPage = (pageName: "home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers") => {
+    window.navigateToPage = (pageName: "home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers" | "faqs" | "warranty" | "smart-science" | "trackingorder") => {
       setCurrentPage(pageName);
       const urlPath = pageName === "home" ? "/" : `/${pageName}`;
       try {
@@ -110,6 +122,14 @@ export default function App() {
         setCurrentPage("terms");
       } else if (currentPath === "careers") {
         setCurrentPage("careers");
+      } else if (currentPath === "faqs" || currentPath === "support") {
+        setCurrentPage("faqs");
+      } else if (currentPath === "warranty" || currentPath === "claim-warranty") {
+        setCurrentPage("warranty");
+      } else if (currentPath === "smart-science" || currentPath === "science") {
+        setCurrentPage("smart-science");
+      } else if (currentPath === "trackingorder" || currentPath === "track-order" || currentPath === "trackorder") {
+        setCurrentPage("trackingorder");
       } else {
         setCurrentPage("home");
       }
@@ -237,6 +257,14 @@ export default function App() {
         <TermsOfServicePage />
       ) : currentPage === "careers" ? (
         <CareersPage />
+      ) : currentPage === "faqs" ? (
+        <FaqPage />
+      ) : currentPage === "warranty" ? (
+        <WarrantyPage />
+      ) : currentPage === "smart-science" ? (
+        <SmartSciencePage />
+      ) : currentPage === "trackingorder" ? (
+        <TrackOrderPage />
       ) : (
         <SanjeeviniPage />
       )}

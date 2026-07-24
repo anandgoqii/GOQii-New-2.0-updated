@@ -92,6 +92,50 @@ export default function Header() {
       return;
     }
 
+    // Intercept the FAQs / Help page to switch to standalone stateful page
+    if (targetId === "section-faq-page" || targetId === "faqs" || targetId === "support") {
+      setMobileMenuOpen(false);
+      setActiveDropdown(null);
+      if (window.navigateToPage) {
+        window.navigateToPage("faqs");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      return;
+    }
+
+    // Intercept the Warranty page
+    if (targetId === "section-warranty-page" || targetId === "warranty" || targetId === "claim-warranty") {
+      setMobileMenuOpen(false);
+      setActiveDropdown(null);
+      if (window.navigateToPage) {
+        window.navigateToPage("warranty");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      return;
+    }
+
+    // Intercept the Smart Science page
+    if (targetId === "section-smart-science" || targetId === "smart-science" || targetId === "science") {
+      setMobileMenuOpen(false);
+      setActiveDropdown(null);
+      if (window.navigateToPage) {
+        window.navigateToPage("smart-science");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      return;
+    }
+
+    // Intercept the Track Order page
+    if (targetId === "section-trackingorder-page" || targetId === "trackingorder" || targetId === "track-order" || targetId === "trackorder") {
+      setMobileMenuOpen(false);
+      setActiveDropdown(null);
+      if (window.navigateToPage) {
+        window.navigateToPage("trackingorder");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      return;
+    }
+
     // Switch back to home if scrolling to other sections
     if (window.navigateToPage) {
       window.navigateToPage("home");
