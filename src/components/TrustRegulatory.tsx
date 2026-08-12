@@ -206,9 +206,7 @@ export default function TrustRegulatory() {
 
         {/* ================= METRIC CARDS GRID ================= */}
         <div 
-          ref={scrollRef}
-          onScroll={handleScroll}
-          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth pb-6 gap-6 -mx-5 px-5 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:overflow-visible sm:snap-none sm:pb-0 sm:gap-6 relative z-10 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 w-full relative z-10"
         >
           
           {/* Card 1: Lives Covered */}
@@ -217,26 +215,26 @@ export default function TrustRegulatory() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col items-center text-center bg-white border border-[#E8EDF2] rounded-[32px] p-8 shadow-[0_16px_48px_rgba(15,23,42,0.015)] shrink-0 w-[270px] max-w-[85vw] snap-center sm:shrink sm:w-auto sm:snap-align-none"
+            className="flex flex-col items-center text-center bg-white border border-[#E8EDF2] rounded-2xl sm:rounded-[32px] p-4 sm:p-6 lg:p-8 shadow-[0_16px_48px_rgba(15,23,42,0.015)] w-full"
           >
-            <div className="relative mb-6 flex items-center justify-center">
-              <div className="absolute w-16 h-16 rounded-full bg-[#E5F7F0]/60 -z-10 blur-[8px]" />
-              <div className="w-12 h-12 rounded-full border border-emerald-50 bg-white flex items-center justify-center shadow-[0_4px_12px_rgba(43,196,138,0.06)] text-[#2BC48A]">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <div className="relative mb-3 sm:mb-6 flex items-center justify-center">
+              <div className="absolute w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#E5F7F0]/60 -z-10 blur-[8px]" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-emerald-50 bg-white flex items-center justify-center shadow-[0_4px_12px_rgba(43,196,138,0.06)] text-[#2BC48A]">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
             </div>
 
-            <div className="text-4xl lg:text-[44px] font-black font-sans text-[#0F172A] tracking-tight mb-2">
+            <div className="text-2xl sm:text-4xl lg:text-[44px] font-black font-sans text-[#0F172A] tracking-tight mb-1 sm:mb-2">
               <AnimatedCounter endValue={1} suffix="M+" />
             </div>
 
-            <div className="text-[10px] font-sans font-extrabold tracking-[0.15em] text-[#2BC48A] uppercase mb-4 leading-none">
+            <div className="text-[9px] sm:text-[10px] font-sans font-extrabold tracking-[0.12em] sm:tracking-[0.15em] text-[#2BC48A] uppercase mb-2 sm:mb-4 leading-tight">
               LIVES COVERED
             </div>
 
-            <p className="text-[#667085] text-[13px] leading-relaxed max-w-[200px] font-sans font-medium">
+            <p className="text-[#667085] text-xs sm:text-[13px] leading-normal sm:leading-relaxed max-w-full font-sans font-medium">
               Individuals and families using GOQii solutions globally.
             </p>
           </motion.div>
@@ -247,26 +245,26 @@ export default function TrustRegulatory() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
-            className="flex flex-col items-center text-center bg-white border border-[#E8EDF2] rounded-[32px] p-8 shadow-[0_16px_48px_rgba(15,23,42,0.015)] shrink-0 w-[270px] max-w-[85vw] snap-center sm:shrink sm:w-auto sm:snap-align-none"
+            className="flex flex-col items-center text-center bg-white border border-[#E8EDF2] rounded-2xl sm:rounded-[32px] p-4 sm:p-6 lg:p-8 shadow-[0_16px_48px_rgba(15,23,42,0.015)] w-full"
           >
-            <div className="relative mb-6 flex items-center justify-center">
-              <div className="absolute w-16 h-16 rounded-full bg-[#E5F7F0]/60 -z-10 blur-[8px]" />
-              <div className="w-12 h-12 rounded-full border border-emerald-50 bg-white flex items-center justify-center shadow-[0_4px_12px_rgba(43,196,138,0.06)] text-[#2BC48A]">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            <div className="relative mb-3 sm:mb-6 flex items-center justify-center">
+              <div className="absolute w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#E5F7F0]/60 -z-10 blur-[8px]" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-emerald-50 bg-white flex items-center justify-center shadow-[0_4px_12px_rgba(43,196,138,0.06)] text-[#2BC48A]">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 v5m-4 0h4" />
                 </svg>
               </div>
             </div>
 
-            <div className="text-4xl lg:text-[44px] font-black font-sans text-[#0F172A] tracking-tight mb-2">
+            <div className="text-2xl sm:text-4xl lg:text-[44px] font-black font-sans text-[#0F172A] tracking-tight mb-1 sm:mb-2">
               <AnimatedCounter endValue={1} prefix="0" />
             </div>
 
-            <div className="text-[10px] font-sans font-extrabold tracking-[0.15em] text-[#2BC48A] uppercase mb-4 leading-none">
+            <div className="text-[9px] sm:text-[10px] font-sans font-extrabold tracking-[0.12em] sm:tracking-[0.15em] text-[#2BC48A] uppercase mb-2 sm:mb-4 leading-tight">
               DEPLOYMENT
             </div>
 
-            <p className="text-[#667085] text-[13px] leading-relaxed max-w-[200px] font-sans font-medium">
+            <p className="text-[#667085] text-xs sm:text-[13px] leading-normal sm:leading-relaxed max-w-full font-sans font-medium">
               Primary healthcare deployment on national digital channels.
             </p>
           </motion.div>
@@ -277,26 +275,26 @@ export default function TrustRegulatory() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            className="flex flex-col items-center text-center bg-white border border-[#E8EDF2] rounded-[32px] p-8 shadow-[0_16px_48px_rgba(15,23,42,0.015)] shrink-0 w-[270px] max-w-[85vw] snap-center sm:shrink sm:w-auto sm:snap-align-none"
+            className="flex flex-col items-center text-center bg-white border border-[#E8EDF2] rounded-2xl sm:rounded-[32px] p-4 sm:p-6 lg:p-8 shadow-[0_16px_48px_rgba(15,23,42,0.015)] w-full"
           >
-            <div className="relative mb-6 flex items-center justify-center">
-              <div className="absolute w-16 h-16 rounded-full bg-[#E5F7F0]/60 -z-10 blur-[8px]" />
-              <div className="w-12 h-12 rounded-full border border-emerald-50 bg-white flex items-center justify-center shadow-[0_4px_12px_rgba(43,196,138,0.06)] text-[#2BC48A]">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <div className="relative mb-3 sm:mb-6 flex items-center justify-center">
+              <div className="absolute w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#E5F7F0]/60 -z-10 blur-[8px]" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-emerald-50 bg-white flex items-center justify-center shadow-[0_4px_12px_rgba(43,196,138,0.06)] text-[#2BC48A]">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
               </div>
             </div>
 
-            <div className="text-4xl lg:text-[44px] font-black font-sans text-[#0F172A] tracking-tight mb-2">
+            <div className="text-2xl sm:text-4xl lg:text-[44px] font-black font-sans text-[#0F172A] tracking-tight mb-1 sm:mb-2">
               <AnimatedCounter endValue={34} suffix="%" />
             </div>
 
-            <div className="text-[10px] font-sans font-extrabold tracking-[0.15em] text-[#2BC48A] uppercase mb-4 leading-none">
+            <div className="text-[9px] sm:text-[10px] font-sans font-extrabold tracking-[0.12em] sm:tracking-[0.15em] text-[#2BC48A] uppercase mb-2 sm:mb-4 leading-tight">
               CLAIMS REDUCTION
             </div>
 
-            <p className="text-[#667085] text-[13px] leading-relaxed max-w-[200px] font-sans font-medium">
+            <p className="text-[#667085] text-xs sm:text-[13px] leading-normal sm:leading-relaxed max-w-full font-sans font-medium">
               Average reduction in claims through proactive programs.
             </p>
           </motion.div>
@@ -307,56 +305,30 @@ export default function TrustRegulatory() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-            className="flex flex-col items-center text-center bg-white border border-[#E8EDF2] rounded-[32px] p-8 shadow-[0_16px_48px_rgba(15,23,42,0.015)] shrink-0 w-[270px] max-w-[85vw] snap-center sm:shrink sm:w-auto sm:snap-align-none"
+            className="flex flex-col items-center text-center bg-white border border-[#E8EDF2] rounded-2xl sm:rounded-[32px] p-4 sm:p-6 lg:p-8 shadow-[0_16px_48px_rgba(15,23,42,0.015)] w-full"
           >
-            <div className="relative mb-6 flex items-center justify-center">
-              <div className="absolute w-16 h-16 rounded-full bg-[#E5F7F0]/60 -z-10 blur-[8px]" />
-              <div className="w-12 h-12 rounded-full border border-emerald-50 bg-white flex items-center justify-center shadow-[0_4px_12px_rgba(43,196,138,0.06)] text-[#2BC48A]">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <div className="relative mb-3 sm:mb-6 flex items-center justify-center">
+              <div className="absolute w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#E5F7F0]/60 -z-10 blur-[8px]" />
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-emerald-50 bg-white flex items-center justify-center shadow-[0_4px_12px_rgba(43,196,138,0.06)] text-[#2BC48A]">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
             </div>
 
-            <div className="text-4xl lg:text-[44px] font-black font-sans text-[#0F172A] tracking-tight mb-2">
+            <div className="text-2xl sm:text-4xl lg:text-[44px] font-black font-sans text-[#0F172A] tracking-tight mb-1 sm:mb-2">
               <AnimatedCounter endValue={90} suffix="%" />
             </div>
 
-            <div className="text-[10px] font-sans font-extrabold tracking-[0.15em] text-[#2BC48A] uppercase mb-4 leading-none">
+            <div className="text-[9px] sm:text-[10px] font-sans font-extrabold tracking-[0.12em] sm:tracking-[0.15em] text-[#2BC48A] uppercase mb-2 sm:mb-4 leading-tight">
               PATIENT SATISFACTION
             </div>
 
-            <p className="text-[#667085] text-[13px] leading-relaxed max-w-[200px] font-sans font-medium">
+            <p className="text-[#667085] text-xs sm:text-[13px] leading-normal sm:leading-relaxed max-w-full font-sans font-medium">
               Consistently high satisfaction across health programs.
             </p>
           </motion.div>
 
-        </div>
-
-        {/* Mobile indicator dots */}
-        <div className="flex sm:hidden justify-center items-center gap-2 mt-3">
-          {[0, 1, 2, 3].map((idx) => (
-            <button
-              key={idx}
-              onClick={() => {
-                if (scrollRef.current) {
-                  const container = scrollRef.current;
-                  const cardWidth = container.scrollWidth / 4;
-                  container.scrollTo({
-                    left: idx * cardWidth,
-                    behavior: "smooth"
-                  });
-                  setActiveMobileIdx(idx);
-                }
-              }}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                activeMobileIdx === idx 
-                  ? "w-6 bg-[#2BC48A]" 
-                  : "w-2 bg-[#E8EDF2] hover:bg-[#2BC48A]/40"
-              }`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
         </div>
 
         {/* ================= BOTTOM BANNER PILL ================= */}
