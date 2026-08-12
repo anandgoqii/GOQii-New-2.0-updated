@@ -807,40 +807,6 @@ export default function FaqPage() {
   return (
     <div className="w-full min-h-screen bg-[#F8FAFB] text-[#0F172A] font-sans pt-24 pb-20 select-none relative">
       
-      {/* Top Header Breadcrumb Bar */}
-      <div className="max-w-7xl mx-auto px-6 mb-8">
-        <div className="flex items-center gap-3 text-xs font-semibold text-[#64748B]">
-          <button
-            onClick={() => {
-              if (window.navigateToPage) window.navigateToPage("home");
-            }}
-            className="hover:text-[#2BC48A] transition-colors flex items-center gap-1.5 cursor-pointer"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" /> Home
-          </button>
-          <span>/</span>
-          <span className="text-[#0F172A]">Help &amp; FAQs</span>
-          {selectedCategory && (
-            <>
-              <span>/</span>
-              <span className="text-[#2BC48A]">{selectedCategory}</span>
-            </>
-          )}
-          {selectedDevice && (
-            <>
-              <span>/</span>
-              <span className="text-[#2BC48A]">{selectedDevice}</span>
-            </>
-          )}
-          {activeArticle && (
-            <>
-              <span>/</span>
-              <span className="text-[#0F172A] truncate max-w-[200px] sm:max-w-xs">{activeArticle.title}</span>
-            </>
-          )}
-        </div>
-      </div>
-
       {/* ARTICLE FULL PAGE VIEW STATE (If activeArticle selected on page level) */}
       {activeArticle ? (
         <div className="max-w-4xl mx-auto px-6">

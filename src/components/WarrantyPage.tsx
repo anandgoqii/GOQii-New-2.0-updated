@@ -5,7 +5,6 @@ import {
   Search,
   CheckCircle2,
   Upload,
-  ArrowLeft,
   HelpCircle,
   Package,
   FileText,
@@ -142,48 +141,13 @@ export default function WarrantyPage() {
   return (
     <div className="w-full min-h-screen bg-[#F8FAFB] text-[#0F172A] font-sans pt-24 pb-20 select-none">
       
-      {/* Top Breadcrumb */}
-      <div className="max-w-6xl mx-auto px-6 mb-8">
-        <div className="flex items-center gap-2 text-xs font-semibold text-[#64748B]">
-          <button
-            onClick={() => {
-              if (window.navigateToPage) window.navigateToPage("home");
-            }}
-            className="hover:text-[#2BC48A] transition-colors flex items-center gap-1 cursor-pointer"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" /> Home
-          </button>
-          <span>/</span>
-          <span className="text-[#0F172A]">Warranty Support</span>
-        </div>
-      </div>
-
       <div className="max-w-5xl mx-auto px-6">
         
-        {/* HERO SECTION */}
-        <div className="bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] text-white rounded-3xl p-8 sm:p-14 lg:p-16 mb-12 shadow-xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#2BC48A]/10 rounded-full blur-3xl pointer-events-none" />
-          
-          <div className="max-w-2xl relative z-10">
-            <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#2BC48A] bg-[#2BC48A]/10 px-3.5 py-1.5 rounded-full mb-6">
-              <ShieldCheck className="w-4 h-4" /> GOQii Warranty Support
-            </div>
-
-            <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight leading-tight mb-4 text-white">
-              GOQii Device Warranty &amp; Support
-            </h1>
-
-            <p className="text-sm sm:text-base text-slate-300 font-medium mb-8 leading-relaxed">
-              Need help with your GOQii device? Submit your warranty claim and our support team will assist you with diagnosis, repairs, or an immediate hardware replacement.
-            </p>
-
-            <button
-              onClick={scrollToForm}
-              className="bg-[#2BC48A] hover:bg-[#22a372] text-white px-8 py-4 rounded-full text-xs font-bold tracking-wider uppercase shadow-lg shadow-[#2BC48A]/20 transition-all flex items-center gap-3 cursor-pointer"
-            >
-              Start Warranty Claim <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
+        {/* PAGE HEADING */}
+        <div className="text-center mb-8">
+          <h1 className="text-2xl sm:text-4xl font-bold text-[#0F172A] tracking-tight">
+            GOQii Device Warranty &amp; Support
+          </h1>
         </div>
 
         {/* CLAIM SUBMITTED CONFIRMATION STATE */}

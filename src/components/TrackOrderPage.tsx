@@ -128,22 +128,6 @@ export default function TrackOrderPage() {
   return (
     <div className="w-full min-h-screen bg-[#F8FAFB] text-[#0F172A] font-sans pt-24 pb-20 select-none">
       
-      {/* Top Breadcrumb */}
-      <div className="max-w-7xl mx-auto px-6 mb-8">
-        <div className="flex items-center gap-2 text-xs font-semibold text-[#64748B]">
-          <button
-            onClick={() => handleNavigateTo("home")}
-            className="hover:text-[#2BC48A] transition-colors flex items-center gap-1 cursor-pointer"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" /> Home
-          </button>
-          <span>/</span>
-          <span>Support</span>
-          <span>/</span>
-          <span className="text-[#0F172A]">Track Order</span>
-        </div>
-      </div>
-
       <div className="max-w-7xl mx-auto px-6">
         
         {/* ============================================================ */}
