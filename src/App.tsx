@@ -166,7 +166,7 @@ export default function App() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.35 }}
-      className="relative min-h-screen bg-[#F8FAFB] w-full"
+      className="relative min-h-screen bg-[#F8FAFB] w-full max-w-full overflow-x-hidden"
     >
       {/* Global Floating Header Navigation Bar */}
       <Header />
