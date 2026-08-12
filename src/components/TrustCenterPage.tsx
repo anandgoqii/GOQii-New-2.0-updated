@@ -84,7 +84,7 @@ export default function TrustCenterPage() {
             <Shield className="w-4 h-4 text-[#2BC48A]" />
             <span>GOQii TRUST CENTER</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl font-black font-sans tracking-tight text-[#0F172A] mb-6 leading-[1.1]">
+          <h1 className="text-4xl sm:text-5xl font-semibold font-sans tracking-tight text-[#0F172A] mb-6 leading-[1.1]">
             TRUST CENTER
           </h1>
           <p className="text-base sm:text-lg text-slate-500 font-medium leading-relaxed mb-6">
@@ -105,7 +105,7 @@ export default function TrustCenterPage() {
                 <ShieldCheck className="w-6 h-6" />
               </div>
               <div className="space-y-3 flex-1">
-                <h2 className="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight">Our Commitment</h2>
+                <h2 className="text-xl sm:text-2xl font-semibold text-[#0F172A] tracking-tight">Our Commitment</h2>
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                   GOQii combines healthcare, coaching, diagnostics, wearable technology, and artificial intelligence into one connected ecosystem.
                 </p>
@@ -125,7 +125,7 @@ export default function TrustCenterPage() {
                   <div className="p-2.5 bg-emerald-50 text-[#2BC48A] rounded-xl">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-black text-[#0F172A] tracking-tight">Privacy & Data Protection</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold text-[#0F172A] tracking-tight">Privacy & Data Protection</h3>
                 </div>
                 <p className="text-slate-500 text-sm mb-6 leading-relaxed">
                   We are committed to protecting personal and health information through industry-recognized privacy and security practices. Our approach includes:
@@ -148,7 +148,7 @@ export default function TrustCenterPage() {
                   <div className="p-2.5 bg-cyan-50 text-[#00ADC7] rounded-xl">
                     <Lock className="w-5 h-5" />
                   </div>
-                  <h3 className="text-lg sm:text-xl font-black text-[#0F172A] tracking-tight">Platform Security</h3>
+                  <h3 className="text-lg sm:text-xl font-semibold text-[#0F172A] tracking-tight">Platform Security</h3>
                 </div>
                 <p className="text-slate-500 text-sm mb-6 leading-relaxed">
                   Security is integrated throughout the GOQii ecosystem to secure your critical platform logs and telemetry. Key controls include:
@@ -171,7 +171,7 @@ export default function TrustCenterPage() {
               <div className="p-2.5 bg-indigo-50 text-indigo-600 rounded-xl">
                 <Award className="w-6 h-6" />
               </div>
-              <h2 className="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight">Compliance & Certifications</h2>
+              <h2 className="text-xl sm:text-2xl font-semibold text-[#0F172A] tracking-tight">Compliance & Certifications</h2>
             </div>
             <p className="text-slate-500 text-sm sm:text-base leading-relaxed mb-8">
               GOQii aligns with internationally recognized standards and healthcare compliance frameworks. Compliance requirements are continuously reviewed and strengthened as regulations evolve.
@@ -198,7 +198,7 @@ export default function TrustCenterPage() {
                 <div className="p-2.5 bg-pink-50 text-pink-600 rounded-xl">
                   <Cpu className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-black text-[#0F172A] tracking-tight">Responsible AI</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-[#0F172A] tracking-tight">Responsible AI</h3>
               </div>
               <p className="text-slate-500 text-sm mb-6 leading-relaxed">
                 Artificial intelligence within GOQii is designed to support prevention, engagement, coaching, and health decision-making:
@@ -222,7 +222,7 @@ export default function TrustCenterPage() {
                 <div className="p-2.5 bg-red-50 text-red-500 rounded-xl">
                   <Stethoscope className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg sm:text-xl font-black text-[#0F172A] tracking-tight">Healthcare & Clinical Responsibility</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-[#0F172A] tracking-tight">Healthcare & Clinical Responsibility</h3>
               </div>
               <p className="text-slate-500 text-sm mb-6 leading-relaxed">
                 GOQii combines technology with human expertise. Our ecosystem links multiple clinical entities together:
@@ -248,7 +248,7 @@ export default function TrustCenterPage() {
                 <Eye className="w-6 h-6" />
               </div>
               <div className="space-y-3 flex-1">
-                <h2 className="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight">Transparency</h2>
+                <h2 className="text-xl sm:text-2xl font-semibold text-[#0F172A] tracking-tight">Transparency</h2>
                 <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
                   We believe trust is earned through openness. We continuously strive to:
                 </p>
@@ -283,7 +283,7 @@ export default function TrustCenterPage() {
                   <MessageSquare className="w-4 h-4" />
                   <span>Reach out</span>
                 </div>
-                <h2 className="text-xl sm:text-2xl font-black tracking-tight text-white">Trust & Security Team</h2>
+                <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-white">Trust & Security Team</h2>
                 <p className="text-slate-400 text-xs sm:text-sm leading-relaxed">
                   For security, compliance, privacy, or trust-related inquiries, contact our specialized taskforce directly. We'll be glad to help.
                 </p>

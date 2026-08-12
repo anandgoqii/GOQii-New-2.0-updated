@@ -108,7 +108,7 @@ const TOPIC_CATEGORIES: TopicCategory[] = [
       "Warranty",
       "Compatible third-party devices"
     ],
-    cta: "Device Support →",
+    cta: "Explore Trackers →",
     description: "Pairing guides, Bluetooth troubleshooting, sensor care, and third-party sync."
   },
   {
@@ -701,6 +701,11 @@ export default function FaqPage() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
+  // Scroll to top of window whenever active article, selected category, or selected device changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [activeArticle, selectedCategory, selectedDevice]);
+
   // Filtered Articles based on search or active category/device filters
   const filteredArticles = useMemo(() => {
     let result = FAQ_ARTICLES;
@@ -793,9 +798,10 @@ export default function FaqPage() {
     setModalExpandedArticleId(matchedDevArt ? matchedDevArt.id : null);
   };
 
-  // Open Article Detail Modal Popup
+  // Open Article Detail View (Full Page Scrolled to Top)
   const handleOpenArticleModal = (art: FaqArticle) => {
-    setModalArticle(art);
+    setActiveArticle(art);
+    window.scrollTo({ top: 0, behavior: "instant" });
   };
 
   return (
@@ -864,7 +870,7 @@ export default function FaqPage() {
               )}
             </div>
 
-            <h1 className="text-2xl sm:text-3xl font-black text-[#0F172A] mb-6 tracking-tight leading-snug">
+            <h1 className="text-2xl sm:text-3xl font-semibold text-[#0F172A] mb-6 tracking-tight leading-snug">
               {activeArticle.title}
             </h1>
 
@@ -905,7 +911,7 @@ export default function FaqPage() {
             {/* Related Articles */}
             {activeArticle.relatedIds.length > 0 && (
               <div className="mt-8">
-                <h3 className="text-sm font-black uppercase tracking-wider text-[#0F172A] mb-4">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-[#0F172A] mb-4">
                   Related Support Articles
                 </h3>
                 <div className="space-y-3">
@@ -936,14 +942,14 @@ export default function FaqPage() {
             )}
 
             {/* Still Need Help Banner inside Article */}
-            <div className="mt-12 bg-gradient-to-r from-[#0F172A] to-[#1E293B] rounded-2xl p-6 sm:p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="mt-12 bg-gradient-to-r from-[#0F172A] via-[#1E293B] to-[#0F172A] rounded-2xl p-6 sm:p-8 text-white flex flex-col sm:flex-row items-center justify-between gap-6 border border-slate-700/60 shadow-lg">
               <div>
-                <h4 className="text-base font-bold mb-1">Still need help with this topic?</h4>
-                <p className="text-xs text-slate-300">Our medical &amp; device care team is standing by to assist you.</p>
+                <h4 className="text-base sm:text-lg font-bold mb-1 text-white">Still need help with this topic?</h4>
+                <p className="text-xs sm:text-sm text-slate-200 font-medium">Our medical &amp; device care team is standing by to assist you.</p>
               </div>
               <button
                 onClick={handleContactSupport}
-                className="bg-[#2BC48A] hover:bg-[#22a372] text-white px-5 py-2.5 rounded-full text-xs font-bold shadow-md transition-all whitespace-nowrap cursor-pointer"
+                className="bg-[#2BC48A] hover:bg-[#22a372] text-white px-6 py-3 rounded-full text-xs font-black shadow-lg transition-all whitespace-nowrap cursor-pointer tracking-wider"
               >
                 CONTACT SUPPORT
               </button>
@@ -966,7 +972,7 @@ export default function FaqPage() {
                 GOQii HELP &amp; FAQS
               </span>
 
-              <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight mb-4 text-white">
+              <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight leading-tight mb-4 text-white">
                 How can we help?
               </h1>
 
@@ -1092,7 +1098,7 @@ export default function FaqPage() {
                   <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#2BC48A]">
                     TOPIC DIRECTORY
                   </span>
-                  <h2 className="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight">
+                  <h2 className="text-2xl sm:text-3xl font-semibold text-[#0F172A] tracking-tight">
                     Browse By Topic
                   </h2>
                 </div>
@@ -1121,7 +1127,7 @@ export default function FaqPage() {
                           </span>
                         </div>
 
-                        <h3 className="text-lg font-black text-[#0F172A] group-hover:text-[#2BC48A] transition-colors mb-1">
+                        <h3 className="text-lg font-semibold text-[#0F172A] group-hover:text-[#2BC48A] transition-colors mb-1">
                           {cat.title}
                         </h3>
 
@@ -1177,7 +1183,7 @@ export default function FaqPage() {
                 <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#2BC48A]">
                   QUICK ANSWERS
                 </span>
-                <h2 className="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight mt-1">
+                <h2 className="text-2xl sm:text-3xl font-semibold text-[#0F172A] tracking-tight mt-1">
                   Popular Questions
                 </h2>
                 <p className="text-xs text-[#64748B] font-medium mt-2">
@@ -1241,78 +1247,31 @@ export default function FaqPage() {
             </div>
           )}
 
-          {/* SECTION 3: DEVICE SUPPORT VISUAL SELECTOR CARDS */}
-          {!searchQuery && !selectedCategory && (
-            <div className="mb-20 bg-white rounded-3xl p-8 sm:p-12 border border-[#E2E8F0] shadow-sm">
-              <div className="text-center max-w-2xl mx-auto mb-10">
-                <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#2BC48A]">
-                  VISUAL PRODUCT HELPDESK
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight mt-1">
-                  Device Support
-                </h2>
-                <p className="text-xs text-[#64748B] font-medium mt-2">
-                  Select your GOQii product below to open its dedicated setup, hardware, and diagnostic popup details.
-                </p>
-              </div>
-
-              {/* Visual Product Selector Cards */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
-                {DEVICE_LIST.map((dev) => {
-                  return (
-                    <div
-                      key={dev.name}
-                      onClick={() => handleOpenDeviceModal(dev)}
-                      className="p-4 rounded-2xl border transition-all cursor-pointer flex flex-col items-center text-center group bg-[#F8FAFB] border-[#E2E8F0] hover:border-[#2BC48A] hover:bg-white hover:shadow-lg"
-                    >
-                      <div className="w-16 h-16 rounded-xl overflow-hidden mb-3 bg-slate-200 shadow-inner">
-                        <img
-                          src={dev.image}
-                          alt={dev.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                        />
-                      </div>
-                      <h4 className="text-xs font-black text-[#0F172A] group-hover:text-[#2BC48A] transition-colors mb-1">
-                        {dev.name}
-                      </h4>
-                      <p className="text-[10px] text-slate-500 leading-tight line-clamp-2 font-medium mb-3">
-                        {dev.desc}
-                      </p>
-                      <span className="mt-auto text-[10px] font-bold text-[#2BC48A] bg-[#E5F7F0] px-2.5 py-1 rounded-full group-hover:bg-[#2BC48A] group-hover:text-white transition-all">
-                        View Details →
-                      </span>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-
-          {/* SECTION 4: STILL NEED HELP? */}
-          <div className="bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] rounded-3xl p-8 sm:p-12 text-white text-center shadow-xl relative overflow-hidden">
+          {/* SECTION 3: STILL NEED HELP? */}
+          <div className="bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] rounded-3xl p-8 sm:p-12 text-white text-center shadow-2xl relative overflow-hidden border border-slate-700/80">
             <div className="max-w-xl mx-auto relative z-10">
-              <div className="w-12 h-12 rounded-full bg-[#2BC48A]/20 text-[#2BC48A] flex items-center justify-center mx-auto mb-4">
-                <Headphones className="w-6 h-6" />
+              <div className="w-14 h-14 rounded-full bg-[#2BC48A]/20 text-[#2BC48A] flex items-center justify-center mx-auto mb-4 border border-[#2BC48A]/40 shadow-inner">
+                <Headphones className="w-7 h-7 text-[#2BC48A]" />
               </div>
 
-              <h2 className="text-2xl sm:text-3xl font-black tracking-tight mb-2">
+              <h2 className="text-2xl sm:text-4xl font-semibold tracking-tight mb-3 text-white">
                 Still Need Help?
               </h2>
 
-              <p className="text-xs sm:text-sm text-slate-300 font-medium mb-8 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-200 font-medium mb-8 leading-relaxed max-w-lg mx-auto">
                 Can&apos;t find what you&apos;re looking for? Our dedicated 24/7 GOQii Support team is here to assist you with device, app, and coaching support.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
                 <button
                   onClick={handleContactSupport}
-                  className="w-full sm:w-auto bg-[#2BC48A] hover:bg-[#22a372] text-white px-8 py-3.5 rounded-full text-xs font-black shadow-lg transition-all cursor-pointer tracking-wider"
+                  className="w-full sm:w-auto bg-[#2BC48A] hover:bg-[#22a372] text-white px-8 py-3.5 rounded-full text-xs font-black shadow-xl hover:shadow-2xl transition-all cursor-pointer tracking-wider"
                 >
                   CONTACT SUPPORT
                 </button>
               </div>
 
-              <div className="text-[11px] text-slate-400 font-medium bg-white/5 py-2.5 px-4 rounded-full inline-block">
+              <div className="text-[11px] text-slate-300 font-medium bg-white/10 py-2.5 px-4 rounded-full inline-block border border-white/15">
                 Secondary Assistance: <span className="text-white font-semibold">Open GOQii App &rarr; Home &rarr; Support</span>
               </div>
             </div>
@@ -1360,7 +1319,7 @@ export default function FaqPage() {
                         {modalTopic.topics.length} Key Topics
                       </span>
                     </div>
-                    <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white mt-1">
+                    <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-white mt-1">
                       {modalTopic.title}
                     </h2>
                     <p className="text-xs sm:text-sm text-slate-300 font-medium mt-1 max-w-xl">
@@ -1577,7 +1536,7 @@ export default function FaqPage() {
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#2BC48A] bg-[#2BC48A]/20 px-2.5 py-0.5 rounded-full">
                       HARDWARE HELPDESK
                     </span>
-                    <h2 className="text-2xl sm:text-3xl font-black text-white mt-1">
+                    <h2 className="text-2xl sm:text-3xl font-semibold text-white mt-1">
                       {modalDevice.name} Support
                     </h2>
                     <p className="text-xs text-slate-300 font-medium">
@@ -1690,7 +1649,7 @@ export default function FaqPage() {
                       </span>
                     )}
                   </div>
-                  <h2 className="text-xl sm:text-2xl font-black text-white leading-snug">
+                  <h2 className="text-xl sm:text-2xl font-semibold text-white leading-snug">
                     {modalArticle.title}
                   </h2>
                 </div>

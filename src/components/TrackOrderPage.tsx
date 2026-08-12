@@ -160,7 +160,7 @@ export default function TrackOrderPage() {
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl font-black text-[#0F172A] tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-6xl font-semibold text-[#0F172A] tracking-tight leading-tight">
               Track your <br className="hidden sm:inline" />
               <span className="text-[#2BC48A]">GOQii order.</span>
             </h1>
@@ -183,7 +183,7 @@ export default function TrackOrderPage() {
           <div className="lg:col-span-6">
             <div className="bg-white rounded-3xl p-8 sm:p-10 border border-[#E2E8F0] shadow-xl relative overflow-hidden">
               <div className="mb-6">
-                <h2 className="text-2xl font-black text-[#0F172A]">Find your order</h2>
+                <h2 className="text-2xl font-semibold text-[#0F172A]">Find your order</h2>
                 <p className="text-xs text-[#64748B] font-medium mt-1">
                   Enter your registered phone number and Order ID or AWB.
                 </p>
@@ -259,7 +259,7 @@ export default function TrackOrderPage() {
                 <AlertCircle className="w-8 h-8" />
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-black text-[#0F172A] mb-2">
+              <h3 className="text-xl sm:text-2xl font-semibold text-[#0F172A] mb-2">
                 {errorType === "invalid_mobile" && "Please enter a valid 10-digit mobile number."}
                 {errorType === "invalid_order" && "Please enter your Order ID or AWB number."}
                 {errorType === "not_found" && "We couldn't find your order."}
@@ -312,7 +312,7 @@ export default function TrackOrderPage() {
                   <div className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest text-[#2BC48A] bg-[#E5F7F0] px-3.5 py-1 rounded-full mb-3">
                     <Truck className="w-3.5 h-3.5" /> Your order is on the way
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-black text-[#0F172A]">
+                  <h2 className="text-2xl sm:text-3xl font-semibold text-[#0F172A]">
                     Order ID: <span className="text-[#2BC48A]">{trackingResult.orderId}</span>
                   </h2>
                 </div>
@@ -480,7 +480,7 @@ export default function TrackOrderPage() {
             <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#2BC48A]">
               QUICK GUIDE
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight mt-1">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-[#0F172A] tracking-tight mt-1">
               Where can I find my Order ID?
             </h2>
           </div>
@@ -495,7 +495,7 @@ export default function TrackOrderPage() {
               <span className="text-xs font-black text-[#2BC48A] tracking-widest uppercase block mb-1">
                 STEP 01
               </span>
-              <h3 className="text-base font-extrabold text-[#0F172A] mb-2">CHECK YOUR EMAIL</h3>
+              <h3 className="text-base font-semibold text-[#0F172A] mb-2">CHECK YOUR EMAIL</h3>
               <p className="text-xs text-[#64748B] font-medium leading-relaxed">
                 Look for your GOQii order confirmation email sent immediately after purchase.
               </p>
@@ -509,7 +509,7 @@ export default function TrackOrderPage() {
               <span className="text-xs font-black text-[#3B82F6] tracking-widest uppercase block mb-1">
                 STEP 02
               </span>
-              <h3 className="text-base font-extrabold text-[#0F172A] mb-2">CHECK YOUR SMS</h3>
+              <h3 className="text-base font-semibold text-[#0F172A] mb-2">CHECK YOUR SMS</h3>
               <p className="text-xs text-[#64748B] font-medium leading-relaxed">
                 Your order confirmation SMS contains your 8-digit Order ID and dispatch details.
               </p>
@@ -523,7 +523,7 @@ export default function TrackOrderPage() {
               <span className="text-xs font-black text-[#8B5CF6] tracking-widest uppercase block mb-1">
                 STEP 03
               </span>
-              <h3 className="text-base font-extrabold text-[#0F172A] mb-2">CHECK YOUR GOQii ACCOUNT</h3>
+              <h3 className="text-base font-semibold text-[#0F172A] mb-2">CHECK YOUR GOQii ACCOUNT</h3>
               <p className="text-xs text-[#64748B] font-medium leading-relaxed">
                 View your active orders list under Profile → Orders inside the GOQii App.
               </p>
@@ -541,7 +541,7 @@ export default function TrackOrderPage() {
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#2BC48A] bg-[#2BC48A]/10 px-3.5 py-1 rounded-full inline-block mb-3">
               ASSISTANCE
             </span>
-            <h3 className="text-2xl sm:text-3xl font-black mb-2">Need help with your order?</h3>
+            <h3 className="text-2xl sm:text-3xl font-semibold mb-2">Need help with your order?</h3>
             <p className="text-xs sm:text-sm text-slate-300 font-medium max-w-md">
               Find answers about delivery timelines, warranty replacements and product setup.
             </p>

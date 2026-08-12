@@ -150,7 +150,7 @@ export default function SolutionsEcosystem() {
               Solutions Ecosystem
             </span>
           </div>
-          <h2 id="solutions-ecosystem-title" className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0F172A] tracking-tight font-sans leading-[1.12]">
+          <h2 id="solutions-ecosystem-title" className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#0F172A] tracking-tight font-sans leading-[1.12]">
             One platform. Multiple healthcare stakeholders.
           </h2>
           <p className="text-sm text-slate-500 mt-4 max-w-3xl leading-relaxed font-sans font-medium">

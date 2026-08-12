@@ -34,7 +34,7 @@ export default function ConnectedEcosystem() {
           </span>
         </div>
 
-        <h2 className="text-3xl sm:text-4xl md:text-[46px] font-black tracking-tight text-slate-900 leading-[1.12] mb-6 font-sans">
+        <h2 className="text-3xl sm:text-4xl md:text-[46px] font-semibold tracking-tight text-slate-900 leading-[1.12] mb-6 font-sans">
           One platform for <span className="text-[#2BC48A]">smarter, healthier living.</span>
         </h2>
         <p className="text-slate-500 text-base md:text-lg font-sans font-medium tracking-tight max-w-2xl mx-auto mt-4 leading-relaxed">
@@ -74,7 +74,7 @@ export default function ConnectedEcosystem() {
 
         {/* Card Title Block */}
         <div className="text-left mb-10 relative z-10 max-w-md">
-          <h3 className="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight mb-2 font-sans">
+          <h3 className="text-2xl sm:text-3xl font-semibold text-[#0F172A] tracking-tight mb-2 font-sans">
             Your Health. Connected.
           </h3>
           <p className="text-slate-500 text-xs sm:text-sm font-semibold">
@@ -127,7 +127,7 @@ export default function ConnectedEcosystem() {
               </div>
 
               <div>
-                <h4 className="text-[15px] font-black text-[#0F172A] mb-0.5 font-sans">Wearables</h4>
+                <h4 className="text-[15px] font-bold text-[#0F172A] mb-0.5 font-sans">Wearables</h4>
                 <p className="text-xs text-slate-500 font-medium leading-normal font-sans">
                   Steps, HR, Sleep, Activity & more
                 </p>
@@ -178,7 +178,7 @@ export default function ConnectedEcosystem() {
               </div>
 
               <div>
-                <h4 className="text-[15px] font-black text-[#0F172A] mb-0.5 font-sans">Coaching</h4>
+                <h4 className="text-[15px] font-bold text-[#0F172A] mb-0.5 font-sans">Coaching</h4>
                 <p className="text-xs text-slate-500 font-medium leading-normal font-sans">
                   Expert guidance, personalized support
                 </p>
@@ -309,7 +309,7 @@ export default function ConnectedEcosystem() {
               </div>
 
               <div>
-                <h4 className="text-[15px] font-black text-[#0F172A] mb-0.5 font-sans">AI Intelligence</h4>
+                <h4 className="text-[15px] font-bold text-[#0F172A] mb-0.5 font-sans">AI Intelligence</h4>
                 <p className="text-xs text-slate-500 font-medium leading-normal font-sans">
                   Predictive insights & risk detection
                 </p>
@@ -360,7 +360,7 @@ export default function ConnectedEcosystem() {
               </div>
 
               <div>
-                <h4 className="text-[15px] font-black text-[#0F172A] mb-0.5 font-sans">Preventive Care</h4>
+                <h4 className="text-[15px] font-bold text-[#0F172A] mb-0.5 font-sans">Preventive Care</h4>
                 <p className="text-xs text-slate-500 font-medium leading-normal font-sans">
                   Early action, better outcomes
                 </p>

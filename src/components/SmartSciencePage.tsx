@@ -173,7 +173,7 @@ export default function SmartSciencePage() {
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-6xl font-black text-white tracking-tight leading-[1.1]">
+            <h1 className="text-4xl sm:text-6xl font-semibold text-white tracking-tight leading-[1.1]">
               The science behind <br className="hidden sm:inline" />
               <span className="text-[#2BC48A]">
                 smarter health tracking.
@@ -207,7 +207,7 @@ export default function SmartSciencePage() {
             <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#2BC48A] block mb-2">
               BIOMETRIC SIGNALS
             </span>
-            <h2 className="text-3xl sm:text-5xl font-black text-[#0F172A] tracking-tight mb-4">
+            <h2 className="text-3xl sm:text-5xl font-semibold text-[#0F172A] tracking-tight mb-4">
               Small signals. Meaningful insights.
             </h2>
             <p className="text-sm sm:text-base text-[#64748B] font-medium leading-relaxed">
@@ -935,7 +935,7 @@ export default function SmartSciencePage() {
             <Lock className="w-3.5 h-3.5" /> DATA RESPONSIBILITY
           </div>
 
-          <h2 className="text-2xl sm:text-4xl font-black text-[#0F172A] tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl font-semibold text-[#0F172A] tracking-tight mb-4">
             Your health data deserves serious protection.
           </h2>
 
@@ -963,7 +963,7 @@ export default function SmartSciencePage() {
       {/* ============================================================ */}
       <section className="w-full py-20 px-6 bg-gradient-to-b from-[#0F172A] to-[#1E293B] text-white text-center">
         <div className="max-w-3xl mx-auto space-y-6">
-          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-5xl font-semibold text-white tracking-tight leading-tight">
             Smart technology. <br />
             Human guidance. <br />
             <span className="text-[#2BC48A]">Better health decisions.</span>

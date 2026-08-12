@@ -21,7 +21,7 @@ export default function SectionProblem() {
           </div>
 
           {/* Main High-contrast Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-[54px] font-black tracking-tight text-[#0F172A] leading-[1.05] mb-6 font-sans">
+          <h2 className="text-3xl sm:text-4xl lg:text-[54px] font-semibold tracking-tight text-[#0F172A] leading-[1.05] mb-6 font-sans">
             Most healthcare <br />
             <span className="text-[#5A6376]">reacts too late.</span>
           </h2>

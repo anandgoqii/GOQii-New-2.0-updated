@@ -93,6 +93,14 @@ export default function Footer() {
         }
         return;
       }
+
+      if (targetId === "section-plans" || targetId === "plans") {
+        if (window.navigateToPage) {
+          window.navigateToPage("plans");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+        return;
+      }
       
       if (window.navigateToPage) {
         window.navigateToPage("home");
@@ -144,8 +152,6 @@ export default function Footer() {
       title: "RESOURCES",
       links: [
         { label: "India Fit Report", href: "https://www.indiafit.org/" },
-        { label: "Smart Science", href: "#section-smart-science" },
-        { label: "Smart Guide", href: "https://goqii.com/goqiiIndia/startupguide.html" },
         { label: "Blog", href: "https://goqii.com/blog/" },
       ]
     },
@@ -161,14 +167,11 @@ export default function Footer() {
       title: "SUPPORT",
       links: [
         { label: "FAQs", href: "#section-faq-page" },
-        { label: "Startup Guide", href: "https://goqii.com/goqiiIndia/startupguide.html" },
         { label: "Track Order", href: "#section-trackingorder-page" },
         { label: "Warranty", href: "#section-warranty-page" },
       ]
     }
   };
-
-  const regions = ["India", "United States", "United Kingdom"];
 
   const legalLinks = [
     { label: "Privacy Policy", href: "#section-privacy-policy-page" },
@@ -300,22 +303,9 @@ export default function Footer() {
 
         </div>
 
-        {/* Region & Legal Bar */}
+        {/* Legal Bar */}
         <div className="pt-6 border-t border-[#F1F5F9] flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs font-medium text-[#64748B]">
           
-          {/* Region */}
-          <div className="flex items-center gap-2">
-            <span className="font-bold text-[#0F172A] uppercase tracking-wider text-[10px]">Region:</span>
-            <div className="flex items-center gap-2 text-[#64748B]">
-              {regions.map((region, idx) => (
-                <React.Fragment key={region}>
-                  <span className="hover:text-[#0F172A] cursor-pointer transition-colors">{region}</span>
-                  {idx < regions.length - 1 && <span className="text-[#CBD5E1]">|</span>}
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
-
           {/* Legal Links */}
           <div className="flex items-center gap-3">
             <span className="font-bold text-[#0F172A] uppercase tracking-wider text-[10px] hidden sm:inline">Legal:</span>

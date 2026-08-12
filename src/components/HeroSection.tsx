@@ -328,7 +328,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
                   <span className="inline-block bg-[#E5F7F0] text-[#2BC48A] font-bold text-[10px] tracking-wider uppercase px-3 py-1 rounded-full mb-3">
                     Download GOQii
                   </span>
-                  <h3 className="text-2xl font-black text-slate-900 tracking-tight leading-none">
+                  <h3 className="text-2xl font-semibold text-slate-900 tracking-tight leading-none">
                     Start Your Healthspan Journey
                   </h3>
                   <p className="text-[#667085] text-xs mt-2 font-medium leading-relaxed">

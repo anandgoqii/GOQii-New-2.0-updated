@@ -58,21 +58,20 @@ const PRODUCTS: ProductOption[] = [
 ];
 
 const ISSUE_TYPES = [
-  "Device Not Charging / Power Issue",
-  "Display / Screen Non-responsive or Blank",
-  "Bluetooth Pairing & Sync Failure",
-  "Inaccurate Sensor Readings (SpO2 / HR / Temp)",
-  "Physical / Strap Mount Defect",
-  "Water Ingress / Liquid Moisture Issue",
-  "Other Hardware Defect"
+  "Tracker not charging",
+  "Tracker touch not working",
+  "Tracker display issue",
+  "Item damaged on arrival",
+  "Some tracker feature not working",
+  "Missing/faulty parts (charger, straps etc.)"
 ];
 
 export default function WarrantyPage() {
   const [orderId, setOrderId] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState<string>("");
   const [issueType, setIssueType] = useState("");
   const [remarks, setRemarks] = useState("");
   const [uploadedFiles, setUploadedFiles] = useState<string[]>([]);
+  const [captchaChecked, setCaptchaChecked] = useState(false);
   const [submittedClaimNumber, setSubmittedClaimNumber] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -96,15 +95,19 @@ export default function WarrantyPage() {
     setErrorMessage("");
 
     if (!orderId.trim()) {
-      setErrorMessage("Please enter a valid Order ID or Mobile Number.");
-      return;
-    }
-    if (!selectedProduct) {
-      setErrorMessage("Please select your GOQii product.");
+      setErrorMessage("Please enter your Order ID.");
       return;
     }
     if (!issueType) {
-      setErrorMessage("Please select the issue/defect category.");
+      setErrorMessage("Please select the Issue / Defect.");
+      return;
+    }
+    if (!remarks.trim()) {
+      setErrorMessage("Please elaborate on the defect in the remarks field.");
+      return;
+    }
+    if (!captchaChecked) {
+      setErrorMessage("Please check 'I'm not a robot' to verify.");
       return;
     }
 
@@ -116,16 +119,16 @@ export default function WarrantyPage() {
       setSubmittedClaimNumber(claimNum);
       setIsSubmitting(false);
       window.scrollTo({ top: 0, behavior: "smooth" });
-    }, 1200);
+    }, 1000);
   };
 
   const handleResetForm = () => {
     setSubmittedClaimNumber(null);
     setOrderId("");
-    setSelectedProduct("");
     setIssueType("");
     setRemarks("");
     setUploadedFiles([]);
+    setCaptchaChecked(false);
     setErrorMessage("");
   };
 
@@ -162,16 +165,16 @@ export default function WarrantyPage() {
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#2BC48A]/10 rounded-full blur-3xl pointer-events-none" />
           
           <div className="max-w-2xl relative z-10">
-            <div className="inline-flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.2em] text-[#2BC48A] bg-[#2BC48A]/10 px-3.5 py-1.5 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#2BC48A] bg-[#2BC48A]/10 px-3.5 py-1.5 rounded-full mb-6">
               <ShieldCheck className="w-4 h-4" /> GOQii Warranty Support
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-black tracking-tight leading-tight mb-4 text-white">
-              Need help with your GOQii device?
+            <h1 className="text-3xl sm:text-5xl font-semibold tracking-tight leading-tight mb-4 text-white">
+              GOQii Device Warranty &amp; Support
             </h1>
 
             <p className="text-sm sm:text-base text-slate-300 font-medium mb-8 leading-relaxed">
-              Submit your warranty claim and our support team will assist you with diagnosis, repairs, or an immediate hardware replacement.
+              Need help with your GOQii device? Submit your warranty claim and our support team will assist you with diagnosis, repairs, or an immediate hardware replacement.
             </p>
 
             <button
@@ -194,17 +197,17 @@ export default function WarrantyPage() {
               <CheckCircle2 className="w-10 h-10" />
             </div>
 
-            <span className="text-xs font-extrabold uppercase tracking-widest text-[#2BC48A] bg-[#E5F7F0] px-3.5 py-1 rounded-full inline-block mb-3">
+            <span className="text-xs font-bold uppercase tracking-widest text-[#2BC48A] bg-[#E5F7F0] px-3.5 py-1 rounded-full inline-block mb-3">
               Claim Submitted Successfully
             </span>
 
-            <h2 className="text-2xl sm:text-3xl font-black text-[#0F172A] mb-2">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-[#0F172A] mb-2">
               Warranty claim submitted.
             </h2>
 
             <div className="bg-[#F8FAFB] border border-[#E2E8F0] rounded-2xl p-6 my-6 max-w-md mx-auto">
               <span className="text-xs font-bold uppercase tracking-wider text-[#64748B]">YOUR CLAIM NUMBER</span>
-              <div className="text-2xl sm:text-3xl font-black text-[#2BC48A] tracking-wider mt-1">
+              <div className="text-2xl sm:text-3xl font-bold text-[#2BC48A] tracking-wider mt-1">
                 {submittedClaimNumber}
               </div>
             </div>
@@ -230,192 +233,132 @@ export default function WarrantyPage() {
             </div>
           </motion.div>
         ) : (
-          /* WARRANTY CLAIM FORM */
-          <div id="warranty-claim-form" className="bg-white rounded-3xl p-6 sm:p-12 border border-[#E2E8F0] shadow-sm mb-16">
+          /* WARRANTY CLAIM FORM - MATCHING ATTACHED SCREENSHOT EXACTLY */
+          <div id="warranty-claim-form" className="max-w-xl mx-auto bg-white rounded-xl sm:rounded-2xl p-6 sm:p-10 border border-slate-200/80 shadow-md mb-16">
             
-            <div className="mb-10 pb-6 border-b border-[#F1F5F9]">
-              <span className="text-xs font-extrabold uppercase tracking-[0.2em] text-[#2BC48A]">
-                WARRANTY CLAIM FORM
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight mt-1">
-                Register Your Hardware Defect
-              </h2>
-              <p className="text-xs sm:text-sm text-[#64748B] font-medium mt-1">
-                All official GOQii devices carry a 1-year limited warranty against manufacturing defects.
-              </p>
-            </div>
+            <h2 className="text-xl sm:text-2xl font-bold text-[#1E293B] mb-6">
+              Please enter details
+            </h2>
 
             {errorMessage && (
-              <div className="mb-8 p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-700 text-xs font-bold flex items-center gap-3">
-                <AlertCircle className="w-5 h-5 shrink-0" />
+              <div className="mb-6 p-3.5 rounded-lg bg-rose-50 border border-rose-200 text-rose-700 text-xs font-bold flex items-center gap-2.5">
+                <AlertCircle className="w-4 h-4 shrink-0" />
                 <span>{errorMessage}</span>
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-10">
+            <form onSubmit={handleSubmit} className="space-y-5">
               
-              {/* STEP 01: Find Your Order */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <span className="w-7 h-7 rounded-full bg-[#0F172A] text-white text-xs font-bold flex items-center justify-center shrink-0">
-                    01
-                  </span>
-                  <h3 className="text-base font-bold text-[#0F172A]">Find Your Order</h3>
-                </div>
+              {/* ORDER ID */}
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#1E293B] mb-1.5">
+                  ORDER ID <span className="text-red-600 font-bold ml-0.5">*</span>:
+                </label>
+                <input
+                  type="text"
+                  value={orderId}
+                  onChange={(e) => setOrderId(e.target.value)}
+                  placeholder="Enter your Order ID"
+                  className="w-full bg-white border border-[#D1D5DB] rounded px-3 py-2 text-sm text-[#1F2937] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-1 focus:ring-[#28A745] focus:border-[#28A745] transition-all"
+                />
+              </div>
 
-                <div className="pl-10">
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#64748B] mb-2">
-                    Order ID / Registered Mobile Number *
-                  </label>
+              {/* ISSUE/DEFECT DROPDOWN */}
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#1E293B] mb-1.5">
+                  ISSUE/DEFECT <span className="text-red-600 font-bold ml-0.5">*</span>:
+                </label>
+                <select
+                  value={issueType}
+                  onChange={(e) => setIssueType(e.target.value)}
+                  className="w-full bg-white border border-[#D1D5DB] rounded px-3 py-2 text-sm text-[#1F2937] focus:outline-none focus:ring-1 focus:ring-[#28A745] focus:border-[#28A745] transition-all cursor-pointer"
+                >
+                  <option value="">--- Select ---</option>
+                  {ISSUE_TYPES.map((iss, idx) => (
+                    <option key={idx} value={iss}>
+                      {iss}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* REMARKS */}
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#1E293B] mb-1.5">
+                  REMARKS <span className="text-red-600 font-bold ml-0.5">*</span>:
+                </label>
+                <textarea
+                  rows={3}
+                  value={remarks}
+                  onChange={(e) => setRemarks(e.target.value)}
+                  placeholder="Elaborate Defect"
+                  className="w-full bg-white border border-[#D1D5DB] rounded px-3 py-2 text-sm text-[#1F2937] placeholder:text-[#9CA3AF] focus:outline-none focus:ring-1 focus:ring-[#28A745] focus:border-[#28A745] transition-all resize-none"
+                />
+              </div>
+
+              {/* ADD A PHOTO OR VIDEO */}
+              <div>
+                <label className="block text-xs font-bold uppercase tracking-wider text-[#1E293B] mb-2">
+                  ADD A PHOTO OR VIDEO <span className="text-red-600 font-bold ml-0.5">*</span>:
+                </label>
+                
+                <div className="relative inline-block">
                   <input
-                    type="text"
-                    value={orderId}
-                    onChange={(e) => setOrderId(e.target.value)}
-                    placeholder="Enter Order ID (e.g. GQ-108924) or 10-digit mobile number..."
-                    className="w-full bg-[#F8FAFB] border border-[#E2E8F0] rounded-xl px-4 py-3.5 text-xs sm:text-sm font-medium text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#2BC48A] transition-all"
+                    type="file"
+                    id="photo-video-upload"
+                    multiple
+                    accept="image/*,video/*"
+                    onChange={handleFileUpload}
+                    className="hidden"
                   />
-                  <span className="text-[11px] text-[#94A3B8] font-medium mt-1 inline-block">
-                    Order ID can be found in your order confirmation email or app purchase receipt.
-                  </span>
-                </div>
-              </div>
-
-              {/* STEP 02: Select Your Product */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <span className="w-7 h-7 rounded-full bg-[#0F172A] text-white text-xs font-bold flex items-center justify-center shrink-0">
-                    02
-                  </span>
-                  <h3 className="text-base font-bold text-[#0F172A]">Select Your Product</h3>
+                  <label
+                    htmlFor="photo-video-upload"
+                    className="bg-[#28A745] hover:bg-[#218838] text-white px-5 py-2 rounded-lg text-sm font-medium inline-flex items-center gap-2 cursor-pointer transition-all shadow-sm"
+                  >
+                    Upload Photo/Video
+                  </label>
                 </div>
 
-                <div className="pl-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-                  {PRODUCTS.map((prod) => {
-                    const isSelected = selectedProduct === prod.id;
-                    return (
-                      <div
-                        key={prod.id}
-                        onClick={() => setSelectedProduct(prod.id)}
-                        className={`p-4 rounded-2xl border transition-all cursor-pointer flex items-center gap-3.5 ${
-                          isSelected
-                            ? "bg-[#E5F7F0] border-[#2BC48A] shadow-sm"
-                            : "bg-[#F8FAFB] border-[#E2E8F0] hover:border-slate-300"
-                        }`}
-                      >
-                        <img
-                          src={prod.image}
-                          alt={prod.name}
-                          className="w-12 h-12 rounded-xl object-cover shrink-0"
-                        />
-                        <div className="flex-1 min-w-0">
-                          <h4 className="text-xs font-bold text-[#0F172A] truncate">{prod.name}</h4>
-                          <span className="text-[10px] text-[#64748B] font-medium truncate block">{prod.model}</span>
-                        </div>
-                        {isSelected && (
-                          <div className="w-5 h-5 rounded-full bg-[#2BC48A] text-white flex items-center justify-center shrink-0">
-                            <Check className="w-3 h-3" />
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* STEP 03: Tell Us the Issue */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <span className="w-7 h-7 rounded-full bg-[#0F172A] text-white text-xs font-bold flex items-center justify-center shrink-0">
-                    03
-                  </span>
-                  <h3 className="text-base font-bold text-[#0F172A]">Tell Us the Issue</h3>
-                </div>
-
-                <div className="pl-10 space-y-4">
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#64748B] mb-2">
-                      Issue / Defect Category *
-                    </label>
-                    <select
-                      value={issueType}
-                      onChange={(e) => setIssueType(e.target.value)}
-                      className="w-full bg-[#F8FAFB] border border-[#E2E8F0] rounded-xl px-4 py-3.5 text-xs sm:text-sm font-medium text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#2BC48A] transition-all cursor-pointer"
-                    >
-                      <option value="">-- Select Hardware Issue --</option>
-                      {ISSUE_TYPES.map((iss, idx) => (
-                        <option key={idx} value={iss}>
-                          {iss}
-                        </option>
-                      ))}
-                    </select>
+                {uploadedFiles.length > 0 && (
+                  <div className="mt-2.5 flex flex-wrap gap-2">
+                    {uploadedFiles.map((fn, idx) => (
+                      <span key={idx} className="text-[11px] font-medium text-[#28A745] bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-md flex items-center gap-1">
+                        <FileText className="w-3.5 h-3.5" /> {fn}
+                      </span>
+                    ))}
                   </div>
-
-                  <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-[#64748B] mb-2">
-                      Remarks / Description
-                    </label>
-                    <textarea
-                      rows={3}
-                      value={remarks}
-                      onChange={(e) => setRemarks(e.target.value)}
-                      placeholder="Describe what happens when you try to use or charge the device..."
-                      className="w-full bg-[#F8FAFB] border border-[#E2E8F0] rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#2BC48A] transition-all resize-none"
-                    />
-                  </div>
-                </div>
+                )}
               </div>
 
-              {/* STEP 04: Upload Evidence */}
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <span className="w-7 h-7 rounded-full bg-[#0F172A] text-white text-xs font-bold flex items-center justify-center shrink-0">
-                    04
+              {/* reCAPTCHA BOX */}
+              <div className="bg-[#F9FAFB] border border-[#D1D5DB] rounded-md p-3.5 max-w-[302px] flex items-center justify-between shadow-xs my-6 select-none">
+                <div className="flex items-center gap-3 cursor-pointer" onClick={() => setCaptchaChecked(!captchaChecked)}>
+                  <div className={`w-6 h-6 rounded border flex items-center justify-center transition-all ${captchaChecked ? "bg-[#28A745] border-[#28A745] text-white" : "border-slate-300 bg-white"}`}>
+                    {captchaChecked && <Check className="w-4 h-4 stroke-[3]" />}
+                  </div>
+                  <span className="text-xs sm:text-sm font-medium text-[#374151]">
+                    I&apos;m not a robot
                   </span>
-                  <h3 className="text-base font-bold text-[#0F172A]">Upload Evidence</h3>
                 </div>
-
-                <div className="pl-10">
-                  <div className="border-2 border-dashed border-[#CBD5E1] hover:border-[#2BC48A] bg-[#F8FAFB] rounded-2xl p-6 text-center transition-all relative cursor-pointer">
-                    <input
-                      type="file"
-                      multiple
-                      accept="image/*,video/*"
-                      onChange={handleFileUpload}
-                      className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
-                    />
-                    <Upload className="w-8 h-8 text-[#2BC48A] mx-auto mb-2" />
-                    <span className="text-xs font-bold text-[#0F172A] block mb-1">
-                      Drag &amp; drop photos or short video clip showing the defect
-                    </span>
-                    <span className="text-[11px] text-[#64748B] font-medium">
-                      Supports JPG, PNG, MP4 (Max 25MB). Optional but accelerates claim approval.
-                    </span>
+                
+                <div className="flex flex-col items-center justify-center pl-2">
+                  <div className="w-6 h-6 text-[#4285F4]">
+                    <svg viewBox="0 0 48 48" className="w-full h-full fill-current">
+                      <path d="M24 8V0L14 10l10 10v-8c7.73 0 14 6.27 14 14 0 2.76-.81 5.33-2.21 7.5l2.92 2.92C40.91 33.3 42 28.8 42 24c0-9.94-8.06-18-18-18zM11.21 11.58L8.29 8.66C6.09 12.7 5 17.2 5 22c0 9.94 8.06 18 18 18v8l10-10-10-10v8c-7.73 0-14-6.27-14-14 0-2.76.81-5.33 2.21-7.5z"/>
+                    </svg>
                   </div>
-
-                  {uploadedFiles.length > 0 && (
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {uploadedFiles.map((fn, idx) => (
-                        <span key={idx} className="text-[11px] font-bold text-[#2BC48A] bg-[#E5F7F0] px-3 py-1 rounded-full flex items-center gap-1.5">
-                          <FileText className="w-3.5 h-3.5" /> {fn}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                  <span className="text-[8px] text-[#6B7280] font-medium tracking-tight mt-0.5">reCAPTCHA</span>
                 </div>
               </div>
 
-              {/* STEP 05: Submit Claim */}
-              <div className="pl-10 pt-4">
+              {/* SUBMIT BUTTON */}
+              <div className="text-center pt-2">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full sm:w-auto bg-[#2BC48A] hover:bg-[#22a372] text-white px-10 py-4 rounded-full text-xs font-bold tracking-widest uppercase shadow-lg shadow-[#2BC48A]/20 transition-all cursor-pointer flex items-center justify-center gap-2"
+                  className="bg-[#28A745] hover:bg-[#218838] text-white text-base font-bold px-14 py-2.5 rounded-full transition-all shadow-md hover:shadow-lg cursor-pointer inline-flex items-center justify-center gap-2"
                 >
-                  {isSubmitting ? (
-                    <span>Registering Claim...</span>
-                  ) : (
-                    <span>SUBMIT WARRANTY CLAIM</span>
-                  )}
+                  {isSubmitting ? "Submitting..." : "Submit"}
                 </button>
               </div>
 
@@ -429,7 +372,7 @@ export default function WarrantyPage() {
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#2BC48A] bg-[#2BC48A]/10 px-3 py-1 rounded-full inline-block mb-2">
               NEED ASSISTANCE?
             </span>
-            <h3 className="text-xl sm:text-2xl font-black mb-1">Can&apos;t complete your warranty claim?</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-1">Can&apos;t complete your warranty claim?</h3>
             <p className="text-xs text-slate-300 font-medium">Our customer care representatives are ready to help you manually over call or live chat.</p>
           </div>
 

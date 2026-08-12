@@ -136,6 +136,17 @@ export default function Header() {
       return;
     }
 
+    // Intercept the Plans page
+    if (targetId === "section-plans" || targetId === "plans") {
+      setMobileMenuOpen(false);
+      setActiveDropdown(null);
+      if (window.navigateToPage) {
+        window.navigateToPage("plans");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      return;
+    }
+
     // Switch back to home if scrolling to other sections
     if (window.navigateToPage) {
       window.navigateToPage("home");
@@ -184,6 +195,7 @@ export default function Header() {
         { label: "NutriGenius", desc: "AI-powered food recognition and smart nutrition tracking.", targetId: "section-ecosystem", href: "https://goqii.com/nutrigenius" }
       ]
     },
+    { label: "Plans", key: "plans", targetId: "section-plans" },
     { label: "Project Sanjeevini", key: "sanjeevini", href: "https://goqii.com/sanjeevini" },
     { label: "Contact", key: "contact", targetId: "section-final" }
   ];

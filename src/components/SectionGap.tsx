@@ -81,7 +81,7 @@ export default function SectionGap() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.35, ease: "easeOut" }}
-            className="text-3xl sm:text-4xl lg:text-[48px] font-black tracking-tight text-[#0F172A] leading-[1.08] mb-6 font-sans"
+            className="text-3xl sm:text-4xl lg:text-[48px] font-semibold tracking-tight text-[#0F172A] leading-[1.08] mb-6 font-sans"
           >
             We know <br className="hidden sm:inline" />{" "}
             <span className="text-[#5A6376]">what to do.</span>{" "}

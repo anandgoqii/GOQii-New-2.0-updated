@@ -1,29 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import "tailwindcss";
 
-@theme {
-  --color-bg: #F8FAFB;
-  --color-text: #0F172A;
-  --color-muted: #64748B;
-  --color-accent: #2BC48A;
-  --color-border: #E8EDF2;
-  --color-card: #FFFFFF;
+/* ==========================================================================
+   GOQii DESIGN SYSTEM v1.0 --- MASTER CSS TOKENS & FOUNDATIONS
+   ========================================================================== */
 
-  --font-sans: "Poppins", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+:root {
+  /* Brand DNA Tokens */
+  --goqii-teal: #2BC48A;
+  --goqii-teal-hover: #22A874;
+  --goqii-teal-light: #E5F7F0;
+  --goqii-teal-subtle: #F0FAF5;
+  --goqii-navy: #0F172A;
+  --goqii-slate-dark: #1E293B;
+  --goqii-slate-muted: #64748B;
+  --goqii-slate-subtle: #94A3B8;
+  --goqii-bg-light: #F8FAFB;
+  --goqii-card-bg: #FFFFFF;
+  --goqii-border-light: #E8EDF2;
+  --goqii-border-dark: #334155;
+
+  /* Typography Scale */
+  --font-goqii-sans: "Poppins", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-goqii-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-goqii-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* 4px Geometry System */
+  --goqii-radius-sm: 6px;
+  --goqii-radius-md: 12px;
+  --goqii-radius-lg: 16px;
+  --goqii-radius-xl: 24px;
+  --goqii-radius-pill: 9999px;
+
+  /* Elevation Shadows */
+  --goqii-shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+  --goqii-shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.06);
+  --goqii-shadow-lg: 0 10px 25px -3px rgba(15, 23, 42, 0.08);
+}
+
+@theme {
+  --color-bg: var(--goqii-bg-light);
+  --color-text: var(--goqii-navy);
+  --color-muted: var(--goqii-slate-muted);
+  --color-accent: var(--goqii-teal);
+  --color-border: var(--goqii-border-light);
+  --color-card: var(--goqii-card-bg);
+
+  --font-sans: var(--font-goqii-sans);
+  --font-serif: var(--font-goqii-serif);
+  --font-mono: var(--font-goqii-mono);
 }
 
 @layer base {
   html {
     font-size: 16px;
-    font-family: var(--font-sans);
+    font-family: var(--font-goqii-sans);
     scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
   }
 
   body {
-    background-color: var(--color-bg);
-    color: var(--color-text);
-    font-family: var(--font-sans);
+    background-color: var(--goqii-bg-light);
+    color: var(--goqii-navy);
+    font-family: var(--font-goqii-sans);
     line-height: 1.6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -31,20 +70,29 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-sans);
-    font-weight: 700;
+    font-family: var(--font-goqii-sans);
+    font-weight: 600;
     letter-spacing: -0.03em;
     line-height: 1.15;
-    color: var(--color-text);
+    color: inherit;
+  }
+
+  /* Accessibility Focus Rings */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+    outline: 2px solid var(--goqii-teal);
+    outline-offset: 2px;
   }
 }
 
-/* Specific theme classes from Bold Typography design template */
+/* ==========================================================================
+   GOQii UTILITY CLASSES & DESIGN COMPONENT PATTERNS
+   ========================================================================== */
+
 .hero-heading {
   font-size: clamp(1.6rem, 5.6vw, 60px);
   line-height: 0.95;
   letter-spacing: -0.04em;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .label-caps {
@@ -56,17 +104,17 @@
 }
 
 .italic-serif {
-  font-family: "Playfair Display", Georgia, ui-serif, serif;
+  font-family: var(--font-goqii-serif);
   font-style: italic;
 }
 
-/* Custom horizontal scroll bar styling for clean presentation */
+/* Custom horizontal scroll bar styling */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Base fade glow styles */
@@ -86,4 +134,5 @@
 .animate-pulse-slow {
   animation: pulse-slow 6s ease-in-out infinite;
 }
+
 

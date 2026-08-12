@@ -82,7 +82,7 @@ export default function SectionXPrize() {
           </div>
 
           {/* 2. Main High-contrast Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-[45px] font-black tracking-tight text-[#0F172A] leading-[1.08] font-sans">
+          <h2 className="text-3xl sm:text-4xl lg:text-[45px] font-semibold tracking-tight text-[#0F172A] leading-[1.08] font-sans">
             Extending Healthy Life.<br />
             <span className="text-[#2BC48A]">The Next Frontier Of Preventive Healthcare.</span>
           </h2>

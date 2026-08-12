@@ -67,13 +67,13 @@ const LEADERSHIP_DATA: Record<string, Member[]> = {
       location: "Mumbai"
     },
     {
-      name: "Rohit Pareek",
-      role: "CFO & Head Corporate Development",
+      name: "Saurabh Joshi",
+      role: "Chief Financial Officer (CFO)",
       company: "GOQii Inc.",
-      bio: "Rohit leads finance and corporate development at GOQii, bringing deep expertise from his investment banking career at Jefferies, JM Financial, and Times Group. He has led 50+ PE/VC, M&A, and IPO transactions across India and the US. He built Jefferies India's Equity Capital Markets (ECM) desk from zero to a leading position. An alumnus of IIM Ahmedabad and IIT BHU, Rohit is passionate about sustainability and governance. He enjoys meditation and spending time with family.",
-      image: "https://appcdn.goqii.com/storeimg/41247_1781259893.png",
-      highlights: ["Corp Finance", "M&A", "Governance"],
-      extraHighlights: "IIM Ahmedabad · Jefferies Alumnus · Finance Strategy",
+      bio: "Saurabh Joshi is the Chief Financial Officer at GOQii, bringing over 20 years of leadership experience in finance, strategy, and business transformation across the healthcare and life sciences sectors.\n\nThroughout his career, he has led finance functions for globally recognized organizations including Lotus Surgicals Pvt. Ltd., Thermo Fisher Scientific, Piramal Healthcare, Siemens Healthcare, and Bharat Serums & Vaccines. His expertise spans financial planning, business scaling, mergers & acquisitions, fundraising, compliance, governance, and strategic growth.\n\nAt GOQii, Saurabh is focused on strengthening the company's financial foundation, enabling sustainable growth, and supporting innovation as GOQii continues its mission to transform preventive healthcare through technology and AI.",
+      image: "https://appcdn.goqii.com/storeimg/90986_1786510650.jpg",
+      highlights: ["Financial Strategy", "M&A & Governance", "Healthcare & Life Sciences"],
+      extraHighlights: "20+ Years · Lotus Surgicals · Thermo Fisher · Piramal · Siemens · BSV",
       location: "USA · Mumbai"
     },
     {

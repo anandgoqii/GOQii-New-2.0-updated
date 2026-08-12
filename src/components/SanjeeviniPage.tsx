@@ -80,7 +80,7 @@ export default function SanjeeviniPage() {
         </div>
 
         {/* Heading */}
-        <h1 className="text-4xl sm:text-5xl lg:text-[68px] font-black tracking-tight text-[#0F172A] leading-[1.05] mb-6 max-w-4xl">
+        <h1 className="text-4xl sm:text-5xl lg:text-[68px] font-semibold tracking-tight text-[#0F172A] leading-[1.05] mb-6 max-w-4xl">
           Project Sanjeevini.<br />
           <span className="text-[#2BC48A]">Extending Healthy Lifespan.</span>
         </h1>
@@ -105,7 +105,7 @@ export default function SanjeeviniPage() {
             <span className="text-[10px] font-sans font-black tracking-[0.25em] text-[#2BC48A] uppercase mb-4 block">
               THE RESEARCH MISSION
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight mb-4">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-[#0F172A] tracking-tight mb-4">
               Pushing back the boundaries of biological age.
             </h2>
             <p className="text-[#64748B] text-sm leading-relaxed mb-6 font-medium">
@@ -147,7 +147,7 @@ export default function SanjeeviniPage() {
             <span className="text-[11px] font-sans font-black tracking-[0.25em] text-[#2BC48A] uppercase mb-2 block">
               OUR JOURNEY
             </span>
-            <h2 className="text-2xl sm:text-3xl font-black text-[#0F172A] tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-semibold text-[#0F172A] tracking-tight">
               Project Sanjeevini Development Milestones
             </h2>
           </div>
@@ -218,7 +218,7 @@ export default function SanjeeviniPage() {
             <span className="text-[11px] font-sans font-black tracking-[0.25em] text-[#2BC48A] uppercase mb-2 block">
               SYSTEM MECHANICS
             </span>
-            <h2 className="text-2xl sm:text-4xl font-black text-[#0F172A] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl font-semibold text-[#0F172A] tracking-tight">
               The Longevity Framework
             </h2>
           </div>
@@ -234,7 +234,7 @@ export default function SanjeeviniPage() {
                   <div className="w-12 h-12 rounded-2xl bg-[#E5F7F0] flex items-center justify-center text-[#2BC48A] mb-6">
                     <Icon className="w-5.5 h-5.5" />
                   </div>
-                  <h3 className="text-lg font-black text-[#0F172A] tracking-tight mb-2">
+                  <h3 className="text-lg font-semibold text-[#0F172A] tracking-tight mb-2">
                     {pillar.title}
                   </h3>
                   <p className="text-[#667085] text-sm leading-relaxed font-medium">
@@ -253,7 +253,7 @@ export default function SanjeeviniPage() {
           <span className="text-[10px] font-sans font-black tracking-[0.25em] text-[#2BC48A] uppercase mb-4 block">
             ACCELERATE HEALTHSPAN
           </span>
-          <h2 className="text-2xl sm:text-5xl font-black tracking-tight mb-6 leading-tight max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-5xl font-semibold tracking-tight mb-6 leading-tight max-w-2xl mx-auto">
             Ready to live healthier, for longer?
           </h2>
           <p className="text-slate-400 text-sm sm:text-base max-w-lg mx-auto mb-10 leading-relaxed font-medium">

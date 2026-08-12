@@ -157,7 +157,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-6xl lg:text-[84px] font-black tracking-tight text-[#0F172A] leading-[1.02] mb-8"
+            className="text-4xl sm:text-6xl lg:text-[84px] font-semibold tracking-tight text-[#0F172A] leading-[1.02] mb-8"
           >
             <span>Health should begin&nbsp;</span>
             <br />
@@ -189,7 +189,7 @@ export default function AboutPage() {
             <span className="text-[#2BC48A] font-mono text-xs sm:text-sm font-extrabold tracking-widest uppercase mb-4 block">
               CORE ARCHITECTURE
             </span>
-            <h2 className="text-3xl sm:text-5xl lg:text-[54px] font-black tracking-tight leading-[1.05] text-[#0F172A] font-sans">
+            <h2 className="text-3xl sm:text-5xl lg:text-[54px] font-semibold tracking-tight leading-[1.05] text-[#0F172A] font-sans">
               One connected <br />
               <span className="text-[#2BC48A]">health platform.</span>
             </h2>
@@ -430,7 +430,7 @@ export default function AboutPage() {
               <div className="w-8 h-[2px] bg-[#2BC48A] mt-2.5 rounded-full" />
             </div>
             
-            <h2 className="text-[34px] sm:text-[45px] lg:text-[48px] font-black tracking-tight leading-[1.12] text-[#0F172A] font-sans">
+            <h2 className="text-[34px] sm:text-[45px] lg:text-[48px] font-semibold tracking-tight leading-[1.12] text-[#0F172A] font-sans">
               Technology alone <br />
               <span className="text-slate-800">cannot change health.</span> <br />
               <span className="text-[#2BC48A] inline-block mt-1">Human behavior can.</span>
@@ -447,7 +447,7 @@ export default function AboutPage() {
                   <User className="w-4.5 h-4.5 text-[#2BC48A]" />
                 </div>
                 <div>
-                  <h4 className="text-[17px] font-extrabold text-[#0F172A] tracking-tight">Real-time Biometric Feedback</h4>
+                  <h4 className="text-[17px] font-semibold text-[#0F172A] tracking-tight">Real-time Biometric Feedback</h4>
                   <p className="text-[13.5px] text-slate-500 mt-1 leading-relaxed leading-[1.4] pr-4">
                     Your coach receives immediate structural parameter alerts when metabolic indices fall out of synchronization.
                   </p>
@@ -459,7 +459,7 @@ export default function AboutPage() {
                   <Sparkles className="w-4.5 h-4.5 text-[#00ADC7]" />
                 </div>
                 <div>
-                  <h4 className="text-[17px] font-extrabold text-[#0F172A] tracking-tight">Empathetic Micro-coaching Pathways</h4>
+                  <h4 className="text-[17px] font-semibold text-[#0F172A] tracking-tight">Empathetic Micro-coaching Pathways</h4>
                   <p className="text-[13.5px] text-slate-500 mt-1 leading-relaxed leading-[1.4] pr-4">
                     We avoid boring robotic AI reports. Guided human conversations shape sustainable, daily habit evolution instead.
                   </p>
@@ -503,7 +503,7 @@ export default function AboutPage() {
                 <span className="text-[#2BC48A] font-mono text-xs sm:text-sm font-semibold tracking-widest uppercase mb-3 block">
                   GLOBAL PRESENCE
                 </span>
-                <h2 className="text-[32px] sm:text-[42px] font-black tracking-tight text-[#0F172A] font-sans leading-[1.15]">
+                <h2 className="text-[32px] sm:text-[42px] font-semibold tracking-tight text-[#0F172A] font-sans leading-[1.15]">
                   Built in Silicon Valley. Scaled Globally.
                 </h2>
               </div>
@@ -522,12 +522,12 @@ export default function AboutPage() {
                         : "bg-white border-slate-100 hover:border-slate-300 shadow-[0_10px_30px_rgba(15,23,42,0.02)] hover:shadow-[0_16px_40px_rgba(15,23,42,0.04)]"
                     }`}
                   >
-                    <span className={`text-[17px] font-extrabold tracking-tight block mb-2 ${
+                    <span className={`text-[17px] font-semibold tracking-tight block mb-2 ${
                       selectedJurisdiction === "US" ? "text-[#2BC48A]" : "text-slate-400"
                     }`}>
                       United States
                     </span>
-                    <span className="text-[19px] font-black text-[#0F172A] block mb-3 font-sans leading-none">
+                    <span className="text-[19px] font-semibold text-[#0F172A] block mb-3 font-sans leading-none">
                       GOQii Inc
                     </span>
                     <p className="text-[14px] text-slate-500 font-medium leading-relaxed max-w-[280px]">
@@ -544,12 +544,12 @@ export default function AboutPage() {
                         : "bg-white border-slate-100 hover:border-slate-300 shadow-[0_10px_30px_rgba(15,23,42,0.02)] hover:shadow-[0_16px_40px_rgba(15,23,42,0.04)]"
                     }`}
                   >
-                    <span className={`text-[17px] font-extrabold tracking-tight block mb-2 ${
+                    <span className={`text-[17px] font-semibold tracking-tight block mb-2 ${
                       selectedJurisdiction === "UK" ? "text-[#2BC48A]" : "text-slate-400"
                     }`}>
                       United Kingdom
                     </span>
-                    <span className="text-[19px] font-black text-[#0F172A] block mb-3 font-sans leading-none">
+                    <span className="text-[19px] font-semibold text-[#0F172A] block mb-3 font-sans leading-none">
                       GOQii UK Limited
                     </span>
                     <p className="text-[14px] text-slate-500 font-medium leading-relaxed">
@@ -566,12 +566,12 @@ export default function AboutPage() {
                         : "bg-white border-slate-100 hover:border-slate-300 shadow-[0_10px_30px_rgba(15,23,42,0.02)] hover:shadow-[0_16px_40px_rgba(15,23,42,0.04)]"
                     }`}
                   >
-                    <span className={`text-[17px] font-extrabold tracking-tight block mb-2 ${
+                    <span className={`text-[17px] font-semibold tracking-tight block mb-2 ${
                       selectedJurisdiction === "IN" ? "text-[#2BC48A]" : "text-slate-400"
                     }`}>
                       India
                     </span>
-                    <span className="text-[19px] font-black text-[#0F172A] block mb-3 font-sans leading-none">
+                    <span className="text-[19px] font-semibold text-[#0F172A] block mb-3 font-sans leading-none">
                       GOQii Technologies Pvt. Ltd.
                     </span>
                     <p className="text-[14px] text-slate-500 font-medium leading-relaxed pr-4">

@@ -17,7 +17,7 @@ export default function FinalCTA() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-emerald-500/10 blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-none mb-4">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight leading-none mb-4">
           Ready to make <span className="text-[#2BC48A]">health continuous?</span>
         </h2>
         

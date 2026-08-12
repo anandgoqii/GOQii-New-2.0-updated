@@ -330,7 +330,7 @@ export default function CareersPage() {
             <Compass className="w-4 h-4" />
             <span>Join Our Mission</span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black font-sans tracking-tight text-[#0F172A] mb-6 leading-[1.05]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold font-sans tracking-tight text-[#0F172A] mb-6 leading-[1.05]">
             SHAPING THE FUTURE OF <span className="text-[#2BC48A]">PREVENTION</span>
           </h1>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
@@ -361,7 +361,7 @@ export default function CareersPage() {
           {/* Left Column: Values & Perks */}
           <div className="lg:col-span-4 space-y-8">
             <div className="space-y-3">
-              <h2 className="text-2xl font-black tracking-tight text-[#0F172A]">Why GOQii?</h2>
+              <h2 className="text-2xl font-semibold tracking-tight text-[#0F172A]">Why GOQii?</h2>
               <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-medium">
                 We believe in keeping our workforce as healthy and motivated as our users. We build products we are proud of and support one another in creating genuine societal impact.
               </p>
@@ -394,7 +394,7 @@ export default function CareersPage() {
           <div className="lg:col-span-8 bg-white border border-[#E8EDF2] rounded-3xl p-6 sm:p-8 shadow-xs relative">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-5 border-b border-slate-100">
               <div>
-                <h2 className="text-2xl font-black tracking-tight text-[#0F172A]">Open Positions</h2>
+                <h2 className="text-2xl font-semibold tracking-tight text-[#0F172A]">Open Positions</h2>
                 <p className="text-xs text-slate-400 font-bold">Discover your next opportunity</p>
               </div>
 
@@ -448,7 +448,7 @@ export default function CareersPage() {
                         <span className="text-[10px] font-black text-[#2BC48A] uppercase tracking-wider bg-emerald-50 px-2 py-0.5 rounded-md inline-block">
                           {job.department}
                         </span>
-                        <h4 className="text-sm sm:text-base font-black text-[#0F172A] group-hover:text-[#2BC48A] transition-colors">
+                        <h4 className="text-sm sm:text-base font-bold text-[#0F172A] group-hover:text-[#2BC48A] transition-colors">
                           {job.title}
                         </h4>
                         
@@ -544,10 +544,10 @@ export default function CareersPage() {
                       <span className="text-[10px] font-black text-[#2BC48A] uppercase tracking-wider bg-emerald-50 px-2 py-0.5 rounded-md inline-block">
                         {selectedJob.department}
                       </span>
-                      <h3 className="text-xl sm:text-2xl font-black text-[#0F172A] leading-tight">
+                      <h3 className="text-xl sm:text-2xl font-bold text-[#0F172A] leading-tight">
                         {selectedJob.title}
                       </h3>
-                      <div className="flex flex-wrap gap-4 text-xs font-extrabold text-slate-400">
+                      <div className="flex flex-wrap gap-4 text-xs font-bold text-slate-400">
                         <span className="flex items-center gap-1">
                           <MapPin className="w-3.5 h-3.5 text-slate-300" />
                           {selectedJob.location}
@@ -560,12 +560,12 @@ export default function CareersPage() {
                     </div>
 
                     <div className="text-xs sm:text-sm text-slate-550 leading-relaxed font-semibold">
-                      <h4 className="text-xs font-black tracking-wider text-slate-400 uppercase mb-2">Overview</h4>
+                      <h4 className="text-xs font-bold tracking-wider text-slate-400 uppercase mb-2">Overview</h4>
                       {selectedJob.description}
                     </div>
 
                     <div className="space-y-4">
-                      <h4 className="text-xs font-black tracking-wider text-slate-400 uppercase">Core Responsibilities</h4>
+                      <h4 className="text-xs font-bold tracking-wider text-slate-400 uppercase">Core Responsibilities</h4>
                       <ul className="space-y-2">
                         {selectedJob.responsibilities.map((resp, idx) => (
                           <li key={idx} className="flex gap-2.5 items-start text-xs text-slate-500 font-semibold leading-relaxed">
@@ -577,7 +577,7 @@ export default function CareersPage() {
                     </div>
 
                     <div className="space-y-4">
-                      <h4 className="text-xs font-black tracking-wider text-slate-400 uppercase">Experience & Requirements</h4>
+                      <h4 className="text-xs font-bold tracking-wider text-slate-400 uppercase">Experience & Requirements</h4>
                       <ul className="space-y-2">
                         {selectedJob.requirements.map((req, idx) => (
                           <li key={idx} className="flex gap-2.5 items-start text-xs text-slate-500 font-semibold leading-relaxed">

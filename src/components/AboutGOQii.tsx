@@ -109,7 +109,7 @@ export default function AboutGOQii() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-[#0F172A] leading-[1.05] font-sans"
+            className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0F172A] leading-[1.05] font-sans"
           >
             A decade of <br />
             <span className="text-[#2BC48A] relative inline-block">
@@ -168,10 +168,10 @@ export default function AboutGOQii() {
 
                 {/* Card Text Content aligned bottom left */}
                 <div className="absolute bottom-6 left-6 z-20 text-left">
-                  <div className="text-[10.5px] tracking-[0.2em] font-extrabold uppercase text-[#2BC48A] mb-1">
+                  <div className="text-[10.5px] tracking-[0.2em] font-bold uppercase text-[#2BC48A] mb-1">
                     EST. {TIMELINE_STEPS[activeIndex].year}
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight leading-none mb-1">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-none mb-1">
                     {TIMELINE_STEPS[activeIndex].title}
                   </h3>
                 </div>

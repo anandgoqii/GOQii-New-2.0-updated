@@ -28,10 +28,11 @@ import FaqPage from "./components/FaqPage";
 import WarrantyPage from "./components/WarrantyPage";
 import SmartSciencePage from "./components/SmartSciencePage";
 import TrackOrderPage from "./components/TrackOrderPage";
+import PlansPage from "./components/PlansPage";
 
 declare global {
   interface Window {
-    navigateToPage?: (pageName: "home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers" | "faqs" | "warranty" | "smart-science" | "trackingorder") => void;
+    navigateToPage?: (pageName: "home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers" | "faqs" | "warranty" | "smart-science" | "trackingorder" | "plans") => void;
   }
 }
 
@@ -54,7 +55,7 @@ function ScrollRevealSection({ children }: ScrollRevealSectionProps) {
 }
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<"home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers" | "faqs" | "warranty" | "smart-science" | "trackingorder">("home");
+  const [currentPage, setCurrentPage] = useState<"home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers" | "faqs" | "warranty" | "smart-science" | "trackingorder" | "plans">("home");
 
   useEffect(() => {
     // Detect initial route safeguards
@@ -85,9 +86,11 @@ export default function App() {
       setCurrentPage("smart-science");
     } else if (pathName === "trackingorder" || pathName === "track-order" || pathName === "trackorder") {
       setCurrentPage("trackingorder");
+    } else if (pathName === "plans") {
+      setCurrentPage("plans");
     }
 
-    window.navigateToPage = (pageName: "home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers" | "faqs" | "warranty" | "smart-science" | "trackingorder") => {
+    window.navigateToPage = (pageName: "home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers" | "faqs" | "warranty" | "smart-science" | "trackingorder" | "plans") => {
       setCurrentPage(pageName);
       const urlPath = pageName === "home" ? "/" : `/${pageName}`;
       try {
@@ -130,6 +133,8 @@ export default function App() {
         setCurrentPage("smart-science");
       } else if (currentPath === "trackingorder" || currentPath === "track-order" || currentPath === "trackorder") {
         setCurrentPage("trackingorder");
+      } else if (currentPath === "plans") {
+        setCurrentPage("plans");
       } else {
         setCurrentPage("home");
       }
@@ -265,6 +270,8 @@ export default function App() {
         <SmartSciencePage />
       ) : currentPage === "trackingorder" ? (
         <TrackOrderPage />
+      ) : currentPage === "plans" ? (
+        <PlansPage />
       ) : (
         <SanjeeviniPage />
       )}

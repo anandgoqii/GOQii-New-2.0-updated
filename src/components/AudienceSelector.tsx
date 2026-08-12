@@ -135,7 +135,7 @@ export default function AudienceSelector() {
           <span className="text-[10px] font-sans font-black tracking-[0.25em] text-[#2BC48A] uppercase mb-2. block">
             TAILORED ENGAGEMENT
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#0F172A] tracking-tight font-sans">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#0F172A] tracking-tight font-sans">
             Who are you?
           </h2>
           <p className="text-xs sm:text-xs text-[#667085] mt-2 max-w-lg mx-auto font-sans leading-relaxed">

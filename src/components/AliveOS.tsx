@@ -71,7 +71,7 @@ export default function AliveOS() {
 
           <div className="max-w-4xl font-sans">
             {/* Headline */}
-            <h2 className="text-3xl sm:text-4xl lg:text-[45px] font-black tracking-tight text-[#0F172A] leading-[1.08] mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-[45px] font-semibold tracking-tight text-[#0F172A] leading-[1.08] mb-4">
               THE INTELLIGENCE <span className="text-[#2BC48A]">LAYER</span>
             </h2>
 
@@ -97,7 +97,7 @@ export default function AliveOS() {
               <span className="text-[10px] font-sans font-black tracking-[0.25em] text-[#2BC48A] uppercase mb-1 block">
                 SYSTEM ARCHITECTURE
               </span>
-              <h3 className="text-xl sm:text-2xl font-black text-[#0F172A] tracking-tight font-sans">
+              <h3 className="text-xl sm:text-2xl font-semibold text-[#0F172A] tracking-tight font-sans">
                 Detect → Predict → Guide
               </h3>
             </div>
@@ -214,7 +214,7 @@ export default function AliveOS() {
                 <span className="self-start inline-flex items-center justify-center py-0.5 px-2 rounded bg-[#E5F7F0] text-[#047857] text-[8px] font-black tracking-wider uppercase font-mono leading-none">
                   PROPRIETARY ENGINE
                 </span>
-                <h4 className="text-[17px] font-black text-slate-900 tracking-wide uppercase font-sans mt-1">
+                <h4 className="text-[17px] font-semibold text-slate-900 tracking-wide uppercase font-sans mt-1">
                   BEHAVIORAL NEUROCODING
                 </h4>
                 <div className="text-xs font-semibold text-[#047857] font-sans leading-none -mt-0.5">
@@ -504,7 +504,7 @@ export default function AliveOS() {
                 </div>
                 <div className="flex-1 text-left">
                   <span className="text-[8px] font-mono font-black text-[#2BC48A] tracking-wider uppercase">STAGE 04 • OUTCOME</span>
-                  <h4 className="text-[13px] font-black text-[#0F172A] leading-tight mt-0.5">Better Outcomes</h4>
+                  <h4 className="text-[13px] font-bold text-[#0F172A] leading-tight mt-0.5">Better Outcomes</h4>
                   <p className="text-[11px] text-[#475467] leading-tight mt-1 font-medium">
                     Sustained prevention. Better health. Lower risk. Longer, healthier lives.
                   </p>
