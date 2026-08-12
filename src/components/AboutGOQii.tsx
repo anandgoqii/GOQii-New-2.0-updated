@@ -112,9 +112,8 @@ export default function AboutGOQii() {
             className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#0F172A] leading-[1.05] font-sans"
           >
             A decade of <br />
-            <span className="text-[#2BC48A] relative inline-block">
+            <span className="text-[#2BC48A]">
               preventive
-              <span className="absolute left-0 bottom-1 w-14 h-[3.5px] bg-[#2BC48A] rounded-full" />
             </span>{" "}
             healthcare.
           </motion.h2>
@@ -123,7 +122,7 @@ export default function AboutGOQii() {
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-[#667085] text-sm sm:text-base font-medium mt-6 max-w-md font-sans leading-relaxed"
+            className="text-[#667085] text-sm sm:text-base font-medium mt-3 max-w-md font-sans leading-relaxed"
           >
             Founded in 2014, GOQii has helped transform the relationship between technology, human coaching, and real health outcomes.
           </motion.p>

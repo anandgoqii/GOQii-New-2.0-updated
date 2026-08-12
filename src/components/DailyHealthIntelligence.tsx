@@ -115,7 +115,7 @@ export default function DailyHealthIntelligence() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl lg:text-[50px] font-black tracking-tight text-[#0F172A] leading-[1.05] font-sans"
+            className="text-3xl sm:text-4xl lg:text-[50px] font-semibold tracking-tight text-[#0F172A] leading-[1.05] font-sans"
           >
             One App. <br />
             <span className="text-[#2BC48A]">Every Health Action.</span>

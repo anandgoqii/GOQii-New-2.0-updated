@@ -150,12 +150,12 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
               className="flex flex-col items-start text-left w-full min-h-[460px] sm:min-h-[390px] md:min-h-[380px] lg:min-h-[370px] justify-start"
             >
               {/* Label */}
-              <div className="label-caps mb-6 md:mb-8 tracking-[0.25em] text-[#2BC48A] font-bold">
+              <div className="label-caps mb-3 sm:mb-4 tracking-[0.25em] text-[#2BC48A] font-bold">
                 {slides[currentSlide].label}
               </div>
 
               {/* Big Large Typography (Reveal line by line using the explicit hero-heading class) */}
-              <h1 className="hero-heading text-[#0F172A] mb-8 flex flex-col items-start leading-[1.08] min-h-[110px] sm:min-h-[130px] lg:min-h-[160px] xl:min-h-[180px]">
+              <h1 className="hero-heading text-[#0F172A] mb-3 sm:mb-4 flex flex-col items-start leading-[1.08]">
                 {slides[currentSlide].id === 1 ? (
                   <>
                     <span>Health should begin&nbsp;</span>

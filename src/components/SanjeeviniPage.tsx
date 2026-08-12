@@ -80,7 +80,7 @@ export default function SanjeeviniPage() {
         </div>
 
         {/* Heading */}
-        <h1 className="text-4xl sm:text-5xl lg:text-[68px] font-semibold tracking-tight text-[#0F172A] leading-[1.05] mb-6 max-w-4xl">
+        <h1 className="text-4xl sm:text-5xl lg:text-[68px] font-semibold tracking-tight text-[#0F172A] leading-[1.05] mb-3 max-w-4xl">
           Project Sanjeevini.<br />
           <span className="text-[#2BC48A]">Extending Healthy Lifespan.</span>
         </h1>

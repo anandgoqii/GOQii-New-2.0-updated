@@ -81,7 +81,7 @@ export default function PlansPage() {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-white font-sans"
+              className="text-3xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.08] text-white font-sans mb-3"
             >
               GOQii Health Plans <br />
               <span className="text-[#2BC48A]">Coming Soon.</span>

@@ -114,7 +114,7 @@ export default function HumanStories() {
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-[#667085] text-sm sm:text-base font-medium mt-4 max-w-3xl"
+          className="text-[#667085] text-sm sm:text-base font-medium mt-2.5 max-w-3xl"
         >
           Every health journey starts with a single decision. Meet people from different walks of life who chose to prioritise their health and went on to achieve remarkable changes through guidance, commitment and small daily improvements.
         </motion.p>
