@@ -1,13 +1,7 @@
 import { motion } from "motion/react";
-import { ArrowLeft, ShieldCheck, Award, Lock, Cpu, Stethoscope, Eye, Mail, MessageSquare, Shield, CheckCircle2 } from "lucide-react";
+import { ShieldCheck, Award, Lock, Cpu, Stethoscope, Eye, Mail, MessageSquare, Shield, CheckCircle2 } from "lucide-react";
 
 export default function TrustCenterPage() {
-  const handleBackToHome = () => {
-    if (window.navigateToPage) {
-      window.navigateToPage("home");
-    }
-  };
-
   const privacyPoints = [
     "Privacy-by-design product development",
     "Secure data handling practices",
@@ -69,15 +63,6 @@ export default function TrustCenterPage() {
       <div className="absolute bottom-10 left-0 w-[45vw] h-[45vw] bg-emerald-100/10 blur-[110px] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 pt-32 pb-24 md:pt-40">
-        {/* Back navigation button */}
-        <button
-          onClick={handleBackToHome}
-          className="inline-flex items-center gap-2 text-xs font-black tracking-widest text-slate-500 hover:text-[#2BC48A] uppercase mb-10 group transition-colors cursor-pointer"
-        >
-          <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-          Back to Platform
-        </button>
-
         {/* Hero Section */}
         <div className="max-w-3xl mb-16">
           <div className="flex items-center gap-3 text-xs mb-5 text-[#2BC48A] font-extrabold tracking-[0.25em] uppercase">

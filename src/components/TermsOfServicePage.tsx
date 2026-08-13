@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
 import {
-  ArrowLeft,
   BookOpen,
   Scale,
   FileText,
@@ -24,12 +23,6 @@ import {
 } from "lucide-react";
 
 export default function TermsOfServicePage() {
-  const handleBackToHome = () => {
-    if (window.navigateToPage) {
-      window.navigateToPage("home");
-    }
-  };
-
   const handleGoToPrivacy = (e: React.MouseEvent) => {
     e.preventDefault();
     if (window.navigateToPage) {
@@ -85,15 +78,6 @@ export default function TermsOfServicePage() {
 
       <div className="max-w-4xl mx-auto px-6 pt-32 pb-24 md:pt-40">
         
-        {/* Back navigation button */}
-        <button
-          onClick={handleBackToHome}
-          className="inline-flex items-center gap-2 text-xs font-black tracking-widest text-[#64748B] hover:text-[#2BC48A] uppercase mb-10 group transition-colors cursor-pointer"
-        >
-          <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-          Back to Platform
-        </button>
-
         {/* Hero Section */}
         <div className="max-w-3xl mb-14">
           <div className="flex items-center gap-3 text-xs mb-5 text-[#2BC48A] font-extrabold tracking-[0.25em] uppercase">

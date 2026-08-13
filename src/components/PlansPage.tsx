@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
-import { Sparkles, ArrowLeft, Mail, CheckCircle2, ShieldCheck, HeartPulse, Users, Zap, Clock } from "lucide-react";
+import { Sparkles, Mail, CheckCircle2, ShieldCheck, HeartPulse, Users, Zap, Clock } from "lucide-react";
 import BookDemoModal from "./BookDemoModal";
 
 export default function PlansPage() {
@@ -12,14 +12,6 @@ export default function PlansPage() {
     e.preventDefault();
     if (email.trim()) {
       setSubmitted(true);
-    }
-  };
-
-  const handleGoHome = () => {
-    if (window.navigateToPage) {
-      window.navigateToPage("home");
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
@@ -50,17 +42,6 @@ export default function PlansPage() {
   return (
     <div className="min-h-screen bg-[#F8FAFB] pt-28 sm:pt-36 pb-20 px-4 sm:px-6 lg:px-8 select-none">
       <div className="max-w-5xl mx-auto">
-        
-        {/* Navigation Breadcrumb */}
-        <div className="mb-8">
-          <button
-            onClick={handleGoHome}
-            className="inline-flex items-center gap-2 text-xs font-bold text-[#64748B] hover:text-[#2BC48A] uppercase tracking-wider transition-colors cursor-pointer group"
-          >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Back to Overview
-          </button>
-        </div>
 
         {/* Hero Banner Box */}
         <div className="relative overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] text-white rounded-3xl p-8 sm:p-14 mb-12 shadow-2xl border border-slate-800 text-center">
