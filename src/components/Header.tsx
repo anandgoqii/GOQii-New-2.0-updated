@@ -170,7 +170,6 @@ export default function Header() {
   };
 
   const menuItems: MenuItem[] = [
-    { label: "About Us", key: "about", targetId: "section-about" },
     {
       label: "Enterprise Solutions",
       key: "enterprise",
@@ -196,8 +195,7 @@ export default function Header() {
       ]
     },
     { label: "Plans", key: "plans", targetId: "section-plans" },
-    { label: "Project Sanjeevini", key: "sanjeevini", href: "https://goqii.com/sanjeevini" },
-    { label: "Contact", key: "contact", targetId: "section-final" }
+    { label: "Project Sanjeevini", key: "sanjeevini", href: "https://goqii.com/sanjeevini" }
   ];
 
   return (

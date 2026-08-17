@@ -14,7 +14,7 @@ export default function Footer() {
       e.preventDefault();
       const targetId = href.substring(1);
       
-      if (targetId === "section-about") {
+      if (targetId === "section-about" || targetId === "about" || targetId === "about-us" || targetId === "aboutus") {
         if (window.navigateToPage) {
           window.navigateToPage("about");
           window.scrollTo({ top: 0, behavior: "smooth" });
@@ -220,14 +220,23 @@ export default function Footer() {
           {/* Logo & Vision Tagline */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 max-w-2xl">
             {/* Official GOQii logo image */}
-            <div className="flex items-center gap-2.5 shrink-0">
+            <button
+              onClick={() => {
+                if (window.navigateToPage) {
+                  window.navigateToPage("home");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+              className="flex items-center gap-2.5 shrink-0 cursor-pointer text-left focus:outline-none"
+              title="GOQii Home"
+            >
               <img
                 src="https://appcdn.goqii.com/storeimg/36455_1779860387.png"
                 alt="GOQii Logo"
-                className="h-8 w-auto object-contain"
+                className="h-8 w-auto object-contain hover:opacity-90 transition-opacity"
                 referrerPolicy="no-referrer"
               />
-            </div>
+            </button>
             
             <p className="text-sm sm:text-[15px] font-medium text-[#64748B] leading-relaxed">
               Transforming healthcare from reactive treatment to continuous, intelligent prevention.

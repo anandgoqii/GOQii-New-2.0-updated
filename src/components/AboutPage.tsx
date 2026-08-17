@@ -127,10 +127,10 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFB] text-[#0F172A] w-full font-sans pt-20 sm:pt-24 overflow-hidden relative selection:bg-[#2BC48A]/20 selection:text-[#0F172A]">
+    <div className="min-h-screen bg-[#F8FAFB] text-[#0F172A] w-full font-sans pt-16 sm:pt-20 overflow-hidden relative selection:bg-[#2BC48A]/20 selection:text-[#0F172A]">
       
       {/* SECTION 1: CINEMATIC HERO BLOCK */}
-      <section className="relative px-4 sm:px-8 lg:px-16 flex flex-col justify-center items-center text-center py-10 sm:py-14 lg:py-16 bg-gradient-to-b from-[#FAFBFB] via-[#FFFFFF] to-[#F1F5F9]/50 overflow-hidden">
+      <section className="relative px-4 sm:px-8 lg:px-16 flex flex-col justify-center items-center text-center py-6 sm:py-8 lg:py-10 bg-gradient-to-b from-[#FAFBFB] via-[#FFFFFF] to-[#F1F5F9]/50 overflow-hidden">
         
         {/* Subtle Ambient Floating Background Gradients */}
         <div className="absolute top-[20%] left-[10%] w-[450px] h-[450px] bg-[#2BC48A]/6 rounded-full blur-[120px] pointer-events-none animate-pulse duration-[8000ms]" />
@@ -145,38 +145,36 @@ export default function AboutPage() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 bg-white border border-[#E8EDF2] py-2 px-4 rounded-full shadow-[0_8px_20px_rgba(15,23,42,0.02)] mb-4 sm:mb-5"
+            className="inline-flex items-center gap-2 bg-white border border-[#E8EDF2] py-1.5 px-3.5 rounded-full shadow-[0_8px_20px_rgba(15,23,42,0.02)] mb-3 sm:mb-4"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#2BC48A]" />
-            <span className="text-[11px] font-black tracking-[0.25em] text-[#667085] uppercase">
+            <span className="text-[10px] sm:text-[11px] font-black tracking-[0.25em] text-[#667085] uppercase">
               ABOUT GOQii
             </span>
           </motion.div>
 
           <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-4xl sm:text-6xl lg:text-[84px] font-semibold tracking-tight text-[#0F172A] leading-[1.02] mb-4 sm:mb-5"
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="text-3xl sm:text-5xl lg:text-[62px] font-semibold tracking-tight text-[#0F172A] leading-[1.08] mb-3 sm:mb-4"
           >
             <span>Health should begin&nbsp;</span>
             <br />
-            <span className="text-slate-400">before illness</span> <br />
+            <span className="text-slate-400">before illness.</span> <br />
             <span className="bg-gradient-to-r from-[#2BC48A] to-[#00ADC7] bg-clip-text text-transparent">
               We built it to prevent it.
             </span>
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-base sm:text-xl md:text-2xl font-light text-[#475467] leading-[1.6] max-w-3xl mb-4 sm:mb-6 sm:px-6"
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="text-sm sm:text-base md:text-lg font-normal text-[#475467] leading-[1.6] max-w-2xl mb-2 sm:mb-3 sm:px-6"
           >
             GOQii combines AI, wearables, coaching, and preventive intelligence into one continuous health ecosystem.
           </motion.p>
-
-
 
         </div>
       </section>

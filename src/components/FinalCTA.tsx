@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import Particles from "./Particles";
-import ContactUsModal from "./ContactUsModal";
+import BookDemoModal from "./BookDemoModal";
 
 export default function FinalCTA() {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -34,10 +34,11 @@ export default function FinalCTA() {
         </button>
       </div>
 
-      {/* ================= MODAL: CONTACT US ================= */}
-      <ContactUsModal
+      {/* ================= MODAL: CONTACT US / DEMO ================= */}
+      <BookDemoModal
         isOpen={isContactOpen}
         onClose={() => setIsContactOpen(false)}
+        initialTab="contact"
       />
     </section>
   );
