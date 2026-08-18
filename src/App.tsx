@@ -30,9 +30,12 @@ import WarrantyPage from "./components/WarrantyPage";
 import SmartSciencePage from "./components/SmartSciencePage";
 import TrackOrderPage from "./components/TrackOrderPage";
 import PlansPage from "./components/PlansPage";
+import { updateSEO, SEO_CONFIG } from "./utils/seo";
 
 declare global {
   interface Window {
+    dataLayer?: any[];
+    gtag?: (...args: any[]) => void;
     navigateToPage?: (pageName: "home" | "about" | "sanjeevini" | "trust" | "privacy" | "terms" | "careers" | "faqs" | "warranty" | "smart-science" | "trackingorder" | "plans") => void;
   }
 }
@@ -156,6 +159,23 @@ export default function App() {
       }
     };
   }, []);
+
+  // Dynamic SEO Metadata & GA4 Page View Tracking on view changes
+  useEffect(() => {
+    // 1. Update Head Title, Meta Description, Open Graph, Twitter Card, and Canonical URL
+    updateSEO(currentPage);
+
+    // 2. Dispatch GA4 Page View event
+    if (typeof window !== "undefined" && typeof window.gtag === "function") {
+      const config = SEO_CONFIG[currentPage] || SEO_CONFIG.home;
+      const path = currentPage === "home" ? "/" : `/${currentPage}`;
+      window.gtag("event", "page_view", {
+        page_path: path,
+        page_title: config.title,
+        page_location: window.location.href,
+      });
+    }
+  }, [currentPage]);
 
   // Smooth scroll handler for the Explore CTA action
   const handleExplore = () => {

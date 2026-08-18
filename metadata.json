@@ -1,6 +1,6 @@
 {
   "name": "GOQii 2.0",
-  "description": "Continuous health intelligence for human health, prevention, and longevity.",
+  "description": "GOQii combines AI, health intelligence, expert coaching, behavioral science, and Dynamic Motivation to make preventive healthcare personal, actionable, and sustainable.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
