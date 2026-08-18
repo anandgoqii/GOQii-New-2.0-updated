@@ -14,6 +14,7 @@ import DailyHealthIntelligence from "./components/DailyHealthIntelligence";
 import SectionXPrize from "./components/SectionXPrize";
 import HumanStories from "./components/HumanStories";
 import TrustRegulatory from "./components/TrustRegulatory";
+import OurStory from "./components/OurStory";
 import Leadership from "./components/Leadership";
 import AboutGOQii from "./components/AboutGOQii";
 import FinalCTA from "./components/FinalCTA";
@@ -232,17 +233,22 @@ export default function App() {
             <HumanStories />
           </ScrollRevealSection>
 
-          {/* 12. Section 08 & 09: Trust + Regulatory */}
+          {/* 10 & 11. Section 10 & 11: Trust + Regulatory */}
           <ScrollRevealSection>
             <TrustRegulatory />
           </ScrollRevealSection>
 
-          {/* 13. Section 10: Leadership */}
+          {/* 12. Section 12: Our Story */}
+          <ScrollRevealSection>
+            <OurStory />
+          </ScrollRevealSection>
+
+          {/* 13. Section 13: Leadership */}
           <ScrollRevealSection>
             <Leadership />
           </ScrollRevealSection>
 
-          {/* 14. Section 11: About GOQii Journey */}
+          {/* 14. Section 14: About GOQii Journey */}
           <ScrollRevealSection>
             <AboutGOQii />
           </ScrollRevealSection>
