@@ -195,6 +195,7 @@ export default function Header() {
       ]
     },
     { label: "Plans", key: "plans", targetId: "section-plans" },
+    { label: "Leadership", key: "leadership", targetId: "section-leadership" },
     { label: "Project Sanjeevini", key: "sanjeevini", href: "https://goqii.com/sanjeevini" }
   ];
 
