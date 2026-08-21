@@ -111,6 +111,21 @@ export const OurStory: React.FC = () => {
             <p className="text-[#475467] text-sm sm:text-base leading-relaxed">
               Today, GOQii has grown from an Indian health-tech pioneer into a global health platform, while staying focused on one mission: <span className="font-medium text-[#0F172A]">making preventive health personal, actionable, and sustainable.</span>
             </p>
+
+            <div className="pt-2">
+              <button
+                id="btn-our-story-read-more"
+                onClick={() => {
+                  if (window.navigateToPage) {
+                    window.navigateToPage("about");
+                  }
+                }}
+                className="inline-flex items-center gap-2 bg-[#0F172A] hover:bg-[#2BC48A] text-white px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 shadow-sm hover:shadow-[0_8px_20px_rgba(43,196,138,0.25)] group cursor-pointer"
+              >
+                <span>Read More</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
           </motion.div>
         </div>
 

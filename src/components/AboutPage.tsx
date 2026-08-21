@@ -157,13 +157,12 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="text-3xl sm:text-5xl lg:text-[62px] font-semibold tracking-tight text-[#0F172A] leading-[1.08] mb-3 sm:mb-4"
+            className="text-3xl sm:text-5xl lg:text-[58px] font-semibold tracking-tight text-[#0F172A] leading-[1.12] mb-4 sm:mb-5 max-w-4xl"
           >
-            <span>Health should begin&nbsp;</span>
+            <span>We believe better health&nbsp;</span>
             <br />
-            <span className="text-slate-400">before illness.</span> <br />
             <span className="bg-gradient-to-r from-[#2BC48A] to-[#00ADC7] bg-clip-text text-transparent">
-              We built it to prevent it.
+              starts with better choices.
             </span>
           </motion.h1>
 
@@ -171,9 +170,9 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-sm sm:text-base md:text-lg font-normal text-[#475467] leading-[1.6] max-w-2xl mb-2 sm:mb-3 sm:px-6"
+            className="text-sm sm:text-base md:text-lg font-normal text-[#475467] leading-[1.6] max-w-3xl mb-2 sm:mb-3 sm:px-6"
           >
-            GOQii combines AI, wearables, coaching, and preventive intelligence into one continuous health ecosystem.
+            GOQii brings science, technology, and human guidance together to help people make healthier choices, build lasting habits, and take greater control of their health.
           </motion.p>
 
         </div>
@@ -274,144 +273,119 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-20 items-center">
           
           {/* LEFT COLUMN: HIGH-POLISHED COACH & CLINICAL FEEDBACK CARD */}
-          <div className="lg:col-span-6 flex justify-center items-center">
-            <div className="relative w-full max-w-[460px] aspect-[4/5] rounded-[48px] border border-slate-100 bg-white shadow-[0_32px_64px_-16px_rgba(15,23,42,0.06)] group hover:shadow-[0_48px_80px_-24px_rgba(15,23,42,0.12)] transition-all duration-700">
+          <div className="lg:col-span-6 flex justify-center items-center py-6 px-4 sm:px-8">
+            <div className="relative w-full max-w-[460px] aspect-[4/5] rounded-[40px] sm:rounded-[48px] border border-slate-100 bg-white shadow-[0_32px_64px_-16px_rgba(15,23,42,0.08)] group hover:shadow-[0_48px_80px_-24px_rgba(15,23,42,0.14)] transition-all duration-700">
               
-              {/* Full Cover Coach Background Image */}
-              <div className="absolute inset-0 rounded-[48px] overflow-hidden">
+              {/* Full Cover Coach Background Image - Completely visible and prominent */}
+              <div className="absolute inset-0 rounded-[40px] sm:rounded-[48px] overflow-hidden">
                 <img 
                   src="https://appcdn.goqii.com/storeimg/2388_1781696644.png" 
                   alt="Personal Coaching Interaction"
-                  className="w-full h-full object-cover transition-transform duration-[8000ms] group-hover:scale-105 select-none"
+                  className="w-full h-full object-cover object-center transition-transform duration-[8000ms] group-hover:scale-105 select-none"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-slate-950/10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/25 via-transparent to-slate-950/5 pointer-events-none" />
               </div>
 
-              {/* OVERLAY 1: HEART RATE SPECTRUM WIDGET */}
+              {/* OVERLAY 1: HEART RATE WIDGET (Offset Top-Left, clearing faces) */}
               <motion.div 
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: -15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="absolute top-[6%] left-[6%] right-[12%] bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-slate-100/60 shadow-[0_12px_32px_rgba(15,23,42,0.08)] flex items-center justify-between z-20 hover:scale-[1.02] transition-transform"
+                className="absolute -top-4 sm:-top-5 -left-2 sm:-left-6 bg-white/95 backdrop-blur-md rounded-2xl py-2.5 px-3.5 sm:py-3 sm:px-4 border border-slate-100/80 shadow-[0_16px_36px_rgba(15,23,42,0.12)] flex items-center gap-2.5 sm:gap-3 z-20 hover:scale-[1.03] transition-transform"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-rose-50 flex items-center justify-center text-rose-500 shrink-0">
-                    <Heart className="w-5 h-5 fill-rose-500/10 animate-pulse" />
-                  </div>
-                  <div>
-                    <span className="text-[11px] font-medium text-slate-500 block leading-none">Heart Rate</span>
-                    <div className="flex items-baseline gap-1.5 mt-1">
-                      <span className="text-xl font-extrabold text-slate-900 leading-none">76</span>
-                      <span className="text-xs font-semibold text-slate-400 font-mono">bpm</span>
-                      <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-emerald-50 text-[#2BC48A] uppercase font-mono tracking-wider ml-1">
-                        In Range
-                      </span>
-                    </div>
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-rose-50 flex items-center justify-center text-rose-500 shrink-0">
+                  <Heart className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-rose-500/15 animate-pulse" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-medium text-slate-500 block leading-none">Heart Rate</span>
+                  <div className="flex items-baseline gap-1 mt-0.5">
+                    <span className="text-base sm:text-lg font-black text-slate-900 leading-none">76</span>
+                    <span className="text-[10px] font-bold text-slate-400 font-mono">bpm</span>
+                    <span className="text-[8px] font-extrabold px-1 py-0.5 rounded bg-emerald-50 text-[#2BC48A] uppercase font-mono tracking-wider ml-0.5">
+                      In Range
+                    </span>
                   </div>
                 </div>
-                
-                {/* Real-time electrocardiography curve */}
-                <div className="w-16 h-8 text-[#2BC48A] shrink-0 opacity-85">
+                {/* Mini ECG Waveform */}
+                <div className="w-10 sm:w-12 h-6 text-[#2BC48A] shrink-0 opacity-80 ml-1 hidden xs:block">
                   <svg className="w-full h-full overflow-visible" stroke="currentColor" strokeWidth="2.5" fill="none" viewBox="0 0 60 30">
                     <path d="M0,15 L10,15 L14,5 L18,25 L22,12 L26,17 L30,15 L40,15 L44,2 L48,28 L52,15 L60,15" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
               </motion.div>
 
-              {/* OVERLAY 2: SLEEP SCORE INDEX COHORT */}
+              {/* OVERLAY 2: SLEEP SCORE WIDGET (Offset Top-Right, clearing center) */}
               <motion.div 
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: -15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute top-[26%] left-[6%] right-[12%] bg-white/95 backdrop-blur-md rounded-2xl p-4 border border-slate-100/60 shadow-[0_12px_32px_rgba(15,23,42,0.08)] flex items-center justify-between z-20 hover:scale-[1.02] transition-transform"
+                className="absolute -top-4 sm:-top-5 -right-2 sm:-right-6 bg-white/95 backdrop-blur-md rounded-2xl py-2.5 px-3.5 sm:py-3 sm:px-4 border border-slate-100/80 shadow-[0_16px_36px_rgba(15,23,42,0.12)] flex items-center gap-2.5 sm:gap-3 z-20 hover:scale-[1.03] transition-transform"
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-500 shrink-0">
-                    <Moon className="w-5 h-5 fill-indigo-500/10" />
-                  </div>
-                  <div>
-                    <span className="text-[11px] font-medium text-slate-500 block leading-none">Sleep Score</span>
-                    <div className="flex items-baseline gap-1.5 mt-1">
-                      <span className="text-xl font-extrabold text-slate-900 leading-none">82</span>
-                      <span className="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-[#EBFDFA] text-[#2BC48A] uppercase font-mono tracking-wider ml-1">
-                        Good
-                      </span>
-                    </div>
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-500 shrink-0">
+                  <Moon className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-indigo-500/15" />
+                </div>
+                <div>
+                  <span className="text-[10px] font-medium text-slate-500 block leading-none">Sleep Score</span>
+                  <div className="flex items-baseline gap-1 mt-0.5">
+                    <span className="text-base sm:text-lg font-black text-slate-900 leading-none">82</span>
+                    <span className="text-[8px] font-extrabold px-1 py-0.5 rounded bg-[#EBFDFA] text-[#2BC48A] uppercase font-mono tracking-wider ml-0.5">
+                      Good
+                    </span>
                   </div>
                 </div>
-
-                {/* Vertical bar chart column stack */}
-                <div className="flex items-end gap-1 h-8 shrink-0 pb-1 pr-1">
-                  {[10, 18, 12, 22, 16, 26, 20, 24, 14, 21].map((h, idx) => (
+                {/* Mini Sleep Bars */}
+                <div className="flex items-end gap-0.5 h-6 shrink-0 pb-0.5 ml-1 hidden xs:flex">
+                  {[8, 14, 10, 18, 12, 20, 16, 19].map((h, idx) => (
                     <div 
                       key={idx} 
-                      className="w-1 bg-indigo-500/80 rounded-full" 
+                      className="w-0.5 bg-indigo-500/70 rounded-full" 
                       style={{ height: `${h}px` }} 
                     />
                   ))}
                 </div>
               </motion.div>
 
-              {/* OVERLAY 3: INTERACTIVE COACH CHAT BUBBLE */}
+              {/* OVERLAY 3: INTERACTIVE COACH CHAT BUBBLE (Offset Bottom-Left) */}
               <motion.div 
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 0.4 }}
-                className="absolute bottom-[24%] left-[-6%] sm:left-[-10%] max-w-[250px] bg-white/98 backdrop-blur-md rounded-3xl rounded-tl-none p-4 border border-slate-100/70 shadow-[0_16px_36px_rgba(15,23,42,0.12)] z-30 flex gap-3 hover:scale-[1.02] transition-transform"
+                className="absolute -bottom-6 sm:-bottom-8 -left-3 sm:-left-8 max-w-[240px] sm:max-w-[270px] bg-white/98 backdrop-blur-md rounded-2xl sm:rounded-3xl rounded-tl-none p-3 sm:p-3.5 border border-slate-100/90 shadow-[0_20px_44px_rgba(15,23,42,0.15)] z-30 flex gap-2.5 sm:gap-3 hover:scale-[1.02] transition-transform"
               >
                 <div className="relative shrink-0">
                   <img 
                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=120" 
                     alt="GOQii Personal Wellness Coach" 
-                    className="w-9 h-9 rounded-full object-cover border border-slate-100 shadow-sm"
+                    className="w-8 h-8 sm:w-9 sm:h-9 rounded-full object-cover border border-slate-100 shadow-xs"
                   />
                   <span className="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-[#2BC48A] border-2 border-white ring-1 ring-[#2BC48A]/20" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-[9px] font-black tracking-widest text-[#2BC48A] uppercase font-mono mb-1 leading-none">Coach</span>
-                  <p className="text-[11px] font-medium text-slate-800 leading-snug">
+                  <span className="text-[8.5px] font-black tracking-widest text-[#2BC48A] uppercase font-mono mb-0.5 leading-none">Coach</span>
+                  <p className="text-[10.5px] sm:text-[11px] font-medium text-slate-800 leading-snug">
                     Great job hitting your step goal today! 💪 Shall we plan your dinner together?
                   </p>
                 </div>
               </motion.div>
 
-              {/* OVERLAY 4: USER CHAT RESPOND INDEX */}
+              {/* OVERLAY 4: USER CHAT RESPONSE (Offset Bottom-Right) */}
               <motion.div 
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 0.5 }}
-                className="absolute bottom-[10%] right-[-4%] max-w-[170px] bg-[#EBFDFA]/98 backdrop-blur-md border border-emerald-100 rounded-3xl rounded-tr-none py-3 px-4 shadow-[0_12px_28px_rgba(43,196,138,0.08)] z-30 flex items-end gap-1.5 hover:scale-[1.02] transition-transform"
+                className="absolute -bottom-4 sm:-bottom-5 -right-2 sm:-right-6 max-w-[155px] sm:max-w-[170px] bg-[#EBFDFA]/98 backdrop-blur-md border border-emerald-200/80 rounded-2xl sm:rounded-3xl rounded-tr-none py-2.5 px-3 sm:py-3 sm:px-4 shadow-[0_16px_36px_rgba(43,196,138,0.12)] z-30 flex items-end gap-1.5 hover:scale-[1.02] transition-transform"
               >
                 <div className="flex flex-col">
-                  <span className="text-[8.5px] font-black tracking-widest text-[#2BC48A]/80 uppercase font-mono mb-0.5 leading-none">You</span>
-                  <p className="text-[11.5px] font-bold text-[#0F172A] leading-tight">
+                  <span className="text-[8px] font-black tracking-widest text-[#2BC48A]/90 uppercase font-mono mb-0.5 leading-none">You</span>
+                  <p className="text-[11px] sm:text-[11.5px] font-bold text-[#0F172A] leading-tight">
                     Yes, let's do it!
                   </p>
                 </div>
                 <div className="text-[#2BC48A] shrink-0 mb-0.5 pb-0.5">
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                     <path d="M2 12l5 5L20 4M8 17l5 5L22 9" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </div>
-              </motion.div>
-
-              {/* OVERLAY 5: TODAY'S FOCUS ACCORDION */}
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="absolute bottom-[4%] left-[4%] right-[22%] bg-white/95 backdrop-blur-md border border-slate-100/60 rounded-2xl px-4 py-3 shadow-[0_10px_24px_rgba(15,23,42,0.04)] z-20 flex items-center gap-3 hover:scale-[1.01] transition-transform"
-              >
-                <div className="w-8 h-8 rounded-lg bg-emerald-50 text-[#2BC48A] flex items-center justify-center shrink-0">
-                  <Target className="w-4.5 h-4.5" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-black tracking-widest text-[#2BC48A] uppercase font-mono mb-0.5 leading-none">Today's Focus</span>
-                  <p className="text-[10px] text-slate-500 font-semibold leading-normal">
-                    Eat balanced • Move more <br />
-                    Sleep well • Stay consistent
-                  </p>
                 </div>
               </motion.div>
 
