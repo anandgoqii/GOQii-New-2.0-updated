@@ -227,7 +227,7 @@ export default function TrustRegulatory() {
             </div>
 
             <div className="text-2xl sm:text-4xl lg:text-[44px] font-black font-sans text-[#0F172A] tracking-tight mb-1 sm:mb-2">
-              <AnimatedCounter endValue={1} suffix="M+" />
+              <AnimatedCounter endValue={5} suffix="M+" />
             </div>
 
             <div className="text-[9px] sm:text-[10px] font-sans font-extrabold tracking-[0.12em] sm:tracking-[0.15em] text-[#2BC48A] uppercase mb-2 sm:mb-4 leading-tight">

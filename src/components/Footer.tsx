@@ -124,7 +124,6 @@ export default function Footer() {
     personal: {
       title: "PERSONAL SOLUTIONS",
       links: [
-        { label: "Personal Care", href: "https://consult.goqii.com/" },
         { label: "Insure Plus", href: "https://store.goqii.com/goqii-insureplus" },
         { label: "SuperLife", href: "https://goqii.com/superlife/" },
         { label: "SmartRx", href: "https://smartrx.goqii.com/" },

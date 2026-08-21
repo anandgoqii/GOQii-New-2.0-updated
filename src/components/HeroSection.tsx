@@ -13,7 +13,7 @@ const slides = [
       { text: "Health should begin", highlight: false },
       { text: "before illness.", highlight: true }
     ],
-    subtext: "GOQii combines wearables, diagnostics, AI, and human coaching into one continuous health platform for individuals, employers, insurers, and healthcare providers.",
+    subtext: "GOQii brings together early health signals, AI, and human coaching to help people understand risks earlier and take action before illness begins.",
     bgImage: "https://appcdn.goqii.com/storeimg/9522_1781597016.png",
     mobileBgImage: "https://appcdn.goqii.com/storeimg/50283_1781000672.jpg",
     objectPosition: "object-right-bottom md:object-right-bottom"
@@ -26,7 +26,7 @@ const slides = [
       { text: "Personalize.", highlight: false },
       { text: "Prevent.", highlight: true }
     ],
-    subtext: "GOQii combines wearables, diagnostics, AI, and human coaching into one continuous health platform for individuals, employers, insurers, and healthcare providers.",
+    subtext: "HealthEngage turns health data into personalized insights and timely interventions, helping organizations move from reactive care to proactive prevention.",
     bgImage: "https://appcdn.goqii.com/storeimg/48777_1781616000.jpg",
     mobileBgImage: "https://appcdn.goqii.com/storeimg/54302_1781000743.jpg",
     objectPosition: "object-right-bottom md:object-right-bottom"
@@ -38,7 +38,7 @@ const slides = [
       { text: "Intelligence for", highlight: false },
       { text: "every human.", highlight: true }
     ],
-    subtext: "GOQii combines wearables, diagnostics, AI, and human coaching into one continuous health platform for individuals, employers, insurers, and healthcare providers.",
+    subtext: "GOQii combines AI, health data, and human expertise to deliver more relevant, personalized health intelligence for every person, wherever they are.",
     bgImage: "https://appcdn.goqii.com/storeimg/30233_1781615916.jpg",
     mobileBgImage: "https://appcdn.goqii.com/storeimg/88832_1781000753.jpg",
     objectPosition: "object-right-bottom md:object-right-bottom"
@@ -50,7 +50,7 @@ const slides = [
       { text: "Preventive Health,", highlight: false },
       { text: "Made Continuous.", highlight: true }
     ],
-    subtext: "GOQii combines AI, diagnostics, wearables and human coaching into one connected health platform.",
+    subtext: "GOQii connects everyday health signals, intelligent insights, and human coaching to make prevention a continuous part of everyday life.",
     bgImage: "https://appcdn.goqii.com/storeimg/70526_1781689373.jpg",
     mobileBgImage: "https://appcdn.goqii.com/storeimg/70822_1782800887.jpg",
     objectPosition: "object-right-bottom md:object-right-bottom"
@@ -76,13 +76,16 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
     return () => window.removeEventListener("resize", checkMobileState);
   }, []);
   
-  // Auto-play the slides
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Auto-play the slides (slowed down for comfortable reading)
   useEffect(() => {
+    if (isPaused || isGetAppOpen || isBookDemoOpen) return;
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 4000);
+    }, 8000);
     return () => clearInterval(timer);
-  }, []);
+  }, [currentSlide, isPaused, isGetAppOpen, isBookDemoOpen]);
 
   // Create subtle parallax scrolling effect on the image
   const { scrollYProgress } = useScroll({
@@ -97,6 +100,8 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
     <div
       id="hero-section"
       ref={sectionRef}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
       className="relative min-h-screen w-full flex flex-col justify-between overflow-hidden bg-[#F8FAFB] py-12 md:py-16 select-none"
     >
       {/* Absolute image background with subtle parallax translation - visible on all screens */}
@@ -111,7 +116,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.95 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.45 }}
+              transition={{ duration: 0.6 }}
               src={isMobile && slides[currentSlide].mobileBgImage ? slides[currentSlide].mobileBgImage : slides[currentSlide].bgImage}
               alt="GOQii Healthspan Hero Image"
               className={`absolute inset-0 w-full h-full object-cover ${slides[currentSlide].objectPosition || "object-right-bottom"}`}
@@ -146,7 +151,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
-              transition={{ duration: 0.35, ease: "easeInOut" }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
               className="flex flex-col items-start text-left w-full min-h-[460px] sm:min-h-[390px] md:min-h-[380px] lg:min-h-[370px] justify-start"
             >
               {/* Label */}
@@ -182,7 +187,7 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
                 <div className="w-full space-y-4 mb-4 select-none">
                   {/* Distinctive trust line */}
                   <div className="text-[11px] font-black text-[#667085] tracking-wider uppercase font-mono bg-[#E5F7F0]/40 border border-[#2BC48A]/10 px-3.5 py-2 rounded-xl inline-block max-w-full">
-                    🛡️ Trusted by 5M+ users, 300+ enterprises, NHS partners & Fortune 500 organizations.
+                    🛡️ Trusted by 5M+ users, 300+ enterprises & Fortune 500 organizations.
                   </div>
 
                   {/* Horizontal visual tracks [ For Me ], [ For Employers ], [ For Insurers ], [ For Providers ] */}
@@ -230,20 +235,15 @@ export default function HeroSection({ onExplore }: { onExplore: () => void }) {
                 </div>
               )}
 
-              {/* XPRIZE Premium Badge */}
-              {slides[currentSlide].id !== 4 && (
-                <div className="inline-flex items-center gap-3 bg-[#FFFFFF]/90 border border-[#E8EDF2] py-2.5 px-4 rounded-xl shadow-[0_8px_20px_rgba(15,23,42,0.02)] mt-4 mb-2">
-                  <span className="text-lg">🏆</span>
-                  <div className="flex flex-col text-left">
-                    <span className="text-[11px] font-black tracking-wider text-[#0F172A] uppercase">
-                      XPRIZE Healthspan Semifinalist
-                    </span>
-                    <span className="text-[9px] font-extrabold text-[#667085] uppercase tracking-widest mt-0.5">
-                      $101M Global Competition
-                    </span>
-                  </div>
-                </div>
-              )}
+              {/* XPRIZE Healthspan Semifinalist Image Badge */}
+              <div className="mt-4 mb-2 flex items-center">
+                <img
+                  src="https://appcdn.goqii.com/storeimg/68036_1787291975.png"
+                  alt="XPRIZE Healthspan Semifinalist"
+                  className="h-11 sm:h-12 w-auto object-contain drop-shadow-xs"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
             </motion.div>
           </AnimatePresence>
 
