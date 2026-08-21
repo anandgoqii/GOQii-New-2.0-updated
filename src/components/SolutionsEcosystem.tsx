@@ -34,8 +34,9 @@ const SOLUTIONS: SolutionCard[] = [
     tagline: "SuperLife",
     description: "Science-led longevity for a healthier, longer life.",
     icon: User,
-    ctaText: "Get the App",
-    ctaType: "app"
+    ctaText: "Explore the plan",
+    ctaType: "app",
+    href: "https://goqii.com/superlife/"
   },
   {
     id: "enterprises",
@@ -43,8 +44,9 @@ const SOLUTIONS: SolutionCard[] = [
     tagline: "Corporate Wellbeing",
     description: "Workforce health programs that improve employee wellbeing, engagement, and productivity.",
     icon: Building2,
-    ctaText: "Book a Demo",
-    ctaType: "demo"
+    ctaText: "Know more",
+    ctaType: "demo",
+    href: "https://goqii.com/healthengage-corporate"
   },
   {
     id: "insurance",

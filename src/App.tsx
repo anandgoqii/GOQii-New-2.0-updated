@@ -203,14 +203,14 @@ export default function App() {
             <ProofStrip />
           </ScrollRevealSection>
 
-          {/* Audience Selector Section */}
-          <ScrollRevealSection>
-            <AudienceSelector />
-          </ScrollRevealSection>
-
           {/* 2. Section 01: The Problem */}
           <ScrollRevealSection>
             <SectionProblem />
+          </ScrollRevealSection>
+
+          {/* Audience Selector Section (Who are you?) */}
+          <ScrollRevealSection>
+            <AudienceSelector />
           </ScrollRevealSection>
 
           {/* 3. Section 02: The Gap */}

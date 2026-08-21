@@ -13,7 +13,8 @@ interface AudienceCard {
   metric: { value: string; label: string };
   bullets: string[];
   ctaText: string;
-  ctaType: "app" | "demo" | "doc" | "contact";
+  ctaType: "app" | "demo" | "doc" | "contact" | "link";
+  ctaLink?: string;
   image: string;
   imageAlt: string;
 }
@@ -31,7 +32,7 @@ const AUDIENCES: AudienceCard[] = [
       "Continuous health & wearable telemetry tracking",
       "Dynamic biomarkers baseline analysis"
     ],
-    ctaText: "Get the App",
+    ctaText: "EXPLORE PLANS",
     ctaType: "app",
     image: "https://appcdn.goqii.com/storeimg/96411_1782299255.png",
     imageAlt: "Individual analyzing personalized health telemetry metrics on a smart device"
@@ -48,8 +49,9 @@ const AUDIENCES: AudienceCard[] = [
       "Comprehensive biomarker checks & clinical screening",
       "Measurable stress & chronic prevention indexes"
     ],
-    ctaText: "Schedule Employer Demo",
-    ctaType: "demo",
+    ctaText: "Know more",
+    ctaType: "link",
+    ctaLink: "https://goqii.com/healthengage-corporate",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80",
     imageAlt: "Highly motivated modern workforce participating in workspace wellbeing initiatives"
   },
@@ -65,8 +67,9 @@ const AUDIENCES: AudienceCard[] = [
       "Incentivized daily behavior dynamic adjustment",
       "Comprehensive regulatory & security compliance structure"
     ],
-    ctaText: "Request Actuarial Framework",
-    ctaType: "doc",
+    ctaText: "Learn more",
+    ctaType: "link",
+    ctaLink: "https://goqii.com/healthengage-insurance",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
     imageAlt: "Predictive preventive health risk intelligence dashboard"
   },
@@ -82,8 +85,9 @@ const AUDIENCES: AudienceCard[] = [
       "Coached transitional care management tracking",
       "Real-time alerts on physiological drift metrics"
     ],
-    ctaText: "Contact Clinical Solutions Team",
-    ctaType: "contact",
+    ctaText: "Know more",
+    ctaType: "link",
+    ctaLink: "https://go-qii-connected-care-7c49.vercel.app/",
     image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80",
     imageAlt: "Healthcare clinicians managing coordinates and patient baseline charts"
   }
@@ -102,7 +106,7 @@ export default function AudienceSelector() {
   }, [activeTab]);
   
   // Handlers for localized CTA routing
-  const handleCtaClick = (type: "app" | "demo" | "doc" | "contact") => {
+  const handleCtaClick = (type: "app" | "demo" | "doc" | "contact" | "link") => {
     if (type === "app") {
       setIsGetAppOpen(true);
     } else if (type === "demo") {
@@ -217,15 +221,31 @@ export default function AudienceSelector() {
                 </div>
 
                 <div className="pt-2">
-                  <motion.button
-                    onClick={() => handleCtaClick(activeAudience.ctaType)}
-                    whileHover={{ scale: 1.01, x: 1 }}
-                    whileTap={{ scale: 0.99 }}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2BC48A] text-white text-[11px] font-black tracking-wider uppercase rounded-xl cursor-pointer shadow-md shadow-[#2BC48A]/10 font-sans"
-                  >
-                    <span>{activeAudience.ctaText}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </motion.button>
+                  {activeAudience.ctaLink ? (
+                    <motion.a
+                      id={`btn-audience-${activeAudience.id}`}
+                      href={activeAudience.ctaLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.01, x: 1 }}
+                      whileTap={{ scale: 0.99 }}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2BC48A] hover:bg-[#24a876] text-white text-[11px] font-black tracking-wider uppercase rounded-xl cursor-pointer shadow-md shadow-[#2BC48A]/10 font-sans transition-colors"
+                    >
+                      <span>{activeAudience.ctaText}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </motion.a>
+                  ) : (
+                    <motion.button
+                      id={`btn-audience-${activeAudience.id}`}
+                      onClick={() => handleCtaClick(activeAudience.ctaType)}
+                      whileHover={{ scale: 1.01, x: 1 }}
+                      whileTap={{ scale: 0.99 }}
+                      className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#2BC48A] hover:bg-[#24a876] text-white text-[11px] font-black tracking-wider uppercase rounded-xl cursor-pointer shadow-md shadow-[#2BC48A]/10 font-sans transition-colors"
+                    >
+                      <span>{activeAudience.ctaText}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </motion.button>
+                  )}
                 </div>
               </div>
 
